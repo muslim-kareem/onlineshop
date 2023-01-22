@@ -11,12 +11,13 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/app-users")
 @RequiredArgsConstructor
-public class UserController {
+public class AppUserController {
 
     private final AppUserService service;
 
     @PostMapping
     public AppUser create(@RequestBody AppUser appUser){
+        appUser.setId(null);
         return  service.create(appUser);
     }
 
@@ -24,12 +25,6 @@ public class UserController {
     public String testBasic(){
         return "BASIC";
     }
-
-//    TODO
-//    @GetMapping("/admin")
-//    public String getStatus(){
-//        return "ADMIN";
-//    }
 
     @PostMapping("/login")
     public Optional<AppUser> login() {

@@ -3,7 +3,7 @@ package com.my.shope.backend.appUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -14,13 +14,12 @@ import java.util.Optional;
 public class AppUserService {
 
     private final AppUserRepo appUserRepo;
-    private final PasswordEncoder passwordEncoder;
-    public Optional<AppUser> findByUserName(String username) {
-
-        return null;
+    private final BCryptPasswordEncoder passwordEncoder;
+    public Optional<AppUser> findByUserName(String userName){
+        return appUserRepo.findUserAppByUsername(userName);
     }
     public AppUser create(AppUser appUser){
-        Optional<AppUser> existingAppUser = appUserRepo.findUserAppByUserName(appUser.getUserName());
+        Optional<AppUser> existingAppUser = appUserRepo.findUserAppByUsername(appUser.getUsername());
 
         if(existingAppUser.isPresent()){
             throw new ResponseStatusException(HttpStatus.CONFLICT);
@@ -48,7 +47,7 @@ public class AppUserService {
 
 
     public Optional<AppUser> findByUsernameWithoutPassword(String username){
-        Optional<AppUser> appUser = appUserRepo.findUserAppByUserName(username);
+        Optional<AppUser> appUser = appUserRepo.findUserAppByUsername(username);
         appUser.ifPresent(user -> user.setPassword(""));
 
         return appUser;

@@ -4,13 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/BackendApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="set up files and login page">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/order/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/LogoutButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/getMe.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/useAuth.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/model/Home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/model/User.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/model/getMe.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/PasswordEncoderConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/PasswordEncoderConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/PasswordEncoderConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/PasswordEncoderConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/SecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +49,8 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -37,32 +66,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend/src/main/java/com/my/shope/backend/configuration",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/src/model&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/node_modules/typescript/lib&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.my.shope.backend.appUser" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration" />
-      <recent name="$PROJECT_DIR$/backend/src/test/resources" />
+      <recent name="$PROJECT_DIR$/frontend/src/model" />
+      <recent name="$PROJECT_DIR$/frontend/src" />
+      <recent name="$PROJECT_DIR$/frontend/src/components" />
+      <recent name="$PROJECT_DIR$/frontend/src/pages" />
+      <recent name="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.my.shope.backend.appUser" />
@@ -96,8 +133,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674283187489</updated>
-      <workItem from="1674283190064" duration="5895000" />
+      <workItem from="1674283190064" duration="9713000" />
+      <workItem from="1674293415190" duration="34551000" />
+      <workItem from="1674399807126" duration="7741000" />
     </task>
+    <task id="LOCAL-00001" summary="init: BIG BANG">
+      <created>1674289720971</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674289720972</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,5 +165,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
+    <MESSAGE value="init: BIG BANG" />
+    <MESSAGE value="set up files and login page" />
+    <option name="LAST_COMMIT_MESSAGE" value="set up files and login page" />
   </component>
 </project>

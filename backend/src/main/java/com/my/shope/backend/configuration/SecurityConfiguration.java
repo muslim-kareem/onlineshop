@@ -24,16 +24,14 @@ public class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {
+
         return http
                 .csrf().disable()
                 .httpBasic().and    ()
                 .authorizeHttpRequests()
-                .antMatchers()
-                .permitAll()
-//                .antMatchers(HttpMethod.GET,"/api/app-users/basic").hasAnyRole("ADMIN","BASIC")
-//                .antMatchers(HttpMethod.GET,"/api/app-users/admin").hasRole("ADMIN")
+                .antMatchers().permitAll()
                 .anyRequest()
-                .authenticated()
+                .permitAll()
                 .and()
                 .build();
     }
@@ -49,7 +47,7 @@ public class SecurityConfiguration {
             AppUser appUser = myUser.get();
 
             return User.builder()
-                    .username(appUser.getUserName())
+                    .username(appUser.getUsername())
                     .password(appUser.getPassword())
                     .roles(appUser.getRole())
                     .build();
