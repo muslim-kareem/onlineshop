@@ -73,9 +73,32 @@
 }
 
 
+/*home*/
+.carousel-container{
+  margin: auto;
+  background-color: #f3f2f2;
+}
+
+.carousel-container-wrapper{
+  padding-top: 40px;
+  width: 100%;
+  background-color: #f3f2f2;
+}
 
 
 
+/*ProductCard*/
+
+
+.product-card{
+  margin-left: 30px;
+  margin-top: 20px;
+
+}
+.product-container{
+  margin: auto;
+  width: 90%;
+}
 /*@media only screen and (min-width: 1075px) {*/
 /*  .user-icon {*/
 /*    margin-left: 20%*/

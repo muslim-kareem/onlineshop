@@ -5,16 +5,25 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import LogoutButton from "./components/LogoutButton";
 import NavBar from "./components/NavBar";
-import Home from "./model/Home";
+import AuthUser from "./components/AuthUser";
+import ProductContainer from "./components/ProductContainer";
+import useAllProducts from "./hooks/useAllProducts";
+
 
 function App() {
 
 
+    const[products,setPoducts] = useAllProducts([]);
+
     return (
 
         <>
-            <NavBar/>
-            <Home/>
+            <AuthUser>
+               <NavBar/>
+            </AuthUser>
+            <ProductContainer products={products}></ProductContainer>
+
+            {/*<Home/>*/}
             <BrowserRouter>
                 <Routes>
                     <Route path="/login" element={<LoginPage/>}/>

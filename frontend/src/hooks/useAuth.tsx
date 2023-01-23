@@ -1,6 +1,7 @@
-import {Dispatch, SetStateAction, useEffect, useState} from "react";
+import React, {Dispatch, SetStateAction, useEffect, useState} from "react";
 import axios from "axios";
 import {User} from "../model/User";
+
 
 export default function useAuth(initialState: User | null): [boolean,User, Dispatch<SetStateAction<User>>] {
   const [user, setUser] = useState<User | null>(null);
@@ -19,7 +20,7 @@ export default function useAuth(initialState: User | null): [boolean,User, Dispa
       }
     })();
 
-  }, []);
+  }, [user]);
 
   return[isReady,user,setUser];
 }
