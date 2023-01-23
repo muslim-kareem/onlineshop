@@ -96,8 +96,10 @@
 
 }
 .product-container{
+ padding: 100px;
+  height: 1350px;
+
   margin: auto;
-  width: 90%;
 }
 /*@media only screen and (min-width: 1075px) {*/
 /*  .user-icon {*/

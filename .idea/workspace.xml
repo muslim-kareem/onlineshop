@@ -4,34 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="create: product classes">
-      <change afterPath="$PROJECT_DIR$/frontend/public/images/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/images/test_photeo1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/images/test_photeo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/images/test_photeo3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/AuthUser.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ProductContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/useAllProducts.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/model/Product.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/hom.css" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: ProductContainer &amp; ProductCard">
+      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/PasswordEncoderConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/PasswordEncoderConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/SecurityConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LogoutButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LogoutButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useAuth.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/images/img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +24,8 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -71,7 +52,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/src/components",
+    "last_opened_file_path": "/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/src/components/images",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
@@ -89,11 +70,11 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/components/images" />
       <recent name="$PROJECT_DIR$/frontend/src/components" />
       <recent name="$PROJECT_DIR$/frontend/public" />
       <recent name="$PROJECT_DIR$/frontend/src" />
       <recent name="$PROJECT_DIR$/frontend/src/images" />
-      <recent name="$PROJECT_DIR$/frontend/src/model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/public/images" />
@@ -134,7 +115,7 @@
       <updated>1674283187489</updated>
       <workItem from="1674283190064" duration="9713000" />
       <workItem from="1674293415190" duration="34551000" />
-      <workItem from="1674399807126" duration="30449000" />
+      <workItem from="1674399807126" duration="36390000" />
     </task>
     <task id="LOCAL-00001" summary="init: BIG BANG">
       <created>1674289720971</created>
@@ -157,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674418293773</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: ProductContainer &amp; ProductCard">
+      <created>1674488849168</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674488849168</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +169,7 @@
     <MESSAGE value="init: BIG BANG" />
     <MESSAGE value="set up files and login page" />
     <MESSAGE value="create: product classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="create: product classes" />
+    <MESSAGE value="feat: ProductContainer &amp; ProductCard" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: ProductContainer &amp; ProductCard" />
   </component>
 </project>
