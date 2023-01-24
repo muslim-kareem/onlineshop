@@ -7,7 +7,6 @@ export default function NavBar({user}:{
 
 
 
-    console.log("NavBar  ==> " + user?.username)
 
     return (
 

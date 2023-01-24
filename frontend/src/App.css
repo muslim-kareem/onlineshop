@@ -120,11 +120,12 @@
 
 }
 .present-photo {
-  width: 400px
+  max-width: 100%
 }
 .details-container{
+  display: inline-block;
   margin-top: 50px;
-  width: 50%;
+  width:60%;
 }
 
 /*@media only screen and (min-width: 1075px) {*/

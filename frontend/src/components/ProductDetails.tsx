@@ -1,36 +1,39 @@
 import useProduct from "../hooks/useProduct";
 import {useParams} from "react-router-dom";
 import {useState} from "react";
+import {IMAGES_PATH} from "../model/aplicationProp";
 
 export default function ProductDetails() {
 
 
     const {id} = useParams();
     const [product] = useProduct(id as string);
-    const [presentPhoto, setPresentPhoto] = useState<string>(product.imageURLs[0])
+    const [presentPhoto, setPresentPhoto] = useState<string>("")
 
+    const onClick = () => {
+
+    }
 
     let sidPhotos = product.imageURLs.map((img, index) => {
-            if (img !== presentPhoto ) {
-                return <div key={index} className=" card border border-5 side-photo"  >
-                    <img src={img}   alt="..."/>
-                </div>
-            }
+
+            return <div key={index} className=" card border border-5 side-photo">
+                <img src={IMAGES_PATH + img} onClick={() => setPresentPhoto(IMAGES_PATH + img)} alt="..."/>
+            </div>
+
 
         }
     )
 
-    console.log(product.imageURLs[0])
 
     return (<>
             <div className={"details-container"}>
-            <div className={" d-flex justify-content-around " }>
-
-                <div>{sidPhotos}</div>
-                <div className=" present-photo-container " style={{width: "20rem"}}>
-                    <img src={presentPhoto ? presentPhoto : "https://i.otto.de/i/otto/60d4d299-7438-517e-b227-b191335a6477?w=1385&h=2000"} className="present-photo " alt="..."/>
+                <div className={" d-flex justify-content-around flex-wrap "}>
+                    <div>{sidPhotos}</div>
+                    <div className=" present-photo-container " style={{width: "25rem"}}>
+                        <img src={presentPhoto ? presentPhoto : IMAGES_PATH+product.imageURLs[0]} className="present-photo "
+                             alt="..."/>
+                    </div>
                 </div>
-            </div>
 
             </div>
         </>

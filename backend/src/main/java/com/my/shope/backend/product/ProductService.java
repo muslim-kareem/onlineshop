@@ -30,4 +30,9 @@ public class ProductService {
             return  theProduct.get();
         }
     }
+
+    public Product updateProduct(Product theProduct) {
+
+       return productRepo.save(theProduct);
+    }
 }
