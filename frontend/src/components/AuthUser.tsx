@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import useAuth from "../hooks/useAuth";
 
 // @ts-ignore
@@ -7,11 +7,11 @@ export const Auth = React.createContext<User>();
 export default function AuthUser({children}:{
     children: React.ReactNode
 }){
-    const [isReady,user,setUser] = useAuth(null);
+    const [user,setUser] = useAuth();
 
 
     return(
-        <Auth.Provider value={user}>
+        <Auth.Provider value={[user,setUser]}>
             {children}
         </Auth.Provider>
     )

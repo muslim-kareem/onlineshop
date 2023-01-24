@@ -1,16 +1,19 @@
-import React, {FormEvent, useCallback, useMemo, useState} from "react";
+import React, {FormEvent, useCallback, useContext, useMemo, useState} from "react";
 import {
   Link,
   useLocation,
   useNavigate,
   useSearchParams
 } from "react-router-dom";
-import axios from "axios";
+import {Auth} from "../components/AuthUser";
 
 
 
 
-export default function LoginPage () {
+export default function LoginPage ({login}:{
+  login: (credentials: {username: string, password: string}) => void
+}) {
+
   // credentials == user
   const [credentials, setCredentials] = useState({
     username: "",
@@ -35,17 +38,13 @@ export default function LoginPage () {
 
   const location = useLocation();
 
-  const login = useCallback(
+  const onLogin = useCallback(
     async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       setErrors([]);
 
       try {
-       await axios.post("/api/app-users/login", null, {
-          headers: {
-            "Authorization": "Basic " + window.btoa(`${credentials.username}:${credentials.password}`)
-          }
-        });
+           await login(credentials)
         navigate(redirect);
       } catch (e) {
         setErrors((errors) => [
@@ -68,7 +67,7 @@ export default function LoginPage () {
         </div>
       )}
 
-      <form onSubmit={login}>
+      <form onSubmit={onLogin}>
         <div className={"input-group mb-3"}>
           <input
               className={"form-control"}

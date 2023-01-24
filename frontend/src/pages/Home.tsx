@@ -1,11 +1,17 @@
+import useAllProducts from "../hooks/useAllProducts";
+import ProductContainer from "../components/ProductContainer";
+import React from "react";
+import LogoutButton from "../components/LogoutButton";
 
 export default function Home() {
+    const[products,setProducts] = useAllProducts([]);
 
 
 
     return (
         <>
-
+            <ProductContainer products={products}/>
+            <LogoutButton/>
         </>
     )
 }
