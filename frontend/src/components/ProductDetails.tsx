@@ -30,7 +30,8 @@ export default function ProductDetails() {
 
 
      const addToCart = async () => {
-         const res = await axios.post("/api/app-users/ToDo/"+id)
+        console.log("this is in the Product details "+id)
+         const res = await axios.put("/api/orders/"+id)
      }
 
     return (<>
@@ -51,8 +52,8 @@ export default function ProductDetails() {
 
                     </div>
 
-                <button className="btn add-to-cart-button" type="button">In den Warenkorb</button>
-                <button className="btn buy-button" type="button" onClick={addToCart} >Kaufen</button>
+                <button className="btn add-to-cart-button" type="button" onClick={addToCart} >In den Warenkorb</button>
+                <button className="btn buy-button" type="button" >Kaufen</button>
             </div>
 
         </>

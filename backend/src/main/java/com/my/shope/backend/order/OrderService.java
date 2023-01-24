@@ -31,18 +31,17 @@ public class OrderService {
             boolean isExist = true;
             for (String pId : optionOrder.get().getProductsIds()) {
 
-                if(pId.equals(productId)){
+                if(productId.equals(pId)){
                     isExist = false;
+                    break;
                 }
             }
 
             if(isExist){
                 optionOrder.get().getProductsIds().add(productId);
+                orderRepo.save(optionOrder.get());
             }
         }
-
-
-
         return optionOrder.get();
     }
 
