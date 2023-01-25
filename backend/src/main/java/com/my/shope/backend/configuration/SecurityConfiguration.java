@@ -20,8 +20,6 @@ public class SecurityConfiguration {
 
     private final AppUserService appUserService;
 
-
-
     @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {
 

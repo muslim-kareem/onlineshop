@@ -3,24 +3,26 @@ import axios from "axios";
 import {User} from "../model/User";
 
 
-export default function useAuth(initialState: User | null): [boolean,User, Dispatch<SetStateAction<User>>] {
-  const [user, setUser] = useState<User | null>(null);
-  const [isReady, setIsReady] = useState(false);
+export default function useAuth(): [ User, Dispatch<SetStateAction<User>>] {
+    const [user, setUser] = useState<User | null>(null);
+    const [isReady, setIsReady] = useState(false);
 
-  useEffect(() => {
+    useEffect(() => {
 
-    (async () => {
-      try {
-        const user = await axios.get("/api/app-users/me");
-        setUser(user.data);
-      } catch (e) {
-        console.error("You are not logged in!", e);
-      } finally {
-          setIsReady(true);
-      }
-    })();
+            (
+                async () => {
+                    try {
+                        const user = await axios.get("/api/app-users/me");
+                        setUser(user.data);
+                    } catch (e) {
+                        console.error("You are not logged in!", e);
+                    } finally {
+                        setIsReady(true);
+                    }
+                })();
 
-  }, [user]);
 
-  return[isReady,user,setUser];
+    }, [user]);
+
+    return [ user, setUser];
 }

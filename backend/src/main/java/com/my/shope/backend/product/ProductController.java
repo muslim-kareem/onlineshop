@@ -17,9 +17,18 @@ public class ProductController {
         theProduct.setId(null);
         return service.createProduct(theProduct);
     }
+    @PutMapping
+    public Product updateProduct(@RequestBody Product theProduct){
+        return service.updateProduct(theProduct);
+    }
 
     @GetMapping
     public List<Product> getAll(){
         return service.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Product getProductById(@PathVariable String id){
+        return service.getProductById(id);
     }
 }

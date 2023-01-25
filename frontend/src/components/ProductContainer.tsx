@@ -10,7 +10,7 @@ export default function ProductContainer({products}:{
 
         <div className="product-container">
             <div className={"d-flex align-content-start flex-wrap  mb-5 "}>
-            {products.map(p => <div className={"product-card"}><ProductCard  key={p.id} product={p}/></div>)}
+            {products.map(p => <div key={p.id} className={"product-card"}><ProductCard   product={p}/></div>)}
             </div>
         </div>
     )
