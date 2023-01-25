@@ -66,11 +66,12 @@
 }
 .navbar-icons-container a{
   color: black;
-  font-family: Arial;
+  font-family: Arial, serif;
   font-size: 15px;
   font-weight: bold;
   text-decoration: none
 }
+
 
 
 /*home*/
@@ -117,7 +118,7 @@
 
 .details-container{
   display: flex;
-  align-items: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 40px;
 }
@@ -126,6 +127,7 @@
   max-width: 30%;
 }
 .text-buttons-container{
+  margin-top: 80px;
   width: 25rem;
 
 }
