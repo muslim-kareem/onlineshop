@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: addToCart method and Order repo,service,Controller, endpoint addToCart">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="refactored: ProductDetails component">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/fly.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/order/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/order/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/order/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/order/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="details_component" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,7 +54,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/public",
+    "last_opened_file_path": "/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
@@ -71,11 +72,11 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/frontend/public" />
       <recent name="$PROJECT_DIR$/frontend/src/components/images" />
       <recent name="$PROJECT_DIR$/frontend/src/components" />
       <recent name="$PROJECT_DIR$/frontend/src" />
-      <recent name="$PROJECT_DIR$/frontend/src/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/public/images" />
@@ -94,7 +95,7 @@
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
       <envs>
-        <env name="MONGODB_URI" value="mongodb://localhost:27017/my-onlineshope" />
+        <env name="MONGO_URI" value="mongodb://localhost:27017/my-onlineshope" />
       </envs>
       <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.my.shope.backend.BackendApplication" />
@@ -117,7 +118,10 @@
       <updated>1674283187489</updated>
       <workItem from="1674283190064" duration="9713000" />
       <workItem from="1674293415190" duration="34551000" />
-      <workItem from="1674399807126" duration="76805000" />
+      <workItem from="1674399807126" duration="81725000" />
+      <workItem from="1674642442607" duration="1299000" />
+      <workItem from="1674643821853" duration="115000" />
+      <workItem from="1674644137539" duration="12775000" />
     </task>
     <task id="LOCAL-00001" summary="init: BIG BANG">
       <created>1674289720971</created>
@@ -175,7 +179,28 @@
       <option name="project" value="LOCAL" />
       <updated>1674589038538</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: add to cart function done">
+      <created>1674590751564</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1674590751565</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix: add productId to order">
+      <created>1674634125059</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1674634125059</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactored: ProductDetails component">
+      <created>1674656879176</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1674656879176</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +229,9 @@
     <MESSAGE value="feat: refactor login" />
     <MESSAGE value="feat: applicationProps &amp; PUT endpoint" />
     <MESSAGE value="feat: addToCart method and Order repo,service,Controller, endpoint addToCart" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: addToCart method and Order repo,service,Controller, endpoint addToCart" />
+    <MESSAGE value="feat: add to cart function done" />
+    <MESSAGE value="fix: add productId to order" />
+    <MESSAGE value="refactored: ProductDetails component" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored: ProductDetails component" />
   </component>
 </project>
