@@ -1,7 +1,6 @@
 import {useCallback} from "react";
 import axios from "axios";
 import {useLocation, useNavigate} from "react-router-dom";
-import useAuth from "../hooks/useAuth";
 
 export default function LogoutButton () {
   const navigate = useNavigate();

@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="refactored: ProductDetails component">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/fly.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/Config.java" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="flay-io: first deployment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +117,7 @@
       <workItem from="1674399807126" duration="81725000" />
       <workItem from="1674642442607" duration="1299000" />
       <workItem from="1674643821853" duration="115000" />
-      <workItem from="1674644137539" duration="12775000" />
+      <workItem from="1674644137539" duration="13550000" />
     </task>
     <task id="LOCAL-00001" summary="init: BIG BANG">
       <created>1674289720971</created>
@@ -200,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674656879176</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="flay-io: first deployment">
+      <created>1674659813439</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1674659813439</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +235,7 @@
     <MESSAGE value="feat: add to cart function done" />
     <MESSAGE value="fix: add productId to order" />
     <MESSAGE value="refactored: ProductDetails component" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored: ProductDetails component" />
+    <MESSAGE value="flay-io: first deployment" />
+    <option name="LAST_COMMIT_MESSAGE" value="flay-io: first deployment" />
   </component>
 </project>

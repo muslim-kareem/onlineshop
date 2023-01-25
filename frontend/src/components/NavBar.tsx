@@ -19,7 +19,7 @@ export default function NavBar({user}:{
                 </form>
                 {/* users icon containers */}
                 <div className={"d-flex"}>
-                    {user == undefined ? <div className={"user-icon-container"}>
+                    {user === undefined ? <div className={"user-icon-container"}>
                             <a id={"example"} href={"/login"}>
                             <h3 className="fa-regular fa-user "></h3>
                             <p>Einlogin</p>
