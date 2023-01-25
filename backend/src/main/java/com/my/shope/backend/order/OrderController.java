@@ -18,7 +18,6 @@ public class OrderController {
 
     @PutMapping("/{id}")
     public Order addToCart(@PathVariable String id){
-        System.out.println("======> " + id);
         return service.addToCart(id);
     }
 
