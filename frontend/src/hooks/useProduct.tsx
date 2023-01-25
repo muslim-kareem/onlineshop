@@ -18,7 +18,7 @@ export default function useProduct(productId: string): [Product, Dispatch<SetSta
             const product = await getProduct(productId)
             setProduct(product)
         })();
-    }, []);
+    }, [productId]);
 
     return [product,setProduct];
 }
