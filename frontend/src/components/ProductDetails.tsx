@@ -31,7 +31,7 @@ export default function ProductDetails() {
 
 
             <div>
-                <div className={" details-container "}>
+                <div className={"photos-container"}>
                     <div>{product.imageURLs.map((img, index) => {
 
                             return <div key={index} className={" card  border-5 side-photo "}>
@@ -49,6 +49,7 @@ export default function ProductDetails() {
                              className="present-photo " style={{width: "25rem"}} alt={product.imageURLs[0]}/>
 
                     <div className={"text-buttons-container"}>
+                                <h2 >{product.name}</h2>
                         <p className={"description"}>Step into the season in style with our latest collection of
                             clothing.From flowy dresses to tailored suits, we have something for every occasion." </p>
                         <div className={"details-button-container"}>

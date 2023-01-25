@@ -31,6 +31,7 @@ function App() {
 
         <>
 
+
             <BrowserRouter>
                 <NavBar user={user}/>
                 <Routes>
@@ -43,6 +44,8 @@ function App() {
                     <Route path={"/"} element={<LogoutButton/>} />
                     <Route path={"/details/:id"} element={<ProductDetails/>} />
                 </Routes>
+
+
             </BrowserRouter>
 
         </>
