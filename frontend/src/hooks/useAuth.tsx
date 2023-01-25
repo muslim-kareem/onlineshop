@@ -1,11 +1,11 @@
-import React, {Dispatch, SetStateAction, useEffect, useState} from "react";
+import {Dispatch, SetStateAction, useEffect, useState} from "react";
 import axios from "axios";
 import {User} from "../model/User";
 
 
 export default function useAuth(): [ User, Dispatch<SetStateAction<User>>] {
     const [user, setUser] = useState<User | null>(null);
-    const [isReady, setIsReady] = useState(false);
+    const [, setIsReady] = useState(false);
 
     useEffect(() => {
 

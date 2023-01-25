@@ -1,11 +1,10 @@
-import React, {FormEvent, useCallback, useContext, useMemo, useState} from "react";
+import React, {FormEvent, useCallback, useMemo, useState} from "react";
 import {
   Link,
   useLocation,
   useNavigate,
   useSearchParams
 } from "react-router-dom";
-import {Auth} from "../components/AuthUser";
 
 
 
@@ -53,7 +52,7 @@ export default function LoginPage ({login}:{
         ]);
       }
     },
-    [credentials, navigate, redirect]
+    [credentials, login, navigate, redirect]
   );
 
   return (

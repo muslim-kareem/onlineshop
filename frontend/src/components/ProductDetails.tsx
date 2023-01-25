@@ -3,8 +3,6 @@ import {useParams} from "react-router-dom";
 import {useState} from "react";
 import {IMAGES_PATH} from "../model/aplicationProp";
 import axios from "axios";
-import {Product} from "../model/Product";
-
 export default function ProductDetails() {
 
     const {id} = useParams();
@@ -12,21 +10,21 @@ export default function ProductDetails() {
     const [presentPhoto, setPresentPhoto] = useState<string>("")
 
 
-    let sidePhotos = product.imageURLs.map((img, index) => {
-
-            return <div key={index} className={" card  border-5 side-photo " }>
-                        <img
-                            src={IMAGES_PATH + img}
-                            onClick={() =>{
-                            setPresentPhoto(IMAGES_PATH + img)
-                        } } alt="..."/>
-                  </div>
-                }
-             )
+    // let sidePhotos = product.imageURLs.map((img, index) => {
+    //
+    //         return <div key={index} className={" card  border-5 side-photo " }>
+    //                     <img
+    //                         src={IMAGES_PATH + img}
+    //                         onClick={() =>{
+    //                         setPresentPhoto(IMAGES_PATH + img)
+    //                     } } alt="..."/>
+    //               </div>
+    //             }
+    //          )
 
 
      const addToCart = async () => {
-         const res = await axios.put("/api/orders/"+id)
+        await axios.put("/api/orders/"+id)
      }
 
     return (<>
