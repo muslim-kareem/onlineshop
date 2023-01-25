@@ -1,9 +1,9 @@
-import React, {Dispatch, SetStateAction, useEffect, useState} from "react";
+import {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {Product} from "../model/Product";
 import {getProducts} from "../api/ProductApi";
 
 
-export default function useAllProducts(initialState: Product[]): [Product[], Dispatch<SetStateAction<Product[]>>] {
+export default function useAllProducts(): [Product[], Dispatch<SetStateAction<Product[]>>] {
     const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {

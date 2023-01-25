@@ -1,5 +1,4 @@
 import {Product} from "../model/Product";
-import img from './images/img.png';
 import {IMAGES_PATH} from "../model/aplicationProp";
 
 export default function ProductCard({product}:{

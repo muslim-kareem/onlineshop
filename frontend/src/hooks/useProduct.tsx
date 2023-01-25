@@ -1,6 +1,6 @@
-import React, {Dispatch, SetStateAction, useEffect, useState} from "react";
+import {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {Product} from "../model/Product";
-import {getProduct, getProducts} from "../api/ProductApi";
+import {getProduct} from "../api/ProductApi";
 
 const initialStait: Product = {
     id: "",

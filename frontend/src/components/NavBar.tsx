@@ -20,8 +20,8 @@ export default function NavBar({user}:{
                 {/* users icon containers */}
                 <div className={"d-flex"}>
                     {user === undefined ? <div className={"user-icon-container"}>
-                            <a id={"example"} href={"/login"}>
-                            <h3 className="fa-regular fa-user "></h3>
+                            <a href={"/login"}>
+                            <div className="fa-regular fa-user "></div>
                             <p>Einlogin</p>
                             </a>
 
@@ -30,12 +30,12 @@ export default function NavBar({user}:{
                         :
 
                         <div className={"user-icon-container"}>
-                            <h3 className="fa-solid fa-user-check "></h3>
+                            <div className="fa-solid fa-user-check "></div>
                             <p>{user?.username}</p>
                         </div>
                     }
 
-                    <h2 className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon"></h2>
+                    <div className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon"></div>
                 </div>
             </div>
 
