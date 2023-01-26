@@ -8,11 +8,14 @@ import ProductDetails from "./components/ProductDetails";
 import React from "react";
 import useAuth from "./hooks/useAuth";
 import axios from "axios";
+import CartProducts from "./components/CartProducts";
+import useProducts from "./hooks/useProducts";
 
 export default function Root(){
 
 
     const[user,setUser] = useAuth()
+    const [cardProduct] = useProducts(true);
 
 
     const login = async (credentials: {username: string,password: string})=> {
@@ -29,7 +32,7 @@ export default function Root(){
         <>
             <NavBar user={user}/>
             <Routes>
-                <Route path={"home-shopping-cart/:excuted"} element={<Home/>} />
+                <Route path={"/home-shopping-cart"} element={<CartProducts cartProducts={cardProduct}/>} />
                 <Route path={"/"} element={<Home/>} />
                 <Route path={"/login"} element={
                     <AuthUser>

@@ -37,8 +37,8 @@ public class ProductController {
        return productService.buyProduct(id);
     }
 
-    @GetMapping("/addedToCardProducts")
+    @GetMapping("/addedToCartProducts")
     public List<Product> addedToCardProducts(){
-        return productService.getAddedToCardProducts();
+        return productService.getAddedToCartProducts();
     }
 }

@@ -39,7 +39,11 @@ public class ProductService {
     }
 
     public Product updateProduct(Product theProduct) {
-       theProduct.setId(null);
+       return productRepo.save(theProduct);
+    }
+
+    public Product creatProduct(Product theProduct) {
+        theProduct.setId(null);
        return productRepo.save(theProduct);
     }
 
@@ -73,7 +77,7 @@ public class ProductService {
     }
 
 
-    public List<Product> getAddedToCardProducts(){
+    public List<Product> getAddedToCartProducts(){
         List<Product> addedToCardProducts = new ArrayList<>();
         AppUser appUser = userService.getAuthenticatedUser();
 
