@@ -49,7 +49,7 @@ public class ProductService {
 
         if (optionalOrder.isEmpty()) {
             Order newOrder = new Order(null, appUser.getId(), List.of(productId), true);
-            orderService.createOrderOrUpdate(newOrder);
+            orderService.createOrder(newOrder);
 
             return getProductById(productId);
         } else {
@@ -65,7 +65,7 @@ public class ProductService {
 
             if (isExist) {
                 optionalOrder.get().getProductsIds().add(productId);
-                orderService.createOrderOrUpdate(optionalOrder.get());
+                orderService.createOrder(optionalOrder.get());
             }
         }
 
