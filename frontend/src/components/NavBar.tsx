@@ -19,10 +19,11 @@ export default function NavBar({user}:{
                 </form>
                 {/* users icon containers */}
                 <div className={"d-flex"}>
-                    {user === undefined ? <div className={"user-icon-container"}>
+                    {/* eslint-disable-next-line eqeqeq */}
+                    {user == undefined ? <div className={"user-icon-container"}>
                             <a href={"/login"}>
-                            <div className="fa-regular fa-user "></div>
-                            <p>Einlogin</p>
+                            <div className="fa-regular fa-user  fs-2"></div>
+                            <p >Einlogin</p>
                             </a>
 
                         </div>
@@ -30,12 +31,12 @@ export default function NavBar({user}:{
                         :
 
                         <div className={"user-icon-container"}>
-                            <div className="fa-solid fa-user-check "></div>
-                            <p>{user?.username}</p>
+                            <div className="fa-solid fa-user-check fs-2"></div>
+                            <p className={"text-under-icon"}>{user?.username}</p>
                         </div>
                     }
 
-                    <div className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon"></div>
+                    <div className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2"></div>
                 </div>
             </div>
 

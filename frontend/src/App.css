@@ -32,14 +32,16 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0 -50px 36px -28px inset;
 }
 .search-input{
-  /*min-width: 100px;*/
+  min-width: 100px;
 }
 .user-icon-container{
   margin-bottom: 0;
   text-align: center;
+  padding-left: 2rem;
 }
-.user-icon-container p{
+.text-under-icon{
   margin: 0;
+  padding-right: 0.7rem;
 }
 .user-icon-container h3{
   margin: 0;
@@ -64,7 +66,7 @@
   padding-top: .5rem;
   width: 90%;
 }
-.navbar-icons-container a{
+ a{
   color: black;
   font-family: Arial, serif;
   font-size: 15px;
@@ -116,19 +118,24 @@
 }
 
 
-.details-container{
+.photos-container{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 40px;
+  margin-left: 10%;
+}
+
+.text-buttons-container h2{
+  margin-bottom: 8%;
 }
 .description {
   display: inline-block;
-  max-width: 30%;
 }
 .text-buttons-container{
   margin-top: 80px;
   width: 25rem;
+  padding-top: 10%;
 
 }
 
@@ -138,6 +145,7 @@
 .add-to-cart-button {
   background-color: #f66666;
   display: inline-block;
+  margin-bottom: 20px;
 
 
 
@@ -149,16 +157,21 @@
 .buy-button {
   background-color: #e81111;
   color: white;
-  width: 15%;
-  display: inline-block;
-  margin-top: 30px;
+  min-width: 30%;
+  display: block;
+  margin-bottom: 15px;
+  margin-left: 14px;
+  /*margin: auto;*/
 
 }
 
 .buy-button:hover{
   background-color: #ccc2c2;
 }
+ a{
+  text-decoration: none
 
+}
 
 
 
