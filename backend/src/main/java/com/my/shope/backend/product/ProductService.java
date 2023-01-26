@@ -51,7 +51,6 @@ public class ProductService {
             orderService.createOrderOrUpdate(newOrder);
 
             return getProductById(productId);
-
         } else {
 
             boolean isExist = true;

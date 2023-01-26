@@ -1,4 +1,5 @@
 import {User} from "../model/User";
+import {NavLink} from "react-router-dom";
 
 export default function NavBar({user}:{
     user: User
@@ -36,7 +37,7 @@ export default function NavBar({user}:{
                         </div>
                     }
 
-                    <div className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2"></div>
+                    <NavLink to={"/home"} className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2"></NavLink>
                 </div>
             </div>
 
