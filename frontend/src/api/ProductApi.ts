@@ -10,3 +10,8 @@ export const getProduct = async (productId: string): Promise<Product> => {
     const response = await axios.get<Product>('/api/products/'+productId);
     return response.data;
 };
+
+export const getAddedToCardProducts = async (): Promise<Product> => {
+    const response = await axios.get<Product>('/api/products/addedToCardProducts');
+    return response.data;
+};

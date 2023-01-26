@@ -37,7 +37,7 @@ export default function NavBar({user}:{
                         </div>
                     }
 
-                    <NavLink to={"/home"} className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2"></NavLink>
+                    <NavLink to={"/home-shopping-cart"} className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2"></NavLink>
                 </div>
             </div>
 

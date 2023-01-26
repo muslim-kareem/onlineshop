@@ -7,6 +7,7 @@ import com.my.shope.backend.order.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -68,7 +69,25 @@ public class ProductService {
             }
         }
 
-
         return getProductById(productId);
+    }
+
+
+    public List<Product> getAddedToCardProducts(){
+        List<Product> addedToCardProducts = new ArrayList<>();
+        AppUser appUser = userService.getAuthenticatedUser();
+
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(),  true);
+
+        if(optionalOrder.isPresent()){
+            for (String productId : optionalOrder.get().getProductsIds()) {
+                addedToCardProducts.add(getProductById(productId));
+            }
+        }
+
+        return addedToCardProducts;
+
+
+
     }
 }
