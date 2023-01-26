@@ -7,6 +7,7 @@ import com.my.shope.backend.order.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -38,7 +39,7 @@ public class ProductService {
     }
 
     public Product updateProduct(Product theProduct) {
-
+       theProduct.setId(null);
        return productRepo.save(theProduct);
     }
 
@@ -48,10 +49,9 @@ public class ProductService {
 
         if (optionalOrder.isEmpty()) {
             Order newOrder = new Order(null, appUser.getId(), List.of(productId), true);
-            orderService.createOrderOrUpdate(newOrder);
+            orderService.createOrder(newOrder);
 
             return getProductById(productId);
-
         } else {
 
             boolean isExist = true;
@@ -65,11 +65,27 @@ public class ProductService {
 
             if (isExist) {
                 optionalOrder.get().getProductsIds().add(productId);
-                orderService.createOrderOrUpdate(optionalOrder.get());
+                orderService.createOrder(optionalOrder.get());
             }
         }
 
-
         return getProductById(productId);
+    }
+
+
+    public List<Product> getAddedToCardProducts(){
+        List<Product> addedToCardProducts = new ArrayList<>();
+        AppUser appUser = userService.getAuthenticatedUser();
+
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(),  false);
+
+        if(optionalOrder.isPresent()){
+            for (String productId : optionalOrder.get().getProductsIds()) {
+                addedToCardProducts.add(getProductById(productId));
+            }
+        }
+
+        return addedToCardProducts;
+
     }
 }

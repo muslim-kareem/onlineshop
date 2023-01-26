@@ -1,16 +1,25 @@
-import useAllProducts from "../hooks/useAllProducts";
+import useProducts from "../hooks/useProducts";
 import ProductContainer from "../components/ProductContainer";
-import React from "react";
 import LogoutButton from "../components/LogoutButton";
+import {useParams} from "react-router-dom";
 
 export default function Home() {
-    const[products] = useAllProducts();
+    const {excuted} = useParams();
+
+
+let areExcuted : boolean = excuted ? Boolean(excuted) : false ;
+
+
+
+
+    console.log(areExcuted)
+    const[products] = useProducts(areExcuted);
+
 
 
 
     return (
         <>
-
             <ProductContainer products={products}/>
             <LogoutButton/>
         </>

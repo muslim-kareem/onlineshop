@@ -14,7 +14,6 @@ public class ProductController {
 
     @PostMapping
     public Product createProduct(@RequestBody Product theProduct){
-        theProduct.setId(null);
         return productService.createProduct(theProduct);
     }
     @PutMapping
@@ -36,5 +35,10 @@ public class ProductController {
     public Product buyProduct(@PathVariable String id){
         System.out.println("=======>"+id);
        return productService.buyProduct(id);
+    }
+
+    @GetMapping("/addedToCardProducts")
+    public List<Product> addedToCardProducts(){
+        return productService.getAddedToCardProducts();
     }
 }

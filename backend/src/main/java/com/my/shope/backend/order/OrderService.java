@@ -51,7 +51,7 @@ public class OrderService {
 
 
 
-    public void createOrderOrUpdate(Order order) {
+    public void createOrder(Order order) {
         orderRepo.save(order);
     }
 
