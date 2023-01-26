@@ -77,7 +77,7 @@ public class ProductService {
         List<Product> addedToCardProducts = new ArrayList<>();
         AppUser appUser = userService.getAuthenticatedUser();
 
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(),  true);
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(),  false);
 
         if(optionalOrder.isPresent()){
             for (String productId : optionalOrder.get().getProductsIds()) {

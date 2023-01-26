@@ -1,5 +1,5 @@
 import {User} from "../model/User";
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default function NavBar({user}:{
     user: User
@@ -14,8 +14,9 @@ export default function NavBar({user}:{
         <nav className="navbar">
 
             <div className="d-flex justify-content-around navbar-icons-container">
-                <h2 className="fa-solid fa-shop shop-icon"> </h2>
+                <Link to={"/"}><h2 className="fa-solid fa-shop shop-icon"> </h2></Link>
                 <form>
+                     {/*todo*/}
                     <input className="form-control me-3 search-input" placeholder="Search" aria-label="Search"/>
                 </form>
                 {/* users icon containers */}
@@ -37,7 +38,7 @@ export default function NavBar({user}:{
                         </div>
                     }
 
-                    <NavLink to={"/home-shopping-cart"} className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2"></NavLink>
+                    <Link to={"/home-shopping-cart/excuted"} className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2"></Link>
                 </div>
             </div>
 

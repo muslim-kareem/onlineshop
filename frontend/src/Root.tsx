@@ -29,7 +29,7 @@ export default function Root(){
         <>
             <NavBar user={user}/>
             <Routes>
-                <Route path={"/home-shopping-cart"} element={<Home/>} />
+                <Route path={"home-shopping-cart/:excuted"} element={<Home/>} />
                 <Route path={"/"} element={<Home/>} />
                 <Route path={"/login"} element={
                     <AuthUser>

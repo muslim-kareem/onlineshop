@@ -9,10 +9,10 @@ export default function useProducts(areExcuted: boolean): [Product[], Dispatch<S
     useEffect(() => {
         (async () => {
             if(areExcuted){
-                const products = await getProducts();
+                const products = await getAddedToCardProducts()
                 setProducts(products)
             }else {
-                const products = await getAddedToCardProducts();
+                const products = await getProducts()
                 setProducts(products)
             }
         })();
