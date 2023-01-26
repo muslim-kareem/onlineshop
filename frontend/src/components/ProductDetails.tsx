@@ -1,5 +1,5 @@
 import useProduct from "../hooks/useProduct";
-import {useParams} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 import React, {useState} from "react";
 import {IMAGES_PATH} from "../model/aplicationProp";
 import axios from "axios";
@@ -37,42 +37,47 @@ export default function ProductDetails() {
                 <div className={"photos-container"}>
                     <div>{sidePhotos}</div>
 
-                        <img src={presentPhoto ? presentPhoto : IMAGES_PATH + product.imageURLs[0]}
-                             className="present-photo " style={{width: "25rem"}} alt={product.imageURLs[0]}/>
+                    <img src={presentPhoto ? presentPhoto : IMAGES_PATH + product.imageURLs[0]}
+                         className="present-photo " style={{width: "25rem"}} alt={product.imageURLs[0]}/>
 
                     <div className={"text-buttons-container"}>
-                                <h2 >{product.name}</h2>
+                        <h2>{product.name}</h2>
                         <p className={"description"}>Step into the season in style with our latest collection of
                             clothing.From flowy dresses to tailored suits, we have something for every occasion." </p>
+
+                        {/*ADD TO CARD BUTTON*/}
                         <div className={"details-button-container"}>
 
-                             {/*ADD TO CARD BUTTON*/}
-                            <button type="button" className="btn btn m-t-3 add-to-cart-button" onClick={addToCart} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" className="btn btn m-t-3 add-to-cart-button" onClick={addToCart}
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 In den Warenkorb
                             </button>
 
-                            <div className="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
                                 <div className="modal-dialog">
                                     <div className="modal-content">
 
                                         <div className="modal-body">
-                                            Das Product wurde zu Warenkorb hnzugefügt
+                                            Das Product wurde zu Warenkorb hnzugefügt <div
+                                            className="fa-sharp fa-solid fa-circle-check"></div>
                                         </div>
                                         <div className="modal-footer">
-                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">schließen</button>
+                                            <button type="button" className="btn btn-secondary"
+                                                    data-bs-dismiss="modal">schließen
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             {/*---------------*/}
-                            <button className="btn buy-button" type="button" onClick={buyProduct}>Kaufen</button>
+                            <NavLink to={"/thankPage"}><button className="btn buy-button" type="button" onClick={buyProduct}>Kaufen</button></NavLink>
+
 
                         </div>
                     </div>
 
                 </div>
-
-
 
 
             </div>
