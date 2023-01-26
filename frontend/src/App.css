@@ -131,12 +131,10 @@
 }
 .description {
   display: inline-block;
-  /*max-width: 30%;*/
 }
 .text-buttons-container{
   margin-top: 80px;
   width: 25rem;
-  /*text-align: center;*/
   padding-top: 10%;
 
 }

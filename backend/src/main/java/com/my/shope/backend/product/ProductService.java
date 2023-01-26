@@ -1,5 +1,9 @@
 package com.my.shope.backend.product;
 
+import com.my.shope.backend.appUser.AppUser;
+import com.my.shope.backend.appUser.AppUserService;
+import com.my.shope.backend.order.Order;
+import com.my.shope.backend.order.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +16,8 @@ import java.util.Optional;
 public class ProductService {
 
     private final ProductRepo productRepo;
+    private final OrderService orderService;
+    private final AppUserService userService;
 
     public Product createProduct(Product theProduct) {
         return  productRepo.save(theProduct);
@@ -34,5 +40,15 @@ public class ProductService {
     public Product updateProduct(Product theProduct) {
 
        return productRepo.save(theProduct);
+    }
+
+    public Product buyProduct(String productId){
+        AppUser appUser = userService.getAuthenticatedUser();
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserId(appUser.getId());
+//        toDo
+
+
+
+        return null;
     }
 }

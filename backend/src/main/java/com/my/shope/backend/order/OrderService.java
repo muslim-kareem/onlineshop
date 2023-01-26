@@ -5,7 +5,6 @@ import com.my.shope.backend.appUser.AppUserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.nio.file.OpenOption;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,10 +16,16 @@ public class OrderService {
     private final AppUserService appUserService;
 
 
+
+    public Optional<Order> getOrderByAppUserId(String userId){
+        return orderRepo.getOrderByAppUserId(userId);
+    }
+
+
     public Order addToCart(String productId){
         AppUser appUser =  appUserService.getAuthenticatedUser();
 
-        Optional<Order> optionOrder = orderRepo.getOrderByAppUserId(appUser.getId());
+        Optional<Order> optionOrder =  getOrderByAppUserId(appUser.getId());
 
         if(optionOrder.isEmpty()){
             Order newOrder = new Order(null,appUser.getId(),List.of(productId),false );
@@ -43,5 +48,7 @@ public class OrderService {
         }
         return optionOrder.get();
     }
+
+
 
 }

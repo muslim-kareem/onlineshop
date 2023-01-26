@@ -1,6 +1,6 @@
 import useProduct from "../hooks/useProduct";
 import {useParams} from "react-router-dom";
-import {useState} from "react";
+import React, {useState} from "react";
 import {IMAGES_PATH} from "../model/aplicationProp";
 import axios from "axios";
 export default function ProductDetails() {
@@ -53,8 +53,28 @@ export default function ProductDetails() {
                         <p className={"description"}>Step into the season in style with our latest collection of
                             clothing.From flowy dresses to tailored suits, we have something for every occasion." </p>
                         <div className={"details-button-container"}>
-                            <button className="btn m-t-3 add-to-cart-button" type="button" onClick={addToCart} >In den Warenkorb</button>
+
+                             {/*ADD TO CARD BUTTON*/}
+                            <button type="button" className="btn btn m-t-3 add-to-cart-button" onClick={addToCart} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                In den Warenkorb
+                            </button>
+
+                            <div className="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+
+                                        <div className="modal-body">
+                                            Das Product wurde zu Warenkorb hnzugefügt
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">schließen</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/*---------------*/}
                             <button className="btn buy-button" type="button" >Kaufen</button>
+
                         </div>
                     </div>
 

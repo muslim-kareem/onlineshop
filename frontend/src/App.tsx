@@ -32,6 +32,7 @@ function App() {
         <>
 
 
+
             <BrowserRouter>
                 <NavBar user={user}/>
                 <Routes>
