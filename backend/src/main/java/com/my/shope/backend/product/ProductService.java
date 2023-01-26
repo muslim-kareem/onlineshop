@@ -39,7 +39,7 @@ public class ProductService {
     }
 
     public Product updateProduct(Product theProduct) {
-
+       theProduct.setId(null);
        return productRepo.save(theProduct);
     }
 

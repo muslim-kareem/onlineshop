@@ -14,7 +14,6 @@ public class ProductController {
 
     @PostMapping
     public Product createProduct(@RequestBody Product theProduct){
-        theProduct.setId(null);
         return productService.createProduct(theProduct);
     }
     @PutMapping
