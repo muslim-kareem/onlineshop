@@ -18,7 +18,7 @@ public class OrderService {
 
 
     public Optional<Order> getOrderByAppUserIdAndIsExcuted(String userId, boolean isExcuted){
-        return orderRepo.getOrderByAppUserIdAndExecuted(userId,isExcuted);
+        return orderRepo.getOrderByAppUserIdAndIsExecuted(userId,isExcuted);
     }
 
 

@@ -50,7 +50,7 @@ public class ProductService {
             Order newOrder = new Order(null, appUser.getId(), List.of(productId), true);
             orderService.createOrderOrUpdate(newOrder);
 
-                    return getProductById(productId);
+            return getProductById(productId);
 
         } else {
 

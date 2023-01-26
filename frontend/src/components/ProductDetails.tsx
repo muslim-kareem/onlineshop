@@ -10,21 +10,24 @@ export default function ProductDetails() {
     const [presentPhoto, setPresentPhoto] = useState<string>("")
 
 
-    // let sidePhotos = product.imageURLs.map((img, index) => {
-    //
-    //         return <div key={index} className={" card  border-5 side-photo " }>
-    //                     <img
-    //                         src={IMAGES_PATH + img}
-    //                         onClick={() =>{
-    //                         setPresentPhoto(IMAGES_PATH + img)
-    //                     } } alt="..."/>
-    //               </div>
-    //             }
-    //          )
+    let sidePhotos = product.imageURLs.map((img, index) => {
+
+            return <div key={index} className={" card  border-5 side-photo " }>
+                        <img
+                            src={IMAGES_PATH + img}
+                            onClick={() =>{
+                            setPresentPhoto(IMAGES_PATH + img)
+                        } } alt="..."/>
+                  </div>
+                }
+             )
 
 
      const addToCart = async () => {
         await axios.put("/api/orders/"+id)
+     }
+     const buyProduct = async () => {
+        await axios.put("/api/products/"+id)
      }
 
     return (<>
@@ -32,18 +35,7 @@ export default function ProductDetails() {
 
             <div>
                 <div className={"photos-container"}>
-                    <div>{product.imageURLs.map((img, index) => {
-
-                            return <div key={index} className={" card  border-5 side-photo "}>
-                                <img
-                                    src={IMAGES_PATH + img}
-                                    onClick={() => {
-                                        setPresentPhoto(IMAGES_PATH + img)
-                                    }} alt="..."/>
-                            </div>
-                        }
-                    )}
-                    </div>
+                    <div>{sidePhotos}</div>
 
                         <img src={presentPhoto ? presentPhoto : IMAGES_PATH + product.imageURLs[0]}
                              className="present-photo " style={{width: "25rem"}} alt={product.imageURLs[0]}/>
@@ -73,7 +65,7 @@ export default function ProductDetails() {
                                 </div>
                             </div>
                             {/*---------------*/}
-                            <button className="btn buy-button" type="button" >Kaufen</button>
+                            <button className="btn buy-button" type="button" onClick={buyProduct}>Kaufen</button>
 
                         </div>
                     </div>

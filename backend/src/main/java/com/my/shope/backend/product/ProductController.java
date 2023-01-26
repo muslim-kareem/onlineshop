@@ -34,6 +34,7 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public Product buyProduct(@PathVariable String id){
+        System.out.println("=======>"+id);
        return productService.buyProduct(id);
     }
 }
