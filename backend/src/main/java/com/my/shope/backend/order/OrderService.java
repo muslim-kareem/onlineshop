@@ -17,15 +17,15 @@ public class OrderService {
 
 
 
-    public Optional<Order> getOrderByAppUserId(String userId){
-        return orderRepo.getOrderByAppUserId(userId);
+    public Optional<Order> getOrderByAppUserIdAndIsExcuted(String userId, boolean isExcuted){
+        return orderRepo.getOrderByAppUserIdAndExecuted(userId,isExcuted);
     }
 
 
     public Order addToCart(String productId){
         AppUser appUser =  appUserService.getAuthenticatedUser();
 
-        Optional<Order> optionOrder =  getOrderByAppUserId(appUser.getId());
+        Optional<Order> optionOrder =  getOrderByAppUserIdAndIsExcuted(appUser.getId(),false);
 
         if(optionOrder.isEmpty()){
             Order newOrder = new Order(null,appUser.getId(),List.of(productId),false );
@@ -48,6 +48,13 @@ public class OrderService {
         }
         return optionOrder.get();
     }
+
+
+
+    public void createOrderOrUpdate(Order order) {
+        orderRepo.save(order);
+    }
+
 
 
 

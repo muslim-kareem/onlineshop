@@ -6,5 +6,6 @@ import java.util.Optional;
 
 public interface OrderRepo extends MongoRepository<Order,String> {
 
-    Optional<Order> getOrderByAppUserId(String id);
+    Optional<Order> getOrderByAppUserIdAndExecuted(String userId,boolean isExecuted);
+
 }

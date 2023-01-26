@@ -42,13 +42,34 @@ public class ProductService {
        return productRepo.save(theProduct);
     }
 
-    public Product buyProduct(String productId){
+    public Product buyProduct(String productId) {
         AppUser appUser = userService.getAuthenticatedUser();
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserId(appUser.getId());
-//        toDo
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), true);
+
+        if (optionalOrder.isEmpty()) {
+            Order newOrder = new Order(null, appUser.getId(), List.of(productId), true);
+            orderService.createOrderOrUpdate(newOrder);
+
+                    return getProductById(productId);
+
+        } else {
+
+            boolean isExist = true;
+            for (String pId : optionalOrder.get().getProductsIds()) {
+
+                if (productId.equals(pId)) {
+                    isExist = false;
+                    break;
+                }
+            }
+
+            if (isExist) {
+                optionalOrder.get().getProductsIds().add(productId);
+                orderService.createOrderOrUpdate(optionalOrder.get());
+            }
+        }
 
 
-
-        return null;
+        return getProductById(productId);
     }
 }

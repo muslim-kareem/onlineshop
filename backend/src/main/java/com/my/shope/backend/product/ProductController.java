@@ -10,25 +10,30 @@ import java.util.List;
 @RequestMapping("/api/products")
 public class ProductController {
 
-    private final ProductService service;
+    private final ProductService productService;
 
     @PostMapping
     public Product createProduct(@RequestBody Product theProduct){
         theProduct.setId(null);
-        return service.createProduct(theProduct);
+        return productService.createProduct(theProduct);
     }
     @PutMapping
     public Product updateProduct(@RequestBody Product theProduct){
-        return service.updateProduct(theProduct);
+        return productService.updateProduct(theProduct);
     }
 
     @GetMapping
     public List<Product> getAll(){
-        return service.getAll();
+        return productService.getAll();
     }
 
     @GetMapping("/{id}")
     public Product getProductById(@PathVariable String id){
-        return service.getProductById(id);
+        return productService.getProductById(id);
+    }
+
+    @PutMapping("/{id}")
+    public Product buyProduct(@PathVariable String id){
+       return productService.buyProduct(id);
     }
 }
