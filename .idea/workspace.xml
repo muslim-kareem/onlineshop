@@ -7,12 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: refactor Routes to Root">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: endpoint getAddedToCardProducts frontend&#10;feat: getAddedToCardProducts method backend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useAllProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useAllProducts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +129,7 @@
       <workItem from="1674399807126" duration="81725000" />
       <workItem from="1674642442607" duration="1299000" />
       <workItem from="1674643821853" duration="115000" />
-      <workItem from="1674644137539" duration="41108000" />
+      <workItem from="1674644137539" duration="44147000" />
     </task>
     <task id="LOCAL-00001" summary="init: BIG BANG">
       <created>1674289720971</created>
@@ -281,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674729187630</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat: endpoint getAddedToCardProducts frontend&#10;feat: getAddedToCardProducts method backend">
+      <created>1674730422865</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1674730422865</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +336,7 @@
     <MESSAGE value="feat : first functional buyProduct button" />
     <MESSAGE value="feat: link to thank page" />
     <MESSAGE value="fix: refactor Routes to Root" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: refactor Routes to Root" />
+    <MESSAGE value="feat: endpoint getAddedToCardProducts frontend&#10;feat: getAddedToCardProducts method backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: endpoint getAddedToCardProducts frontend&#10;feat: getAddedToCardProducts method backend" />
   </component>
 </project>

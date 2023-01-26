@@ -35,10 +35,13 @@ export default function ProductDetails() {
 
             <div>
                 <div className={"photos-container"}>
+
+                    {/*SIDE BAR PHOTOS*/}
                     <div>{sidePhotos}</div>
 
+                    {/*THE PRESENT POSER*/}
                     <img src={presentPhoto ? presentPhoto : IMAGES_PATH + product.imageURLs[0]}
-                         className="present-photo " style={{width: "25rem"}} alt={product.imageURLs[0]}/>
+                         className="present-photo border border-5 " style={{width: "25rem"}} alt={product.imageURLs[0]}/>
 
                     <div className={"text-buttons-container"}>
                         <h2>{product.name}</h2>
@@ -71,8 +74,10 @@ export default function ProductDetails() {
                                 </div>
                             </div>
                             {/*---------------*/}
-                            <NavLink to={"/thankPage"}><button className="btn buy-button" type="button" onClick={buyProduct}>Kaufen</button></NavLink>
 
+                            {/*BUY BUTTON */}
+                            <NavLink to={"/thankPage"}><button className="btn buy-button" type="button" onClick={buyProduct}>Kaufen</button></NavLink>
+                            {/*---------------*/}
 
                         </div>
                     </div>

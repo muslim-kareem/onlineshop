@@ -37,4 +37,9 @@ public class ProductController {
         System.out.println("=======>"+id);
        return productService.buyProduct(id);
     }
+
+    @GetMapping("/addedToCardProducts")
+    public List<Product> addedToCardProducts(){
+        return productService.getAddedToCardProducts();
+    }
 }
