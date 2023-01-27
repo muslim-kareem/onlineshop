@@ -1,6 +1,7 @@
 import useProducts from "../hooks/useProducts";
 import ProductContainer from "../components/ProductContainer";
 import LogoutButton from "../components/LogoutButton";
+import ProductCard from "../components/ProductCard";
 
 export default function Home() {
 
@@ -8,7 +9,10 @@ export default function Home() {
 
     return (
         <>
-            <ProductContainer products={products}/>
+            <ProductContainer >
+                {products.map(p => <div key={p.id} className={"product-card"}><ProductCard  children={<></>} product={p}/></div>)}
+            </ProductContainer>
+
             <LogoutButton/>
         </>
     )

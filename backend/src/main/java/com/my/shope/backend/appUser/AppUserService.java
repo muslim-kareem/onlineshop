@@ -60,5 +60,9 @@ public class AppUserService {
                 () -> new ResponseStatusException(HttpStatus.FORBIDDEN)
         );
     }
+    public String getAuthorizedUserId(){
+        return getAuthenticatedUser().getId();
+    }
+
 
 }

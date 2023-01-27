@@ -77,7 +77,7 @@ public class ProductService {
     }
 
 
-    public List<Product> getAddedToCartProducts(){
+    public List<Product> shoppingCart(){
         List<Product> addedToCardProducts = new ArrayList<>();
         AppUser appUser = userService.getAuthenticatedUser();
 
@@ -92,4 +92,32 @@ public class ProductService {
         return addedToCardProducts;
 
     }
+
+
+    public Product removeFromShoppingCart(String productId){
+
+        String authorizedUserId = userService.getAuthorizedUserId();
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
+
+        if(optionalOrder.isPresent() && optionalOrder.get().getProductsIds().size() > 0){
+            for (String pId : optionalOrder.get().getProductsIds()) {
+                  if(productId.equals(pId)){
+                    optionalOrder.get().getProductsIds().remove(productId);
+                   orderService.updateOrder(optionalOrder.get());
+                   break;
+                  }
+            }
+        }
+        return getProductById(productId);
+    }
+
+
+//    public List<String> getShoppingCartIds(String productIds){
+//        String authorizedUserId = userService.getAuthorizedUserId();
+//        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
+//
+//        return optionalOrder.map(Order::getProductsIds).orElse(null);
+//    }
+
+
 }
