@@ -33,12 +33,20 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public Product buyProduct(@PathVariable String id){
-        System.out.println("=======>"+id);
        return productService.buyProduct(id);
     }
 
-    @GetMapping("/addedToCardProducts")
-    public List<Product> addedToCardProducts(){
-        return productService.getAddedToCardProducts();
+    @GetMapping("/shopping-carts")
+    public List<Product> shoppingCart(){
+        return productService.shoppingCart();
     }
+
+    @DeleteMapping("/shopping-carts/{id}")
+    public List<Product> removeFromShoppingCart(@PathVariable String id){
+        System.out.println("==========>  "+ id);
+        productService.removeFromShoppingCart(id);
+        return productService.shoppingCart();
+    }
+
+
 }

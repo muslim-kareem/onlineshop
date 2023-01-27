@@ -16,32 +16,31 @@ public class OrderService {
     private final AppUserService appUserService;
 
 
-
-    public Optional<Order> getOrderByAppUserIdAndIsExcuted(String userId, boolean isExcuted){
-        return orderRepo.getOrderByAppUserIdAndIsExecuted(userId,isExcuted);
+    public Optional<Order> getOrderByAppUserIdAndIsExcuted(String userId, boolean isExcuted) {
+        return orderRepo.getOrderByAppUserIdAndIsExecuted(userId, isExcuted);
     }
 
 
-    public Order addToCart(String productId){
-        AppUser appUser =  appUserService.getAuthenticatedUser();
+    public Order addToCart(String productId) {
+        AppUser appUser = appUserService.getAuthenticatedUser();
 
-        Optional<Order> optionOrder =  getOrderByAppUserIdAndIsExcuted(appUser.getId(),false);
+        Optional<Order> optionOrder = getOrderByAppUserIdAndIsExcuted(appUser.getId(), false);
 
-        if(optionOrder.isEmpty()){
-            Order newOrder = new Order(null,appUser.getId(),List.of(productId),false );
+        if (optionOrder.isEmpty()) {
+            Order newOrder = new Order(null, appUser.getId(), List.of(productId), false);
             orderRepo.save(newOrder);
             return newOrder;
-        }else {
+        } else {
 
             boolean isExist = true;
             for (String pId : optionOrder.get().getProductsIds()) {
 
-                if(productId.equals(pId)){
+                if (productId.equals(pId)) {
                     isExist = false;
                     break;
                 }
             }
-            if(isExist){
+            if (isExist) {
                 optionOrder.get().getProductsIds().add(productId);
                 orderRepo.save(optionOrder.get());
             }
@@ -50,12 +49,13 @@ public class OrderService {
     }
 
 
-
     public void createOrder(Order order) {
+        order.setId(null);
         orderRepo.save(order);
     }
-
-
+    public void updateOrder(Order order) {
+        orderRepo.save(order);
+    }
 
 
 }

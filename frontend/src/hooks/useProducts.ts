@@ -1,6 +1,6 @@
 import {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {Product} from "../model/Product";
-import {getAddedToCardProducts, getProducts} from "../api/ProductApi";
+import {getAddedToCartProducts, getProducts} from "../api/ProductApi";
 
 
 export default function useProducts(areExcuted: boolean): [Product[], Dispatch<SetStateAction<Product[]>>] {
@@ -9,7 +9,7 @@ export default function useProducts(areExcuted: boolean): [Product[], Dispatch<S
     useEffect(() => {
         (async () => {
             if(areExcuted){
-                const products = await getAddedToCardProducts()
+                const products = await getAddedToCartProducts()
                 setProducts(products)
             }else {
                 const products = await getProducts()

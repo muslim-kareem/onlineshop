@@ -8,11 +8,15 @@ import ProductDetails from "./components/ProductDetails";
 import React from "react";
 import useAuth from "./hooks/useAuth";
 import axios from "axios";
+import ShoppingCard from "./components/ShoppingCard"
+import useProducts from "./hooks/useProducts";
+import {removeFromShoppingCart} from "./api/ProductApi";
 
 export default function Root(){
 
 
     const[user,setUser] = useAuth()
+    const [shoppingCards,setShoppingCards] = useProducts(true);
 
 
     const login = async (credentials: {username: string,password: string})=> {
@@ -25,11 +29,20 @@ export default function Root(){
         setUser(res.data)
     }
 
+    const onRemove = (id: string) => {
+        const theNewShoppingCard = shoppingCards.filter(f => f.id !== id)
+        removeFromShoppingCart(id);
+        setShoppingCards([...theNewShoppingCard])
+
+
+
+    }
+
     return(
         <>
             <NavBar user={user}/>
             <Routes>
-                <Route path={"home-shopping-cart/:excuted"} element={<Home/>} />
+                <Route path={"/home-shopping-cart"} element={<ShoppingCard cartProducts={shoppingCards} onRemove={onRemove}/>} />
                 <Route path={"/"} element={<Home/>} />
                 <Route path={"/login"} element={
                     <AuthUser>

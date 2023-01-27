@@ -1,26 +1,18 @@
 import useProducts from "../hooks/useProducts";
 import ProductContainer from "../components/ProductContainer";
 import LogoutButton from "../components/LogoutButton";
-import {useParams} from "react-router-dom";
+import ProductCard from "../components/ProductCard";
 
 export default function Home() {
-    const {excuted} = useParams();
 
-
-let areExcuted : boolean = excuted ? Boolean(excuted) : false ;
-
-
-
-
-    console.log(areExcuted)
-    const[products] = useProducts(areExcuted);
-
-
-
+    const[products] = useProducts(false);
 
     return (
         <>
-            <ProductContainer products={products}/>
+            <ProductContainer >
+                {products.map(p => <div key={p.id} className={"product-card"}><ProductCard  children={<></>} product={p}/></div>)}
+            </ProductContainer>
+
             <LogoutButton/>
         </>
     )
