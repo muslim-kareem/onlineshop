@@ -175,3 +175,17 @@
 
 
 
+.remove-button{
+  margin-left: 45%;
+  background-color: #f65858;
+  /*font-family: bold;*/
+  font-size: .8rem;
+  display: inline;
+  color: #e2eee0;
+}
+.remove-button:hover{
+  background-color: #989393;
+}
+.price-card{
+  display: inline;
+}

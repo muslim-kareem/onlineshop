@@ -38,14 +38,14 @@ public class ProductController {
 
     @GetMapping("/shopping-carts")
     public List<Product> shoppingCart(){
-        return productService.shoppingCart();
+        return productService.getShoppingCart();
     }
 
     @DeleteMapping("/shopping-carts/{id}")
     public List<Product> removeFromShoppingCart(@PathVariable String id){
         System.out.println("==========>  "+ id);
         productService.removeFromShoppingCart(id);
-        return productService.shoppingCart();
+        return productService.getShoppingCart();
     }
 
 

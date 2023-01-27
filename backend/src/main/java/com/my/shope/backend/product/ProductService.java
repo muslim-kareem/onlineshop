@@ -77,7 +77,7 @@ public class ProductService {
     }
 
 
-    public List<Product> shoppingCart(){
+    public List<Product> getShoppingCart(){
         List<Product> addedToCardProducts = new ArrayList<>();
         AppUser appUser = userService.getAuthenticatedUser();
 
