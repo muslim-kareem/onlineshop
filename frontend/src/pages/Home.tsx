@@ -10,7 +10,19 @@ export default function Home() {
     return (
         <>
             <ProductContainer >
-                {products.map(p => <div key={p.id} className={"product-card"}><ProductCard  children={<></>} product={p}/></div>)}
+                {products.map(p => <div key={p.id} className={"product-card"}><ProductCard
+                    children={
+
+                        <>
+                            {/*REMOVE BUTTON*/}
+                            <div className={"crud-buttons-container"}>
+                            <button type="button" className="btn  p-1 add-button" onClick={()=> {}}>Add</button>
+                            <button type="button" className="btn  p-1 update-button" onClick={()=> {}}>Update</button>
+                            <button type="button" className="btn  p-1 remove-button" onClick={()=> {}}>remove</button>
+                            </div>
+                        </>
+                }
+                                                                                            product={p}/></div>)}
             </ProductContainer>
 
             <LogoutButton/>
