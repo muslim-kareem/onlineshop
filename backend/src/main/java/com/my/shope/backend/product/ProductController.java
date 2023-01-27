@@ -43,7 +43,6 @@ public class ProductController {
 
     @DeleteMapping("/shopping-carts/{id}")
     public List<Product> removeFromShoppingCart(@PathVariable String id){
-        System.out.println("==========>  "+ id);
         productService.removeFromShoppingCart(id);
         return productService.getShoppingCart();
     }

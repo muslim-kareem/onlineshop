@@ -54,7 +54,6 @@ public class ProductService {
         if (optionalOrder.isEmpty()) {
             Order newOrder = new Order(null, appUser.getId(), List.of(productId), true);
             orderService.createOrder(newOrder);
-
             return getProductById(productId);
         } else {
 

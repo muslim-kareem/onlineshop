@@ -2,10 +2,14 @@ import useProducts from "../hooks/useProducts";
 import ProductContainer from "../components/ProductContainer";
 import LogoutButton from "../components/LogoutButton";
 import ProductCard from "../components/ProductCard";
+import useAuth from "../hooks/useAuth";
+import React from "react";
 
 export default function Home() {
 
     const[products] = useProducts(false);
+
+    // const[user,setUser] = useAuth();
 
     return (
         <>
@@ -14,12 +18,29 @@ export default function Home() {
                     children={
 
                         <>
-                            {/*REMOVE BUTTON*/}
-                            <div className={"crud-buttons-container"}>
-                            <button type="button" className="btn  p-1 add-button" onClick={()=> {}}>Add</button>
-                            <button type="button" className="btn  p-1 update-button" onClick={()=> {}}>Update</button>
-                            <button type="button" className="btn  p-1 remove-button" onClick={()=> {}}>remove</button>
+                            {/*CURD BUTTONs*/}
+                           <div className={"crud-buttons-container"}>
+                                {/*<button type="button" className="btn  p-1 add-button" onClick={() => {*/}
+                                {/*}}>Add*/}
+                                {/*</button>*/}
+
+
+
+                            <AddButton/>
+
+
+
+
+
+
+                                <button type="button" className="btn  p-1 update-button" onClick={() => {
+                                }}>Update
+                                </button>
+                                <button type="button" className="btn  p-1 remove-button" onClick={() => {
+                                }}>remove
+                                </button>
                             </div>
+
                         </>
                 }
                                                                                             product={p}/></div>)}
@@ -35,47 +56,49 @@ export default function Home() {
 
 
 
+function AddButton(){
+
+
+
+    return(
+
+        <>
+            {/*ADD TO CARD BUTTON*/}
+            <div className={"details-button-container"}>
+
+
+                <button type="button" className="btn  p-1 add-button"  onClick={() => {
+                }}
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                   add
+                </button>
+
+
+
+                <div className="modal fade" id="exampleModal" taria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div className="modal-body">
+                                <input/>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                {/*<button type="submit" className="btn btn-primary">Save changes</button>*/}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                {/*---------------*/}
+        </>
+    )
+}
 
 
 
 
 
-
-
-
-
-// <div className={" carousel-container-wrapper"}>
-//     <div className={"card  carousel-container "} style={{width: 1000}}>
-//         <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-//             <div className="carousel-inner">
-//                 <div className="carousel-item active">
-//                     <img
-//                         src="https://www.pixelstalk.net/wp-content/uploads/2016/09/Best-Beautiful-Images-For-Desktop-Nature.png"
-//                         className="d-block w-100" alt="..."/>
-//                 </div>
-//                 <div className="carousel-item">
-//                     <img
-//                         src="https://www.pixelstalk.net/wp-content/uploads/2016/09/Best-Photos-For-Backgrounds-Free-Download.jpg"
-//                         className="d-block w-100" alt="..."/>
-//                 </div>
-//                 <div className="carousel-item">
-//                     <img
-//                         src="/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/src/images/test_photeo1.png"
-//                         className="d-block w-100" alt="..."/>
-//                 </div>
-//             </div>
-//             <button className="carousel-control-prev" type="button"
-//                     data-bs-target="#carouselExampleAutoplaying"
-//                     data-bs-slide="prev">
-//                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-//                 <span className="visually-hidden">Previous</span>
-//             </button>
-//             <button className="carousel-control-next" type="button"
-//                     data-bs-target="#carouselExampleAutoplaying"
-//                     data-bs-slide="next">
-//                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
-//                 <span className="visually-hidden">Next</span>
-//             </button>
-//         </div>
-//     </div>
-// </div>

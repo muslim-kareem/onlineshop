@@ -39,7 +39,7 @@ export default function ProductDetails() {
                     {/*SIDE BAR PHOTOS*/}
                     <div>{sidePhotos}</div>
 
-                    {/*THE PRESENT POSER*/}
+                    {/*THE PRESENT POSTER*/}
                     <img src={presentPhoto ? presentPhoto : IMAGES_PATH + product.imageURLs[0]}
                          className="present-photo border border-5 " style={{width: "25rem"}} alt={product.imageURLs[0]}/>
 
