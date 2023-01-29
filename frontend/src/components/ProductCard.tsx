@@ -1,5 +1,5 @@
 import {Product} from "../model/Product";
-import {IMAGES_PATH} from "../model/aplicationProp";
+import {IMAGES_PATH} from "../model/aplication_properties";
 
 export default function ProductCard({product,children}:{
     product: Product

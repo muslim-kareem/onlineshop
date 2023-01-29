@@ -2,8 +2,8 @@ import useProducts from "../hooks/useProducts";
 import ProductContainer from "../components/ProductContainer";
 import LogoutButton from "../components/LogoutButton";
 import ProductCard from "../components/ProductCard";
-import useAuth from "../hooks/useAuth";
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 
 export default function Home() {
 
@@ -20,19 +20,7 @@ export default function Home() {
                         <>
                             {/*CURD BUTTONs*/}
                            <div className={"crud-buttons-container"}>
-                                {/*<button type="button" className="btn  p-1 add-button" onClick={() => {*/}
-                                {/*}}>Add*/}
-                                {/*</button>*/}
-
-
-
-                            <AddButton/>
-
-
-
-
-
-
+                               <AddButton/>
                                 <button type="button" className="btn  p-1 update-button" onClick={() => {
                                 }}>Update
                                 </button>
@@ -41,10 +29,11 @@ export default function Home() {
                                 </button>
                             </div>
 
-                        </>
-                }
-                                                                                            product={p}/></div>)}
+                        </> }
+                                                                                            product={p}/>
+                </div>)}
             </ProductContainer>
+
 
             <LogoutButton/>
         </>
@@ -53,15 +42,11 @@ export default function Home() {
 
 
 
-
-
-
 function AddButton(){
-
-
+    const[file,setFile] =useState<File | null>()
+    const fileInputRef = React.useRef<HTMLInputElement>(null)
 
     return(
-
         <>
             {/*ADD TO CARD BUTTON*/}
             <div className={"details-button-container"}>
@@ -73,8 +58,6 @@ function AddButton(){
                    add
                 </button>
 
-
-
                 <div className="modal fade" id="exampleModal" taria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
@@ -83,11 +66,46 @@ function AddButton(){
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
-                                <input/>
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                {/*<button type="submit" className="btn btn-primary">Save changes</button>*/}
+                                {/*THE FORM*/}
+                                <form
+                                    // ON SUBMIT FOR THE FORM
+                                    onSubmit={async (e) => {
+                                        // FILE UPLOAD
+                                        e.preventDefault();
+                                        if (file) {
+                                            const formData = new FormData();
+                                            formData.append(`file`, file);
+
+                                            const res = await axios.post("/api/files", formData);
+                                            alert(JSON.stringify(res.data, null, 2));
+                                        }
+                                    }
+                                    }>
+
+                                    {/*THE TRIGGER BUTTON */}
+                                    <button onClick={() => {
+                                        fileInputRef.current?.click();
+                                        setFile(null);
+                                    }}>load data</button>
+
+                                    {/*THE ORIGINAL INPUT */}
+                                    <input type={"file"}
+                                           ref={fileInputRef}
+                                            style={{display: "none"}}
+                                        // ON CHANGE FOR INPUT
+                                           onChange={(e) => {
+                                               if (e.target.files && e.target.files.length) {
+                                                   setFile(e.target.files[0])
+                                               }
+                                           }}
+                                           multiple/>
+
+                                    <div className="modal-footer">
+                                        <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal">Abschicken</button>
+                                        {/*<button type="submit" className="btn btn-primary">Save changes</button>*/}
+                                    </div>
+
+                                </form>
                             </div>
                         </div>
                     </div>
