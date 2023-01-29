@@ -178,21 +178,23 @@
   display: inline;
   margin: 0;
 }
+.crud-buttons-container *{
+  font-size: .8rem;
+  font-family: bold, serif;
+  min-width: 3rem;
+  max-height: 27px;
+
+}
 .add-button {
   max-height: 27px;
-  min-width: 3rem;
   background-color: #d0cfcf;
-  font-size: .8rem;
   color: #1f1b1b;
   display: block;
 }
 .update-button{
   max-height: 27px;
-  min-width: 3rem;
   margin-top: 3px;
   background-color: #e78181;
-  font-family: bold;
-  font-size: .8rem;
   display: inline;
   color: #e2eee0;
 }
@@ -200,14 +202,9 @@
 
 .remove-button{
   margin-top: 3px;
-  max-height: 27px;
-  min-width: 3rem;
   background-color: #f10606;
-  font-family: bold;
-  font-size: .8rem;
   display: block;
   color: #fffefe;
-
 
 }
 
@@ -228,12 +225,12 @@
 
 .price-title-container {
 display: inline-block;
+  max-width: 75%;
 }
 .price-title-container .title-card{
   display: block;
 
 }
-
 
 .price-title-container p {
   display: inline-block;
