@@ -1,8 +1,8 @@
 import useProduct from "../hooks/useProduct";
 import {NavLink, useParams} from "react-router-dom";
 import React, {useState} from "react";
-import {IMAGES_PATH} from "../model/aplicationProp";
 import axios from "axios";
+import {IMAGES_PATH} from "../model/aplication_properties";
 export default function ProductDetails() {
 
     const {id} = useParams();
@@ -48,7 +48,7 @@ export default function ProductDetails() {
                         <p className={"description"}>Step into the season in style with our latest collection of
                             clothing.From flowy dresses to tailored suits, we have something for every occasion." </p>
 
-                        {/*ADD TO CARD BUTTON*/}
+                        {/*ADD TO CART BUTTON*/}
                         <div className={"details-button-container"}>
 
                             <button type="button" className="btn btn m-t-3 add-to-cart-button" onClick={addToCart}
