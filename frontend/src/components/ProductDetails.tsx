@@ -25,7 +25,7 @@ export default function ProductDetails() {
 
 
     const addToCart = async () => {
-        await axios.put("/api/orders/" + id)
+        await axios.put("/api/orders/" + id);
     }
     const buyProduct = async () => {
         await axios.put("/api/products/" + id)

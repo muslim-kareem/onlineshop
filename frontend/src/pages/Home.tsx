@@ -94,9 +94,7 @@ function AddButton({onSubmit,onChange}:{
                             </div>
                             <div className="modal-body">
                                 {/*THE FORM*/}
-                                <form
-                                    // ON SUBMIT FOR THE FORM
-                                    onSubmit={onSubmit }>
+                                <form onSubmit={onSubmit }>
 
                                     {/*THE TRIGGER BUTTON */}
                                     <button onClick={() => {
