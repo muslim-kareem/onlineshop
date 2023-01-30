@@ -101,7 +101,6 @@ function AddButton({onSubmit,onChange}:{
                                     {/*THE TRIGGER BUTTON */}
                                     <button onClick={() => {
                                         fileInputRef.current?.click();
-                                        setFiles(null);
                                     }}>load data</button>
 
                                     {/*THE ORIGINAL INPUT */}
