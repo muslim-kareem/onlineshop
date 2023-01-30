@@ -1,8 +1,9 @@
 import useProduct from "../hooks/useProduct";
 import {NavLink, useParams} from "react-router-dom";
 import React, {useState} from "react";
-import {IMAGES_PATH} from "../model/aplicationProp";
 import axios from "axios";
+import {IMAGES_PATH} from "../model/aplication_properties";
+
 export default function ProductDetails() {
 
     const {id} = useParams();
@@ -10,25 +11,25 @@ export default function ProductDetails() {
     const [presentPhoto, setPresentPhoto] = useState<string>("")
 
 
-    let sidePhotos = product.imageURLs.map((img, index) => {
+    let sidePhotos = product.imageIDs.map((img, index) => {
 
-            return <div key={index} className={" card  border-5 side-photo " }>
-                        <img
-                            src={IMAGES_PATH + img}
-                            onClick={() =>{
-                            setPresentPhoto(IMAGES_PATH + img)
-                        } } alt="..."/>
-                  </div>
-                }
-             )
+            return <div key={index} className={" card  border-5 side-photo "}>
+                <img
+                    src={IMAGES_PATH + img}
+                    onClick={() => {
+                        setPresentPhoto(IMAGES_PATH + img)
+                    }} alt="..."/>
+            </div>
+        }
+    )
 
 
-     const addToCart = async () => {
-        await axios.put("/api/orders/"+id)
-     }
-     const buyProduct = async () => {
-        await axios.put("/api/products/"+id)
-     }
+    const addToCart = async () => {
+        await axios.put("/api/orders/" + id)
+    }
+    const buyProduct = async () => {
+        await axios.put("/api/products/" + id)
+    }
 
     return (<>
 
@@ -39,16 +40,16 @@ export default function ProductDetails() {
                     {/*SIDE BAR PHOTOS*/}
                     <div>{sidePhotos}</div>
 
-                    {/*THE PRESENT POSER*/}
-                    <img src={presentPhoto ? presentPhoto : IMAGES_PATH + product.imageURLs[0]}
-                         className="present-photo border border-5 " style={{width: "25rem"}} alt={product.imageURLs[0]}/>
+                    {/*THE PRESENT POSTER*/}
+                    <img src={presentPhoto ? presentPhoto : IMAGES_PATH + product.imageIDs[0]}
+                         className="present-photo border border-5 " style={{width: "25rem"}} alt={product.imageIDs[0]}/>
 
                     <div className={"text-buttons-container"}>
                         <h2>{product.name}</h2>
                         <p className={"description"}>Step into the season in style with our latest collection of
                             clothing.From flowy dresses to tailored suits, we have something for every occasion." </p>
 
-                        {/*ADD TO CARD BUTTON*/}
+                        {/*ADD TO CART BUTTON*/}
                         <div className={"details-button-container"}>
 
                             <button type="button" className="btn btn m-t-3 add-to-cart-button" onClick={addToCart}
@@ -76,7 +77,9 @@ export default function ProductDetails() {
                             {/*---------------*/}
 
                             {/*BUY BUTTON */}
-                            <NavLink to={"/thankPage"}><button className="btn buy-button" type="button" onClick={buyProduct}>Kaufen</button></NavLink>
+                            <NavLink to={"/thankPage"}>
+                                <button className="btn buy-button" type="button" onClick={buyProduct}>Bestellen</button>
+                            </NavLink>
                             {/*---------------*/}
 
                         </div>
@@ -84,9 +87,7 @@ export default function ProductDetails() {
 
                 </div>
 
-
             </div>
-
 
         </>
     )

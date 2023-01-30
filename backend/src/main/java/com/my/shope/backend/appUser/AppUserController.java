@@ -36,10 +36,14 @@ public class AppUserController {
     return service.findByUsernameWithoutPassword(
             SecurityContextHolder.getContext().getAuthentication().getName()
     );
+
+
    }
 
     @GetMapping("/logout")
     public void logout(HttpSession httpSession){
         httpSession.invalidate();
     }
+
+
 }

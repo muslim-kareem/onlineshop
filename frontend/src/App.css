@@ -170,8 +170,84 @@
 }
  a{
   text-decoration: none
+}
+
+
+.crud-buttons-container{
+  float: right;
+  display: inline;
+  margin: 0;
+}
+.crud-buttons-container *{
+  font-size: .8rem;
+  font-family: bold, serif;
+  min-width: 3rem;
+  /*max-height: 27px;*/
+
+}
+.add-button {
+  max-height: 27px;
+  background-color: #d0cfcf;
+  color: #1f1b1b;
+  display: block;
+}
+.update-button{
+  max-height: 27px;
+  margin-top: 3px;
+  background-color: #e78181;
+  display: inline;
+  color: #e2eee0;
+}
+
+
+.remove-button{
+  margin-top: 3px;
+  background-color: #f10606;
+  display: block;
+  color: #fffefe;
 
 }
 
+.add-button:hover{
+  background-color: #5b3f3f;
+  color: #f3f2f2;
+}
+
+.update-button:hover{
+  background-color: #989393;
+}
+.remove-button:hover{
+  background-color: #989393;
+}
+
+/*CARD BODY*/
+
+
+.price-title-container {
+display: inline-block;
+  max-width: 75%;
+}
+.price-title-container .title-card{
+  display: block;
+
+}
+
+.price-title-container p {
+  display: inline-block;
+}
+
+
+.shopping-cart-remove-button:hover{
+  background-color: #989393;
+}
+
+.shopping-cart-remove-button{
+  float: right;
+  background-color: #f65858;
+  font-size: .8rem;
+  margin: 0;
+  display: block;
+  margin-top: 18%;
+}
 
 

@@ -7,7 +7,7 @@ const initialStait: Product = {
     name: "",
     description: "",
     price: 0.0,
-    imageURLs: [],
+    imageIDs: [],
     category: ""
 }
 export default function useProduct(productId: string): [Product, Dispatch<SetStateAction<Product>>] {

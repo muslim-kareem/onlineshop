@@ -16,7 +16,7 @@ export default function useProducts(areExcuted: boolean): [Product[], Dispatch<S
                 setProducts(products)
             }
         })();
-    }, [products,areExcuted]);
+    }, [areExcuted]);
 
     return [products,setProducts];
 }
