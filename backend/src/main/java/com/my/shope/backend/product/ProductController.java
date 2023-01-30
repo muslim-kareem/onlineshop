@@ -15,7 +15,7 @@ public class ProductController {
     private final ProductService productService;
 
     @PostMapping
-    public Product uploadFile( @RequestParam("file") MultipartFile[] file) throws IOException {
+    public Product uploadFile( @RequestParam("file[]") MultipartFile[] file) throws IOException {
         return productService.creatProduct(file);
     }
     @PutMapping

@@ -16,7 +16,7 @@ export default function Root(){
 
 
     const[user,setUser] = useAuth()
-    const [shoppingCards,setShoppingCards] = useProducts(true);
+    const [shoppingCart,setShoppingCards] = useProducts(true);
 
 
     const login = async (credentials: {username: string,password: string})=> {
@@ -30,19 +30,16 @@ export default function Root(){
     }
 
     const onRemove = (id: string) => {
-        const theNewShoppingCard = shoppingCards.filter(f => f.id !== id)
+        const theNewShoppingCard = shoppingCart.filter(f => f.id !== id)
         removeFromShoppingCart(id);
         setShoppingCards([...theNewShoppingCard])
-
-
-
     }
 
     return(
         <>
             <NavBar user={user}/>
             <Routes>
-                <Route path={"/home-shopping-cart"} element={<ShoppingCard cartProducts={shoppingCards} onRemove={onRemove}/>} />
+                <Route path={"/home-shopping-cart"} element={<ShoppingCard cartProducts={shoppingCart} onRemove={onRemove}/>} />
                 <Route path={"/"} element={<Home/>} />
                 <Route path={"/login"} element={
                     <AuthUser>

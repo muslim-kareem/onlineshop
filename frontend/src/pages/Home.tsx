@@ -7,7 +7,35 @@ import axios from "axios";
 
 export default function Home() {
 
-    const[products] = useProducts(false);
+    const[products,setProducts] = useProducts(false);
+    const[files,setFiles] =useState<File[] | null>()
+
+
+
+    // ON SUBMIT FOR THE FORM
+    const onSubmit= async (e: React.FormEvent) => {
+        // FILE UPLOAD
+        e.preventDefault();
+        if (!files) {
+            return;
+        }
+        const formData = new FormData();
+        for (const file of files) {
+            formData.append("file[]", file);
+        }
+        const res = await axios.post("/api/products", formData);
+        setProducts([...products, res.data])
+    }
+// ON CHANGE FOR INPUT
+    const onChange= (e:  React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files.length) {
+            const f = [];
+            for (let i = 0; i < e.target.files.length; i++) {
+                f.push(e.target.files[i]);
+            }
+            setFiles(f);
+        }
+    }
 
     // const[user,setUser] = useAuth();
 
@@ -16,34 +44,33 @@ export default function Home() {
             <ProductContainer >
                 {products.map(p => <div key={p.id} className={"product-card"}><ProductCard
                     children={
-
                         <>
-                            {/*CURD BUTTONs*/}
+                            {/*CURD BUTTONS*/}
                            <div className={"crud-buttons-container"}>
-                               <AddButton/>
-                                <button type="button" className="btn  p-1 update-button" onClick={() => {
-                                }}>Update
-                                </button>
+                               <AddButton onSubmit={onSubmit} onChange={onChange}/>
+                                <button type="button" className="btn  p-1 update-button" onClick={() => {}}>Update</button>
                                 <button type="button" className="btn  p-1 remove-button" onClick={() => {
-                                }}>remove
+                                }}>delete
                                 </button>
                             </div>
-
                         </> }
-                                                                                            product={p}/>
+                    product={p}/>
                 </div>)}
             </ProductContainer>
 
-
             <LogoutButton/>
+
+
         </>
     )
+
+
+
 }
-
-
-
-function AddButton(){
-    const[file,setFile] =useState<File | null>()
+function AddButton({onSubmit,onChange}:{
+    onSubmit: (e: React.FormEvent) => void,
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}){
     const fileInputRef = React.useRef<HTMLInputElement>(null)
 
     return(
@@ -69,23 +96,12 @@ function AddButton(){
                                 {/*THE FORM*/}
                                 <form
                                     // ON SUBMIT FOR THE FORM
-                                    onSubmit={async (e) => {
-                                        // FILE UPLOAD
-                                        e.preventDefault();
-                                        if (file) {
-                                            const formData = new FormData();
-                                            formData.append(`file`, file);
-
-                                            const res = await axios.post("/api/files", formData);
-                                            alert(JSON.stringify(res.data, null, 2));
-                                        }
-                                    }
-                                    }>
+                                    onSubmit={onSubmit }>
 
                                     {/*THE TRIGGER BUTTON */}
                                     <button onClick={() => {
                                         fileInputRef.current?.click();
-                                        setFile(null);
+                                        setFiles(null);
                                     }}>load data</button>
 
                                     {/*THE ORIGINAL INPUT */}
@@ -93,11 +109,7 @@ function AddButton(){
                                            ref={fileInputRef}
                                             style={{display: "none"}}
                                         // ON CHANGE FOR INPUT
-                                           onChange={(e) => {
-                                               if (e.target.files && e.target.files.length) {
-                                                   setFile(e.target.files[0])
-                                               }
-                                           }}
+                                           onChange={onChange}
                                            multiple/>
 
                                     <div className="modal-footer">

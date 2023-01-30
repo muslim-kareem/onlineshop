@@ -22,7 +22,7 @@ export default function useAuth(): [ User, Dispatch<SetStateAction<User>>] {
                 })();
 
 
-    }, [user]);
+    }, [setUser]);
 
     return [ user, setUser];
 }

@@ -70,9 +70,13 @@ public class FileService {
     }
 
     public GridFSFile getFile(String id) {
+//       gridFsTemplate.delete(new Query().addCriteria(
+//               Criteria.where("_id").in(new ArrayList<>())));
+//       gridFsTemplate.
         return Optional.ofNullable(
             gridFsTemplate.findOne(new Query().addCriteria(
                 Criteria.where("_id").is(id)
+
             ))
         ).orElseThrow(() -> new ResponseStatusException(
             HttpStatus.NOT_FOUND,

@@ -182,7 +182,7 @@
   font-size: .8rem;
   font-family: bold, serif;
   min-width: 3rem;
-  max-height: 27px;
+  /*max-height: 27px;*/
 
 }
 .add-button {

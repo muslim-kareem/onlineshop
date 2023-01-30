@@ -24,7 +24,7 @@ public class ProductService {
     private final AppUserService userService;
     private final FileService fileService;
     public String DETAILS_PATH = "/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend/product_details.txt";
-
+//string with id
     public Product creatProduct(MultipartFile[] file) throws IOException {
         Product product = new Product();
         List<String> imagesIds = new ArrayList<>();
@@ -39,9 +39,10 @@ public class ProductService {
                 imagesIds.add(fileService.saveFile(multipartFile).getId());
             }
         }
-        product.setImageURLs(imagesIds);
+        product.setImageIDs(imagesIds);
 
         System.out.println(product);
+//        product.setId();
         return productRepo.save(product);
     }
 

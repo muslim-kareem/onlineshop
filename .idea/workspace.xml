@@ -7,15 +7,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix : sonar plugin">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: add new product button and refactor onCubmit and onChange">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/Product.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useAuth.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/model/Product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/model/Product.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/model/aplication_properties.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/model/aplication_properties.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +76,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
@@ -83,11 +95,11 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
+      <recent name="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/frontend/public" />
       <recent name="$PROJECT_DIR$/frontend/src/components/images" />
-      <recent name="$PROJECT_DIR$/frontend/src/components" />
-      <recent name="$PROJECT_DIR$/frontend/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/public/images" />
@@ -133,6 +145,10 @@
       <workItem from="1674642442607" duration="1299000" />
       <workItem from="1674643821853" duration="115000" />
       <workItem from="1674644137539" duration="78771000" />
+      <workItem from="1674917022895" duration="10414000" />
+      <workItem from="1674974185968" duration="2186000" />
+      <workItem from="1675004746195" duration="18927000" />
+      <workItem from="1675025754007" duration="12509000" />
     </task>
     <task id="LOCAL-00001" summary="init: BIG BANG">
       <created>1674289720971</created>
@@ -358,7 +374,91 @@
       <option name="project" value="LOCAL" />
       <updated>1674834171738</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="fix : sonar plugin">
+      <created>1674849644715</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1674849644715</updated>
+    </task>
+    <task id="LOCAL-00034" summary="feat: setup gridFS">
+      <created>1675019253152</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1675019253152</updated>
+    </task>
+    <task id="LOCAL-00035" summary="rename: fronted application_properties">
+      <created>1675019314357</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1675019314357</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fix:  max-width of price-title-container &#10;feat: refactor CSS">
+      <created>1675019849961</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1675019849961</updated>
+    </task>
+    <task id="LOCAL-00037" summary="fix: reformat cod and added method getAppUserById">
+      <created>1675019952367</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1675019952367</updated>
+    </task>
+    <task id="LOCAL-00038" summary="fix: rename name field">
+      <created>1675020010660</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1675020010660</updated>
+    </task>
+    <task id="LOCAL-00039" summary="fix: rename name field">
+      <created>1675020023486</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1675020023486</updated>
+    </task>
+    <task id="LOCAL-00040" summary="fix: refactor and add AddButton component">
+      <created>1675020150748</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1675020150748</updated>
+    </task>
+    <task id="LOCAL-00041" summary="feat: create product with txt file">
+      <created>1675020521021</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1675020521021</updated>
+    </task>
+    <task id="LOCAL-00042" summary="fix: correct the application_properties file">
+      <created>1675020581245</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1675020581245</updated>
+    </task>
+    <task id="LOCAL-00043" summary="feat: set product details from txt file">
+      <created>1675020650410</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1675020650410</updated>
+    </task>
+    <task id="LOCAL-00044" summary="feat: create product with MultipartFile">
+      <created>1675020859798</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1675020859798</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,19 +479,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix: add productId to order" />
-    <MESSAGE value="refactored: ProductDetails component" />
-    <MESSAGE value="flay-io: first deployment" />
-    <MESSAGE value="small: fix" />
-    <MESSAGE value="fix: reactor small unused variables" />
-    <MESSAGE value="fix: missing dependency added" />
-    <MESSAGE value="fix: missing dependency productId" />
-    <MESSAGE value="added: fly.toml" />
-    <MESSAGE value="feat: ProductDetails style done" />
-    <MESSAGE value="inProgress: buyProduct" />
-    <MESSAGE value="method: buyProduct &#10;EndPoint: PUT /api/products/id" />
-    <MESSAGE value="feat : first functional buyProduct button" />
-    <MESSAGE value="feat: link to thank page" />
     <MESSAGE value="fix: refactor Routes to Root" />
     <MESSAGE value="feat: endpoint getAddedToCardProducts frontend&#10;feat: getAddedToCardProducts method backend" />
     <MESSAGE value="feat: improve useProducts with filter via isExcuted" />
@@ -404,6 +491,19 @@
     <MESSAGE value="feat: remove from shopping card" />
     <MESSAGE value="feat: first admin curd buttons layout" />
     <MESSAGE value="fix : sonar plugin" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix : sonar plugin" />
+    <MESSAGE value="feat: gridFs" />
+    <MESSAGE value="feat: setup gridFS" />
+    <MESSAGE value="rename: fronted application_properties" />
+    <MESSAGE value="feat: change the max-width of price-title-container" />
+    <MESSAGE value="fix:  max-width of price-title-container &#10;feat: refactor CSS" />
+    <MESSAGE value="fix: reformat cod and added method getAppUserById" />
+    <MESSAGE value="fix: rename name field" />
+    <MESSAGE value="fix: refactor and add AddButton component" />
+    <MESSAGE value="feat: create product with txt file" />
+    <MESSAGE value="fix: correct the application_properties file" />
+    <MESSAGE value="feat: set product details from txt file" />
+    <MESSAGE value="feat: create product with MultipartFile" />
+    <MESSAGE value="fix: add new product button and refactor onCubmit and onChange" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: add new product button and refactor onCubmit and onChange" />
   </component>
 </project>

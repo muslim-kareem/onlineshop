@@ -4,6 +4,6 @@ export type Product ={
     name: string,
     description: string,
     price: number,
-    imageURLs: string[],
+    imageIDs: string[],
     category: string
 }
