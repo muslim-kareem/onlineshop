@@ -7,9 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: setFiles">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: clean up some spaces">
+      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/useShoppingCart.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Root.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ShoppingCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ShoppingCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,9 +25,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="TypeScript File" />
         <option value="Class" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -84,6 +88,7 @@
       <recent name="$PROJECT_DIR$/frontend/src/components/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/hooks" />
       <recent name="$PROJECT_DIR$/frontend/public/images" />
       <recent name="$PROJECT_DIR$/frontend/src/components" />
       <recent name="$PROJECT_DIR$/frontend/public" />
@@ -130,7 +135,7 @@
       <workItem from="1674917022895" duration="10414000" />
       <workItem from="1674974185968" duration="2186000" />
       <workItem from="1675004746195" duration="18927000" />
-      <workItem from="1675025754007" duration="14820000" />
+      <workItem from="1675025754007" duration="20934000" />
     </task>
     <task id="LOCAL-00001" summary="init: BIG BANG">
       <created>1674289720971</created>
@@ -454,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675087293679</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fix: clean up some spaces">
+      <created>1675091926280</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1675091926280</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +487,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="feat: endpoint getAddedToCardProducts frontend&#10;feat: getAddedToCardProducts method backend" />
     <MESSAGE value="feat: improve useProducts with filter via isExcuted" />
     <MESSAGE value="feat: show Added to Card done" />
     <MESSAGE value="fix: update product" />
@@ -500,6 +511,7 @@
     <MESSAGE value="feat: create product with MultipartFile" />
     <MESSAGE value="fix: add new product button and refactor onCubmit and onChange" />
     <MESSAGE value="fix: setFiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: setFiles" />
+    <MESSAGE value="fix: clean up some spaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: clean up some spaces" />
   </component>
 </project>

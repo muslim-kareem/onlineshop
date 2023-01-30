@@ -7,7 +7,7 @@ import axios from "axios";
 
 export default function Home() {
 
-    const[products,setProducts] = useProducts(false);
+    const[products,setProducts] = useProducts();
     const[files,setFiles] =useState<File[] | null>()
 
 
