@@ -11,8 +11,7 @@ export default function UpdateProductButton({onSubmit,onChange,onClick}:{
         <>
             {/*ADD TO CARD BUTTON*/}
             <div className={"details-button-container"}>
-                <button type="button" className="btn  p-1 "  onClick={() => {
-                }}
+                <button type="button" className="btn  p-1 "  onClick={onClick}
                         data-bs-toggle="modal" data-bs-target="#update-modal">
                      UPDATE
                 </button>
@@ -42,7 +41,7 @@ export default function UpdateProductButton({onSubmit,onChange,onClick}:{
                                            multiple/>
 
                                     <div className="modal-footer">
-                                        <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal" onClick={onClick}>Abschicken</button>
+                                        <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal" >Abschicken</button>
                                         {/*<button type="submit" className="btn btn-primary">Save changes</button>*/}
                                     </div>
 

@@ -11,14 +11,13 @@ import AddButton from "../components/AddButton";
 
 export default function Home() {
 
-    const[products,setProducts] = useProducts();
-    const[files,setFiles] =useState<File[] | null>()
-    const[productId,setProductId] = useState("")
-
+    const [products, setProducts] = useProducts();
+    const [files, setFiles] = useState<File[] | null>()
+    const [productId, setProductId] = useState("")
 
 
     // ON SUBMIT FOR THE FORM
-    const onSubmit= async (e: React.FormEvent) => {
+    const onSubmit = async (e: React.FormEvent) => {
         // FILE UPLOAD
         e.preventDefault();
         if (!files) {
@@ -33,7 +32,7 @@ export default function Home() {
         setProducts([...products, res.data])
     }
 
-    const onUpdate= async (e: React.FormEvent) => {
+    const onUpdate = async (e: React.FormEvent) => {
         // FILE UPLOAD
         e.preventDefault();
         if (!files) {
@@ -43,13 +42,17 @@ export default function Home() {
         for (const file of files) {
             formData.append("file[]", file);
         }
-        setFiles(null)
-        const res = await axios.post("/api/products/update/"+productId, formData);
-       setProducts([...products, res.data])
 
+        const res = await axios.post("/api/products/update/" + productId, formData);
+
+        let theNewProduct = products.filter(f => f.id !== productId);
+        theNewProduct.push(res.data)
+
+        setProducts([...theNewProduct])
+        setFiles(null)
     }
 // ON CHANGE FOR INPUT
-    const onChange= (e:  React.ChangeEvent<HTMLInputElement>) => {
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length) {
             const f = [];
             for (let i = 0; i < e.target.files.length; i++) {
@@ -61,7 +64,7 @@ export default function Home() {
 
     }
 
-    const onDelete = (id: string) =>{
+    const onDelete = (id: string) => {
         const theNewProducts = products.filter(f => f.id !== id);
         setProducts([...theNewProducts])
         deleteProduct(id)
@@ -72,17 +75,19 @@ export default function Home() {
         <>
 
 
-            <ProductContainer >
+            <ProductContainer>
                 {products.map(p => <div key={p.id} className={"product-card"}><ProductCard
                     children={
                         <>
 
-                        </> }
+                        </>}
                     product={p}/>
                     {/*CURD BUTTONS*/}
                     <div className={"crud-buttons-container"}>
 
-                        <UpdateProductButton onChange={onChange} onSubmit={onUpdate} onClick={()=> { setProductId(p.id)}}/>
+                        <UpdateProductButton onChange={onChange} onSubmit={onUpdate} onClick={() => {
+                            setProductId(p.id)
+                        }}/>
                         <DeleteButton onDelete={() => onDelete(p.id)}/>
                     </div>
                 </div>)}
@@ -94,7 +99,6 @@ export default function Home() {
 
         </>
     )
-
 
 
 }

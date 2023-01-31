@@ -3,7 +3,6 @@ import {NavLink, useParams} from "react-router-dom";
 import React, {useState} from "react";
 import axios from "axios";
 import {IMAGES_PATH} from "../model/aplication_properties";
-import {getProduct} from "../api/ProductApi";
 import useShoppingCart from "../hooks/useShoppingCart";
 
 export default function ProductDetails() {
@@ -27,13 +26,8 @@ export default function ProductDetails() {
 
 
     const addToCart = async () => {
-        const res = await axios.put("/api/orders/" + id);
-
-        let productsIds = res.data.productsIds;
+        await axios.put("/api/orders/" + id);
         setShoppingCart([...shoppingCart,product])
-        alert(getProduct(productsIds[productsIds.length - 1]))
-
-
 
     }
     const buyProduct = async () => {
