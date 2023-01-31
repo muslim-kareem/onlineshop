@@ -62,11 +62,11 @@ export default function ProductDetails() {
                         <div className={"details-button-container"}>
 
                             <button type="button" className="btn btn m-t-3 add-to-cart-button" onClick={addToCart}
-                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    data-bs-toggle="modal" data-bs-target="#shopping-cart-added">
                                 In den Warenkorb
                             </button>
 
-                            <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel"
+                            <div className="modal fade" id="shopping-cart-added" aria-labelledby="exampleModalLabel"
                                  aria-hidden="true">
                                 <div className="modal-dialog">
                                     <div className="modal-content">

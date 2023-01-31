@@ -33,10 +33,10 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
-    @PutMapping("/{id}")
-    public Product buyProduct(@PathVariable String id){
-       return productService.buyProduct(id);
-    }
+//    @PutMapping("/{id}")
+//    public Product buyProduct(@PathVariable String id){
+//       return productService.buyProduct(id);
+//    }
 
     @GetMapping("/shopping-carts")
     public List<Product> shoppingCart(){
@@ -55,6 +55,6 @@ public class ProductController {
     }
 
 
-
+ 
 
 }
