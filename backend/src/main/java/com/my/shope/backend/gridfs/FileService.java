@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -70,9 +71,7 @@ public class FileService {
     }
 
     public GridFSFile getFile(String id) {
-//       gridFsTemplate.delete(new Query().addCriteria(
-//               Criteria.where("_id").in(new ArrayList<>())));
-//       gridFsTemplate.
+
         return Optional.ofNullable(
             gridFsTemplate.findOne(new Query().addCriteria(
                 Criteria.where("_id").is(id)
@@ -91,4 +90,10 @@ public class FileService {
                Paths.get(path_directory + File.separator + file.getOriginalFilename()),
                StandardCopyOption.REPLACE_EXISTING);
    }
+
+    public void deleteImagesByIds(List<String> imageIdes){
+        gridFsTemplate.delete(new Query()
+                .addCriteria(Criteria.where("_id").in(imageIdes)));
+    }
+
 }

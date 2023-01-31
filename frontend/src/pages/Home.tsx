@@ -4,6 +4,8 @@ import LogoutButton from "../components/LogoutButton";
 import ProductCard from "../components/ProductCard";
 import React, {useState} from "react";
 import axios from "axios";
+import DeleteButton from "../components/DeleteButton";
+import {deleteProduct} from "../api/ProductApi";
 
 export default function Home() {
 
@@ -23,9 +25,11 @@ export default function Home() {
         for (const file of files) {
             formData.append("file[]", file);
         }
+        setFiles(null)
         const res = await axios.post("/api/products", formData);
         setProducts([...products, res.data])
     }
+
 // ON CHANGE FOR INPUT
     const onChange= (e:  React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length) {
@@ -34,29 +38,40 @@ export default function Home() {
                 f.push(e.target.files[i]);
             }
             setFiles(f);
+
         }
+
     }
 
-    // const[user,setUser] = useAuth();
+    const onDelete = (id: string) =>{
+        const theNewProducts = products.filter(f => f.id !== id);
+        setProducts([...theNewProducts])
+        deleteProduct(id)
+    }
+
 
     return (
         <>
+
+
             <ProductContainer >
                 {products.map(p => <div key={p.id} className={"product-card"}><ProductCard
                     children={
                         <>
-                            {/*CURD BUTTONS*/}
-                           <div className={"crud-buttons-container"}>
-                               <AddButton onSubmit={onSubmit} onChange={onChange}/>
-                                <button type="button" className="btn  p-1 update-button" onClick={() => {}}>Update</button>
-                                <button type="button" className="btn  p-1 remove-button" onClick={() => {
-                                }}>delete
-                                </button>
-                            </div>
+
                         </> }
                     product={p}/>
+                    {/*CURD BUTTONS*/}
+                    <div className={"crud-buttons-container"}>
+
+                        <button type="button" className="btn  p-1 update-button" onClick={() => {}}>Update</button>
+
+
+                        <DeleteButton onDelete={() => onDelete(p.id)}/>
+                    </div>
                 </div>)}
             </ProductContainer>
+            <AddButton onSubmit={onSubmit} onChange={onChange}/>
 
             <LogoutButton/>
 
@@ -82,14 +97,14 @@ function AddButton({onSubmit,onChange}:{
                 <button type="button" className="btn  p-1 add-button"  onClick={() => {
                 }}
                         data-bs-toggle="modal" data-bs-target="#exampleModal">
-                   add
+                   Add new product
                 </button>
 
                 <div className="modal fade" id="exampleModal" taria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <h1 className="modal-title fs-5" id="exampleModalLabel">Add new product</h1>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
@@ -124,6 +139,7 @@ function AddButton({onSubmit,onChange}:{
         </>
     )
 }
+
 
 
 
