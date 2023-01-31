@@ -7,15 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: clean spaces">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/AddButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/UpdateProductButton.tsx" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: send binary and id to update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/DeleteButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/DeleteButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,14 +136,7 @@
       <workItem from="1674917022895" duration="10414000" />
       <workItem from="1674974185968" duration="2186000" />
       <workItem from="1675004746195" duration="18927000" />
-      <workItem from="1675025754007" duration="60999000" />
-    </task>
-    <task id="LOCAL-00008" summary="feat: addToCart method and Order repo,service,Controller, endpoint addToCart">
-      <created>1674589038538</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1674589038538</updated>
+      <workItem from="1675025754007" duration="66966000" />
     </task>
     <task id="LOCAL-00009" summary="feat: add to cart function done">
       <created>1674590751564</created>
@@ -481,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675162520009</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="feat: send binary and id to update">
+      <created>1675177172266</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1675177172266</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +502,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix : sonar plugin" />
     <MESSAGE value="feat: gridFs" />
     <MESSAGE value="feat: setup gridFS" />
     <MESSAGE value="rename: fronted application_properties" />
@@ -527,6 +526,7 @@
     <MESSAGE value="feat: css refactor and button position" />
     <MESSAGE value="fix: delete comments" />
     <MESSAGE value="fix: clean spaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: clean spaces" />
+    <MESSAGE value="feat: send binary and id to update" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: send binary and id to update" />
   </component>
 </project>

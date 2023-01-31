@@ -9,7 +9,7 @@ export default function ProductCard({product,children}:{
     return(
 
         <div className="card" style={{width: "15rem"}}>
-            <Link to={"/details/"+ product.id} ><img src={IMAGES_PATH+product.imageIDs[0]} className="card-img-top" alt="..."/></Link>
+            <Link to={"/details/"+ product.id} ><img src={IMAGES_PATH+product.imageIDs[0]?IMAGES_PATH+product.imageIDs[0]: ""} className="card-img-top" alt="..."/></Link>
                 <div className="card-body">
                     <div className={"price-title-container"}>
                         <p className={"title-card"}> {product.name}</p>

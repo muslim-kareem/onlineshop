@@ -25,7 +25,7 @@ public class ProductService {
     private final FileService fileService;
     public String DETAILS_PATH = "/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend/product_details.txt";
 //string with id
-    public Product creatProduct(MultipartFile[] file) throws IOException {
+    public Product createProduct(MultipartFile[] file) throws IOException {
         Product product = new Product();
         List<String> imagesIds = new ArrayList<>();
 
@@ -149,5 +149,31 @@ public class ProductService {
         List<String> imageIds = product.getImageIDs();
         productRepo.delete(product);
         fileService.deleteImagesByIds(imageIds);
+    }
+
+
+    public Product updateProduct(String productId, MultipartFile[] multipartFile) throws IOException {
+        Product productToUpdate = getProductById(productId);
+
+
+        for (MultipartFile value : multipartFile) {
+            if (Objects.requireNonNull(value.getOriginalFilename()).startsWith("product_details")) {
+                fileService.saveProductDetailsFile(value);
+                setProductDetails(productToUpdate, DETAILS_PATH);
+            } else {
+                fileService.deleteImagesByIds(productToUpdate.getImageIDs());
+            }
+
+        }
+
+        productToUpdate.setImageIDs(new ArrayList<>());
+        for (MultipartFile file : multipartFile) {
+            if (!Objects.requireNonNull(file.getOriginalFilename()).startsWith("product_details")) {
+                productToUpdate.getImageIDs().add(fileService.saveFile(file).getId());
+            }
+        }
+        System.out.println(productToUpdate);
+        return productRepo.save(productToUpdate);
+
     }
 }
