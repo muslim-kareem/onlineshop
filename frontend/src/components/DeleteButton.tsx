@@ -33,11 +33,16 @@ export default function DeleteButton({onDelete}:{
         setOpen(false);
     };
 
+    // margin-top: 3px;
+    // background-color: #f10606;
+    // display: inline;
+    // color: #fffefe;
+    // max-width: 70px;
+    // float: right;
     return (
-        <div className={"btn  p-0 umi  remove-button"}>
+        <div >
 
-
-            <Button   onClick={handleClickOpen}>
+            <Button sx={{p: "0.2rem",color: "white",fontSize: '0.7rem', bgcolor:"red ",float: "right",mt: ".3rem"}}  onClick={handleClickOpen}>
                 delete
             </Button>
 

@@ -99,9 +99,9 @@
 
 }
 .product-container{
- padding: 100px;
-  height: 800px;
+ padding: 100px;padding-bottom: 50px;
 
+  padding-top: 10px;
   margin: auto;
 }
 
@@ -173,23 +173,22 @@
 }
 
 
-/*.crud-buttons-container{*/
-/*  float: right;*/
-/*  display: inline;*/
-/*  margin: 0;*/
-/*}*/
+.crud-buttons-container{
+ display: flex;
+  justify-content: space-around;
+}
 .crud-buttons-container *{
   font-size: .8rem;
   font-family: bold, serif;
   min-width: 3rem;
-  /*max-height: 27px;*/
 
 }
 .add-button {
-  max-height: 27px;
   background-color: #d0cfcf;
   color: #1f1b1b;
   display: block;
+  margin: auto;
+  min-width: 300px;
 }
 .update-button{
   max-height: 27px;
@@ -251,8 +250,3 @@ display: inline-block;
 }
 
 
-/*delet-button*/
-
-.mui{
-  background-color: black;
-}

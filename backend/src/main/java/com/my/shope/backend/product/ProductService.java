@@ -144,5 +144,13 @@ public class ProductService {
 
     }
 
+    public void deleteProduct(String productId){
+        Product product = getProductById(productId);
+        List<String> imageIds = product.getImageIDs();
+        productRepo.delete(product);
+        fileService.deleteImagesByIds(imageIds);
+
+
+    }
 
 }
