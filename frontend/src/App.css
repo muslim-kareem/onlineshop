@@ -100,7 +100,7 @@
 }
 .product-container{
  padding: 100px;
-  height: 1350px;
+  height: 800px;
 
   margin: auto;
 }
@@ -173,11 +173,11 @@
 }
 
 
-.crud-buttons-container{
-  float: right;
-  display: inline;
-  margin: 0;
-}
+/*.crud-buttons-container{*/
+/*  float: right;*/
+/*  display: inline;*/
+/*  margin: 0;*/
+/*}*/
 .crud-buttons-container *{
   font-size: .8rem;
   font-family: bold, serif;
@@ -195,7 +195,6 @@
   max-height: 27px;
   margin-top: 3px;
   background-color: #e78181;
-  display: inline;
   color: #e2eee0;
 }
 
@@ -203,8 +202,10 @@
 .remove-button{
   margin-top: 3px;
   background-color: #f10606;
-  display: block;
+  display: inline;
   color: #fffefe;
+  max-width: 70px;
+  float: right;
 
 }
 
@@ -225,7 +226,6 @@
 
 .price-title-container {
 display: inline-block;
-  max-width: 75%;
 }
 .price-title-container .title-card{
   display: block;
@@ -251,3 +251,8 @@ display: inline-block;
 }
 
 
+/*delet-button*/
+
+.mui{
+  background-color: black;
+}
