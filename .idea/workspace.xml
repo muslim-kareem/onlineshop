@@ -7,27 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: add new product button and refactor onCubmit and onChange">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: clean up some spaces">
+      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/useShoppingCart.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useAuth.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ShoppingCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ShoppingCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/model/Product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/model/Product.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/model/aplication_properties.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/model/aplication_properties.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,9 +25,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="TypeScript File" />
         <option value="Class" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -102,6 +88,7 @@
       <recent name="$PROJECT_DIR$/frontend/src/components/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/hooks" />
       <recent name="$PROJECT_DIR$/frontend/public/images" />
       <recent name="$PROJECT_DIR$/frontend/src/components" />
       <recent name="$PROJECT_DIR$/frontend/public" />
@@ -148,7 +135,7 @@
       <workItem from="1674917022895" duration="10414000" />
       <workItem from="1674974185968" duration="2186000" />
       <workItem from="1675004746195" duration="18927000" />
-      <workItem from="1675025754007" duration="12509000" />
+      <workItem from="1675025754007" duration="20934000" />
     </task>
     <task id="LOCAL-00001" summary="init: BIG BANG">
       <created>1674289720971</created>
@@ -458,7 +445,28 @@
       <option name="project" value="LOCAL" />
       <updated>1675020859798</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="fix: add new product button and refactor onCubmit and onChange">
+      <created>1675086551546</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1675086551546</updated>
+    </task>
+    <task id="LOCAL-00046" summary="fix: setFiles">
+      <created>1675087293679</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1675087293679</updated>
+    </task>
+    <task id="LOCAL-00047" summary="fix: clean up some spaces">
+      <created>1675091926280</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1675091926280</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,8 +487,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix: refactor Routes to Root" />
-    <MESSAGE value="feat: endpoint getAddedToCardProducts frontend&#10;feat: getAddedToCardProducts method backend" />
     <MESSAGE value="feat: improve useProducts with filter via isExcuted" />
     <MESSAGE value="feat: show Added to Card done" />
     <MESSAGE value="fix: update product" />
@@ -504,6 +510,8 @@
     <MESSAGE value="feat: set product details from txt file" />
     <MESSAGE value="feat: create product with MultipartFile" />
     <MESSAGE value="fix: add new product button and refactor onCubmit and onChange" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: add new product button and refactor onCubmit and onChange" />
+    <MESSAGE value="fix: setFiles" />
+    <MESSAGE value="fix: clean up some spaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: clean up some spaces" />
   </component>
 </project>

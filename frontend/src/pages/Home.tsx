@@ -7,7 +7,7 @@ import axios from "axios";
 
 export default function Home() {
 
-    const[products,setProducts] = useProducts(false);
+    const[products,setProducts] = useProducts();
     const[files,setFiles] =useState<File[] | null>()
 
 
@@ -94,9 +94,7 @@ function AddButton({onSubmit,onChange}:{
                             </div>
                             <div className="modal-body">
                                 {/*THE FORM*/}
-                                <form
-                                    // ON SUBMIT FOR THE FORM
-                                    onSubmit={onSubmit }>
+                                <form onSubmit={onSubmit }>
 
                                     {/*THE TRIGGER BUTTON */}
                                     <button onClick={() => {
