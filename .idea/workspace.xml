@@ -7,15 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: delete endpoint">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: delete comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/DeleteButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/DeleteButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,21 +131,7 @@
       <workItem from="1674917022895" duration="10414000" />
       <workItem from="1674974185968" duration="2186000" />
       <workItem from="1675004746195" duration="18927000" />
-      <workItem from="1675025754007" duration="47485000" />
-    </task>
-    <task id="LOCAL-00005" summary="feat: details component">
-      <created>1674501804221</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1674501804221</updated>
-    </task>
-    <task id="LOCAL-00006" summary="feat: refactor login">
-      <created>1674570165806</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1674570165806</updated>
+      <workItem from="1675025754007" duration="49625000" />
     </task>
     <task id="LOCAL-00007" summary="feat: applicationProps &amp; PUT endpoint">
       <created>1674579345360</created>
@@ -481,7 +462,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675152241712</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="feat: css refactor and button position">
+      <created>1675159522295</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1675159522295</updated>
+    </task>
+    <task id="LOCAL-00055" summary="fix: delete comments">
+      <created>1675159650822</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1675159650822</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,8 +497,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="clean up :)" />
-    <MESSAGE value="feat: remove from shopping card" />
     <MESSAGE value="feat: first admin curd buttons layout" />
     <MESSAGE value="fix : sonar plugin" />
     <MESSAGE value="feat: gridFs" />
@@ -527,6 +520,8 @@
     <MESSAGE value="feat: delete product method" />
     <MESSAGE value="feat: add new api in frontend" />
     <MESSAGE value="feat: delete endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: delete endpoint" />
+    <MESSAGE value="feat: css refactor and button position" />
+    <MESSAGE value="fix: delete comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: delete comments" />
   </component>
 </project>
