@@ -74,26 +74,18 @@ export default function Home() {
 
             <ProductContainer>
                 {products.map(p => <div key={p.id} className={"product-card"}><ProductCard
-                    children={
-                        <>
-
-                        </>}
+                    children={<> </>}
                     product={p}/>
                     {/*CURD BUTTONS*/}
                     <div className={"crud-buttons-container"}>
-
-                        <UpdateProductButton onChange={onChange} onSubmit={onUpdate} onClick={() => {
-                            setProductId(p.id)
-                        }}/>
+                        <UpdateProductButton onChange={onChange} onSubmit={onUpdate} onClick={() => {setProductId(p.id)}}/>
                         <DeleteButton onDelete={() => onDelete(p.id)}/>
                     </div>
-                </div>)}
+                   </div>)}
             </ProductContainer>
             <AddButton onSubmit={onSubmit} onChange={onChange}/>
 
             <LogoutButton/>
-
-
         </>
     )
 
