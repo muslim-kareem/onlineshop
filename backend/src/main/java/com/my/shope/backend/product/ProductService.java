@@ -65,6 +65,8 @@ public class ProductService {
 
 
     public Product buyProduct(String productId) {
+        removeFromShoppingCart(productId);
+
         AppUser appUser = userService.getAuthenticatedUser();
         Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), true);
 

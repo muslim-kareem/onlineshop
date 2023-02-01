@@ -7,17 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: small changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: update product first version is done">
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/UpdateProductButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UpdateProductButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="delete_product" />
+        <entry key="$PROJECT_DIR$" value="update_product" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -138,14 +129,7 @@
       <workItem from="1674917022895" duration="10414000" />
       <workItem from="1674974185968" duration="2186000" />
       <workItem from="1675004746195" duration="18927000" />
-      <workItem from="1675025754007" duration="79209000" />
-    </task>
-    <task id="LOCAL-00011" summary="refactored: ProductDetails component">
-      <created>1674656879176</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1674656879176</updated>
+      <workItem from="1675025754007" duration="80247000" />
     </task>
     <task id="LOCAL-00012" summary="flay-io: first deployment">
       <created>1674659813439</created>
@@ -483,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675188203556</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="feat: update product first version is done">
+      <created>1675244488166</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1675244488166</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,8 +495,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="rename: fronted application_properties" />
-    <MESSAGE value="feat: change the max-width of price-title-container" />
     <MESSAGE value="fix:  max-width of price-title-container &#10;feat: refactor CSS" />
     <MESSAGE value="fix: reformat cod and added method getAppUserById" />
     <MESSAGE value="fix: rename name field" />
@@ -529,6 +518,8 @@
     <MESSAGE value="feat: send binary and id to update" />
     <MESSAGE value="set up and implement update method and endpoint" />
     <MESSAGE value="fix: small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: small changes" />
+    <MESSAGE value="update first version is done" />
+    <MESSAGE value="feat: update product first version is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update product first version is done" />
   </component>
 </project>
