@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class Product implements Comparable<Product> {
     private String id;
     private String name;
     private String description;
@@ -19,4 +19,8 @@ public class Product {
     private List<String> imageIDs;
     private String category;
 
+    @Override
+    public int compareTo(Product p) {
+        return this.getId().compareTo(p.getId());
+    }
 }

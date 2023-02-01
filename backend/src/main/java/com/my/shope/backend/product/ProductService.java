@@ -47,7 +47,9 @@ public class ProductService {
     }
 
     public List<Product> getAll() {
-        return productRepo.findAll();
+        List<Product> allProduct = productRepo.findAll();
+        productRepo.findAll().sort(Collections.reverseOrder()); // in case  doesn't work
+        return allProduct;
     }
     public Product getProductById(String id) {
         Optional<Product> optionalProduct = productRepo.findById(id);
@@ -155,10 +157,17 @@ public class ProductService {
     public Product updateProduct(String productId, MultipartFile[] multipartFile) throws IOException {
         Product productToUpdate = getProductById(productId);
 
+        // if only product_details in the multipartFile then update only the details
+        if(multipartFile.length == 1 && Objects.requireNonNull(multipartFile[0].getOriginalFilename()).startsWith("product_details")){
+            fileService.saveProductDetailsFile(multipartFile[0]);
+            setProductDetails(productToUpdate, DETAILS_PATH);
+            return productRepo.save(productToUpdate);
+        }
 
-        for (MultipartFile value : multipartFile) {
-            if (Objects.requireNonNull(value.getOriginalFilename()).startsWith("product_details")) {
-                fileService.saveProductDetailsFile(value);
+        // case contains the product_details file and photos
+        for (MultipartFile file : multipartFile) {
+            if (Objects.requireNonNull(file.getOriginalFilename()).startsWith("product_details")) {
+                fileService.saveProductDetailsFile(file);
                 setProductDetails(productToUpdate, DETAILS_PATH);
             } else {
                 fileService.deleteImagesByIds(productToUpdate.getImageIDs());
@@ -166,6 +175,7 @@ public class ProductService {
 
         }
 
+        //just to delete old photos and sett the new photos to mey productToUpdate
         productToUpdate.setImageIDs(new ArrayList<>());
         for (MultipartFile file : multipartFile) {
             if (!Objects.requireNonNull(file.getOriginalFilename()).startsWith("product_details")) {

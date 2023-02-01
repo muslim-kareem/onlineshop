@@ -15,6 +15,7 @@ export default function Home() {
     const [files, setFiles] = useState<File[] | null>()
     const [productId, setProductId] = useState("")
 
+    products.sort()
 
     // ON SUBMIT FOR THE FORM
     const onSubmit = async (e: React.FormEvent) => {
@@ -42,13 +43,9 @@ export default function Home() {
         for (const file of files) {
             formData.append("file[]", file);
         }
-
         const res = await axios.post("/api/products/update/" + productId, formData);
 
-        let theNewProduct = products.filter(f => f.id !== productId);
-        theNewProduct.push(res.data)
-
-        setProducts([...theNewProduct])
+        setProducts([...res.data]);
         setFiles(null)
     }
 // ON CHANGE FOR INPUT

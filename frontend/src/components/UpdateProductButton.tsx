@@ -10,7 +10,7 @@ export default function UpdateProductButton({onSubmit,onChange,onClick}:{
     return(
         <>
             {/*ADD TO CARD BUTTON*/}
-            <div className={"details-button-container"}>
+            <div className={""}>
                 <button type="button" className="btn  p-1 "  onClick={onClick}
                         data-bs-toggle="modal" data-bs-target="#update-modal">
                      UPDATE
