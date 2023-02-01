@@ -3,7 +3,6 @@ import {NavLink, useParams} from "react-router-dom";
 import React, {useState} from "react";
 import axios from "axios";
 import {IMAGES_PATH} from "../model/aplication_properties";
-import {getProduct} from "../api/ProductApi";
 import useShoppingCart from "../hooks/useShoppingCart";
 
 export default function ProductDetails() {
@@ -27,13 +26,8 @@ export default function ProductDetails() {
 
 
     const addToCart = async () => {
-        const res = await axios.put("/api/orders/" + id);
-
-        let productsIds = res.data.productsIds;
+        await axios.put("/api/orders/" + id);
         setShoppingCart([...shoppingCart,product])
-        alert(getProduct(productsIds[productsIds.length - 1]))
-
-
 
     }
     const buyProduct = async () => {
@@ -62,11 +56,11 @@ export default function ProductDetails() {
                         <div className={"details-button-container"}>
 
                             <button type="button" className="btn btn m-t-3 add-to-cart-button" onClick={addToCart}
-                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    data-bs-toggle="modal" data-bs-target="#shopping-cart-added">
                                 In den Warenkorb
                             </button>
 
-                            <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel"
+                            <div className="modal fade" id="shopping-cart-added" aria-labelledby="exampleModalLabel"
                                  aria-hidden="true">
                                 <div className="modal-dialog">
                                     <div className="modal-content">

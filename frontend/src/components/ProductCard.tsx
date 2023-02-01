@@ -6,6 +6,7 @@ export default function ProductCard({product,children}:{
     product: Product
     children: React.ReactNode
 }){
+
     return(
 
         <div className="card" style={{width: "15rem"}}>

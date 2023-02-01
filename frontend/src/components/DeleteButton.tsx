@@ -37,8 +37,8 @@ export default function DeleteButton({onDelete}:{
         <div >
 
             <Button sx={{p: "0.2rem",
-                color: "white",fontSize: '0.7rem',
-                bgcolor:"red ",float: "right",
+                color: "black",fontSize: '0.7rem',
+                float: "right",
                 mt: ".3rem"}}
                 onClick={handleClickOpen}>
                 Delete

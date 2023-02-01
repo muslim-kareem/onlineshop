@@ -99,8 +99,7 @@
 
 }
 .product-container{
- padding: 100px;padding-bottom: 50px;
-
+ padding: 100px;
   padding-top: 10px;
   margin: auto;
 }
@@ -246,7 +245,6 @@ display: inline-block;
   font-size: .8rem;
   margin: 0;
   display: block;
-  margin-top: 18%;
 }
 
 

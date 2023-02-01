@@ -84,7 +84,7 @@ public class FileService {
     }
 
 
-   public void saveProductDetailsFile(MultipartFile file) throws IOException {
+public void saveProductDetailsFile(MultipartFile file) throws IOException {
        String path_directory ="/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend";
        Files.copy(file.getInputStream(),
                Paths.get(path_directory + File.separator + file.getOriginalFilename()),

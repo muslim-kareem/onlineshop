@@ -25,7 +25,7 @@ public class ProductService {
     private final FileService fileService;
     public String DETAILS_PATH = "/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend/product_details.txt";
 //string with id
-    public Product creatProduct(MultipartFile[] file) throws IOException {
+    public Product createProduct(MultipartFile[] file) throws IOException {
         Product product = new Product();
         List<String> imagesIds = new ArrayList<>();
 
@@ -47,7 +47,9 @@ public class ProductService {
     }
 
     public List<Product> getAll() {
-        return productRepo.findAll();
+        List<Product> allProduct = productRepo.findAll();
+        productRepo.findAll().sort(Collections.reverseOrder()); // in case  doesn't work
+        return allProduct;
     }
     public Product getProductById(String id) {
         Optional<Product> optionalProduct = productRepo.findById(id);
@@ -63,6 +65,8 @@ public class ProductService {
 
 
     public Product buyProduct(String productId) {
+        removeFromShoppingCartOrOrderedByExecuted(false,productId);
+
         AppUser appUser = userService.getAuthenticatedUser();
         Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), true);
 
@@ -103,10 +107,10 @@ public class ProductService {
     }
 
 
-    public void removeFromShoppingCart(String productId) {
+    public void removeFromShoppingCartOrOrderedByExecuted(boolean isExecuted, String productId) {
 
         String authorizedUserId = userService.getAuthorizedUserId();
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, isExecuted);
 
         if (optionalOrder.isPresent() && optionalOrder.get().getProductsIds().size() > 0) {
             for (String pId : optionalOrder.get().getProductsIds()) {
@@ -145,12 +149,61 @@ public class ProductService {
     }
 
     public void deleteProduct(String productId){
+        removeFromShoppingCartOrOrderedByExecuted(true,productId);
+        removeFromShoppingCartOrOrderedByExecuted(false,productId);
         Product product = getProductById(productId);
         List<String> imageIds = product.getImageIDs();
         productRepo.delete(product);
         fileService.deleteImagesByIds(imageIds);
+    }
 
+
+    public Product updateProduct(String productId, MultipartFile[] multipartFile) throws IOException {
+        Product productToUpdate = getProductById(productId);
+
+        // if only product_details in the multipartFile then update only the details
+        if(multipartFile.length == 1 && Objects.requireNonNull(multipartFile[0].getOriginalFilename()).startsWith("product_details")){
+            fileService.saveProductDetailsFile(multipartFile[0]);
+            setProductDetails(productToUpdate, DETAILS_PATH);
+            return productRepo.save(productToUpdate);
+        }
+
+        // case contains the product_details file and photos
+        for (MultipartFile file : multipartFile) {
+            if (Objects.requireNonNull(file.getOriginalFilename()).startsWith("product_details")) {
+                fileService.saveProductDetailsFile(file);
+                setProductDetails(productToUpdate, DETAILS_PATH);
+            } else {
+                fileService.deleteImagesByIds(productToUpdate.getImageIDs());
+            }
+
+        }
+
+        //just to delete old photos and sett the new photos to mey productToUpdate
+        productToUpdate.setImageIDs(new ArrayList<>());
+        for (MultipartFile file : multipartFile) {
+            if (!Objects.requireNonNull(file.getOriginalFilename()).startsWith("product_details")) {
+                productToUpdate.getImageIDs().add(fileService.saveFile(file).getId());
+            }
+        }
+        System.out.println(productToUpdate);
+        return productRepo.save(productToUpdate);
 
     }
 
+//    public void removeFromOrderdProduct(String productId){
+//        String authorizedUserId = userService.getAuthorizedUserId();
+//        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
+//
+//        if (optionalOrder.isPresent() && optionalOrder.get().getProductsIds().size() > 0) {
+//            for (String pId : optionalOrder.get().getProductsIds()) {
+//                if (productId.equals(pId)) {
+//                    optionalOrder.get().getProductsIds().remove(productId);
+//                    orderService.updateOrder(optionalOrder.get());
+//                    break;
+//                }
+//            }
+//        }
+//        getProductById(productId);
+//    }
 }

@@ -14,6 +14,5 @@ export default function useProducts(): [Product[], Dispatch<SetStateAction<Produ
 
         })();
     }, []);
-
     return [products,setProducts];
 }

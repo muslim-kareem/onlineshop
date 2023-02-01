@@ -16,7 +16,7 @@ public class ProductController {
 
     @PostMapping
     public Product uploadFile( @RequestParam("file[]") MultipartFile[] file) throws IOException {
-        return productService.creatProduct(file);
+        return productService.createProduct(file);
     }
     @PutMapping
     public Product updateProduct(@RequestBody Product theProduct){
@@ -50,9 +50,15 @@ public class ProductController {
 
     @DeleteMapping("/shopping-carts/{id}")
     public List<Product> removeFromShoppingCart(@PathVariable String id){
-        productService.removeFromShoppingCart(id);
+        productService.removeFromShoppingCartOrOrderedByExecuted(false,id);
         return productService.getShoppingCart();
     }
 
+
+    @PostMapping("/update/{id}")
+    public List<Product> updateProduct(@PathVariable String id, @RequestParam("file[]") MultipartFile[] file) throws IOException {
+      productService.updateProduct(id,file);
+      return productService.getAll();
+    }
 
 }
