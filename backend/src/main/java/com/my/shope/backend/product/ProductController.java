@@ -50,7 +50,7 @@ public class ProductController {
 
     @DeleteMapping("/shopping-carts/{id}")
     public List<Product> removeFromShoppingCart(@PathVariable String id){
-        productService.removeFromShoppingCart(id);
+        productService.removeFromShoppingCartOrOrderedByExecuted(false,id);
         return productService.getShoppingCart();
     }
 

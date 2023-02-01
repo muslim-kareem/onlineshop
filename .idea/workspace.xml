@@ -7,7 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: update product first version is done">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: delete product from shopping cart when product bought">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,14 +130,7 @@
       <workItem from="1674917022895" duration="10414000" />
       <workItem from="1674974185968" duration="2186000" />
       <workItem from="1675004746195" duration="18927000" />
-      <workItem from="1675025754007" duration="80247000" />
-    </task>
-    <task id="LOCAL-00012" summary="flay-io: first deployment">
-      <created>1674659813439</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1674659813439</updated>
+      <workItem from="1675025754007" duration="81351000" />
     </task>
     <task id="LOCAL-00013" summary="small: fix">
       <created>1674660464411</created>
@@ -474,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675244488166</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="feat: delete product from shopping cart when product bought">
+      <created>1675245096109</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1675245096109</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +496,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix:  max-width of price-title-container &#10;feat: refactor CSS" />
     <MESSAGE value="fix: reformat cod and added method getAppUserById" />
     <MESSAGE value="fix: rename name field" />
     <MESSAGE value="fix: refactor and add AddButton component" />
@@ -520,6 +520,7 @@
     <MESSAGE value="fix: small changes" />
     <MESSAGE value="update first version is done" />
     <MESSAGE value="feat: update product first version is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update product first version is done" />
+    <MESSAGE value="feat: delete product from shopping cart when product bought" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: delete product from shopping cart when product bought" />
   </component>
 </project>

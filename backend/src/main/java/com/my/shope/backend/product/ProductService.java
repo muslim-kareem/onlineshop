@@ -65,7 +65,7 @@ public class ProductService {
 
 
     public Product buyProduct(String productId) {
-        removeFromShoppingCart(productId);
+        removeFromShoppingCartOrOrderedByExecuted(false,productId);
 
         AppUser appUser = userService.getAuthenticatedUser();
         Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), true);
@@ -107,10 +107,10 @@ public class ProductService {
     }
 
 
-    public void removeFromShoppingCart(String productId) {
+    public void removeFromShoppingCartOrOrderedByExecuted(boolean isExecuted, String productId) {
 
         String authorizedUserId = userService.getAuthorizedUserId();
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, isExecuted);
 
         if (optionalOrder.isPresent() && optionalOrder.get().getProductsIds().size() > 0) {
             for (String pId : optionalOrder.get().getProductsIds()) {
@@ -149,6 +149,8 @@ public class ProductService {
     }
 
     public void deleteProduct(String productId){
+        removeFromShoppingCartOrOrderedByExecuted(true,productId);
+        removeFromShoppingCartOrOrderedByExecuted(false,productId);
         Product product = getProductById(productId);
         List<String> imageIds = product.getImageIDs();
         productRepo.delete(product);
@@ -188,4 +190,20 @@ public class ProductService {
         return productRepo.save(productToUpdate);
 
     }
+
+//    public void removeFromOrderdProduct(String productId){
+//        String authorizedUserId = userService.getAuthorizedUserId();
+//        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
+//
+//        if (optionalOrder.isPresent() && optionalOrder.get().getProductsIds().size() > 0) {
+//            for (String pId : optionalOrder.get().getProductsIds()) {
+//                if (productId.equals(pId)) {
+//                    optionalOrder.get().getProductsIds().remove(productId);
+//                    orderService.updateOrder(optionalOrder.get());
+//                    break;
+//                }
+//            }
+//        }
+//        getProductById(productId);
+//    }
 }
