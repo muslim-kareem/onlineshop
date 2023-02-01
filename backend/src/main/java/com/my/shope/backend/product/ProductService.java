@@ -63,9 +63,8 @@ public class ProductService {
         return productRepo.save(theProduct);
     }
 
-
     public Product buyProduct(String productId) {
-        removeFromShoppingCartOrOrderedByExecuted(false,productId);
+        removeFromShoppingCart(productId);
 
         AppUser appUser = userService.getAuthenticatedUser();
         Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), true);
@@ -108,20 +107,28 @@ public class ProductService {
 
 
 
-    public void removeFromShoppingCartOrOrderedByExecuted(boolean isExecuted, String productId) {
+    public void removeFromShoppingCart(String productId) {
         String authorizedUserId = userService.getAuthorizedUserId();
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, isExecuted);
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
+        removeProductFromOrder(productId,optionalOrder);
+    }
+    public void removeFromExecutedOrder(String productId) {
+        String authorizedUserId = userService.getAuthorizedUserId();
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
+        removeProductFromOrder(productId,optionalOrder);
+    }
 
-        if (optionalOrder.isPresent() && optionalOrder.get().getProductsIds().size() > 0) {
-            for (String pId : optionalOrder.get().getProductsIds()) {
+    public void removeProductFromOrder(String productId, Optional<Order> order) {
+
+        if (order.isPresent() && order.get().getProductsIds().size() > 0) {
+            for (String pId : order.get().getProductsIds()) {
                 if (productId.equals(pId)) {
-                    optionalOrder.get().getProductsIds().remove(productId);
-                    orderService.updateOrder(optionalOrder.get());
+                    order.get().getProductsIds().remove(productId);
+                    orderService.updateOrder(order.get());
                     break;
                 }
             }
         }
-        getProductById(productId);
     }
 
 
@@ -150,8 +157,8 @@ public class ProductService {
 
     public void deleteProduct(String productId){
         //remove from shopping cart and ordered when product is bought
-        removeFromShoppingCartOrOrderedByExecuted(true,productId);
-        removeFromShoppingCartOrOrderedByExecuted(false,productId);
+        removeFromShoppingCart(productId);
+        removeFromExecutedOrder(productId);
 
         //delete product and all photos
         Product product = getProductById(productId);
