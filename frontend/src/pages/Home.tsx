@@ -8,16 +8,17 @@ import DeleteButton from "../components/DeleteButton";
 import {deleteProduct} from "../api/ProductApi";
 import UpdateProductButton from "../components/UpdateProductButton";
 import AddButton from "../components/AddButton";
+import useAuth from "../hooks/useAuth";
+import NavBar from "../components/NavBar";
 
 export default function Home() {
 
-    const [products, setProducts] = useProducts();
     const [files, setFiles] = useState<File[] | null>()
     const [productId, setProductId] = useState("")
+    const [searchParam,setSearchParam] = useState('')
+    const [products, setProducts] = useProducts(searchParam);
+    const[user] = useAuth()
 
-    products.sort()
-
-    // ON SUBMIT FOR THE FORM
     const onSubmit = async (e: React.FormEvent) => {
         // FILE UPLOAD
         e.preventDefault();
@@ -32,7 +33,6 @@ export default function Home() {
         const res = await axios.post("/api/products", formData);
         setProducts([...products, res.data])
     }
-
     const onUpdate = async (e: React.FormEvent) => {
         // FILE UPLOAD
         e.preventDefault();
@@ -48,7 +48,6 @@ export default function Home() {
         setProducts([...res.data]);
         setFiles(null)
     }
-// ON CHANGE FOR INPUT
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length) {
             const f = [];
@@ -60,7 +59,6 @@ export default function Home() {
         }
 
     }
-
     const onDelete = (id: string) => {
         const theNewProducts = products.filter(f => f.id !== id);
         setProducts([...theNewProducts])
@@ -70,8 +68,7 @@ export default function Home() {
 
     return (
         <>
-
-
+            <NavBar user={user} onSearch={(e) => setSearchParam(e)} />
             <ProductContainer>
                 {products.map(p => <div key={p.id} className={"product-card"}><ProductCard
                     children={<> </>}
@@ -84,17 +81,9 @@ export default function Home() {
                    </div>)}
             </ProductContainer>
             <AddButton onSubmit={onSubmit} onChange={onChange}/>
-
             <LogoutButton/>
         </>
     )
 
 
 }
-
-
-
-
-
-
-

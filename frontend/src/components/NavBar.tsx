@@ -1,11 +1,11 @@
 import {User} from "../model/User";
 import {Link} from "react-router-dom";
+import {ChangeEvent} from "react";
 
-export default function NavBar({user}:{
+export default function NavBar({user,onSearch}:{
+    onSearch?: (search: string) => void
     user: User
 }) {
-
-
 
 
 
@@ -17,12 +17,11 @@ export default function NavBar({user}:{
                 <Link to={"/"}><h2 className="fa-solid fa-shop shop-icon"> </h2></Link>
                 <form>
                      {/*todo*/}
-                    <input className="form-control me-3 search-input" placeholder="Search" aria-label="Search"/>
+                    { user && <input  onChange={(e:ChangeEvent <HTMLInputElement>) => {return onSearch !== undefined ? onSearch(e.target.value): null}} className="form-control me-3 search-input" placeholder="Search" aria-label="Search"/>}
                 </form>
                 {/* users icon containers */}
                 <div className={"d-flex"}>
-                    {/* eslint-disable-next-line eqeqeq */}
-                    {user == undefined ? <div className={"user-icon-container"}>
+                    {user === null ? <div className={"user-icon-container"}>
                             <a href={"/login"}>
                             <div className="fa-regular fa-user  fs-2"></div>
                             <p >Einlogin</p>

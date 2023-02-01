@@ -61,4 +61,9 @@ public class ProductController {
       return productService.getAll();
     }
 
+    @GetMapping("/search-by-name/{name}")
+    public List<Product> getTitle(@PathVariable String name){
+       return productService.getAllByProductName(name);
+    }
+
 }

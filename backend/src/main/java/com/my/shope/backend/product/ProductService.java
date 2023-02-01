@@ -107,8 +107,8 @@ public class ProductService {
     }
 
 
-    public void removeFromShoppingCartOrOrderedByExecuted(boolean isExecuted, String productId) {
 
+    public void removeFromShoppingCartOrOrderedByExecuted(boolean isExecuted, String productId) {
         String authorizedUserId = userService.getAuthorizedUserId();
         Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, isExecuted);
 
@@ -194,19 +194,15 @@ public class ProductService {
 
     }
 
-//    public void removeFromOrderdProduct(String productId){
-//        String authorizedUserId = userService.getAuthorizedUserId();
-//        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
-//
-//        if (optionalOrder.isPresent() && optionalOrder.get().getProductsIds().size() > 0) {
-//            for (String pId : optionalOrder.get().getProductsIds()) {
-//                if (productId.equals(pId)) {
-//                    optionalOrder.get().getProductsIds().remove(productId);
-//                    orderService.updateOrder(optionalOrder.get());
-//                    break;
-//                }
-//            }
-//        }
-//        getProductById(productId);
-//    }
+
+    public List<Product> getAllByProductName(String productName){
+        List<Product> theList = new ArrayList<>();
+
+        for (Product product: getAll()) {
+            if(product.getName().toLowerCase().contains(productName.toLowerCase())){
+                theList.add(product);
+            }
+        }
+        return theList;
+    }
 }
