@@ -149,12 +149,15 @@ public class ProductService {
     }
 
     public void deleteProduct(String productId){
+        //remove from shopping cart and ordered when product is bought
         removeFromShoppingCartOrOrderedByExecuted(true,productId);
         removeFromShoppingCartOrOrderedByExecuted(false,productId);
+
+        //delete product and all photos
         Product product = getProductById(productId);
-        List<String> imageIds = product.getImageIDs();
+        fileService.deleteImagesByIds(product.getImageIDs());
         productRepo.delete(product);
-        fileService.deleteImagesByIds(imageIds);
+
     }
 
 
