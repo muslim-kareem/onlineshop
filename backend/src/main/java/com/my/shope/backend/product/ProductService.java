@@ -114,7 +114,7 @@ public class ProductService {
     }
     public void removeFromExecutedOrder(String productId) {
         String authorizedUserId = userService.getAuthorizedUserId();
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, true);
         removeProductFromOrder(productId,optionalOrder);
     }
 
