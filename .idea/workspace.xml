@@ -7,10 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: search on product and refactor NavBar component">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: remove removeFromExecutedOrder">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,21 +133,7 @@
       <workItem from="1674917022895" duration="10414000" />
       <workItem from="1674974185968" duration="2186000" />
       <workItem from="1675004746195" duration="18927000" />
-      <workItem from="1675025754007" duration="103593000" />
-    </task>
-    <task id="LOCAL-00017" summary="feat: ProductDetails style done">
-      <created>1674682120702</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1674682120702</updated>
-    </task>
-    <task id="LOCAL-00018" summary="inProgress: buyProduct">
-      <created>1674715535676</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1674715535676</updated>
+      <workItem from="1675025754007" duration="108302000" />
     </task>
     <task id="LOCAL-00019" summary="method: buyProduct &#10;EndPoint: PUT /api/products/id">
       <created>1674719329847</created>
@@ -476,7 +464,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675278778535</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="refactor: removeFromShoppingCarrOrOrdered method">
+      <created>1675279728451</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1675279728451</updated>
+    </task>
+    <task id="LOCAL-00067" summary="fix: remove removeFromExecutedOrder">
+      <created>1675281646268</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1675281646268</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,8 +499,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix: correct the application_properties file" />
-    <MESSAGE value="feat: set product details from txt file" />
     <MESSAGE value="feat: create product with MultipartFile" />
     <MESSAGE value="fix: add new product button and refactor onCubmit and onChange" />
     <MESSAGE value="fix: setFiles" />
@@ -522,6 +522,8 @@
     <MESSAGE value="refactor deleteProduct method" />
     <MESSAGE value="reformat cod add simple stile to file upload button" />
     <MESSAGE value="feat: search on product and refactor NavBar component" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: search on product and refactor NavBar component" />
+    <MESSAGE value="refactor: removeFromShoppingCarrOrOrdered method" />
+    <MESSAGE value="fix: remove removeFromExecutedOrder" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: remove removeFromExecutedOrder" />
   </component>
 </project>

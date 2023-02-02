@@ -57,8 +57,7 @@ public class ProductController {
 
     @PostMapping("/update/{id}")
     public List<Product> updateProduct(@PathVariable String id, @RequestParam("file[]") MultipartFile[] file) throws IOException {
-      productService.updateProduct(id,file);
-      return productService.getAll();
+     return productService.updateProduct(id,file);
     }
 
     @GetMapping("/search-by-name/{name}")

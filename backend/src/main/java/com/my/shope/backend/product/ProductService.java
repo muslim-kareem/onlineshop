@@ -168,14 +168,15 @@ public class ProductService {
     }
 
 
-    public Product updateProduct(String productId, MultipartFile[] multipartFile) throws IOException {
+    public List<Product> updateProduct(String productId, MultipartFile[] multipartFile) throws IOException {
         Product productToUpdate = getProductById(productId);
 
         // if only product_details in the multipartFile then update only the details
         if(multipartFile.length == 1 && Objects.requireNonNull(multipartFile[0].getOriginalFilename()).startsWith("product_details")){
             fileService.saveProductDetailsFile(multipartFile[0]);
             setProductDetails(productToUpdate, DETAILS_PATH);
-            return productRepo.save(productToUpdate);
+             productRepo.save(productToUpdate);
+             return getAll();
         }
 
         // case contains the product_details file and photos
@@ -197,7 +198,8 @@ public class ProductService {
             }
         }
         System.out.println(productToUpdate);
-        return productRepo.save(productToUpdate);
+         productRepo.save(productToUpdate);
+         return getAll();
 
     }
 
