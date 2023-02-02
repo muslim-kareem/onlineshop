@@ -8,17 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: some tests">
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/appUser/AppUserControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/SecurityConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,33 +102,48 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized">
-    <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AppUserControllerTest">
+    <configuration name="AppUserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.product.*" />
+          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.add_returnPatient_whenLoggedInAndAddPatient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppUserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.product.*" />
+          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="add_returnPatient_whenLoggedInAndAddPatient" />
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppUserServiceTest.create_appUser_when_successful_return_new_user" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserServiceTest" />
+      <option name="METHOD_NAME" value="create_appUser_when_successful_return_new_user" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,22 +160,6 @@
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
       <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
       <option name="METHOD_NAME" value="create_whenNotLoggedIn_returnUnauthorized" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductControllerTest.getAll_should_return_AllProdcuts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="getAll_should_return_AllProdcuts" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -208,20 +197,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="JUnit.ProductControllerTest" />
-      <item itemvalue="JUnit.ProductControllerTest.add_returnPatient_whenLoggedInAndAddPatient" />
+      <item itemvalue="JUnit.AppUserControllerTest" />
+      <item itemvalue="JUnit.AppUserServiceTest.create_appUser_when_successful_return_new_user" />
       <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
-      <item itemvalue="JUnit.ProductControllerTest.getAll_should_return_AllProdcuts" />
       <item itemvalue="JUnit.ProductControllerTest.getProductById_should_return_product" />
+      <item itemvalue="JUnit.AppUserServiceTest" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppUserControllerTest" />
+        <item itemvalue="JUnit.AppUserServiceTest" />
+        <item itemvalue="JUnit.AppUserServiceTest.create_appUser_when_successful_return_new_user" />
         <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
         <item itemvalue="JUnit.ProductControllerTest.getProductById_should_return_product" />
-        <item itemvalue="JUnit.ProductControllerTest.getAll_should_return_AllProdcuts" />
-        <item itemvalue="JUnit.ProductControllerTest.add_returnPatient_whenLoggedInAndAddPatient" />
-        <item itemvalue="JUnit.ProductControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -243,14 +232,7 @@
       <workItem from="1674974185968" duration="2186000" />
       <workItem from="1675004746195" duration="18927000" />
       <workItem from="1675025754007" duration="117114000" />
-      <workItem from="1675343841228" duration="17288000" />
-    </task>
-    <task id="LOCAL-00021" summary="feat: link to thank page">
-      <created>1674727728656</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1674727728656</updated>
+      <workItem from="1675343841228" duration="17610000" />
     </task>
     <task id="LOCAL-00022" summary="fix: refactor Routes to Root">
       <created>1674729187630</created>
@@ -588,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675333695037</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="feat: some tests">
+      <created>1675363154101</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1675363154101</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
