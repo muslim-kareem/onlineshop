@@ -98,6 +98,10 @@
   margin-top: 20px;
 
 }
+.card-img-top {
+  object-fit: contain;
+  aspect-ratio: 3/4;
+}
 .product-container{
  padding: 100px;
   padding-top: 10px;
@@ -250,3 +254,4 @@ display: inline-block;
   background-color: #7f99bd;
   color: black;
 }
+

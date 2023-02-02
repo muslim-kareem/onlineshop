@@ -7,11 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="refactor: updateProduct method">
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/appUser/AppUserServiceTest.java" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: some tests">
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/appUser/AppUserControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/appUser/AppUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/SecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,33 +56,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a",
-    "ts.external.directory.path": "/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/node_modules/typescript/lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/node_modules/typescript/lib&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.my.shope.backend.appUser" />
@@ -98,87 +105,88 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.my.shope.backend.product" />
       <recent name="com.my.shope.backend.appUser" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppUserServiceTest">
-    <configuration name="AppUserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized">
+    <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
+          <option name="PATTERN" value="com.my.shope.backend.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserServiceTest" />
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppUserServiceTest.create_whenUserAlreadyExists_thenReturnException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.add_returnPatient_whenLoggedInAndAddPatient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
+          <option name="PATTERN" value="com.my.shope.backend.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserServiceTest" />
-      <option name="METHOD_NAME" value="create_whenUserAlreadyExists_thenReturnException" />
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
+      <option name="METHOD_NAME" value="add_returnPatient_whenLoggedInAndAddPatient" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppUserServiceTest.findAuthinticatedUder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
+          <option name="PATTERN" value="com.my.shope.backend.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserServiceTest" />
-      <option name="METHOD_NAME" value="findAuthinticatedUder" />
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
+      <option name="METHOD_NAME" value="create_whenNotLoggedIn_returnUnauthorized" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppUserServiceTest.findByUsername_whenUserExists_thenReturnUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.getAll_should_return_AllProdcuts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
+          <option name="PATTERN" value="com.my.shope.backend.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserServiceTest" />
-      <option name="METHOD_NAME" value="findByUsername_whenUserExists_thenReturnUser" />
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
+      <option name="METHOD_NAME" value="getAll_should_return_AllProdcuts" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppUserServiceTest.getAuthenticatedUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.getProductById_should_return_product" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
+          <option name="PATTERN" value="com.my.shope.backend.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserServiceTest" />
-      <option name="METHOD_NAME" value="getAuthenticatedUser" />
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
+      <option name="METHOD_NAME" value="getProductById_should_return_product" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,20 +208,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="JUnit.AppUserServiceTest" />
-      <item itemvalue="JUnit.AppUserServiceTest.create_whenUserAlreadyExists_thenReturnException" />
-      <item itemvalue="JUnit.AppUserServiceTest.findAuthinticatedUder" />
-      <item itemvalue="JUnit.AppUserServiceTest.findByUsername_whenUserExists_thenReturnUser" />
-      <item itemvalue="JUnit.AppUserServiceTest.getAuthenticatedUser" />
+      <item itemvalue="JUnit.ProductControllerTest" />
+      <item itemvalue="JUnit.ProductControllerTest.add_returnPatient_whenLoggedInAndAddPatient" />
+      <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
+      <item itemvalue="JUnit.ProductControllerTest.getAll_should_return_AllProdcuts" />
+      <item itemvalue="JUnit.ProductControllerTest.getProductById_should_return_product" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppUserServiceTest" />
-        <item itemvalue="JUnit.AppUserServiceTest.create_whenUserAlreadyExists_thenReturnException" />
-        <item itemvalue="JUnit.AppUserServiceTest.findAuthinticatedUder" />
-        <item itemvalue="JUnit.AppUserServiceTest.getAuthenticatedUser" />
-        <item itemvalue="JUnit.AppUserServiceTest.findByUsername_whenUserExists_thenReturnUser" />
+        <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
+        <item itemvalue="JUnit.ProductControllerTest.getProductById_should_return_product" />
+        <item itemvalue="JUnit.ProductControllerTest.getAll_should_return_AllProdcuts" />
+        <item itemvalue="JUnit.ProductControllerTest.add_returnPatient_whenLoggedInAndAddPatient" />
+        <item itemvalue="JUnit.ProductControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -234,14 +242,8 @@
       <workItem from="1674917022895" duration="10414000" />
       <workItem from="1674974185968" duration="2186000" />
       <workItem from="1675004746195" duration="18927000" />
-      <workItem from="1675025754007" duration="113080000" />
-    </task>
-    <task id="LOCAL-00020" summary="feat : first functional buyProduct button">
-      <created>1674721259586</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1674721259586</updated>
+      <workItem from="1675025754007" duration="117114000" />
+      <workItem from="1675343841228" duration="17288000" />
     </task>
     <task id="LOCAL-00021" summary="feat: link to thank page">
       <created>1674727728656</created>
@@ -579,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675328778857</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="test: AppUserService">
+      <created>1675333695037</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1675333695037</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,8 +609,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix: add new product button and refactor onCubmit and onChange" />
-    <MESSAGE value="fix: setFiles" />
     <MESSAGE value="fix: clean up some spaces" />
     <MESSAGE value="fix: fix and refactor useProducts and ShoppingCard component" />
     <MESSAGE value="fix: remove comment" />
@@ -625,19 +632,26 @@
     <MESSAGE value="refactor: removeFromShoppingCarrOrOrdered method" />
     <MESSAGE value="fix: remove removeFromExecutedOrder" />
     <MESSAGE value="refactor: updateProduct method" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: updateProduct method" />
+    <MESSAGE value="test: AppUserService" />
+    <MESSAGE value="feat: some tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: some tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/appUser/AppUserServiceTest.java</url>
-          <line>69</line>
+          <line>64</line>
           <properties class="com.my.shope.backend.appUser.AppUserServiceTest" method="findByUsernameWithoutPassword_should_be_successful">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
