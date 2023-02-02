@@ -7,8 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: some tests">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="added: DirtiesContext">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/configuration/SecurityConfiguration.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +105,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppUserControllerTest">
+  <component name="RunManager" selected="JUnit.ProductControllerTest">
     <configuration name="AppUserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -149,7 +152,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -159,13 +162,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
       <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="create_whenNotLoggedIn_returnUnauthorized" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.getProductById_should_return_product" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.when_only_txtFile_then_uploaded_then_does_not_set_the_photos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -175,7 +177,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
       <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="getProductById_should_return_product" />
+      <option name="METHOD_NAME" value="when_only_txtFile_then_uploaded_then_does_not_set_the_photos" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,18 +201,18 @@
       <item itemvalue="JavaScript Debug.Debug Application" />
       <item itemvalue="JUnit.AppUserControllerTest" />
       <item itemvalue="JUnit.AppUserServiceTest.create_appUser_when_successful_return_new_user" />
-      <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
-      <item itemvalue="JUnit.ProductControllerTest.getProductById_should_return_product" />
+      <item itemvalue="JUnit.ProductControllerTest" />
+      <item itemvalue="JUnit.ProductControllerTest.when_only_txtFile_then_uploaded_then_does_not_set_the_photos" />
       <item itemvalue="JUnit.AppUserServiceTest" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProductControllerTest" />
+        <item itemvalue="JUnit.ProductControllerTest.when_only_txtFile_then_uploaded_then_does_not_set_the_photos" />
         <item itemvalue="JUnit.AppUserControllerTest" />
         <item itemvalue="JUnit.AppUserServiceTest" />
         <item itemvalue="JUnit.AppUserServiceTest.create_appUser_when_successful_return_new_user" />
-        <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
-        <item itemvalue="JUnit.ProductControllerTest.getProductById_should_return_product" />
       </list>
     </recent_temporary>
   </component>
@@ -232,14 +234,7 @@
       <workItem from="1674974185968" duration="2186000" />
       <workItem from="1675004746195" duration="18927000" />
       <workItem from="1675025754007" duration="117114000" />
-      <workItem from="1675343841228" duration="17610000" />
-    </task>
-    <task id="LOCAL-00022" summary="fix: refactor Routes to Root">
-      <created>1674729187630</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1674729187630</updated>
+      <workItem from="1675343841228" duration="18876000" />
     </task>
     <task id="LOCAL-00023" summary="feat: endpoint getAddedToCardProducts frontend&#10;feat: getAddedToCardProducts method backend">
       <created>1674730422865</created>
@@ -577,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675363154101</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="add: maven-surefire-plugin">
+      <created>1675363724549</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1675363724550</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,8 +600,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix: clean up some spaces" />
-    <MESSAGE value="fix: fix and refactor useProducts and ShoppingCard component" />
     <MESSAGE value="fix: remove comment" />
     <MESSAGE value="feat: delete product component with MUI" />
     <MESSAGE value="feat: delete product method" />
@@ -623,7 +623,9 @@
     <MESSAGE value="refactor: updateProduct method" />
     <MESSAGE value="test: AppUserService" />
     <MESSAGE value="feat: some tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: some tests" />
+    <MESSAGE value="add: maven-surefire-plugin" />
+    <MESSAGE value="added: DirtiesContext" />
+    <option name="LAST_COMMIT_MESSAGE" value="added: DirtiesContext" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

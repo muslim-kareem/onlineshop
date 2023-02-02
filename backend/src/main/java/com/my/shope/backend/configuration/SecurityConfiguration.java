@@ -28,6 +28,7 @@ public class SecurityConfiguration {
                 .httpBasic().and()
                 .authorizeHttpRequests()
                 .antMatchers(HttpMethod.POST,"/api/app-users/login").permitAll()
+                .antMatchers(HttpMethod.PUT,"/api/products/update/").hasRole("ADMIN")
                 .antMatchers(HttpMethod.POST,"/api/products").hasRole("ADMIN")
                 .antMatchers(HttpMethod.GET,"/api/products").hasAnyRole("BASIC","ADMIN")
                 .and()

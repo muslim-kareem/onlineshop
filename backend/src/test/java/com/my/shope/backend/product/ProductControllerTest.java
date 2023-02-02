@@ -9,6 +9,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 @SpringBootTest
 @AutoConfigureMockMvc
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 class ProductControllerTest {
 
     @Autowired
@@ -36,10 +38,11 @@ class ProductControllerTest {
                     "file[]",
                     "product_details.txt",
                     MediaType.TEXT_PLAIN.toString(),
-                    ("name:Jack & Jones Wollmantel" +
-                    "description:Eleganter Mantel" +
-                    "price:59.90" +
-                    "category:CLOSING").getBytes()
+                    ("""
+                            name:Jack & Jones Mantelshelf
+                            description:Eleganter Mantel
+                            price:59.90
+                            category:CLOSING""").getBytes()
             );
             MockMultipartFile file2 = new MockMultipartFile("file[]", "image.jpg", "image/jpeg", "some image".getBytes());
 
@@ -56,10 +59,11 @@ class ProductControllerTest {
                 "file[]",
                 "product_details.txt",
                 MediaType.TEXT_PLAIN.toString(),
-                ("name:Jack & Jones Wollmantel" +
-                        "description:Eleganter Mantel" +
-                        "price:59.90\n" +
-                        "category:CLOSING").getBytes()
+                ("""
+                        name:Jack & Jones Wollmantel
+                        description:Eleganter Mantel
+                        price:59.90
+                        category:CLOSING""").getBytes()
         );
         MockMultipartFile file2 = new MockMultipartFile("file[]", "image.jpg", "image/jpeg", "some image".getBytes());
 
@@ -84,10 +88,11 @@ class ProductControllerTest {
                 "file[]",
                 "product_details.txt",
                 MediaType.TEXT_PLAIN.toString(),
-                ("name:Jack & Jones Wollmantel" +
-                        "description:Eleganter Mantel" +
-                        "price:59.90\n" +
-                        "category:CLOSING").getBytes()
+                ("""
+                        name:Jack & Jones Wollmantel
+                        description:Eleganter Mantel
+                        price:59.90
+                        category:CLOSING""").getBytes()
         );
         MockMultipartFile file2 = new MockMultipartFile("file[]", "image.jpg", "image/jpeg", "some image".getBytes());
 
@@ -153,6 +158,7 @@ class ProductControllerTest {
 
 
     @Test
+    @WithMockUser(username = "user", password = "pw",roles = "ADMIN")
     void when_only_txtFile_then_uploaded_then_does_not_set_the_photos() throws Exception {
             //given
         Product product = new Product("1","name Of Product","description",2.88,new ArrayList<>(List.of("1","2")),"CLO");
@@ -162,10 +168,11 @@ class ProductControllerTest {
                 "file[]",
                 "product_details.txt",
                 MediaType.TEXT_PLAIN.toString(),
-                ("name:Jack & Jones Wollmantel" +
-                        "description:Eleganter Mantel" +
-                        "price:59.90\n" +
-                        "category:CLOSING").getBytes()
+                ("""
+                        name:Jack & Jones Wollmantel
+                        description:Eleganter Mantel
+                        price:59.90
+                        category:CLOSING""").getBytes()
         );
 
         // when and actual
