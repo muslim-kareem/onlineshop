@@ -7,12 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: correct the name">
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/TestData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="add: product_details.txt and remove delete product_details.txt file from setProductDetails">
+      <change beforePath="$PROJECT_DIR$/backend/product_details.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +105,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductControllerTest.when_only_txtFile_uploaded_then_does_not_sett_the_photos">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -241,20 +237,6 @@
       <workItem from="1675004746195" duration="18927000" />
       <workItem from="1675025754007" duration="117114000" />
       <workItem from="1675343841228" duration="18876000" />
-    </task>
-    <task id="LOCAL-00025" summary="feat: show Added to Card done">
-      <created>1674741109651</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1674741109651</updated>
-    </task>
-    <task id="LOCAL-00026" summary="fix: update product">
-      <created>1674741699659</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1674741699659</updated>
     </task>
     <task id="LOCAL-00027" summary="fix: update order">
       <created>1674742125397</created>
@@ -585,7 +567,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675420462936</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="fix: test refactoring">
+      <created>1675427615370</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1675427615370</updated>
+    </task>
+    <task id="LOCAL-00075" summary="add: product_details.txt and remove delete product_details.txt file from setProductDetails">
+      <created>1675428014416</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1675428014417</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,8 +602,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="feat: add new api in frontend" />
-    <MESSAGE value="feat: delete endpoint" />
     <MESSAGE value="feat: css refactor and button position" />
     <MESSAGE value="fix: delete comments" />
     <MESSAGE value="fix: clean spaces" />
@@ -631,7 +625,9 @@
     <MESSAGE value="fix: org.apache.maven.plugins" />
     <MESSAGE value="fix: delete product" />
     <MESSAGE value="fix: correct the name" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: correct the name" />
+    <MESSAGE value="fix: test refactoring" />
+    <MESSAGE value="add: product_details.txt and remove delete product_details.txt file from setProductDetails" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: product_details.txt and remove delete product_details.txt file from setProductDetails" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -647,7 +643,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java</url>
-          <line>92</line>
+          <line>88</line>
           <properties class="com.my.shope.backend.product.ProductControllerTest" method="getProductById_should_return_product">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -661,7 +657,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java</url>
-          <line>158</line>
+          <line>157</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
