@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -14,7 +15,7 @@ import java.util.Optional;
 public class AppUserService {
 
     private final AppUserRepo appUserRepo;
-    private final BCryptPasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
     public Optional<AppUser> findByUserName(String userName){
         return appUserRepo.findUserAppByUsername(userName);
     }
@@ -46,7 +47,7 @@ public class AppUserService {
 
 
 
-    public Optional<AppUser> findByUsernameWithoutPassword(String username){
+public Optional<AppUser> findByUsernameWithoutPassword(String username){
         Optional<AppUser> appUser = appUserRepo.findUserAppByUsername(username);
         appUser.ifPresent(user -> user.setPassword(""));
 

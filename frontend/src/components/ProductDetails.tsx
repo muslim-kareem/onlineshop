@@ -4,10 +4,13 @@ import React, {useState} from "react";
 import axios from "axios";
 import {IMAGES_PATH} from "../model/aplication_properties";
 import useShoppingCart from "../hooks/useShoppingCart";
+import NavBar from "./NavBar";
+import useAuth from "../hooks/useAuth";
 
 export default function ProductDetails() {
 
     const {id} = useParams();
+    const [user] = useAuth();
     const[shoppingCart,setShoppingCart] = useShoppingCart();
     const [product] = useProduct(id as string);
     const [presentPhoto, setPresentPhoto] = useState<string>("")
@@ -36,7 +39,7 @@ export default function ProductDetails() {
 
     return (<>
 
-
+            <NavBar user={user}/>
             <div>
                 <div className={"photos-container"}>
 

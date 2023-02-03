@@ -48,7 +48,7 @@ public class ProductService {
 
     public List<Product> getAll() {
         List<Product> allProduct = productRepo.findAll();
-        productRepo.findAll().sort(Collections.reverseOrder()); // in case  doesn't work
+        productRepo.findAll().sort(Collections.reverseOrder());
         return allProduct;
     }
     public Product getProductById(String id) {
@@ -59,13 +59,10 @@ public class ProductService {
             return optionalProduct.get();
         }
     }
-    public Product updateProduct(Product theProduct) {
-        return productRepo.save(theProduct);
-    }
 
 
     public Product buyProduct(String productId) {
-        removeFromShoppingCartOrOrderedByExecuted(false,productId);
+        removeFromShoppingCart(productId);
 
         AppUser appUser = userService.getAuthenticatedUser();
         Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), true);
@@ -107,21 +104,29 @@ public class ProductService {
     }
 
 
-    public void removeFromShoppingCartOrOrderedByExecuted(boolean isExecuted, String productId) {
 
+    public void removeFromShoppingCart(String productId) {
         String authorizedUserId = userService.getAuthorizedUserId();
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, isExecuted);
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
+        removeProductFromOrder(productId,optionalOrder);
+    }
+    public void removeFromExecutedOrder(String productId) {
+        String authorizedUserId = userService.getAuthorizedUserId();
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, true);
+        removeProductFromOrder(productId,optionalOrder);
+    }
 
-        if (optionalOrder.isPresent() && optionalOrder.get().getProductsIds().size() > 0) {
-            for (String pId : optionalOrder.get().getProductsIds()) {
+    public void removeProductFromOrder(String productId, Optional<Order> order) {
+
+        if (order.isPresent() && order.get().getProductsIds().size() > 0) {
+            for (String pId : order.get().getProductsIds()) {
                 if (productId.equals(pId)) {
-                    optionalOrder.get().getProductsIds().remove(productId);
-                    orderService.updateOrder(optionalOrder.get());
+                    order.get().getProductsIds().remove(productId);
+                    orderService.updateOrder(order.get());
                     break;
                 }
             }
         }
-        getProductById(productId);
     }
 
 
@@ -141,31 +146,36 @@ public class ProductService {
                 case "description" -> product.setDescription(value);
                 case "price" -> product.setPrice(Double.parseDouble(value));
                 case "category" -> product.setCategory(value);
+                case"id" -> product.setId(value);
             }
         }
-        //noinspection ResultOfMethodCallIgnored
-        file.delete();
+
 
     }
 
-    public void deleteProduct(String productId){
-        removeFromShoppingCartOrOrderedByExecuted(true,productId);
-        removeFromShoppingCartOrOrderedByExecuted(false,productId);
+    public List<Product> deleteProduct(String productId){
+        //remove from shopping cart and ordered when product is bought
+        removeFromShoppingCart(productId);
+        removeFromExecutedOrder(productId);
+
+        //delete product and all photos
         Product product = getProductById(productId);
-        List<String> imageIds = product.getImageIDs();
+        fileService.deleteImagesByIds(product.getImageIDs());
         productRepo.delete(product);
-        fileService.deleteImagesByIds(imageIds);
+        return productRepo.findAll();
+
     }
 
 
-    public Product updateProduct(String productId, MultipartFile[] multipartFile) throws IOException {
+    public List<Product> updateProduct(String productId, MultipartFile[] multipartFile) throws IOException {
         Product productToUpdate = getProductById(productId);
 
         // if only product_details in the multipartFile then update only the details
         if(multipartFile.length == 1 && Objects.requireNonNull(multipartFile[0].getOriginalFilename()).startsWith("product_details")){
             fileService.saveProductDetailsFile(multipartFile[0]);
             setProductDetails(productToUpdate, DETAILS_PATH);
-            return productRepo.save(productToUpdate);
+             productRepo.save(productToUpdate);
+             return getAll();
         }
 
         // case contains the product_details file and photos
@@ -187,23 +197,20 @@ public class ProductService {
             }
         }
         System.out.println(productToUpdate);
-        return productRepo.save(productToUpdate);
+         productRepo.save(productToUpdate);
+         return getAll();
 
     }
 
-//    public void removeFromOrderdProduct(String productId){
-//        String authorizedUserId = userService.getAuthorizedUserId();
-//        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
-//
-//        if (optionalOrder.isPresent() && optionalOrder.get().getProductsIds().size() > 0) {
-//            for (String pId : optionalOrder.get().getProductsIds()) {
-//                if (productId.equals(pId)) {
-//                    optionalOrder.get().getProductsIds().remove(productId);
-//                    orderService.updateOrder(optionalOrder.get());
-//                    break;
-//                }
-//            }
-//        }
-//        getProductById(productId);
-//    }
+
+    public List<Product> getAllByProductName(String productName){
+        List<Product> theList = new ArrayList<>();
+
+        for (Product product: getAll()) {
+            if(product.getName().toLowerCase().contains(productName.toLowerCase())){
+                theList.add(product);
+            }
+        }
+        return theList;
+    }
 }

@@ -21,15 +21,6 @@ public class AppUserController {
         return  service.create(appUser);
     }
 
-    @GetMapping("/basic")
-    public String testBasic(){
-        return "BASIC";
-    }
-
-    @PostMapping("/login")
-    public Optional<AppUser> login() {
-        return me();
-    }
 
    @GetMapping("/me")
    public Optional<AppUser> me(){
@@ -37,13 +28,17 @@ public class AppUserController {
             SecurityContextHolder.getContext().getAuthentication().getName()
     );
 
-
    }
-
     @GetMapping("/logout")
     public void logout(HttpSession httpSession){
         httpSession.invalidate();
     }
+
+    @PostMapping("/login")
+    public Optional<AppUser> login() {
+        return me();
+    }
+
 
 
 }

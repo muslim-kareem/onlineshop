@@ -30,9 +30,9 @@ export default function AddButton({onSubmit,onChange}:{
                                 <form onSubmit={onSubmit }>
 
                                     {/*THE TRIGGER BUTTON */}
-                                    <button onClick={() => {
+                                    <button className={"load-data-button"} onClick={() => {
                                         fileInputRef.current?.click();
-                                    }}>load data</button>
+                                    }}>select TXT file and all PHOTOS</button>
 
                                     {/*THE ORIGINAL INPUT */}
                                     <input type={"file"}

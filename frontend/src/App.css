@@ -98,6 +98,10 @@
   margin-top: 20px;
 
 }
+.card-img-top {
+  object-fit: contain;
+  aspect-ratio: 3/4;
+}
 .product-container{
  padding: 100px;
   padding-top: 10px;
@@ -197,15 +201,6 @@
 }
 
 
-.remove-button{
-  margin-top: 3px;
-  background-color: #f10606;
-  display: inline;
-  color: #fffefe;
-  max-width: 70px;
-  float: right;
-
-}
 
 .add-button:hover{
   background-color: #5b3f3f;
@@ -215,9 +210,7 @@
 .update-button:hover{
   background-color: #989393;
 }
-.remove-button:hover{
-  background-color: #989393;
-}
+
 
 /*CARD BODY*/
 
@@ -247,4 +240,23 @@ display: inline-block;
   display: block;
 }
 
+/*UPDATE COMPONNENT */
 
+.load-data-button{
+  background-color: #1f1fc7;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 15px 25px, rgba(0, 0, 0, 0.05) 0 5px 10px;
+
+}
+.load-data-button:hover{
+  background-color: #7f99bd;
+  color: black;
+}
+
+
+.footer{
+  min-height: 35px;
+  margin-top: 20px;
+}

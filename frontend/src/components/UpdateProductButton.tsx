@@ -9,7 +9,7 @@ export default function UpdateProductButton({onSubmit,onChange,onClick}:{
 
     return(
         <>
-            {/*ADD TO CARD BUTTON*/}
+            {/*UPDATE PRODUCT BUTTON*/}
             <div className={""}>
                 <button type="button" className="btn  p-1 "  onClick={onClick}
                         data-bs-toggle="modal" data-bs-target="#update-modal">
@@ -28,9 +28,9 @@ export default function UpdateProductButton({onSubmit,onChange,onClick}:{
                                 <form onSubmit={onSubmit }>
 
                                     {/*THE TRIGGER BUTTON */}
-                                    <button onClick={() => {
+                                    <button className={"load-data-button"} onClick={() => {
                                         fileInputRef.current?.click();
-                                    }}>load data</button>
+                                    }}>load TXT File to update Details or Photos to update Alle Photos or Both</button>
 
                                     {/*THE ORIGINAL INPUT */}
                                     <input type={"file"}

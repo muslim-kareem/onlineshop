@@ -24,3 +24,9 @@ export const deleteProduct = async (productId: string): Promise<Product> => {
     const response = await axios.delete<Product>('/api/products/'+productId);
     return response.data;
 };
+
+
+export const getByTitle = async (name: string): Promise<Product[]> => {
+    const response = await axios.get('/api/products/search-by-name/'+name);
+    return response.data;
+};

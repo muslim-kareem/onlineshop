@@ -15,12 +15,8 @@ public class ProductController {
     private final ProductService productService;
 
     @PostMapping
-    public Product uploadFile( @RequestParam("file[]") MultipartFile[] file) throws IOException {
+    public Product createProduct( @RequestParam("file[]") MultipartFile[] file) throws IOException {
         return productService.createProduct(file);
-    }
-    @PutMapping
-    public Product updateProduct(@RequestBody Product theProduct){
-        return productService.updateProduct(theProduct);
     }
 
     @GetMapping
@@ -44,21 +40,25 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteProduct(@PathVariable String id){
-        productService.deleteProduct(id);
+    public List<Product> deleteProduct(@PathVariable String id){
+        return productService.deleteProduct(id);
     }
 
     @DeleteMapping("/shopping-carts/{id}")
     public List<Product> removeFromShoppingCart(@PathVariable String id){
-        productService.removeFromShoppingCartOrOrderedByExecuted(false,id);
+        productService.removeFromShoppingCart(id);
         return productService.getShoppingCart();
     }
 
 
     @PostMapping("/update/{id}")
     public List<Product> updateProduct(@PathVariable String id, @RequestParam("file[]") MultipartFile[] file) throws IOException {
-      productService.updateProduct(id,file);
-      return productService.getAll();
+     return productService.updateProduct(id,file);
+    }
+
+    @GetMapping("/search-by-name/{name}")
+    public List<Product> getTitle(@PathVariable String name){
+       return productService.getAllByProductName(name);
     }
 
 }
