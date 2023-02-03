@@ -7,8 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="add: product_details.txt and remove delete product_details.txt file from setProductDetails">
-      <change beforePath="$PROJECT_DIR$/backend/product_details.txt" beforeDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: sonar">
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,13 +237,6 @@
       <workItem from="1675004746195" duration="18927000" />
       <workItem from="1675025754007" duration="117114000" />
       <workItem from="1675343841228" duration="18876000" />
-    </task>
-    <task id="LOCAL-00027" summary="fix: update order">
-      <created>1674742125397</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1674742125397</updated>
     </task>
     <task id="LOCAL-00028" summary="feat: setup sona cloud">
       <created>1674746111013</created>
@@ -581,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675428014417</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="fix: sonar">
+      <created>1675428348637</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1675428348637</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +602,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="feat: css refactor and button position" />
     <MESSAGE value="fix: delete comments" />
     <MESSAGE value="fix: clean spaces" />
     <MESSAGE value="feat: send binary and id to update" />
@@ -627,7 +626,8 @@
     <MESSAGE value="fix: correct the name" />
     <MESSAGE value="fix: test refactoring" />
     <MESSAGE value="add: product_details.txt and remove delete product_details.txt file from setProductDetails" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: product_details.txt and remove delete product_details.txt file from setProductDetails" />
+    <MESSAGE value="fix: sonar" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: sonar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
