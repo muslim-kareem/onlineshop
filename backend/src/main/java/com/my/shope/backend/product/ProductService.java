@@ -48,7 +48,7 @@ public class ProductService {
 
     public List<Product> getAll() {
         List<Product> allProduct = productRepo.findAll();
-        productRepo.findAll().sort(Collections.reverseOrder()); // in case  doesn't work
+        productRepo.findAll().sort(Collections.reverseOrder());
         return allProduct;
     }
     public Product getProductById(String id) {
@@ -59,9 +59,7 @@ public class ProductService {
             return optionalProduct.get();
         }
     }
-    public Product updateProduct(Product theProduct) {
-        return productRepo.save(theProduct);
-    }
+
 
     public Product buyProduct(String productId) {
         removeFromShoppingCart(productId);
@@ -155,7 +153,7 @@ public class ProductService {
 
     }
 
-    public void deleteProduct(String productId){
+    public List<Product> deleteProduct(String productId){
         //remove from shopping cart and ordered when product is bought
         removeFromShoppingCart(productId);
         removeFromExecutedOrder(productId);
@@ -164,6 +162,7 @@ public class ProductService {
         Product product = getProductById(productId);
         fileService.deleteImagesByIds(product.getImageIDs());
         productRepo.delete(product);
+        return productRepo.findAll();
 
     }
 

@@ -255,3 +255,8 @@ display: inline-block;
   color: black;
 }
 
+
+.footer{
+  min-height: 35px;
+  margin-top: 20px;
+}

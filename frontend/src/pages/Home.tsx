@@ -1,6 +1,5 @@
 import useProducts from "../hooks/useProducts";
 import ProductContainer from "../components/ProductContainer";
-import LogoutButton from "../components/LogoutButton";
 import ProductCard from "../components/ProductCard";
 import React, {useState} from "react";
 import axios from "axios";
@@ -10,6 +9,7 @@ import UpdateProductButton from "../components/UpdateProductButton";
 import AddButton from "../components/AddButton";
 import useAuth from "../hooks/useAuth";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 export default function Home() {
 
@@ -81,8 +81,8 @@ export default function Home() {
                    </div>)}
             </ProductContainer>
             <AddButton onSubmit={onSubmit} onChange={onChange}/>
-            <LogoutButton/>
-        </>
+            <Footer/>
+            </>
     )
 
 

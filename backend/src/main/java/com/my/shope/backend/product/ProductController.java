@@ -40,8 +40,8 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteProduct(@PathVariable String id){
-        productService.deleteProduct(id);
+    public List<Product> deleteProduct(@PathVariable String id){
+        return productService.deleteProduct(id);
     }
 
     @DeleteMapping("/shopping-carts/{id}")

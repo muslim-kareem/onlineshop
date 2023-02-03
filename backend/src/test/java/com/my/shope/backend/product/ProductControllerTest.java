@@ -1,6 +1,5 @@
 package com.my.shope.backend.product;
 
-import com.my.shope.backend.order.OrderRepo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -11,10 +10,12 @@ import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -29,10 +30,7 @@ class ProductControllerTest {
     @Autowired
     private ProductRepo productRepo;
 
-    @Autowired
-    private OrderRepo orderRepo;
-
-        @Test
+    @Test
         void create_whenNotLoggedIn_returnUnauthorized() throws Exception {
             MockMultipartFile file = new MockMultipartFile(
                     "file[]",
@@ -54,7 +52,7 @@ class ProductControllerTest {
 
     @Test
     @WithMockUser(username = "muslim",password = "passowrd", roles = {"ADMIN"})
-    void crate_product_Without_photos_when_only_txtFile_sended() throws Exception {
+    void crate_product_Without_photos_when_only_txtFile_sanded() throws Exception {
         MockMultipartFile file = new MockMultipartFile(
                 "file[]",
                 "product_details.txt",
@@ -64,7 +62,7 @@ class ProductControllerTest {
                         description:Eleganter Mantel
                         price:59.90
                         category:CLOSING""").getBytes()
-        );
+                 );
         MockMultipartFile file2 = new MockMultipartFile("file[]", "image.jpg", "image/jpeg", "some image".getBytes());
 
         this.mvc.perform(multipart("/api/products")
@@ -83,7 +81,7 @@ class ProductControllerTest {
     }
     @Test
     @WithMockUser(username = "muslim",password = "passowrd", roles = {"BASIC"})
-    void crate_product_should_returnUnauthorized() throws Exception {
+    void crate_product_should_returnUnauthorized_for_BASIC() throws Exception {
         MockMultipartFile file = new MockMultipartFile(
                 "file[]",
                 "product_details.txt",
@@ -106,11 +104,10 @@ class ProductControllerTest {
 
     @Test
     @WithMockUser(username = "user", password = "pw",roles = "BASIC")
-    void getAll_should_return_AllProdcuts() throws Exception {
+    void getAll_should_return_all_products() throws Exception {
             // given
         Product product = new Product("2","name","description",2.88,new ArrayList<>(List.of("1","2")),"CLOSING");
         productRepo.save(product);
-
 
         String expected = """
                [ {
@@ -128,14 +125,41 @@ class ProductControllerTest {
                 .andExpectAll(
                         status().isOk()).andExpect(content().json(expected));
     }
+    @Test
+    @WithMockUser(username = "user",password = "ps" ,roles = "ADMIN")
+    void delete_product_then_return_minus_the_deleted_product() throws Exception {
+        // given
+        Product product = new Product("2", "name", "description", 2.88, new ArrayList<>(List.of("1", "2")), "CLOSING");
+        productRepo.save(product);
+
+
+        mvc.perform(MockMvcRequestBuilders.post("/api/app-users")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("""
+                                                                {
+                                                                
+                                                                "username": "user",
+                                                                "password": "ps",
+                                                                "role": "ADMIN"
+                                                                }
+      """));
+
+
+        String expected = """
+                []
+               """;
+        //when and then
+        mvc.perform(delete("/api/products/"+product.getId()))
+                .andExpectAll(
+                        status().isOk()).andExpect(content().json(expected));
+        }
 
     @Test
-    @WithMockUser(username = "user", password = "pw",roles = "BASIC")
+    @WithMockUser(username = "user", password = "pw",roles = "ADMIN")
     void getProductById_should_return_product() throws Exception {
         // given
         Product product = new Product("2","name","description",2.88,new ArrayList<>(List.of("1","2")),"CLOSING");
         productRepo.save(product);
-//        Order order = new Order("1","2",new ArrayList<>(List.of("2")),false);
 
 
         String expected = """
@@ -153,6 +177,52 @@ class ProductControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpectAll(
                         status().isOk()).andExpect(content().json(expected));
+    }
+
+    @Test
+    @WithMockUser(username = "user", password = "pw",roles = "ADMIN")
+    void getProductsByName_should_return_products_with_the_this_specific_name() throws Exception {
+        // given
+        Product product = new Product("2","key","description",2.88,new ArrayList<>(List.of("1","2")),"CLOSING");
+        Product product2 = new Product("1","name","description",2.88,new ArrayList<>(List.of("1","2")),"CLOSING");
+        productRepo.save(product);
+        productRepo.save(product2);
+
+
+        String expected = """
+                [{
+                   "name":"key",
+                    "description": "description",
+                    "price": 2.88,
+                    "imageIDs": ["1","2"],
+                    "category":"CLOSING"
+                }]
+                """;
+
+        //when and then
+        mvc.perform(multipart(HttpMethod.GET,"/api/products/search-by-name/"+product.getName())
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpectAll(
+                            status().isOk()).andExpect(content().json(expected));
+    }    @Test
+    @WithMockUser(username = "user", password = "pw",roles = "ADMIN")
+    void getProductsByName_should_return_empty() throws Exception {
+        // given
+        Product product = new Product("2","key","description",2.88,new ArrayList<>(List.of("1","2")),"CLOSING");
+        Product product2 = new Product("1","name","description",2.88,new ArrayList<>(List.of("1","2")),"CLOSING");
+        productRepo.save(product);
+        productRepo.save(product2);
+
+
+        String expected = """
+                []
+                """;
+
+        //when and then
+        mvc.perform(multipart(HttpMethod.GET,"/api/products/search-by-name/"+"empty")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpectAll(
+                            status().isOk()).andExpect(content().json(expected));
     }
 
 
