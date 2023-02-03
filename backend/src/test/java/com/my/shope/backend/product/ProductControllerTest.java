@@ -52,7 +52,7 @@ class ProductControllerTest {
 
     @Test
     @WithMockUser(username = "muslim",password = "passowrd", roles = {"ADMIN"})
-    void crate_product_Without_photos_when_only_txtFile_sanded() throws Exception {
+    void create_product_Without_photos_when_only_txtFile_sanded() throws Exception {
         MockMultipartFile file = new MockMultipartFile(
                 "file[]",
                 "product_details.txt",
