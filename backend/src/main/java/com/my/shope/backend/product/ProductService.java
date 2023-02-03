@@ -149,8 +149,7 @@ public class ProductService {
                 case"id" -> product.setId(value);
             }
         }
-        //noinspection ResultOfMethodCallIgnored
-        file.delete();
+
 
     }
 
