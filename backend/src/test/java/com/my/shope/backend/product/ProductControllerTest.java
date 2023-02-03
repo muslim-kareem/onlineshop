@@ -21,11 +21,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class ProductControllerTest {
 
     @Autowired
-    private MockMvc mvc;
+    private MockMvc mockMvc;
+
+    public  void insertUser() throws Exception {
+        mockMvc.perform(post("/api/app-users")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(TestData.NEW_USER_ADMIN)).andExpect( MockMvcResultMatchers.status().isOk()
+        );
+    }
 
     @Test
         void create_whenNotLoggedIn_returnUnauthorized() throws Exception {
-        this.mvc.perform(multipart(HttpMethod.POST,"/api/products")
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                 .file(TestData.PRODUCT_FILE_1)
         ).andExpect(status().isUnauthorized());
     }
@@ -33,14 +40,14 @@ class ProductControllerTest {
     @Test
     @WithMockUser(username = "muslim",password = "passowrd", roles = {"ADMIN"})
     void create_product_Without_photos_when_only_txtFile_sanded() throws Exception {
-        this.mvc.perform(multipart(HttpMethod.POST,"/api/products")
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                         .file(TestData.PRODUCT_FILE_1))
                 .andExpect(status().isOk());
     }
     @Test
     @WithMockUser(username = "muslim",password = "passowrd", roles = {"BASIC"})
     void create_product_should_returnUnauthorized_for_BASIC() throws Exception {
-        this.mvc.perform(multipart(HttpMethod.POST,"/api/products")
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                         .file(TestData.PRODUCT_FILE_1)
                 )
                 .andExpect(status().isForbidden());
@@ -52,12 +59,12 @@ class ProductControllerTest {
     @WithMockUser(username = "user", password = "pw",roles = "ADMIN")
     void getAll_should_return_all_products() throws Exception {
             // given
-        this.mvc.perform(multipart(HttpMethod.POST,"/api/products")
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                 .file(TestData.PRODUCT_FILE_2)
         );
 
         //when and then
-        mvc.perform(multipart(HttpMethod.GET,"/api/products")
+        mockMvc.perform(multipart(HttpMethod.GET,"/api/products")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpectAll(
                         status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
@@ -66,12 +73,8 @@ class ProductControllerTest {
     @WithMockUser(username = "admin",password = "ps",roles = "ADMIN")
     void delete_product_then_return_minus_the_deleted_product() throws Exception {
         // given
-        mvc.perform(post("/api/app-users")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(TestData.NEW_USER_ADMIN)).andExpect( MockMvcResultMatchers.status().isOk()
-        );
-
-        this.mvc.perform(multipart(HttpMethod.POST,"/api/products")
+        insertUser();
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                 .file(TestData.PRODUCT_FILE_1)
         );
 
@@ -79,7 +82,7 @@ class ProductControllerTest {
                 []
                """;
         //when and then
-        mvc.perform(delete("/api/products/"+"1"))
+        mockMvc.perform(delete("/api/products/"+"1"))
                 .andExpectAll(
                         status().isOk()).andExpect(content().json(expected));
         }
@@ -88,17 +91,13 @@ class ProductControllerTest {
     @WithMockUser(username = "user", password = "pw",roles = "ADMIN")
     void getProductById_should_return_product() throws Exception {
         // given
-        this.mvc.perform(post("/api/app-users")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(TestData.NEW_USER_ADMIN)).andExpect( MockMvcResultMatchers.status().isOk()
-        );
-
-        this.mvc.perform(multipart(HttpMethod.POST,"/api/products")
+        insertUser();
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                 .file(TestData.PRODUCT_FILE_1)
         ).andExpect(status().isOk());
 
         //when and then
-        mvc.perform(multipart(HttpMethod.GET,"/api/products/"+"1")).andExpectAll(
+        mockMvc.perform(multipart(HttpMethod.GET,"/api/products/"+"1")).andExpectAll(
                                status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_1,false));
     }
 
@@ -106,23 +105,20 @@ class ProductControllerTest {
     @WithMockUser(username = "user", password = "pw",roles = "ADMIN")
     void getProductsByName_should_return_products_with_the_this_specific_name() throws Exception {
         // given
-        this.mvc.perform(post("/api/app-users")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(TestData.NEW_USER_ADMIN)).andExpect( MockMvcResultMatchers.status().isOk()
-        );
+         insertUser();
 
-        this.mvc.perform(multipart(HttpMethod.POST,"/api/products")
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                 .file(TestData.PRODUCT_FILE_1)
         ).andExpect(status().isOk());
 
-        this.mvc.perform(multipart(HttpMethod.POST,"/api/products")
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                 .file(TestData.PRODUCT_FILE_2)
         ).andExpect(status().isOk());
 
 
 
         //when and then
-        mvc.perform(multipart(HttpMethod.GET,"/api/products/search-by-name/"+"product2")
+        mockMvc.perform(multipart(HttpMethod.GET,"/api/products/search-by-name/"+"product2")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpectAll(
                             status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
@@ -132,7 +128,7 @@ class ProductControllerTest {
     @WithMockUser(username = "user", password = "pw",roles = "ADMIN")
     void getProductsByName_should_return_empty() throws Exception {
         // given
-        this.mvc.perform(multipart(HttpMethod.POST,"/api/products")
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                 .file(TestData.PRODUCT_FILE_1)
         ).andExpect(status().isOk());
 
@@ -140,7 +136,7 @@ class ProductControllerTest {
                 []
                 """;
         //when and then
-        mvc.perform(multipart(HttpMethod.GET,"/api/products/search-by-name/"+"empty")
+        mockMvc.perform(multipart(HttpMethod.GET,"/api/products/search-by-name/"+"empty")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpectAll(
                             status().isOk()).andExpect(content().json(expected));
@@ -150,7 +146,7 @@ class ProductControllerTest {
     @WithMockUser(username = "user", password = "pw",roles = "ADMIN")
     void when_only_txtFile_uploaded_then_does_not_sett_the_photos() throws Exception {
         // given
-        this.mvc.perform(multipart(HttpMethod.POST,"/api/products")
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                 .file(TestData.PRODUCT_FILE_2)
         ).andExpect(status().isOk()) .andExpect(status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2));
         // when and actual

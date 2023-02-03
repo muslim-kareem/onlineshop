@@ -16,7 +16,7 @@ export default function NavBar({user,onSearch}:{
             <div className="d-flex justify-content-around navbar-icons-container">
                 <Link to={"/"}><h2 className="fa-solid fa-shop shop-icon"> </h2></Link>
                 <form>
-                     {/*todo*/}
+
                     { user && <input  onChange={(e:ChangeEvent <HTMLInputElement>) => {return onSearch !== undefined ? onSearch(e.target.value): null}} className="form-control me-3 search-input" placeholder="Search" aria-label="Search"/>}
                 </form>
                 {/* users icon containers */}
