@@ -7,7 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: delete product" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: correct the name">
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/TestData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,10 +23,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="TypeScript File" />
         <option value="JUnit5 Test Class" />
         <option value="TypeScript JSX File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -92,6 +98,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.my.shope.backend" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.my.shope.backend.product" />
       <recent name="com.my.shope.backend.appUser" />
@@ -100,7 +109,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductControllerTest.crate_product_Without_photos_when_only_txtFile_sanded">
+  <component name="RunManager" selected="JUnit.ProductControllerTest.when_only_txtFile_uploaded_then_does_not_sett_the_photos">
     <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -116,7 +125,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.crate_product_Without_photos_when_only_txtFile_sanded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.getAll_should_return_all_products" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -126,23 +135,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
       <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="crate_product_Without_photos_when_only_txtFile_sanded" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductControllerTest.delete_product_then_return_minus_the_deleted_product" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="delete_product_then_return_minus_the_deleted_product" />
+      <option name="METHOD_NAME" value="getAll_should_return_all_products" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,7 +157,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.getProductName_should_return_empty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.getProductsByName_should_return_empty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -174,7 +167,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
       <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="getProductName_should_return_empty" />
+      <option name="METHOD_NAME" value="getProductsByName_should_return_empty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductControllerTest.when_only_txtFile_uploaded_then_does_not_sett_the_photos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.my.shope.backend.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
+      <option name="METHOD_NAME" value="when_only_txtFile_uploaded_then_does_not_sett_the_photos" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -196,20 +205,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="JUnit.ProductControllerTest.crate_product_Without_photos_when_only_txtFile_sanded" />
-      <item itemvalue="JUnit.ProductControllerTest.delete_product_then_return_minus_the_deleted_product" />
+      <item itemvalue="JUnit.ProductControllerTest.getAll_should_return_all_products" />
       <item itemvalue="JUnit.ProductControllerTest.getProductById_should_return_product" />
-      <item itemvalue="JUnit.ProductControllerTest.getProductName_should_return_empty" />
+      <item itemvalue="JUnit.ProductControllerTest.getProductsByName_should_return_empty" />
+      <item itemvalue="JUnit.ProductControllerTest.when_only_txtFile_uploaded_then_does_not_sett_the_photos" />
       <item itemvalue="JUnit.ProductControllerTest" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProductControllerTest.crate_product_Without_photos_when_only_txtFile_sanded" />
+        <item itemvalue="JUnit.ProductControllerTest.when_only_txtFile_uploaded_then_does_not_sett_the_photos" />
         <item itemvalue="JUnit.ProductControllerTest" />
-        <item itemvalue="JUnit.ProductControllerTest.delete_product_then_return_minus_the_deleted_product" />
         <item itemvalue="JUnit.ProductControllerTest.getProductById_should_return_product" />
-        <item itemvalue="JUnit.ProductControllerTest.getProductName_should_return_empty" />
+        <item itemvalue="JUnit.ProductControllerTest.getProductsByName_should_return_empty" />
+        <item itemvalue="JUnit.ProductControllerTest.getAll_should_return_all_products" />
       </list>
     </recent_temporary>
   </component>
@@ -232,13 +241,6 @@
       <workItem from="1675004746195" duration="18927000" />
       <workItem from="1675025754007" duration="117114000" />
       <workItem from="1675343841228" duration="18876000" />
-    </task>
-    <task id="LOCAL-00024" summary="feat: improve useProducts with filter via isExcuted">
-      <created>1674732901978</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1674732901978</updated>
     </task>
     <task id="LOCAL-00025" summary="feat: show Added to Card done">
       <created>1674741109651</created>
@@ -576,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675420102450</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="fix: correct the name">
+      <created>1675420462936</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1675420462936</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +606,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="feat: delete product method" />
     <MESSAGE value="feat: add new api in frontend" />
     <MESSAGE value="feat: delete endpoint" />
     <MESSAGE value="feat: css refactor and button position" />
@@ -622,7 +630,8 @@
     <MESSAGE value="added: DirtiesContext" />
     <MESSAGE value="fix: org.apache.maven.plugins" />
     <MESSAGE value="fix: delete product" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: delete product" />
+    <MESSAGE value="fix: correct the name" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: correct the name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -636,6 +645,15 @@
           </properties>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java</url>
+          <line>92</line>
+          <properties class="com.my.shope.backend.product.ProductControllerTest" method="getProductById_should_return_product">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java</url>
           <line>34</line>
@@ -643,7 +661,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java</url>
-          <line>157</line>
+          <line>158</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

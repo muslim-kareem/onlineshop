@@ -146,6 +146,7 @@ public class ProductService {
                 case "description" -> product.setDescription(value);
                 case "price" -> product.setPrice(Double.parseDouble(value));
                 case "category" -> product.setCategory(value);
+                case"id" -> product.setId(value);
             }
         }
         //noinspection ResultOfMethodCallIgnored
