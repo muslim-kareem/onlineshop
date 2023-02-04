@@ -80,7 +80,8 @@ a {
     font-weight: bold;
     text-decoration: none
 }
-.logout-button{
+
+.logout-button {
     border: none;
     padding: 0;
     background-color: white;
@@ -246,10 +247,11 @@ a {
 
 .shopping-cart-remove-button {
     float: right;
-    background-color: #f65858;
-    font-size: .8rem;
+    background-color: #ef6e6e;
+    font-size: .6rem;
     margin: 0;
     display: block;
+    color: white;
 }
 
 /*UPDATE COMPONNENT */
@@ -275,7 +277,7 @@ a {
     background-color: #ecebeb;
 }
 
-.place-holder{
+.place-holder {
     min-height: 700px;
     margin: auto;
     text-align: center;
@@ -284,6 +286,6 @@ a {
     font-size: 2rem;
 }
 
-.dropdown{
+.dropdown {
     max-height: 12px;
 }

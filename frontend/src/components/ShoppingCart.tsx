@@ -24,10 +24,13 @@ export default function ShoppingCart(){
             <ProductContainer >
                 {shoppingCart.map(p => <div key={p.id} className={"product-card"}><ProductCard  children={
                     <>
-                    {/*REMOVE BUTTON*/}
-                    <button type="button" className="btn  p-1 shopping-cart-remove-button" onClick={()=> {onRemove(p.id)}}>Entfernen</button>
+
                     </>
                 } product={p}/>
+                    {/*REMOVE BUTTON*/}
+                    {name === "shopping-cart" ?<button type="button" className="btn  p-1 mt-2  shopping-cart-remove-button" onClick={() => {
+                        onRemove(p.id)
+                    }}>remove from shoppingCart</button>: ""}
 
 
                 </div>)}

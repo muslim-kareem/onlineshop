@@ -58,7 +58,6 @@ public class ProductController {
         return productService.getShoppingCart();
     }
 
-
     @PostMapping("/update/{id}")
     public List<Product> updateProduct(@PathVariable String id, @RequestParam("file[]") MultipartFile[] file) throws Exception {
      return productService.updateProduct(id,file);
