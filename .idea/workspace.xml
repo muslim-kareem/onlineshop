@@ -7,8 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="add dropdown and refactor Login/logout link">
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: getOrdered method">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test_and_refactor" />
+        <entry key="$PROJECT_DIR$" value="logout_and_footer" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -239,14 +239,7 @@
       <workItem from="1675025754007" duration="117114000" />
       <workItem from="1675343841228" duration="18876000" />
       <workItem from="1675437998030" duration="7246000" />
-      <workItem from="1675447569871" duration="21585000" />
-    </task>
-    <task id="LOCAL-00035" summary="rename: fronted application_properties">
-      <created>1675019314357</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1675019314357</updated>
+      <workItem from="1675447569871" duration="22480000" />
     </task>
     <task id="LOCAL-00036" summary="fix:  max-width of price-title-container &#10;feat: refactor CSS">
       <created>1675019849961</created>
@@ -584,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675528496925</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="small styling for footer">
+      <created>1675528853778</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1675528853778</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,8 +617,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="feat: delete product from shopping cart when product bought" />
-    <MESSAGE value="feat: by delete product then removed from Orders and  shopping cart" />
     <MESSAGE value="refactor deleteProduct method" />
     <MESSAGE value="reformat cod add simple stile to file upload button" />
     <MESSAGE value="feat: search on product and refactor NavBar component" />
@@ -642,7 +640,9 @@
     <MESSAGE value="first version of test and refactor" />
     <MESSAGE value="delete MyProperties.java class" />
     <MESSAGE value="add dropdown and refactor Login/logout link" />
-    <option name="LAST_COMMIT_MESSAGE" value="add dropdown and refactor Login/logout link" />
+    <MESSAGE value="small styling for footer" />
+    <MESSAGE value="feat: getOrdered method" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: getOrdered method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

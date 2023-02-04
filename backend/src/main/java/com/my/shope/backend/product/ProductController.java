@@ -42,6 +42,10 @@ public class ProductController {
     public List<Product> shoppingCart(){
         return productService.getShoppingCart();
     }
+    @GetMapping("/ordered")
+    public List<Product> getOrderedProducts() {
+        return productService.getOrdered();
+    }
 
     @DeleteMapping("/{id}")
     public List<Product> deleteProduct(@PathVariable String id){
@@ -61,8 +65,10 @@ public class ProductController {
     }
 
     @GetMapping("/search-by-name/{name}")
-    public List<Product> getTitle(@PathVariable String name){
+    public List<Product> getAllByProductName(@PathVariable String name){
        return productService.getAllByProductName(name);
     }
+
+
 
 }
