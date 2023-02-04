@@ -1,17 +1,23 @@
 import {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {Product} from "../model/Product";
-import {getAddedToCartProducts} from "../api/ProductApi";
+import {getOrdered, getShoppingCart} from "../api/ProductApi";
 
 
-export default function useShoppingCart(): [Product[], Dispatch<SetStateAction<Product[]>>] {
+export default function useShoppingCart(order: string): [Product[], Dispatch<SetStateAction<Product[]>>] {
     const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
         (async () => {
-                const products = await getAddedToCartProducts()
-                setProducts(products)
+            if(order === "shopping-cart"){
+                const shoppingCart = await getShoppingCart()
+                setProducts(shoppingCart)
+            }
+            if (order === "ordered"){
+                const ordered = await getOrdered();
+                setProducts(ordered)
+            }
         })();
-}, []);
+}, [order]);
 
     return [products,setProducts];
 }

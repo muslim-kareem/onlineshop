@@ -4,22 +4,15 @@ import LoginPage from "./pages/LoginPage";
 import LogoutButton from "./components/LogoutButton";
 import ProductDetails from "./components/ProductDetails";
 import React from "react";
+import ShoppingCart from "./components/ShoppingCart";
 
-import ShoppingCard from "./components/ShoppingCard"
 
 export default function Root(){
-
-
-
-
-
-
-
 
     return(
         <>
             <Routes>
-                <Route path={"/home-shopping-cart"} element={<ShoppingCard />} />
+                <Route path={"/home-shopping-cart/:name"} element={<ShoppingCart/>} />
                 <Route path={"/"} element={<Home/>} />
                 <Route path={"/login"} element={<LoginPage/> }
                 />

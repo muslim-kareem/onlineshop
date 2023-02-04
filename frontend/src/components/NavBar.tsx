@@ -38,7 +38,7 @@ export default function NavBar({user, onSearch}: {
                         </div>
                     }
 
-                    <Link to={"/home-shopping-cart"}
+                    <Link to={"/home-shopping-cart/shopping-cart"}
                           className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2"></Link>
 
                      {/*DROPDOWN*/}
@@ -50,7 +50,7 @@ export default function NavBar({user, onSearch}: {
                         </button>
                         <ul className="dropdown-menu">
                             <li>
-                                <button className="dropdown-item" type="button"><Link to={"/login"}>Ligin</Link></button>
+                                <button className="dropdown-item" type="button"><Link to={"/home-shopping-cart/ordered"}>myOrder</Link></button>
                             </li>
                             <li>
                                 <button className="dropdown-item" type="button"><Link to={"/login"}>Ligin</Link></button>

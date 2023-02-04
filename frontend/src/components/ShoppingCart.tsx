@@ -4,15 +4,18 @@ import useShoppingCart from "../hooks/useShoppingCart";
 import {removeFromShoppingCart} from "../api/ProductApi";
 import NavBar from "./NavBar";
 import useAuth from "../hooks/useAuth";
+import {useParams} from "react-router-dom";
 
-export default function ShoppingCard(){
-    const [shoppingCart,setShoppingCards] = useShoppingCart();
+export default function ShoppingCart(){
+    const {name} = useParams();
+    console.log(name)
+    const [shoppingCart,setShoppingCart] = useShoppingCart(name as string);
     const [user] = useAuth();
 
     const onRemove = (id: string) => {
         const theNewShoppingCard = shoppingCart.filter(f => f.id !== id)
         removeFromShoppingCart(id);
-        setShoppingCards([...theNewShoppingCard])
+        setShoppingCart([...theNewShoppingCard])
     }
 
     return (

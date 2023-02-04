@@ -11,8 +11,13 @@ export const getProduct = async (productId: string): Promise<Product> => {
     return response.data;
 };
 
-export const getAddedToCartProducts = async (): Promise<Product[]> => {
+export const getShoppingCart = async (): Promise<Product[]> => {
     const response = await axios.get<Product[]>('/api/products/shopping-carts');
+    return response.data;
+};
+
+export const getOrdered= async (): Promise<Product[]> => {
+    const response = await axios.get<Product[]>('/api/products/ordered');
     return response.data;
 };
 

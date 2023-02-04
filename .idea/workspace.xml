@@ -7,8 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: getOrdered method">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: new endPoint /api/ordered">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ShoppingCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ShoppingCart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useShoppingCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useShoppingCart.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,21 +248,7 @@
       <workItem from="1675025754007" duration="117114000" />
       <workItem from="1675343841228" duration="18876000" />
       <workItem from="1675437998030" duration="7246000" />
-      <workItem from="1675447569871" duration="22480000" />
-    </task>
-    <task id="LOCAL-00036" summary="fix:  max-width of price-title-container &#10;feat: refactor CSS">
-      <created>1675019849961</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1675019849961</updated>
-    </task>
-    <task id="LOCAL-00037" summary="fix: reformat cod and added method getAppUserById">
-      <created>1675019952367</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1675019952367</updated>
+      <workItem from="1675447569871" duration="26171000" />
     </task>
     <task id="LOCAL-00038" summary="fix: rename name field">
       <created>1675020010660</created>
@@ -584,7 +579,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675528853778</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="feat: getOrdered method">
+      <created>1675529602861</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1675529602861</updated>
+    </task>
+    <task id="LOCAL-00086" summary="feat: new endPoint /api/ordered">
+      <created>1675529901991</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1675529901991</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +626,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="refactor deleteProduct method" />
     <MESSAGE value="reformat cod add simple stile to file upload button" />
     <MESSAGE value="feat: search on product and refactor NavBar component" />
     <MESSAGE value="refactor: removeFromShoppingCarrOrOrdered method" />
@@ -642,7 +650,8 @@
     <MESSAGE value="add dropdown and refactor Login/logout link" />
     <MESSAGE value="small styling for footer" />
     <MESSAGE value="feat: getOrdered method" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: getOrdered method" />
+    <MESSAGE value="feat: new endPoint /api/ordered" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: new endPoint /api/ordered" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

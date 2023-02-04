@@ -11,7 +11,7 @@ export default function ProductDetails() {
 
     const {id} = useParams();
     const [user] = useAuth();
-    const[shoppingCart,setShoppingCart] = useShoppingCart();
+    const[shoppingCart,setShoppingCart] = useShoppingCart("shopping-cart");
     const [product] = useProduct(id as string);
     const [presentPhoto, setPresentPhoto] = useState<string>("")
 
