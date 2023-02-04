@@ -7,12 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="refactor addToCart and delete OrderController">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="first version of test and refactor">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/MyProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/order/OrderController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/order/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/order/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/TestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/TestData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
@@ -115,23 +113,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
-    <configuration name="AppUserControllerTest.createUser_whenAlreadyExists_ThrowConflict" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserControllerTest" />
-      <option name="METHOD_NAME" value="createUser_whenAlreadyExists_ThrowConflict" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ProductControllerTest">
     <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -179,6 +161,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductControllerTest.removeFromShoppingCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.my.shope.backend.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
+      <option name="METHOD_NAME" value="removeFromShoppingCart" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductControllerTest.shoppingCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -212,19 +210,19 @@
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
       <item itemvalue="JUnit.ProductControllerTest.buyProduct" />
+      <item itemvalue="JUnit.ProductControllerTest.removeFromShoppingCart" />
       <item itemvalue="JUnit.ProductControllerTest.shoppingCart" />
       <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
-      <item itemvalue="JUnit.AppUserControllerTest.createUser_whenAlreadyExists_ThrowConflict" />
       <item itemvalue="JUnit.ProductControllerTest" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProductControllerTest" />
+        <item itemvalue="JUnit.ProductControllerTest.removeFromShoppingCart" />
         <item itemvalue="JUnit.ProductControllerTest.shoppingCart" />
         <item itemvalue="JUnit.ProductControllerTest.buyProduct" />
-        <item itemvalue="JUnit.ProductControllerTest" />
         <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
-        <item itemvalue="JUnit.AppUserControllerTest.createUser_whenAlreadyExists_ThrowConflict" />
       </list>
     </recent_temporary>
   </component>
@@ -248,21 +246,7 @@
       <workItem from="1675025754007" duration="117114000" />
       <workItem from="1675343841228" duration="18876000" />
       <workItem from="1675437998030" duration="7246000" />
-      <workItem from="1675447569871" duration="5144000" />
-    </task>
-    <task id="LOCAL-00030" summary="clean up :)">
-      <created>1674754371119</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1674754371119</updated>
-    </task>
-    <task id="LOCAL-00031" summary="feat: remove from shopping card">
-      <created>1674820204950</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1674820204951</updated>
+      <workItem from="1675447569871" duration="12358000" />
     </task>
     <task id="LOCAL-00032" summary="feat: first admin curd buttons layout">
       <created>1674834171737</created>
@@ -593,7 +577,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675445859517</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="refactor addToCart and delete OrderController">
+      <created>1675503085930</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1675503085930</updated>
+    </task>
+    <task id="LOCAL-00080" summary="first version of test and refactor">
+      <created>1675509499842</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1675509499842</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +612,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix: small changes" />
     <MESSAGE value="update first version is done" />
     <MESSAGE value="feat: update product first version is done" />
     <MESSAGE value="feat: delete product from shopping cart when product bought" />
@@ -639,7 +636,8 @@
     <MESSAGE value="test: continue for appUser" />
     <MESSAGE value="small refactor" />
     <MESSAGE value="refactor addToCart and delete OrderController" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor addToCart and delete OrderController" />
+    <MESSAGE value="first version of test and refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="first version of test and refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -652,11 +650,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java</url>
-          <line>203</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserService.java</url>
