@@ -16,8 +16,9 @@ export default function Home() {
     const [files, setFiles] = useState<File[] | null>()
     const [productId, setProductId] = useState("")
     const [searchParam,setSearchParam] = useState('')
-    const [products, setProducts] = useProducts(searchParam);
+    const [products, setProducts,isReady] = useProducts(searchParam);
     const[user] = useAuth()
+
 
     const onSubmit = async (e: React.FormEvent) => {
         // FILE UPLOAD
@@ -69,17 +70,22 @@ export default function Home() {
     return (
         <>
             <NavBar user={user} onSearch={(e) => setSearchParam(e)} />
+            {isReady && products.length > 0 ?
             <ProductContainer>
                 {products.map(p => <div key={p.id} className={"product-card"}><ProductCard
                     children={<> </>}
                     product={p}/>
                     {/*CURD BUTTONS*/}
                     <div className={"crud-buttons-container"}>
-                        <UpdateProductButton onChange={onChange} onSubmit={onUpdate} onClick={() => {setProductId(p.id)}}/>
+                        <UpdateProductButton onChange={onChange} onSubmit={onUpdate} onClick={() => {
+                            setProductId(p.id)
+                        }}/>
                         <DeleteButton onDelete={() => onDelete(p.id)}/>
                     </div>
-                   </div>)}
+                </div>)}
             </ProductContainer>
+                :
+                <div className={"place-holder"}> Load data...</div>}
             <AddButton onSubmit={onSubmit} onChange={onChange}/>
             <Footer/>
             </>

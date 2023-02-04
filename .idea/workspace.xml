@@ -7,15 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="first version of test and refactor">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/MyProperties.java" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="add dropdown and refactor Login/logout link">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/TestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/TestData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/product_details.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product_details.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LogoutButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LogoutButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +36,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test_appUser" />
+        <entry key="$PROJECT_DIR$" value="test_and_refactor" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -113,7 +113,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductControllerTest">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -246,21 +246,7 @@
       <workItem from="1675025754007" duration="117114000" />
       <workItem from="1675343841228" duration="18876000" />
       <workItem from="1675437998030" duration="7246000" />
-      <workItem from="1675447569871" duration="12358000" />
-    </task>
-    <task id="LOCAL-00032" summary="feat: first admin curd buttons layout">
-      <created>1674834171737</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1674834171738</updated>
-    </task>
-    <task id="LOCAL-00033" summary="fix : sonar plugin">
-      <created>1674849644715</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1674849644715</updated>
+      <workItem from="1675447569871" duration="21283000" />
     </task>
     <task id="LOCAL-00034" summary="feat: setup gridFS">
       <created>1675019253152</created>
@@ -591,7 +577,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675509499842</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="first version of test and refactor">
+      <created>1675510737149</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1675510737149</updated>
+    </task>
+    <task id="LOCAL-00082" summary="delete MyProperties.java class">
+      <created>1675511116470</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1675511116470</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +602,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="test_and_refactor" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -612,8 +624,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="update first version is done" />
-    <MESSAGE value="feat: update product first version is done" />
     <MESSAGE value="feat: delete product from shopping cart when product bought" />
     <MESSAGE value="feat: by delete product then removed from Orders and  shopping cart" />
     <MESSAGE value="refactor deleteProduct method" />
@@ -637,7 +647,9 @@
     <MESSAGE value="small refactor" />
     <MESSAGE value="refactor addToCart and delete OrderController" />
     <MESSAGE value="first version of test and refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="first version of test and refactor" />
+    <MESSAGE value="delete MyProperties.java class" />
+    <MESSAGE value="add dropdown and refactor Login/logout link" />
+    <option name="LAST_COMMIT_MESSAGE" value="add dropdown and refactor Login/logout link" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
