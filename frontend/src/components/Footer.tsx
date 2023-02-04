@@ -6,7 +6,8 @@ export default function Footer(){
         <nav className="navbar footer">
         <div className="d-flex justify-content-between navbar-icons-container">
 
-            <div>impressum</div>
+            <div className="ms-5">impressum</div>
+            <div className="me-5">Products</div>
         </div>
         </nav>
     )

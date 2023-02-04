@@ -8,14 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="add dropdown and refactor Login/logout link">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/product_details.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product_details.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LogoutButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LogoutButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,14 +239,7 @@
       <workItem from="1675025754007" duration="117114000" />
       <workItem from="1675343841228" duration="18876000" />
       <workItem from="1675437998030" duration="7246000" />
-      <workItem from="1675447569871" duration="21283000" />
-    </task>
-    <task id="LOCAL-00034" summary="feat: setup gridFS">
-      <created>1675019253152</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1675019253152</updated>
+      <workItem from="1675447569871" duration="21585000" />
     </task>
     <task id="LOCAL-00035" summary="rename: fronted application_properties">
       <created>1675019314357</created>
@@ -591,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675511116470</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="add dropdown and refactor Login/logout link">
+      <created>1675528496925</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1675528496925</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
