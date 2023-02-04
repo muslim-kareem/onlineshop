@@ -131,6 +131,21 @@ public class ProductService {
 
         return addedToCardProducts;
     }
+    public List<Product> getOrdered() {
+        List<Product> orderedProducts = new ArrayList<>();
+        AppUser appUser = userService.getAuthenticatedUser();
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), true);
+
+        if (optionalOrder.isPresent()) {
+            for (String productId : optionalOrder.get().getProductsIds()) {
+                orderedProducts.add(getProductById(productId));
+            }
+        }
+
+        return orderedProducts;
+    }
+
+
 
 
 
