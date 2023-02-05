@@ -5,6 +5,7 @@ import org.springframework.mock.web.MockMultipartFile;
 
 public  class TestData {
 
+
     public final static String NEW_USER_ADMIN = """
             {
                 "username":"admin",
@@ -12,13 +13,13 @@ public  class TestData {
                 "role":"ADMIN"
             }
             """;
-    public final static String NEW_USER_BASIC = """
-            {
-                "username":"basic",
-                "password":"ps",
-                "role":"BASIC:
-            }
-            """;
+//    public final static String NEW_USER_BASIC = """
+//            {
+//                "username":"basic",
+//                "password":"ps",
+//                "role":"BASIC:
+//            }
+//            """;
 
     public final static String PRODUCT_EXPECTED_1= """
             {
@@ -79,5 +80,7 @@ public  class TestData {
     );
 
 
-    public static MockMultipartFile PRODUCT_FILE_PHOTO = new MockMultipartFile("file[]", "image.jpg", "image/jpeg", "some image".getBytes());
+//    public static MockMultipartFile PRODUCT_FILE_PHOTO = new MockMultipartFile("file[]", "image.jpg", "image/jpeg", "some image".getBytes());
+
+
 }

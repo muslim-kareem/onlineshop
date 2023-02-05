@@ -7,4 +7,7 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="projectKey" value="kareem8989_simple-onlineshope-my-capstone-project-frontend" />
+  </component>
 </module>
