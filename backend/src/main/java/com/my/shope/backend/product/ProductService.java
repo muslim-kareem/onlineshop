@@ -1,7 +1,8 @@
 package com.my.shope.backend.product;
 
-import com.my.shope.backend.appUser.AppUser;
-import com.my.shope.backend.appUser.AppUserService;
+import com.my.shope.backend.app_ser.AppUser;
+import com.my.shope.backend.app_ser.AppUserService;
+import com.my.shope.backend.exception.MyException;
 import com.my.shope.backend.gridfs.FileService;
 import com.my.shope.backend.order.Order;
 import com.my.shope.backend.order.OrderService;
@@ -12,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
+import java.io.IOException ;
 import java.util.*;
 
 
@@ -30,7 +31,7 @@ public class ProductService {
     private static final String PRODUCT_DETAILS = "product_details";
 
 
-    public Product createProduct(MultipartFile[] file) throws Exception {
+    public Product createProduct(MultipartFile[] file) throws MyException, IOException{
         Product product = new Product();
         List<String> imagesIds = new ArrayList<>();
 
@@ -57,7 +58,7 @@ public class ProductService {
     public Product getProductById(String id) {
         Optional<Product> optionalProduct = productRepo.findById(id);
         if (optionalProduct.isEmpty()) {
-            throw new NoSuchElementException("No Product found with this id: " + id);
+            throw new NoSuchElementException ("No Product found with this id: " + id);
         } else {
             return optionalProduct.get();
         }
@@ -92,26 +93,27 @@ public class ProductService {
 
     public Product buyProduct(String productId) {
         removeFromShoppingCart(productId);
+        AppUser appUser = appUserService.getAuthenticatedUser();
 
-        AppUser appUser = userService.getAuthenticatedUser();
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), true);
+        Optional<Order> optionOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), true);
 
-        if (optionalOrder.isEmpty()) {
+        if (optionOrder.isEmpty()) {
             Order newOrder = new Order(null, appUser.getId(), List.of(productId), true);
-            orderService.createOrder(newOrder);
+            orderService.save(newOrder);
             return getProductById(productId);
         } else {
 
             boolean isExist = true;
-            for (String pId : optionalOrder.get().getProductsIds()) {
+            for (String pId : optionOrder.get().getProductsIds()) {
+
                 if (productId.equals(pId)) {
                     isExist = false;
                     break;
                 }
             }
             if (isExist) {
-                optionalOrder.get().getProductsIds().add(productId);
-                orderService.createOrder(optionalOrder.get());
+                optionOrder.get().getProductsIds().add(productId);
+                orderService.save(optionOrder.get());
             }
         }
         return getProductById(productId);
@@ -174,7 +176,7 @@ public class ProductService {
     }
 
 
-    public void setProductDetails(Product product,String textFilePath) throws Exception {
+    public void setProductDetails(Product product,String textFilePath) throws MyException, IOException  {
 
         File file = new File(textFilePath) ;
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -196,13 +198,13 @@ public class ProductService {
                             value.equals("description")||
                             value.equals("price")||
                             value.equals("category")) {
-                            throw new Exception("unknown content of product_details text format");
+                            throw new MyException("unknown content of product_details text format");
                         }
                     }
                 }
             }
-        } catch (IOException e) {
-            throw new IOException("file is nor found :  " + e.getMessage());
+        } catch (IOException  e) {
+            throw new IOException ("file is nor found :  " + e.getMessage());
         }
 
 
@@ -222,7 +224,7 @@ public class ProductService {
     }
 
 
-    public List<Product> updateProduct(String productId, MultipartFile[] multipartFile) throws Exception {
+    public List<Product> updateProduct(String productId, MultipartFile[] multipartFile) throws MyException ,IOException  {
         Product productToUpdate = getProductById(productId);
 
         // if only product_details in the multipartFile then update only the details

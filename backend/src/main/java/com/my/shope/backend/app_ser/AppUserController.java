@@ -1,4 +1,4 @@
-package com.my.shope.backend.appUser;
+package com.my.shope.backend.app_ser;
 
 
 import lombok.RequiredArgsConstructor;
