@@ -8,6 +8,7 @@ public  class TestData {
 
     public final static String NEW_USER_ADMIN = """
             {
+                
                 "username":"admin",
                 "password":"ps",
                 "role":"ADMIN"
@@ -30,7 +31,6 @@ public  class TestData {
                 "category": "CLOSING"
             }
             """;
-
 
 
     public final static String PRODUCT_EXPECTED_2= """
@@ -80,7 +80,17 @@ public  class TestData {
     );
 
 
-//    public static MockMultipartFile PRODUCT_FILE_PHOTO = new MockMultipartFile("file[]", "image.jpg", "image/jpeg", "some image".getBytes());
+//    public final static String EXCUTID_ORDER = """
+//            {
+//                "id" : "1",
+//                "appUserId":"1",
+//                "productsIds":["1"],
+//                "isExecuted": true
+//            }
+//            """;
+
+
+//  public static MockMultipartFile PRODUCT_FILE_PHOTO = new MockMultipartFile("file[]", "image.jpg", "image/jpeg", "some image".getBytes());
 
 
 }

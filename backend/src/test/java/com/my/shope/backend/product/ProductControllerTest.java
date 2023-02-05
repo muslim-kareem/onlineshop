@@ -23,7 +23,7 @@ class ProductControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    public  void insertUser() throws Exception {
+public  void insertUser() throws Exception {
         mockMvc.perform(post("/api/app-users")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestData.NEW_USER_ADMIN)).andExpect( MockMvcResultMatchers.status().isOk()
@@ -150,6 +150,55 @@ class ProductControllerTest {
                 .file(TestData.PRODUCT_FILE_2)
         ).andExpect(status().isOk()) .andExpect(status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2));
         // when and actual
+
+    }
+
+    @Test
+    @WithMockUser(username = "admin", password = "pw",roles = "ADMIN")
+    void buyProduct_then_return_same_product() throws Exception {
+        insertUser();
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
+                .file(TestData.PRODUCT_FILE_1)
+        ).andExpect(status().isOk());
+
+        mockMvc.perform(put("/api/products/"+"1")).andExpectAll(
+                status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_1));
+
+    }
+
+    @Test
+    @WithMockUser(username = "admin", password = "pw",roles = "ADMIN")
+    void shoppingCart_get_array_of_product_that_contains_one_product() throws Exception {
+        insertUser();
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
+                .file(TestData.PRODUCT_FILE_2)
+        ).andExpect(status().isOk());
+
+        mockMvc.perform(put("/api/products/orders/"+"2")).andExpectAll(
+                status().isOk());
+
+        mockMvc.perform(get("/api/products/shopping-carts")).andExpectAll(
+                status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
+    }
+
+    @Test
+    @WithMockUser(username = "admin", password = "pw",roles = "ADMIN")
+    void removeFromShoppingCart_and_get_emptyArray() throws Exception {
+        insertUser();
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
+                .file(TestData.PRODUCT_FILE_2)
+        ).andExpect(status().isOk());
+
+        mockMvc.perform(put("/api/products/orders/"+"2")).andExpectAll(
+                status().isOk());
+
+        String expected =
+                """
+                        []
+                        """;
+
+        mockMvc.perform(delete("/api/products/shopping-carts/"+"2")).andExpectAll(
+                status().isOk()).andExpect(content().json(expected));
 
     }
 }
