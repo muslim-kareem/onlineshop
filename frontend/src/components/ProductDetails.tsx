@@ -17,7 +17,7 @@ export default function ProductDetails() {
 
     let sidePhotos = product.imageIDs.map((img, index) => {
 
-            return <div key={index} className={" card  border-5 side-photo "}>
+            return <div key={img.at(index)} className={" card  border-5 side-photo "}>
                 <img
                     src={IMAGES_PATH + img}
                     onClick={() => {

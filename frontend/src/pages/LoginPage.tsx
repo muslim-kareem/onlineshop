@@ -9,10 +9,6 @@ import axios from "axios";
 import NavBar from "../components/NavBar";
 import useAuth from "../hooks/useAuth";
 
-// export default function LoginPage ({login}:{
-//   login: (credentials: {username: string, password: string}) => void
-// }) {
-
 
 export default function LoginPage() {
 
