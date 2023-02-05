@@ -1,8 +1,8 @@
 package com.my.shope.backend.configuration;
 
 
-import com.my.shope.backend.appUser.AppUser;
-import com.my.shope.backend.appUser.AppUserService;
+import com.my.shope.backend.app_ser.AppUser;
+import com.my.shope.backend.app_ser.AppUserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
