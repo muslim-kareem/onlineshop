@@ -7,13 +7,14 @@ import com.my.shope.backend.gridfs.FileService;
 import com.my.shope.backend.order.Order;
 import com.my.shope.backend.order.OrderService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException ;
+import java.io.IOException;
 import java.util.*;
 
 
@@ -27,8 +28,15 @@ public class ProductService {
     private final FileService fileService;
    private final AppUserService appUserService;
 
-    public static final String DETAILS_PATH = "/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend/product_details.txt";
-    private static final String PRODUCT_DETAILS = "product_details";
+    public  String detailsPath;
+    @Value("${product.details}")
+    public void setDetailsPath(String value){
+        this.detailsPath = value;
+    }
+
+
+
+    private final String productDetails = "product_details";
 
 
     public Product createProduct(MultipartFile[] file) throws MyException, IOException{
@@ -36,10 +44,10 @@ public class ProductService {
         List<String> imagesIds = new ArrayList<>();
 
         for (MultipartFile multipartFile : file) {
-            if (Objects.requireNonNull(multipartFile.getOriginalFilename()).startsWith(PRODUCT_DETAILS)) {
+            if (Objects.requireNonNull(multipartFile.getOriginalFilename()).startsWith(productDetails)) {
 
                 fileService.saveProductDetailsFile(multipartFile);
-                setProductDetails(product, DETAILS_PATH);
+                setProductDetails(product, detailsPath);
 
             } else {
                 imagesIds.add(fileService.saveFile(multipartFile).getId());
@@ -204,7 +212,7 @@ public class ProductService {
                 }
             }
         } catch (IOException  e) {
-            throw new IOException ("file is nor found :  " + e.getMessage());
+            throw new IOException ("file is not found :  " + e.getMessage());
         }
 
 
@@ -228,18 +236,18 @@ public class ProductService {
         Product productToUpdate = getProductById(productId);
 
         // if only product_details in the multipartFile then update only the details
-        if(multipartFile.length == 1 && Objects.requireNonNull(multipartFile[0].getOriginalFilename()).startsWith(PRODUCT_DETAILS)){
+        if(multipartFile.length == 1 && Objects.requireNonNull(multipartFile[0].getOriginalFilename()).startsWith(productDetails)){
             fileService.saveProductDetailsFile(multipartFile[0]);
-            setProductDetails(productToUpdate, DETAILS_PATH);
+            setProductDetails(productToUpdate, detailsPath);
              productRepo.save(productToUpdate);
              return getAll();
         }
 
         // case contains the product_details file and photos
         for (MultipartFile file : multipartFile) {
-            if (Objects.requireNonNull(file.getOriginalFilename()).startsWith(PRODUCT_DETAILS)) {
+            if (Objects.requireNonNull(file.getOriginalFilename()).startsWith(productDetails)) {
                 fileService.saveProductDetailsFile(file);
-                setProductDetails(productToUpdate, DETAILS_PATH);
+                setProductDetails(productToUpdate, detailsPath);
             } else {
                 fileService.deleteImagesByIds(productToUpdate.getImageIDs());
             }

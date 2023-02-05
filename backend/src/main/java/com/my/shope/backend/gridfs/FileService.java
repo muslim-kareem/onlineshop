@@ -2,6 +2,7 @@ package com.my.shope.backend.gridfs;
 
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.client.gridfs.model.GridFSFile;
+import com.my.shope.backend.app_ser.AppUserService;
 import lombok.RequiredArgsConstructor;
 import org.bson.Document;
 import org.bson.types.ObjectId;
@@ -27,6 +28,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class FileService {
     private final GridFsTemplate gridFsTemplate;
+    private final AppUserService appUserService;
 
     public FileMetadata saveFile( MultipartFile multipartFile ) throws IOException {
         if (multipartFile.isEmpty()) {
@@ -41,7 +43,7 @@ public class FileService {
             multipartFile.getOriginalFilename(),
             multipartFile.getContentType(),
             BasicDBObjectBuilder.start()
-                .add("createdBy", "user-x")
+                .add(appUserService.getAuthenticatedUser().getUsername(), appUserService.getAuthenticatedUser().getRole())
                 .get()
         );
 
@@ -85,9 +87,8 @@ public class FileService {
 
 
 public void saveProductDetailsFile(MultipartFile file) throws IOException {
-       String path_directory ="/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend";
        Files.copy(file.getInputStream(),
-               Paths.get(path_directory + File.separator + file.getOriginalFilename()),
+               Paths.get("/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend" + File.separator + file.getOriginalFilename()),
                StandardCopyOption.REPLACE_EXISTING);
    }
 
