@@ -56,7 +56,6 @@ export default function Home() {
                 f.push(e.target.files[i]);
             }
             setFiles(f);
-
         }
 
     }
