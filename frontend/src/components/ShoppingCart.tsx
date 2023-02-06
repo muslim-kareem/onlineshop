@@ -42,9 +42,8 @@ export default function ShoppingCart(){
             </ProductContainer>
 
             {/*ORDER ALL BUTTON*/}
-            <div className={"details-button-container"}>
 
-                <button type="button" className="btn btn mr-auto add-to-cart-button" onClick={onOrderAll}
+                <button type="button" className="btn btn-danger float-end me-5 " onClick={onOrderAll}
                         data-bs-toggle="modal" data-bs-target="#shopping-cart-added">
                      Order all {shoppingCart.length} Products
                 </button>
@@ -66,7 +65,6 @@ export default function ShoppingCart(){
                         </div>
                     </div>
                 </div>
-            </div>
                 {/*---------------*/}
 
         </>
