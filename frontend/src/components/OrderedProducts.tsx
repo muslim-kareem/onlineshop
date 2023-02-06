@@ -8,6 +8,7 @@ import useAuth from "../hooks/useAuth";
 export default function OrderedProducts(){
     const [orderedProduct,setOrderedProduct] = useShoppingCart("ordered");
     const [user] = useAuth();
+
     const onRemove = (id: string) => {
         const theNewShoppingCard = orderedProduct.filter(f => f.id !== id)
         removeOrdered(id);

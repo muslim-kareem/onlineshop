@@ -22,14 +22,14 @@ export default function ShoppingCart(){
 
     const onOrderAll = () => {
         getOrderAll();
-        setShoppingCart([])
+        setShoppingCart([...shoppingCart])
         navigate("/ordered")
     }
 
     return (
         <>
             <NavBar user={user}/>
-            <ProductContainer >
+             <ProductContainer >
                 {shoppingCart.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
                     {/*REMOVE BUTTON*/}
                     <button type="button" className="btn  p-1 mt-2  shopping-cart-remove-button" onClick={() => {
@@ -43,6 +43,8 @@ export default function ShoppingCart(){
 
             {/*ORDER ALL BUTTON*/}
 
+            {shoppingCart.length > 0 ?
+            <div>
                 <button type="button" className="btn btn-danger float-end me-5 " onClick={onOrderAll}
                         data-bs-toggle="modal" data-bs-target="#shopping-cart-added">
                      Order all {shoppingCart.length} Products
@@ -65,6 +67,9 @@ export default function ShoppingCart(){
                         </div>
                     </div>
                 </div>
+                </div>:
+            <div>No Product added to shopping</div>
+            }
                 {/*---------------*/}
 
         </>
