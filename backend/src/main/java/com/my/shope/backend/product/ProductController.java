@@ -70,6 +70,11 @@ public class ProductController {
        return productService.getAllByProductName(name);
     }
 
+    @GetMapping("/order-all")
+    public void orderAll(){
+        productService.orderAll();
+    }
+
 
 
 }

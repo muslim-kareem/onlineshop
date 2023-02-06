@@ -276,4 +276,10 @@ public class ProductService {
         }
         return theList;
     }
+
+    public void orderAll(){
+        for (Product product : getShoppingCart()) {
+            buyProduct(product.getId());
+        }
+    }
 }

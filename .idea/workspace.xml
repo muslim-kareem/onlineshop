@@ -7,17 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: sonar fronted refactor">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="add button to ShoppingCart.tsx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/product_details.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product_details.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ordered_products" />
+        <entry key="$PROJECT_DIR$" value="sonar_fixes" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -250,28 +244,7 @@
       <workItem from="1675343841228" duration="18876000" />
       <workItem from="1675437998030" duration="7246000" />
       <workItem from="1675447569871" duration="51631000" />
-      <workItem from="1675607383471" duration="7712000" />
-    </task>
-    <task id="LOCAL-00043" summary="feat: set product details from txt file">
-      <created>1675020650410</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1675020650410</updated>
-    </task>
-    <task id="LOCAL-00044" summary="feat: create product with MultipartFile">
-      <created>1675020859798</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1675020859798</updated>
-    </task>
-    <task id="LOCAL-00045" summary="fix: add new product button and refactor onCubmit and onChange">
-      <created>1675086551546</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1675086551546</updated>
+      <workItem from="1675607383471" duration="12101000" />
     </task>
     <task id="LOCAL-00046" summary="fix: setFiles">
       <created>1675087293679</created>
@@ -595,7 +568,28 @@
       <option name="project" value="LOCAL" />
       <updated>1675625144763</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="small refactoring and bug fix">
+      <created>1675678544746</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1675678544746</updated>
+    </task>
+    <task id="LOCAL-00093" summary="small refactoring and bug fix">
+      <created>1675682515478</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1675682515479</updated>
+    </task>
+    <task id="LOCAL-00094" summary="add button to ShoppingCart.tsx">
+      <created>1675682566523</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1675682566523</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,8 +622,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="test: AppUserService" />
-    <MESSAGE value="feat: some tests" />
     <MESSAGE value="add: maven-surefire-plugin" />
     <MESSAGE value="added: DirtiesContext" />
     <MESSAGE value="fix: org.apache.maven.plugins" />
@@ -653,7 +645,9 @@
     <MESSAGE value="feat: show ordered product" />
     <MESSAGE value="fix: sonar backend" />
     <MESSAGE value="fix: sonar fronted refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: sonar fronted refactor" />
+    <MESSAGE value="small refactoring and bug fix" />
+    <MESSAGE value="add button to ShoppingCart.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="add button to ShoppingCart.tsx" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
