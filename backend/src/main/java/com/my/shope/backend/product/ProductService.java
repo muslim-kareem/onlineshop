@@ -28,7 +28,7 @@ public class ProductService {
     private final FileService fileService;
    private final AppUserService appUserService;
 
-    public  String detailsPath;
+    private  String detailsPath;
     @Value("${product.details}")
     public void setDetailsPath(String value){
         this.detailsPath = value;
@@ -251,13 +251,12 @@ public class ProductService {
             } else {
                 fileService.deleteImagesByIds(productToUpdate.getImageIDs());
             }
-
         }
 
         //just to delete old photos and sett the new photos to mey productToUpdate
         productToUpdate.setImageIDs(new ArrayList<>());
         for (MultipartFile file : multipartFile) {
-            if (!Objects.requireNonNull(file.getOriginalFilename()).startsWith("PRODUCT_DETAILS")) {
+            if (!Objects.requireNonNull(file.getOriginalFilename()).startsWith(productDetails)) {
                 productToUpdate.getImageIDs().add(fileService.saveFile(file).getId());
             }
         }

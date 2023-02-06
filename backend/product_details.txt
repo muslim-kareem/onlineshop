@@ -1,4 +1,4 @@
-name:Jack & Jones Wollmantel
-description:Eleganter Mantel für Herren der Marke JACK & JONES. Sehr angenehm zu tragen, bequem und sportlich zugleich geschnitten. Durch die schlichte Ausführung lässt sich dieser Wollmantel mit vielen Kleidungsstücken kombinieren. Weiche, atmungsaktive Wolle und eine präzise Verarbeitung zeichnen die Mode der Marke JACK & JONES aus.
-price:59.90
+name:Calvin Klein Blouson »CRINKLE NYLON BLOUSON«
+description:Mit dem Blouson »CRINKLE NYLON BLOUSON« von Calvin Klein kaufst du ein neues Lieblingsstück. Der Kragen steht nach oben und wird nicht umgeschlagen. In den Eingrifftaschen
+price:53.99
 category:CLOSING
