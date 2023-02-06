@@ -7,11 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="order button style">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: remove product from order">
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/OrderedProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/OrderedProducts.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,21 +241,7 @@
       <workItem from="1675343841228" duration="18876000" />
       <workItem from="1675437998030" duration="7246000" />
       <workItem from="1675447569871" duration="51631000" />
-      <workItem from="1675607383471" duration="17687000" />
-    </task>
-    <task id="LOCAL-00049" summary="fix: remove comment">
-      <created>1675099324828</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1675099324828</updated>
-    </task>
-    <task id="LOCAL-00050" summary="feat: delete product component with MUI">
-      <created>1675151988749</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1675151988754</updated>
+      <workItem from="1675607383471" duration="20981000" />
     </task>
     <task id="LOCAL-00051" summary="feat: delete product method">
       <created>1675152044420</created>
@@ -589,7 +572,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675693158659</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="feat: remove product from order">
+      <created>1675694180079</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1675694180079</updated>
+    </task>
+    <task id="LOCAL-00099" summary="feat: remove product from order">
+      <created>1675696398389</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1675696398389</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +619,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix: delete product" />
     <MESSAGE value="fix: correct the name" />
     <MESSAGE value="fix: test refactoring" />
     <MESSAGE value="add: product_details.txt and remove delete product_details.txt file from setProductDetails" />
@@ -647,7 +643,8 @@
     <MESSAGE value="add: method order all and endpoint" />
     <MESSAGE value="removed child from ProductCard component" />
     <MESSAGE value="order button style" />
-    <option name="LAST_COMMIT_MESSAGE" value="order button style" />
+    <MESSAGE value="feat: remove product from order" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: remove product from order" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

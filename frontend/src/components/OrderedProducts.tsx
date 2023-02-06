@@ -4,6 +4,7 @@ import useShoppingCart from "../hooks/useShoppingCart";
 import {removeOrdered} from "../api/ProductApi";
 import NavBar from "./NavBar";
 import useAuth from "../hooks/useAuth";
+import React from "react";
 
 export default function OrderedProducts(){
     const [orderedProduct,setOrderedProduct] = useShoppingCart("ordered");
@@ -18,6 +19,7 @@ export default function OrderedProducts(){
     return (
         <>
             <NavBar user={user}/>
+            {orderedProduct.length > 0 ?
             <ProductContainer >
                 {orderedProduct.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
                     {/*REMOVE BUTTON*/}
@@ -27,6 +29,7 @@ export default function OrderedProducts(){
                 </div>)}
 
             </ProductContainer>
+           : <div className={"place-holder"}>No Products ordered</div>}
         </>
     )
 }

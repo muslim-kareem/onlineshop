@@ -23,7 +23,7 @@ export default function ShoppingCart(){
     const onOrderAll = () => {
         getOrderAll();
         setShoppingCart([...shoppingCart])
-        navigate("/ordered")
+        navigate("/")
     }
 
     return (
@@ -56,8 +56,9 @@ export default function ShoppingCart(){
                         <div className="modal-content">
 
                             <div className="modal-body">
-                                you have added the Product to your Shopping Cart <div
-                                className="fa-sharp fa-solid fa-circle-check"></div>
+                                thank you for your order! <br/>
+                                you can find the ordered Products in myOrder
+                                <div className="fa-sharp fa-solid fa-circle-check"></div>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary"
@@ -68,7 +69,7 @@ export default function ShoppingCart(){
                     </div>
                 </div>
                 </div>:
-            <div className={"place-holder"}>No Product added to shopping</div>
+            <div className={"place-holder"}>No Products added to shopping</div>
             }
                 {/*---------------*/}
 
