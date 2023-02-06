@@ -21,7 +21,7 @@ export const getOrdered= async (): Promise<Product[]> => {
     return response.data;
 };
 
-export const orderAll= async ()=> {
+export const getOrderAll= async ()=> {
     const response = await axios.get('/api/products/order-all');
     return response.data;
 };

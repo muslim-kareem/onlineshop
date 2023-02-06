@@ -1,15 +1,17 @@
 import ProductContainer from "./ProductContainer";
 import ProductCard from "./ProductCard";
 import useShoppingCart from "../hooks/useShoppingCart";
-import {removeFromShoppingCart} from "../api/ProductApi";
+import {getOrderAll, removeFromShoppingCart} from "../api/ProductApi";
 import NavBar from "./NavBar";
 import useAuth from "../hooks/useAuth";
 import React from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function ShoppingCart(){
 
     const [shoppingCart,setShoppingCart] = useShoppingCart("shopping-cart");
     const [user] = useAuth();
+    const navigate = useNavigate();
 
     const onRemove = (id: string) => {
         const theNewShoppingCard = shoppingCart.filter(f => f.id !== id)
@@ -17,15 +19,18 @@ export default function ShoppingCart(){
         setShoppingCart([...theNewShoppingCard])
     }
 
+
+    const onOrderAll = () => {
+        getOrderAll();
+        setShoppingCart([])
+        navigate("/ordered")
+    }
+
     return (
         <>
             <NavBar user={user}/>
             <ProductContainer >
-                {shoppingCart.map(p => <div key={p.id} className={"product-card"}><ProductCard  children={
-                    <>
-
-                    </>
-                } product={p}/>
+                {shoppingCart.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
                     {/*REMOVE BUTTON*/}
                     <button type="button" className="btn  p-1 mt-2  shopping-cart-remove-button" onClick={() => {
                         onRemove(p.id)
@@ -35,10 +40,11 @@ export default function ShoppingCart(){
                 </div>)}
 
             </ProductContainer>
-            {/*ADD TO CART BUTTON*/}
+
+            {/*ORDER ALL BUTTON*/}
             <div className={"details-button-container"}>
 
-                <button type="button" className="btn btn m-t-3 add-to-cart-button" onClick={( ) => {} }
+                <button type="button" className="btn btn mr-auto add-to-cart-button" onClick={onOrderAll}
                         data-bs-toggle="modal" data-bs-target="#shopping-cart-added">
                      Order all {shoppingCart.length} Products
                 </button>

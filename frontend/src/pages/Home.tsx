@@ -71,9 +71,7 @@ export default function Home() {
             <NavBar user={user} onSearch={(e) => setSearchParam(e)} />
             {isReady && products.length > 0 ?
             <ProductContainer>
-                {products.map(p => <div key={p.id} className={"product-card"}><ProductCard
-                    children={<> </>}
-                    product={p}/>
+                {products.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
                     {/*CURD BUTTONS*/}
                     <div className={"crud-buttons-container"}>
                         <UpdateProductButton onChange={onChange} onSubmit={onUpdate} onClick={() => {

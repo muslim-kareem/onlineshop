@@ -18,11 +18,7 @@ export default function OrderedProducts(){
         <>
             <NavBar user={user}/>
             <ProductContainer >
-                {shoppingCart.map(p => <div key={p.id} className={"product-card"}><ProductCard  children={
-                    <>
-
-                    </>
-                } product={p}/>
+                {shoppingCart.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
                     {/*REMOVE BUTTON*/}
                      <button type="button" className="btn  p-1 mt-2  shopping-cart-remove-button" onClick={() => {
                         onRemove(p.id)
