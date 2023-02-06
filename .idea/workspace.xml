@@ -7,11 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="add button to ShoppingCart.tsx">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/product_details.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product_details.txt" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="order button style">
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/OrderedProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/OrderedProducts.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sonar_fixes" />
+        <entry key="$PROJECT_DIR$" value="order_all_product_button" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -244,28 +244,7 @@
       <workItem from="1675343841228" duration="18876000" />
       <workItem from="1675437998030" duration="7246000" />
       <workItem from="1675447569871" duration="51631000" />
-      <workItem from="1675607383471" duration="12101000" />
-    </task>
-    <task id="LOCAL-00046" summary="fix: setFiles">
-      <created>1675087293679</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1675087293679</updated>
-    </task>
-    <task id="LOCAL-00047" summary="fix: clean up some spaces">
-      <created>1675091926280</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1675091926280</updated>
-    </task>
-    <task id="LOCAL-00048" summary="fix: fix and refactor useProducts and ShoppingCard component">
-      <created>1675098083872</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1675098083872</updated>
+      <workItem from="1675607383471" duration="17687000" />
     </task>
     <task id="LOCAL-00049" summary="fix: remove comment">
       <created>1675099324828</created>
@@ -589,7 +568,28 @@
       <option name="project" value="LOCAL" />
       <updated>1675682566523</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="add: method order all and endpoint">
+      <created>1675683381226</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1675683381226</updated>
+    </task>
+    <task id="LOCAL-00096" summary="removed child from ProductCard component">
+      <created>1675689998360</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1675689998360</updated>
+    </task>
+    <task id="LOCAL-00097" summary="order button style">
+      <created>1675693158659</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1675693158659</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,9 +622,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="add: maven-surefire-plugin" />
-    <MESSAGE value="added: DirtiesContext" />
-    <MESSAGE value="fix: org.apache.maven.plugins" />
     <MESSAGE value="fix: delete product" />
     <MESSAGE value="fix: correct the name" />
     <MESSAGE value="fix: test refactoring" />
@@ -647,7 +644,10 @@
     <MESSAGE value="fix: sonar fronted refactor" />
     <MESSAGE value="small refactoring and bug fix" />
     <MESSAGE value="add button to ShoppingCart.tsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="add button to ShoppingCart.tsx" />
+    <MESSAGE value="add: method order all and endpoint" />
+    <MESSAGE value="removed child from ProductCard component" />
+    <MESSAGE value="order button style" />
+    <option name="LAST_COMMIT_MESSAGE" value="order button style" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

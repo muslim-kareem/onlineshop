@@ -54,6 +54,12 @@ public class ProductController {
         return productService.deleteProduct(id);
     }
 
+    @DeleteMapping("/ordered/{id}")
+    public List<Product> removeOrdered(@PathVariable String id){
+        productService.removeFromOrdered(id);
+        return productService.getOrdered();
+    }
+
     @DeleteMapping("/shopping-carts/{id}")
     public List<Product> removeFromShoppingCart(@PathVariable String id){
         productService.removeFromShoppingCart(id);

@@ -164,7 +164,7 @@ public class ProductService {
         Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
         removeProductFromOrder(productId,optionalOrder);
     }
-    public void removeFromExecutedOrder(String productId) {
+    public void removeFromOrdered(String productId) {
         String authorizedUserId = userService.getAuthorizedUserId();
         Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, true);
         removeProductFromOrder(productId,optionalOrder);
@@ -221,7 +221,7 @@ public class ProductService {
     public List<Product> deleteProduct(String productId){
         //remove from shopping cart and ordered when product is bought
         removeFromShoppingCart(productId);
-        removeFromExecutedOrder(productId);
+        removeFromOrdered(productId);
 
         //delete product and all photos
         Product product = getProductById(productId);

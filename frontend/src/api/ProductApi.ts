@@ -29,6 +29,11 @@ export const removeFromShoppingCart = async (productId: string): Promise<Product
     const response = await axios.delete('/api/products/shopping-carts/'+productId);
     return response.data;
 };
+
+export const removeOrdered = async (productId: string): Promise<Product> => {
+    const response = await axios.delete('/api/products/ordered/'+productId);
+    return response.data;
+};
 export const deleteProduct = async (productId: string): Promise<Product> => {
     const response = await axios.delete<Product>('/api/products/'+productId);
     return response.data;
