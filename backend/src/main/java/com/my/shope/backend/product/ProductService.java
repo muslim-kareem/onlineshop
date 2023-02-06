@@ -27,16 +27,11 @@ public class ProductService {
     private final AppUserService userService;
     private final FileService fileService;
    private final AppUserService appUserService;
-
-    private  String detailsPath;
     @Value("${product.details}")
-    public void setDetailsPath(String value){
-        this.detailsPath = value;
-    }
+    private  String detailsPath;
 
 
-
-    private final String productDetails = "product_details";
+    private static final String PRODUCT_DETAILS = "product_details";
 
 
     public Product createProduct(MultipartFile[] file) throws MyException, IOException{
@@ -44,7 +39,7 @@ public class ProductService {
         List<String> imagesIds = new ArrayList<>();
 
         for (MultipartFile multipartFile : file) {
-            if (Objects.requireNonNull(multipartFile.getOriginalFilename()).startsWith(productDetails)) {
+            if (Objects.requireNonNull(multipartFile.getOriginalFilename()).startsWith(PRODUCT_DETAILS)) {
 
                 fileService.saveProductDetailsFile(multipartFile);
                 setProductDetails(product, detailsPath);
@@ -184,7 +179,7 @@ public class ProductService {
     }
 
 
-    public void setProductDetails(Product product,String textFilePath) throws MyException, IOException  {
+    public void setProductDetails(Product product, String textFilePath) throws MyException, IOException  {
 
         File file = new File(textFilePath) ;
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -236,7 +231,7 @@ public class ProductService {
         Product productToUpdate = getProductById(productId);
 
         // if only product_details in the multipartFile then update only the details
-        if(multipartFile.length == 1 && Objects.requireNonNull(multipartFile[0].getOriginalFilename()).startsWith(productDetails)){
+        if(multipartFile.length == 1 && Objects.requireNonNull(multipartFile[0].getOriginalFilename()).startsWith(PRODUCT_DETAILS)){
             fileService.saveProductDetailsFile(multipartFile[0]);
             setProductDetails(productToUpdate, detailsPath);
              productRepo.save(productToUpdate);
@@ -245,7 +240,7 @@ public class ProductService {
 
         // case contains the product_details file and photos
         for (MultipartFile file : multipartFile) {
-            if (Objects.requireNonNull(file.getOriginalFilename()).startsWith(productDetails)) {
+            if (Objects.requireNonNull(file.getOriginalFilename()).startsWith(PRODUCT_DETAILS)) {
                 fileService.saveProductDetailsFile(file);
                 setProductDetails(productToUpdate, detailsPath);
             } else {
@@ -256,7 +251,7 @@ public class ProductService {
         //just to delete old photos and sett the new photos to mey productToUpdate
         productToUpdate.setImageIDs(new ArrayList<>());
         for (MultipartFile file : multipartFile) {
-            if (!Objects.requireNonNull(file.getOriginalFilename()).startsWith(productDetails)) {
+            if (!Objects.requireNonNull(file.getOriginalFilename()).startsWith(PRODUCT_DETAILS)) {
                 productToUpdate.getImageIDs().add(fileService.saveFile(file).getId());
             }
         }
