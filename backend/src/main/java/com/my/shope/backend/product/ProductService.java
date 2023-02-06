@@ -272,6 +272,17 @@ public class ProductService {
         return theList;
     }
 
+    public List<Product> getAllByProductCategory(String category){
+        List<Product> theList = new ArrayList<>();
+
+        for (Product product: getAll()) {
+            if(product.getCategory().equals(category)){
+                theList.add(product);
+            }
+        }
+        return theList;
+    }
+
     public void orderAll(){
         for (Product product : getShoppingCart()) {
             buyProduct(product.getId());

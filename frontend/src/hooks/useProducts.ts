@@ -11,7 +11,8 @@ export default function useProducts(name: string): [Product[], ((value: (((prevS
         (async () => {
            try{
 
-            if (name.length > 0){
+           // && name.toLowerCase() === name
+            if (name.length > 0 ) {
                 const products = await getByTitle(name)
                 setProducts(products)
             }else {
@@ -19,7 +20,7 @@ export default function useProducts(name: string): [Product[], ((value: (((prevS
                 setProducts(products)
             }
            }catch (e){
-               console.log("error : "+ e)
+               console.log("error : " + e)
            }finally {
                setIsReady(true)
            }

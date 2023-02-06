@@ -7,8 +7,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: remove product from order">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: category endpoint and method">
+      <change afterPath="$PROJECT_DIR$/frontend/public/logo192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,18 +30,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="TypeScript File" />
         <option value="JUnit5 Test Class" />
         <option value="TypeScript JSX File" />
         <option value="Class" />
         <option value="Enum" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="order_all_product_button" />
+        <entry key="$PROJECT_DIR$" value="remove_from_ordered" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -87,11 +98,11 @@
       <recent name="$PROJECT_DIR$/frontend/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/pages" />
       <recent name="$PROJECT_DIR$/frontend/src/hooks" />
       <recent name="$PROJECT_DIR$/frontend/public/images" />
       <recent name="$PROJECT_DIR$/frontend/src/components" />
       <recent name="$PROJECT_DIR$/frontend/public" />
-      <recent name="$PROJECT_DIR$/frontend/src/pages" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -241,42 +252,7 @@
       <workItem from="1675343841228" duration="18876000" />
       <workItem from="1675437998030" duration="7246000" />
       <workItem from="1675447569871" duration="51631000" />
-      <workItem from="1675607383471" duration="20981000" />
-    </task>
-    <task id="LOCAL-00051" summary="feat: delete product method">
-      <created>1675152044420</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1675152044420</updated>
-    </task>
-    <task id="LOCAL-00052" summary="feat: add new api in frontend">
-      <created>1675152099603</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1675152099604</updated>
-    </task>
-    <task id="LOCAL-00053" summary="feat: delete endpoint">
-      <created>1675152241712</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1675152241712</updated>
-    </task>
-    <task id="LOCAL-00054" summary="feat: css refactor and button position">
-      <created>1675159522295</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1675159522295</updated>
-    </task>
-    <task id="LOCAL-00055" summary="fix: delete comments">
-      <created>1675159650822</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1675159650822</updated>
+      <workItem from="1675607383471" duration="33388000" />
     </task>
     <task id="LOCAL-00056" summary="fix: clean spaces">
       <created>1675162520009</created>
@@ -586,7 +562,42 @@
       <option name="project" value="LOCAL" />
       <updated>1675696398389</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="small refactor">
+      <created>1675701353931</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1675701353931</updated>
+    </task>
+    <task id="LOCAL-00101" summary="feat: in case no product added to shopping cart">
+      <created>1675701412916</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1675701412916</updated>
+    </task>
+    <task id="LOCAL-00102" summary="small changes">
+      <created>1675708058661</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1675708058661</updated>
+    </task>
+    <task id="LOCAL-00103" summary="add: category dropdown">
+      <created>1675710285438</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1675710285438</updated>
+    </task>
+    <task id="LOCAL-00104" summary="feat: category endpoint and method">
+      <created>1675711213820</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1675711213820</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,13 +630,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix: correct the name" />
-    <MESSAGE value="fix: test refactoring" />
-    <MESSAGE value="add: product_details.txt and remove delete product_details.txt file from setProductDetails" />
-    <MESSAGE value="fix: sonar" />
     <MESSAGE value="fix: sonar (org.apache.maven.plugins)" />
     <MESSAGE value="test: continue for appUser" />
-    <MESSAGE value="small refactor" />
     <MESSAGE value="refactor addToCart and delete OrderController" />
     <MESSAGE value="first version of test and refactor" />
     <MESSAGE value="delete MyProperties.java class" />
@@ -644,7 +650,12 @@
     <MESSAGE value="removed child from ProductCard component" />
     <MESSAGE value="order button style" />
     <MESSAGE value="feat: remove product from order" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: remove product from order" />
+    <MESSAGE value="small refactor" />
+    <MESSAGE value="feat: in case no product added to shopping cart" />
+    <MESSAGE value="small changes" />
+    <MESSAGE value="add: category dropdown" />
+    <MESSAGE value="feat: category endpoint and method" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: category endpoint and method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

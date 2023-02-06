@@ -11,8 +11,8 @@ export const getProductById = async (productId: string): Promise<Product> => {
     return response.data;
 };
 
-export const getProductByCategory = async (productId: string): Promise<Product> => {
-    const response = await axios.get<Product>('/api/products/'+productId);
+export const getProductByCategory = async (category: string): Promise<Product[]> => {
+    const response = await axios.get<Product[]>('/api/products/category/'+category);
     return response.data;
 };
 

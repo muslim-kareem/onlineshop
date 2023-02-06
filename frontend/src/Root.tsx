@@ -2,7 +2,7 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import LogoutButton from "./components/LogoutButton";
-import ProductDetails from "./components/ProductDetails";
+import ProductDetails from "./pages/ProductDetails";
 import React from "react";
 import ShoppingCart from "./components/ShoppingCart";
 import OrderedProducts from "./components/OrderedProducts";

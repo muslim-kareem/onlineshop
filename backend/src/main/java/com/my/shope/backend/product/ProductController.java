@@ -75,6 +75,10 @@ public class ProductController {
     public List<Product> getAllByProductName(@PathVariable String name){
        return productService.getAllByProductName(name);
     }
+    @GetMapping("/category/{category}")
+    public List<Product> getAllByCateGory(@PathVariable String category){
+       return productService.getAllByProductCategory(category);
+    }
 
     @GetMapping("/order-all")
     public void orderAll(){

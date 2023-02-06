@@ -75,7 +75,7 @@ export default function NavBar({user, onSearch}: {
                                 <button className="dropdown-item" type="button"><Link to={"/"}>T-Shirt</Link></button>
                             </li>
                             <li>
-                                <button className="dropdown-item" type="button"><Link to={"/coat"}>Coat</Link></button>
+                                <button className="dropdown-item" type="button"><Link to={"/COAT"}>Coat</Link></button>
                             </li>
                             <li>
                                 <button className="dropdown-item" type="button"><Link to={"/"}>Shoe</Link></button>
