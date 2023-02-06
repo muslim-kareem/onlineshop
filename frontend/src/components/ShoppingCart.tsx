@@ -4,6 +4,7 @@ import useShoppingCart from "../hooks/useShoppingCart";
 import {removeFromShoppingCart} from "../api/ProductApi";
 import NavBar from "./NavBar";
 import useAuth from "../hooks/useAuth";
+import React from "react";
 
 export default function ShoppingCart(){
 
@@ -34,6 +35,34 @@ export default function ShoppingCart(){
                 </div>)}
 
             </ProductContainer>
+            {/*ADD TO CART BUTTON*/}
+            <div className={"details-button-container"}>
+
+                <button type="button" className="btn btn m-t-3 add-to-cart-button" onClick={( ) => {} }
+                        data-bs-toggle="modal" data-bs-target="#shopping-cart-added">
+                     Order all {shoppingCart.length} Products
+                </button>
+
+                <div className="modal fade" id="shopping-cart-added" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+
+                            <div className="modal-body">
+                                you have added the Product to your Shopping Cart <div
+                                className="fa-sharp fa-solid fa-circle-check"></div>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary"
+                                        data-bs-dismiss="modal">close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                {/*---------------*/}
+
         </>
     )
 }
