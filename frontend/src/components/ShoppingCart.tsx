@@ -68,7 +68,7 @@ export default function ShoppingCart(){
                     </div>
                 </div>
                 </div>:
-            <div>No Product added to shopping</div>
+            <div className={"place-holder"}>No Product added to shopping</div>
             }
                 {/*---------------*/}
 
