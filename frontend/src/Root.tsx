@@ -16,8 +16,8 @@ export default function Root(){
                 <Route path={"/home-shopping-cart"} element={<ShoppingCart/>} />
                 <Route path={"/ordered"} element={<OrderedProducts/>} />
                 <Route path={"/"} element={<Home/>} />
-                <Route path={"/login"} element={<LoginPage/> }
-                />
+                <Route path={"/:category"} element={<Home/>} />
+                <Route path={"/login"} element={<LoginPage/> }/>
                 <Route path={"/"} element={<LogoutButton/>} />
                 <Route path={"/details/:id"} element={<ProductDetails/>} />
             </Routes>

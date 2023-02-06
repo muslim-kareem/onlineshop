@@ -6,7 +6,12 @@ export const getProducts = async (): Promise<Product[]> => {
     return response.data;
 };
 
-export const getProduct = async (productId: string): Promise<Product> => {
+export const getProductById = async (productId: string): Promise<Product> => {
+    const response = await axios.get<Product>('/api/products/'+productId);
+    return response.data;
+};
+
+export const getProductByCategory = async (productId: string): Promise<Product> => {
     const response = await axios.get<Product>('/api/products/'+productId);
     return response.data;
 };
