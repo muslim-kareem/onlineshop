@@ -36,6 +36,13 @@ export default function SignUpPage() {
             try {
                 const res = await axios.post("/api/app-users", credentialsUser);
                 setUser(res.data)
+
+                await axios.post("/api/app-users/login", null, {
+                    headers: {
+                        "Authorization": "Basic " + window.btoa(`${credentialsUser.username}:${credentialsUser.password}`)
+                    }
+                });
+
                 navigate(redirect);
             } catch (e) {
                 setErrors((errors) => [
@@ -66,7 +73,6 @@ export default function SignUpPage() {
                                 onChange={handleChange}
                             />
                         </div>
-
                         <div>
                             <input
                                 className={"form-control"}
