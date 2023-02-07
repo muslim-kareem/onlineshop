@@ -6,6 +6,7 @@ import ProductDetails from "./pages/ProductDetails";
 import React from "react";
 import ShoppingCart from "./components/ShoppingCart";
 import OrderedProducts from "./components/OrderedProducts";
+import NotFoundPage from "./pages/NotFoundPage";
 
 
 export default function Root(){
@@ -14,6 +15,7 @@ export default function Root(){
         <>
             <Routes>
                 <Route path={"/home-shopping-cart"} element={<ShoppingCart/>} />
+                <Route path={"*"} element={<NotFoundPage/>}/>
                 <Route path={"/ordered"} element={<OrderedProducts/>} />
                 <Route path={"/"} element={<Home/>} />
                 <Route path={"/:category"} element={<Home/>} />
