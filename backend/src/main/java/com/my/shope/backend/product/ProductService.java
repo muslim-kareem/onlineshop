@@ -46,6 +46,8 @@ public class ProductService {
 
             } else {
                 imagesIds.add(fileService.saveFile(multipartFile).getId());
+
+
             }
         }
         product.setImageIDs(imagesIds);

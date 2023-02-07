@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import DeleteButton from "../components/DeleteButton";
-import {deleteProduct, getProductByCategory} from "../api/ProductApi";
+import {deleteProduct, getProductByCategory, getProducts} from "../api/ProductApi";
 import UpdateProductButton from "../components/UpdateProductButton";
 import AddButton from "../components/AddButton";
 import useAuth from "../hooks/useAuth";
@@ -74,10 +74,11 @@ export default function Home() {
                 const productss = await getProductByCategory(category)
                 setProducts(productss)
             }else{
-                setProducts([...products])
+                const theProduct = await getProducts();
+                setProducts(theProduct)
             }
         })();
-    }, [category]);
+    }, [category,setProducts]);
 
 
 
