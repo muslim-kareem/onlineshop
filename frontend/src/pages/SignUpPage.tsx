@@ -11,37 +11,30 @@ import useAuth from "../hooks/useAuth";
 export default function SignUpPage() {
 
     // credentials == user
-    const [credentials, setCredentials] = useState({
+    const [credentialsUser, setCredentialsUser] = useState({
         username: "",
         password: ""
     });
     const [user,setUser] = useAuth();
-
     const [errors, setErrors] = useState<string[]>([]);
-
     const handleChange = useCallback(
         (event: React.ChangeEvent<HTMLInputElement>) => {
             const {name, value} = event.target;
-            setCredentials({...credentials, [name]: value});
+            setCredentialsUser({...credentialsUser, [name]: value});
         },
-        [credentials, setCredentials]
+        [credentialsUser, setCredentialsUser]
     );
-
     const [searchParams] = useSearchParams();
     const redirect = useMemo(() => searchParams.get("redirect") || "/",
         [searchParams]
     );
     const navigate = useNavigate();
-
-
     const onSubmit = useCallback(
         async (e: FormEvent<HTMLFormElement>) => {
             e.preventDefault();
             setErrors([]);
-
             try {
-
-                const res = await axios.post("/api/app-users", credentials);
+                const res = await axios.post("/api/app-users", credentialsUser);
                 setUser(res.data)
                 navigate(redirect);
             } catch (e) {
@@ -51,27 +44,24 @@ export default function SignUpPage() {
                 ]);
             }
         },
-        [credentials,navigate, redirect, setUser]
+        [credentialsUser,navigate, redirect, setUser]
     );
-
     return (<>
             <NavBar user={user}/>
             <div className={"container-login-page-wrapper"}>
                 <div className={"container login-page rounded-4 "}>
                     <h2>Sign Up</h2>
-
                     {errors.length > 0 && (
                         <div>
                             {errors.map((error) => <p key={error}>{error}</p>)}
                         </div>
                     )}
-
                     <form onSubmit={onSubmit}>
                         <div className={"input-group mb-3"}>
                             <input
                                 className={"form-control"}
                                 placeholder={"username"}
-                                value={credentials.username}
+                                value={credentialsUser.username}
                                 name={"username"}
                                 onChange={handleChange}
                             />
@@ -83,7 +73,7 @@ export default function SignUpPage() {
                                 placeholder={"password"}
                                 type={"password"}
                                 name={"password"}
-                                value={credentials.password}
+                                value={credentialsUser.password}
                                 onChange={handleChange}
                             />
                         </div>
