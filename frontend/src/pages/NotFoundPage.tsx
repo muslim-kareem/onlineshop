@@ -11,11 +11,11 @@ export default function NotFoundPage() {
     return (
         <>
             <NavBar user={user}/>
-            <Container sx={{pt: 6}}>
+            <Container sx={{pt: 6,mx: "25%",mt: 30}}>
                 <Container maxWidth="sm">
                     <Typography variant="h2">404</Typography>
                     <Typography variant="h6">this Page is not exist...</Typography>
-                    <Button variant={"contained"} sx={{mt: 2}} onClick={() => navigate("/")}>&rarr; &nbsp; To
+                    <Button variant={"contained"} sx={{mt: 4,backgroundColor: "#ff1744"}} onClick={() => navigate("/")}>Go to
                         Home</Button>
                 </Container>
             </Container>

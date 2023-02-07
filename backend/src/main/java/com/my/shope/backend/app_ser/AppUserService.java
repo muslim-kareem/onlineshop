@@ -35,15 +35,12 @@ public class AppUserService {
         ){
             appUser.setRole("BASIC");
         }
-
-
         appUserRepo.save(appUser);
 
         appUser.setPassword("");
 
         return appUser;
     }
-
 
 
 public Optional<AppUser> findByUsernameWithoutPassword(String username){
@@ -63,6 +60,5 @@ public Optional<AppUser> findByUsernameWithoutPassword(String username){
     public String getAuthorizedUserId(){
         return getAuthenticatedUser().getId();
     }
-
 
 }
