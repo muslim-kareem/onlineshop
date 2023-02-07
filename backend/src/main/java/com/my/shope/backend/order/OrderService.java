@@ -3,6 +3,7 @@ package com.my.shope.backend.order;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -13,14 +14,17 @@ public class OrderService {
 
 
     public Optional<Order> getOrderByAppUserIdAndIsExcuted(String userId, boolean isExcuted) {
-        return orderRepo.getOrderByAppUserIdAndIsExecuted(userId, isExcuted);
+       List<Optional<Order>> orders = orderRepo.findAllByAppUserId(userId);
+
+           for (Optional<Order> order : orders) {
+               if (order.isPresent() && order.get().isExecuted() == isExcuted) {
+                   return order;
+               }
+           }
+               return Optional.empty();
     }
 
 
-    public void createOrder(Order order) {
-        order.setId(null);
-        orderRepo.save(order);
-    }
     public void updateOrder(Order order) {
         orderRepo.save(order);
     }

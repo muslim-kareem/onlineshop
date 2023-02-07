@@ -27,10 +27,9 @@
 
 /*navbar*/
 .navbar {
-    position: inherit;
     background-color: #d0cfcf;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     box-shadow: rgba(0, 0, 0, 0.35) 0 -50px 36px -28px inset;
 }
 
@@ -55,7 +54,7 @@
 
 .shopping-cart-icon {
     margin-top: 5.8px;
-    margin-left: 70%;
+    margin-left: 18%;
 }
 
 @media only screen and (max-width: 578px) {
@@ -82,6 +81,11 @@ a {
     text-decoration: none
 }
 
+.logout-button {
+    border: none;
+    padding: 0;
+    background-color: white;
+}
 
 /*home*/
 .carousel-container {
@@ -243,10 +247,11 @@ a {
 
 .shopping-cart-remove-button {
     float: right;
-    background-color: #f65858;
-    font-size: .8rem;
+    background-color: #ef6e6e;
+    font-size: .6rem;
     margin: 0;
     display: block;
+    color: white;
 }
 
 /*UPDATE COMPONNENT */
@@ -267,6 +272,20 @@ a {
 
 
 .footer {
-    min-height: 35px;
+    min-height: 40px;
     margin-top: 20px;
+    background-color: #ecebeb;
+}
+
+.place-holder {
+    min-height: 700px;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    font-family: bold, serif;
+    font-size: 2rem;
+}
+
+.dropdown {
+    max-height: 12px;
 }

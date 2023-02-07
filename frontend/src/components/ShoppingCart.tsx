@@ -5,14 +5,15 @@ import {removeFromShoppingCart} from "../api/ProductApi";
 import NavBar from "./NavBar";
 import useAuth from "../hooks/useAuth";
 
-export default function ShoppingCard(){
-    const [shoppingCart,setShoppingCards] = useShoppingCart();
+export default function ShoppingCart(){
+
+    const [shoppingCart,setShoppingCart] = useShoppingCart("shopping-cart");
     const [user] = useAuth();
 
     const onRemove = (id: string) => {
         const theNewShoppingCard = shoppingCart.filter(f => f.id !== id)
         removeFromShoppingCart(id);
-        setShoppingCards([...theNewShoppingCard])
+        setShoppingCart([...theNewShoppingCard])
     }
 
     return (
@@ -21,10 +22,13 @@ export default function ShoppingCard(){
             <ProductContainer >
                 {shoppingCart.map(p => <div key={p.id} className={"product-card"}><ProductCard  children={
                     <>
-                    {/*REMOVE BUTTON*/}
-                    <button type="button" className="btn  p-1 shopping-cart-remove-button" onClick={()=> {onRemove(p.id)}}>Entfernen</button>
+
                     </>
                 } product={p}/>
+                    {/*REMOVE BUTTON*/}
+                    <button type="button" className="btn  p-1 mt-2  shopping-cart-remove-button" onClick={() => {
+                        onRemove(p.id)
+                    }}>remove from shoppingCart</button>
 
 
                 </div>)}

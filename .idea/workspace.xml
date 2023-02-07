@@ -7,15 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="first version of test and refactor">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/MyProperties.java" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: sonar backend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/TestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/TestData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AuthUser.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,13 +26,14 @@
         <option value="JUnit5 Test Class" />
         <option value="TypeScript JSX File" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test_appUser" />
+        <entry key="$PROJECT_DIR$" value="ordered_products" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,7 +64,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/src/components&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
@@ -86,11 +83,11 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/components" />
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/frontend/public" />
-      <recent name="$PROJECT_DIR$/frontend/src/components/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/src/hooks" />
@@ -113,7 +110,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductControllerTest">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -246,77 +243,8 @@
       <workItem from="1675025754007" duration="117114000" />
       <workItem from="1675343841228" duration="18876000" />
       <workItem from="1675437998030" duration="7246000" />
-      <workItem from="1675447569871" duration="12358000" />
-    </task>
-    <task id="LOCAL-00032" summary="feat: first admin curd buttons layout">
-      <created>1674834171737</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1674834171738</updated>
-    </task>
-    <task id="LOCAL-00033" summary="fix : sonar plugin">
-      <created>1674849644715</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1674849644715</updated>
-    </task>
-    <task id="LOCAL-00034" summary="feat: setup gridFS">
-      <created>1675019253152</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1675019253152</updated>
-    </task>
-    <task id="LOCAL-00035" summary="rename: fronted application_properties">
-      <created>1675019314357</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1675019314357</updated>
-    </task>
-    <task id="LOCAL-00036" summary="fix:  max-width of price-title-container &#10;feat: refactor CSS">
-      <created>1675019849961</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1675019849961</updated>
-    </task>
-    <task id="LOCAL-00037" summary="fix: reformat cod and added method getAppUserById">
-      <created>1675019952367</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1675019952367</updated>
-    </task>
-    <task id="LOCAL-00038" summary="fix: rename name field">
-      <created>1675020010660</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1675020010660</updated>
-    </task>
-    <task id="LOCAL-00039" summary="fix: rename name field">
-      <created>1675020023486</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1675020023486</updated>
-    </task>
-    <task id="LOCAL-00040" summary="fix: refactor and add AddButton component">
-      <created>1675020150748</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1675020150748</updated>
-    </task>
-    <task id="LOCAL-00041" summary="feat: create product with txt file">
-      <created>1675020521021</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1675020521021</updated>
+      <workItem from="1675447569871" duration="51631000" />
+      <workItem from="1675607383471" duration="889000" />
     </task>
     <task id="LOCAL-00042" summary="fix: correct the application_properties file">
       <created>1675020581245</created>
@@ -591,7 +519,77 @@
       <option name="project" value="LOCAL" />
       <updated>1675509499842</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="first version of test and refactor">
+      <created>1675510737149</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1675510737149</updated>
+    </task>
+    <task id="LOCAL-00082" summary="delete MyProperties.java class">
+      <created>1675511116470</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1675511116470</updated>
+    </task>
+    <task id="LOCAL-00083" summary="add dropdown and refactor Login/logout link">
+      <created>1675528496925</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1675528496925</updated>
+    </task>
+    <task id="LOCAL-00084" summary="small styling for footer">
+      <created>1675528853778</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1675528853778</updated>
+    </task>
+    <task id="LOCAL-00085" summary="feat: getOrdered method">
+      <created>1675529602861</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1675529602861</updated>
+    </task>
+    <task id="LOCAL-00086" summary="feat: new endPoint /api/ordered">
+      <created>1675529901991</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1675529901991</updated>
+    </task>
+    <task id="LOCAL-00087" summary="feat: show ordered products">
+      <created>1675533283732</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1675533283732</updated>
+    </task>
+    <task id="LOCAL-00088" summary="fix: refactor remove from shoppingCart button">
+      <created>1675533895102</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1675533895102</updated>
+    </task>
+    <task id="LOCAL-00089" summary="feat: show ordered product">
+      <created>1675600824509</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1675600824510</updated>
+    </task>
+    <task id="LOCAL-00090" summary="feat: show ordered product">
+      <created>1675600975560</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1675600975561</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +600,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="test_and_refactor" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -612,15 +622,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="update first version is done" />
-    <MESSAGE value="feat: update product first version is done" />
-    <MESSAGE value="feat: delete product from shopping cart when product bought" />
-    <MESSAGE value="feat: by delete product then removed from Orders and  shopping cart" />
-    <MESSAGE value="refactor deleteProduct method" />
-    <MESSAGE value="reformat cod add simple stile to file upload button" />
-    <MESSAGE value="feat: search on product and refactor NavBar component" />
-    <MESSAGE value="refactor: removeFromShoppingCarrOrOrdered method" />
-    <MESSAGE value="fix: remove removeFromExecutedOrder" />
     <MESSAGE value="refactor: updateProduct method" />
     <MESSAGE value="test: AppUserService" />
     <MESSAGE value="feat: some tests" />
@@ -637,24 +638,28 @@
     <MESSAGE value="small refactor" />
     <MESSAGE value="refactor addToCart and delete OrderController" />
     <MESSAGE value="first version of test and refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="first version of test and refactor" />
+    <MESSAGE value="delete MyProperties.java class" />
+    <MESSAGE value="add dropdown and refactor Login/logout link" />
+    <MESSAGE value="small styling for footer" />
+    <MESSAGE value="feat: getOrdered method" />
+    <MESSAGE value="feat: new endPoint /api/ordered" />
+    <MESSAGE value="feat: show ordered products" />
+    <MESSAGE value="fix: refactor remove from shoppingCart button" />
+    <MESSAGE value="feat: show ordered product" />
+    <MESSAGE value="fix: sonar backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: sonar backend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/appUser/AppUserServiceTest.java</url>
-          <line>64</line>
+          <line>66</line>
           <properties class="com.my.shope.backend.appUser.AppUserServiceTest" method="findByUsernameWithoutPassword_should_be_successful">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/appUser/AppUserService.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

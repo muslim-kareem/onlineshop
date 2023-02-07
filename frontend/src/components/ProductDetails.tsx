@@ -11,13 +11,13 @@ export default function ProductDetails() {
 
     const {id} = useParams();
     const [user] = useAuth();
-    const[shoppingCart,setShoppingCart] = useShoppingCart();
+    const[shoppingCart,setShoppingCart] = useShoppingCart("shopping-cart");
     const [product] = useProduct(id as string);
     const [presentPhoto, setPresentPhoto] = useState<string>("")
 
     let sidePhotos = product.imageIDs.map((img, index) => {
 
-            return <div key={index} className={" card  border-5 side-photo "}>
+            return <div key={img.at(index)} className={" card  border-5 side-photo "}>
                 <img
                     src={IMAGES_PATH + img}
                     onClick={() => {

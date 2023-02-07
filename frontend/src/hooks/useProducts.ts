@@ -1,13 +1,15 @@
-import {Dispatch, SetStateAction, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Product} from "../model/Product";
 import {getByTitle, getProducts} from "../api/ProductApi";
 
 
-export default function useProducts(name: string): [Product[], Dispatch<SetStateAction<Product[]>>] {
+export default function useProducts(name: string): [Product[], ((value: (((prevState: Product[]) => Product[]) | Product[])) => void), boolean] {
     const [products, setProducts] = useState<Product[]>([]);
+    const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
         (async () => {
+           try{
 
             if (name.length > 0){
                 const products = await getByTitle(name)
@@ -16,8 +18,14 @@ export default function useProducts(name: string): [Product[], Dispatch<SetState
                 const products = await getProducts();
                 setProducts(products)
             }
+           }catch (e){
+               console.log("error : "+ e)
+           }finally {
+               setIsReady(true)
+           }
+
 
         })();
     }, [name]);
-    return [products,setProducts];
+    return [products,setProducts,isReady];
 }
