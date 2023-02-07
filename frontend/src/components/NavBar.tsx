@@ -1,13 +1,18 @@
 import {User} from "../model/User";
 import {Link} from "react-router-dom";
-import {ChangeEvent} from "react";
+import {ChangeEvent, useState} from "react";
 import LogoutButton from "./LogoutButton";
+import useProducts from "../hooks/useProducts";
 
 export default function NavBar({user, onSearch}: {
     onSearch?: (search: string) => void
     user: User
 }) {
 
+    const [categoryName, setCateGoryName] = useState("ALL")
+    const [products] = useProducts("")
+
+    const uniqueCategory = [...new Set(products.map(m => m.category))]
 
     return (
 
@@ -51,10 +56,12 @@ export default function NavBar({user, onSearch}: {
                         </button>
                         <ul className="dropdown-menu">
                             <li>
-                                <button className="dropdown-item" type="button"><Link to={"/ordered"}>myOrder</Link></button>
+                                <button className="dropdown-item" type="button"><Link to={"/ordered"}>myOrder</Link>
+                                </button>
                             </li>
                             <li>
-                                <button className="dropdown-item" type="button"><Link to={"/login"}>Login</Link> </button>
+                                <button className="dropdown-item" type="button"><Link to={"/login"}>Login</Link>
+                                </button>
                             </li>
                             <li>
                                 <button className="dropdown-item" type="button"><LogoutButton/></button>
@@ -68,18 +75,22 @@ export default function NavBar({user, onSearch}: {
                                 type="button"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="true">
-                            <div>ALL</div>
+                            <h5>{categoryName}</h5>
                         </button>
                         <ul className="dropdown-menu">
                             <li>
-                                <button className="dropdown-item" type="button"><Link to={"/"}>T-Shirt</Link></button>
+                                <button className="dropdown-item" type="button" onClick={() => setCateGoryName("ALL")}>
+                                    <Link to={"/"}>ALL</Link></button>
                             </li>
-                            <li>
-                                <button className="dropdown-item" type="button"><Link to={"/COAT"}>Coat</Link></button>
-                            </li>
-                            <li>
-                                <button className="dropdown-item" type="button"><Link to={"/"}>Shoe</Link></button>
-                            </li>
+
+                            {uniqueCategory.map(category =>
+                                <li key={category}>
+                                    <button className="dropdown-item" type="button"
+                                            onClick={() => setCateGoryName(category)}><Link
+                                                                                            to={"/" + category}>{category}</Link>
+                                    </button>
+                                </li>)}
+
                         </ul>
                     </div>
 
