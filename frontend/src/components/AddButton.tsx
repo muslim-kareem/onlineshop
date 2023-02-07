@@ -22,7 +22,7 @@ export default function AddButton({onSubmit,onChange}:{
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h1 className="modal-title fs-5" id="add-new-product">Add new P</h1>
+                                <h1 className="modal-title fs-5" id="add-new-product">Add new Product</h1>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
@@ -44,7 +44,6 @@ export default function AddButton({onSubmit,onChange}:{
 
                                     <div className="modal-footer">
                                         <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal">Abschicken</button>
-                                        {/*<button type="submit" className="btn btn-primary">Save changes</button>*/}
                                     </div>
 
                                 </form>

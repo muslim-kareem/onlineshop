@@ -1,24 +1,27 @@
 import useProducts from "../hooks/useProducts";
 import ProductContainer from "../components/ProductContainer";
 import ProductCard from "../components/ProductCard";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import DeleteButton from "../components/DeleteButton";
-import {deleteProduct} from "../api/ProductApi";
+import {deleteProduct, getProductByCategory, getProducts} from "../api/ProductApi";
 import UpdateProductButton from "../components/UpdateProductButton";
 import AddButton from "../components/AddButton";
 import useAuth from "../hooks/useAuth";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import {useParams} from "react-router-dom";
 
 export default function Home() {
 
+    const {category} = useParams();
     const [files, setFiles] = useState<File[] | null>()
     const [productId, setProductId] = useState("")
     const [searchParam,setSearchParam] = useState('')
     const [products, setProducts,isReady] = useProducts(searchParam);
     const[user] = useAuth()
 
+    console.log(category)
 
     const onSubmit = async (e: React.FormEvent) => {
         // FILE UPLOAD
@@ -56,7 +59,6 @@ export default function Home() {
                 f.push(e.target.files[i]);
             }
             setFiles(f);
-
         }
 
     }
@@ -66,15 +68,27 @@ export default function Home() {
         deleteProduct(id)
     }
 
+    useEffect(() => {
+        (async () => {
+            if(category){
+                const productss = await getProductByCategory(category)
+                setProducts(productss)
+            }else{
+                const theProduct = await getProducts();
+                setProducts(theProduct)
+            }
+        })();
+    }, [category,setProducts]);
+
+
+
 
     return (
         <>
             <NavBar user={user} onSearch={(e) => setSearchParam(e)} />
             {isReady && products.length > 0 ?
             <ProductContainer>
-                {products.map(p => <div key={p.id} className={"product-card"}><ProductCard
-                    children={<> </>}
-                    product={p}/>
+                {products.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
                     {/*CURD BUTTONS*/}
                     <div className={"crud-buttons-container"}>
                         <UpdateProductButton onChange={onChange} onSubmit={onUpdate} onClick={() => {

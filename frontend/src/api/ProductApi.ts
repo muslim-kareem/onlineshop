@@ -6,8 +6,13 @@ export const getProducts = async (): Promise<Product[]> => {
     return response.data;
 };
 
-export const getProduct = async (productId: string): Promise<Product> => {
+export const getProductById = async (productId: string): Promise<Product> => {
     const response = await axios.get<Product>('/api/products/'+productId);
+    return response.data;
+};
+
+export const getProductByCategory = async (category: string): Promise<Product[]> => {
+    const response = await axios.get<Product[]>('/api/products/category/'+category);
     return response.data;
 };
 
@@ -21,8 +26,17 @@ export const getOrdered= async (): Promise<Product[]> => {
     return response.data;
 };
 
+export const getOrderAll= async ()=> {
+    const response = await axios.get('/api/products/order-all');
+    return response.data;
+};
 export const removeFromShoppingCart = async (productId: string): Promise<Product> => {
     const response = await axios.delete('/api/products/shopping-carts/'+productId);
+    return response.data;
+};
+
+export const removeOrdered = async (productId: string): Promise<Product> => {
+    const response = await axios.delete('/api/products/ordered/'+productId);
     return response.data;
 };
 export const deleteProduct = async (productId: string): Promise<Product> => {

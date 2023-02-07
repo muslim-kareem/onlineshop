@@ -54,6 +54,12 @@ public class ProductController {
         return productService.deleteProduct(id);
     }
 
+    @DeleteMapping("/ordered/{id}")
+    public List<Product> removeOrdered(@PathVariable String id){
+        productService.removeFromOrdered(id);
+        return productService.getOrdered();
+    }
+
     @DeleteMapping("/shopping-carts/{id}")
     public List<Product> removeFromShoppingCart(@PathVariable String id){
         productService.removeFromShoppingCart(id);
@@ -68,6 +74,15 @@ public class ProductController {
     @GetMapping("/search-by-name/{name}")
     public List<Product> getAllByProductName(@PathVariable String name){
        return productService.getAllByProductName(name);
+    }
+    @GetMapping("/category/{category}")
+    public List<Product> getAllByCateGory(@PathVariable String category){
+       return productService.getAllByProductCategory(category);
+    }
+
+    @GetMapping("/order-all")
+    public void orderAll(){
+        productService.orderAll();
     }
 
 

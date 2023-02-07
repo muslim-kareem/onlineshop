@@ -1,6 +1,6 @@
 import {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {Product} from "../model/Product";
-import {getProduct} from "../api/ProductApi";
+import {getProductById} from "../api/ProductApi";
 
 const initialStait: Product = {
     id: "",
@@ -15,7 +15,7 @@ export default function useProduct(productId: string): [Product, Dispatch<SetSta
 
     useEffect(() => {
         (async () => {
-            const product = await getProduct(productId)
+            const product = await getProductById(productId)
             setProduct(product)
         })();
     }, [productId]);

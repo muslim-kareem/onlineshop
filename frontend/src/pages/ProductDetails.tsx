@@ -1,10 +1,10 @@
 import useProduct from "../hooks/useProduct";
-import {NavLink, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import React, {useState} from "react";
 import axios from "axios";
 import {IMAGES_PATH} from "../model/aplication_properties";
 import useShoppingCart from "../hooks/useShoppingCart";
-import NavBar from "./NavBar";
+import NavBar from "../components/NavBar";
 import useAuth from "../hooks/useAuth";
 
 export default function ProductDetails() {
@@ -60,7 +60,7 @@ export default function ProductDetails() {
 
                             <button type="button" className="btn btn m-t-3 add-to-cart-button" onClick={addToCart}
                                     data-bs-toggle="modal" data-bs-target="#shopping-cart-added">
-                                In den Warenkorb
+                                Add to Shopping cart
                             </button>
 
                             <div className="modal fade" id="shopping-cart-added" aria-labelledby="exampleModalLabel"
@@ -69,12 +69,12 @@ export default function ProductDetails() {
                                     <div className="modal-content">
 
                                         <div className="modal-body">
-                                            Das Product wurde zu Warenkorb hnzugefügt <div
+                                            you have added the Product to your Shopping Cart <div
                                             className="fa-sharp fa-solid fa-circle-check"></div>
                                         </div>
                                         <div className="modal-footer">
                                             <button type="button" className="btn btn-secondary"
-                                                    data-bs-dismiss="modal">schließen
+                                                    data-bs-dismiss="modal">close
                                             </button>
                                         </div>
                                     </div>
@@ -83,9 +83,33 @@ export default function ProductDetails() {
                             {/*---------------*/}
 
                             {/*BUY BUTTON */}
-                            <NavLink to={"/thankPage"}>
-                                <button className="btn buy-button" type="button" onClick={buyProduct}>Bestellen</button>
-                            </NavLink>
+                            <div className={"details-button-container"}>
+
+                                <button type="button" className="btn btn m-t-3 buy-button" onClick={buyProduct}
+                                        data-bs-toggle="modal" data-bs-target="#order-button">
+                                    Order Product
+                                </button>
+
+                                <div className="modal fade" id="order-button" aria-labelledby="exampleModalLabel"
+                                     aria-hidden="true">
+                                    <div className="modal-dialog modal-dialog-centered">
+                                        <div className="modal-content">
+
+                                            <div className="modal-body">
+                                                thank you for your order, you can find the Order in myOrder <div
+                                                className="fa-sharp fa-solid fa-circle-check"></div>
+                                            </div>
+                                            <div className="modal-footer">
+                                                <button type="button" className="btn btn-secondary"
+                                                        data-bs-dismiss="modal">close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             {/*---------------*/}
 
                         </div>

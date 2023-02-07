@@ -2,10 +2,16 @@ import {Product} from "../model/Product";
 import {IMAGES_PATH} from "../model/aplication_properties";
 import {Link} from "react-router-dom";
 
-export default function ProductCard({product,children}:{
+export default function ProductCard({product}:{
     product: Product
-    children: React.ReactNode
 }){
+
+    const convert = Intl.NumberFormat('de-DE', {
+        style: 'currency',
+        currency: 'EUR',
+        minimumFractionDigits: 2,
+
+    });
 
     return(
 
@@ -14,9 +20,8 @@ export default function ProductCard({product,children}:{
                 <div className="card-body">
                     <div className={"price-title-container"}>
                         <p className={"title-card"}> {product.name}</p>
-                        <p className={"price-card"}> {product.price}</p>
+                        <p className={"price-card"}> {convert.format(product.price)}</p>
                     </div>
-                    {children}
                 </div>
 
         </div>
