@@ -49,7 +49,6 @@ export default function LoginPage() {
                         headers: {
                             "Authorization": "Basic " + window.btoa(`${credentials.username}:${credentials.password}`)
                         }
-
                     });
                     setUser(res.data)
                 navigate(redirect);
