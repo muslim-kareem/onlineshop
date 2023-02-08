@@ -201,4 +201,25 @@ public  void insertUser() throws Exception {
                 status().isOk()).andExpect(content().json(expected));
 
     }
+    @Test
+    @WithMockUser(username = "admin", password = "pw",roles = "ADMIN")
+    void removeOrdered_and_get_emptyArray() throws Exception {
+        insertUser();
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
+                .file(TestData.PRODUCT_FILE_1)
+        ).andExpect(status().isOk());
+
+        mockMvc.perform(put("/api/products/"+"1"));
+
+        this.mockMvc.perform(multipart(HttpMethod.DELETE,"/api/products/ordered/"+1));
+
+        String expected =
+                """
+                        []
+                        """;
+
+        mockMvc.perform(get("/api/products/ordered")).andExpectAll(
+                status().isOk()).andExpect(content().json(expected));
+
+    }
 }

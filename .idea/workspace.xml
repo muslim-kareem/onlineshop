@@ -7,10 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: small bug in key value">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: clean some spaces up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/product_details.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product_details.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +110,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="JUnit.ProductControllerTest.removeOrdered_and_get_emptyArray">
     <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -125,7 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.buyProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -135,7 +136,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
       <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="buyProduct" />
+      <option name="METHOD_NAME" value="create_whenNotLoggedIn_returnUnauthorized" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,7 +158,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.shoppingCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.removeOrdered_and_get_emptyArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -167,7 +168,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
       <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="shoppingCart" />
+      <option name="METHOD_NAME" value="removeOrdered_and_get_emptyArray" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,20 +200,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="JUnit.ProductControllerTest.buyProduct" />
+      <item itemvalue="JUnit.ProductControllerTest.removeOrdered_and_get_emptyArray" />
       <item itemvalue="JUnit.ProductControllerTest.removeFromShoppingCart" />
-      <item itemvalue="JUnit.ProductControllerTest.shoppingCart" />
+      <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
       <item itemvalue="JUnit.ProductControllerTest" />
       <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
+        <item itemvalue="JUnit.ProductControllerTest.removeOrdered_and_get_emptyArray" />
         <item itemvalue="JUnit.ProductControllerTest" />
+        <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
+        <item itemvalue="npm.start" />
         <item itemvalue="JUnit.ProductControllerTest.removeFromShoppingCart" />
-        <item itemvalue="JUnit.ProductControllerTest.shoppingCart" />
-        <item itemvalue="JUnit.ProductControllerTest.buyProduct" />
       </list>
     </recent_temporary>
   </component>
@@ -238,21 +239,7 @@
       <workItem from="1675437998030" duration="7246000" />
       <workItem from="1675447569871" duration="51631000" />
       <workItem from="1675607383471" duration="62205000" />
-      <workItem from="1675851677645" duration="3098000" />
-    </task>
-    <task id="LOCAL-00067" summary="fix: remove removeFromExecutedOrder">
-      <created>1675281646268</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1675281646268</updated>
-    </task>
-    <task id="LOCAL-00068" summary="refactor: updateProduct method">
-      <created>1675328778856</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1675328778857</updated>
+      <workItem from="1675851677645" duration="4556000" />
     </task>
     <task id="LOCAL-00069" summary="test: AppUserService">
       <created>1675333695037</created>
@@ -583,7 +570,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675854337575</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="fix: if product details loaded show Product details loaded">
+      <created>1675854949822</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1675854949822</updated>
+    </task>
+    <task id="LOCAL-00117" summary="fix: clean some spaces up">
+      <created>1675855191526</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1675855191526</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,8 +605,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="feat: show ordered products" />
-    <MESSAGE value="fix: refactor remove from shoppingCart button" />
     <MESSAGE value="feat: show ordered product" />
     <MESSAGE value="fix: sonar backend" />
     <MESSAGE value="fix: sonar fronted refactor" />
@@ -629,7 +628,9 @@
     <MESSAGE value="small refactoring" />
     <MESSAGE value="fix: bug fixes change button to div in li tag" />
     <MESSAGE value="fix: small bug in key value" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: small bug in key value" />
+    <MESSAGE value="fix: if product details loaded show Product details loaded" />
+    <MESSAGE value="fix: clean some spaces up" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: clean some spaces up" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
