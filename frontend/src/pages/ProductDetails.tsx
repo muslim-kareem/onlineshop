@@ -15,9 +15,9 @@ export default function ProductDetails() {
     const [product] = useProduct(id as string);
     const [presentPhoto, setPresentPhoto] = useState<string>("")
 
-    let sidePhotos = product.imageIDs.map((img, index) => {
+    let sidePhotos = product.imageIDs.map((img) => {
 
-            return <div key={img.at(index)} className={" card  border-5 side-photo "}>
+            return <div key={img} className={" card  border-5 side-photo "}>
                 <img
                     src={IMAGES_PATH + img}
                     onClick={() => {
@@ -31,7 +31,6 @@ export default function ProductDetails() {
     const addToCart = async () => {
         await axios.put("/api/products/orders/" + id);
         setShoppingCart([...shoppingCart,product])
-
     }
     const buyProduct = async () => {
        await axios.put("/api/products/" + id)

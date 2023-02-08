@@ -90,9 +90,8 @@ export default function NavBar({user, onSearch}: {
                                             to={"/" + category}>{category}</Link>
                                     </div>
                                 </li>)}
-                        </ul>
+                          </ul>
                     </div>
-
                 </div>
             </div>
         </nav>

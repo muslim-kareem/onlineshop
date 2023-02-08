@@ -1,4 +1,4 @@
-name:!Solid Kurzmantel »SDTave Coat 21105918« Kurzmantel mit Eingrifftaschen
-description:DETAILS & HIGHLIGHTS: Kurzmantel mit Eingrifftaschen, kurze Knopfleiste, seitliche Eingriffstaschen, V-Ausschnitt, Hemdkragen, Ärmelbund mit Knöpfen, unifarben, Ziernähte, gerader Saum, angenehmes und hochwertiges Material
-price:71.99
+name:Mantel mit heraustrennbarem
+description:Garantiert ein unverzichtbares Must-Have! Wenn eine Übergangsjacke zu wenig ist und eine Funktionsjacke zu viel kommt der Mantel ins Spiel. Mit heraustrennbarem Inlet und kuscheligem Teddy-Fleece im Kragen komplettiert er gerne zahlreiche Looks im Herbst und Winter. Durch das dezente Pfeffer-Salz Muster entsteht eine authentische und lebedige Optik zugleich.
+price:159.96
 category:COAT
