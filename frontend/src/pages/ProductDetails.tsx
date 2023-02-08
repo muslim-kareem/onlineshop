@@ -12,7 +12,7 @@ export default function ProductDetails() {
     const {id} = useParams();
     const [user] = useAuth();
     const[shoppingCart,setShoppingCart] = useShoppingCart("shopping-cart");
-    const [product] = useProduct(id as string);
+    const [product,,isReady] = useProduct(id as string);
     const [presentPhoto, setPresentPhoto] = useState<string>("")
 
     let sidePhotos = product.imageIDs.map((img) => {
@@ -39,15 +39,16 @@ export default function ProductDetails() {
     return (<>
 
             <NavBar user={user}/>
-            <div>
+            {isReady ? <div>
                 <div className={"photos-container"}>
 
                     {/*SIDE BAR PHOTOS*/}
                     <div>{sidePhotos}</div>
 
                     {/*THE PRESENT POSTER*/}
-                    <img src={presentPhoto ? presentPhoto : IMAGES_PATH + product.imageIDs[0]}
-                         className="present-photo border border-5 " style={{width: "25rem"}} alt={product.imageIDs[0]}/>
+                    <img src={presentPhoto ? presentPhoto : IMAGES_PATH + (product && product.imageIDs[0])}
+                         className="present-photo border border-5 " style={{width: "25rem"}}
+                         alt={product && product.imageIDs[0]}/>
 
                     <div className={"text-buttons-container"}>
                         <h2>{product.name}</h2>
@@ -116,7 +117,7 @@ export default function ProductDetails() {
 
                 </div>
 
-            </div>
+            </div> : <div className={"place-holder"}>Product Details loaded...</div>}
 
         </>
     )
