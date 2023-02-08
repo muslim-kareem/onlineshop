@@ -19,6 +19,8 @@ export default function Home() {
     const [productId, setProductId] = useState("")
     const [searchParam,setSearchParam] = useState('')
     const [products, setProducts,isReady] = useProducts(searchParam);
+    const[previewUrls,setPreviewUrls] = useState<string[]>([])
+    const [textPreview,setTextPreview] = useState<string>("")
     const[user] = useAuth()
 
     const onSubmit = async (e: React.FormEvent) => {
@@ -34,6 +36,10 @@ export default function Home() {
         setFiles(null)
         const res = await axios.post("/api/products", formData);
         setProducts([...products, res.data])
+
+        for (let i = 0; i < previewUrls.length; i++) {
+            URL.revokeObjectURL(previewUrls[i])
+        }
     }
     const onUpdate = async (e: React.FormEvent) => {
         // FILE UPLOAD
@@ -50,13 +56,29 @@ export default function Home() {
         setProducts([...res.data]);
         setFiles(null)
     }
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const onChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length) {
             const f = [];
             for (let i = 0; i < e.target.files.length; i++) {
                 f.push(e.target.files[i]);
             }
             setFiles(f);
+
+            for (let i = 0; i < previewUrls.length; i++) {
+                URL.revokeObjectURL(previewUrls[i])
+            }
+            const fileUrls = [];
+
+            for (let i = 0; i < e.target.files.length; i++) {
+                console.log(e.target.files[i].type)
+                if(e.target.files[i].type === "text/plain"){
+                    const text =  await  e.target.files[i].text();
+                    setTextPreview(text)
+                }else {
+                    fileUrls.push(URL.createObjectURL(e.target.files[i]));
+                }
+            }
+            setPreviewUrls(fileUrls);
         }
 
     }
@@ -95,7 +117,7 @@ export default function Home() {
             </ProductContainer>
                 :
                 <div className={"place-holder"}> Load data...</div>}
-            <AddButton onSubmit={onSubmit} onChange={onChange}/>
+            <AddButton onSubmit={onSubmit} onChange={onChange} previewUrls={previewUrls} textPreview={textPreview}/>
             <Footer/>
             </>
     )

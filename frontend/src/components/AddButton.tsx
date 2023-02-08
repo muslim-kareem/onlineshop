@@ -1,16 +1,18 @@
 import React from "react";
 
-export default function AddButton({onSubmit,onChange}:{
+export default function AddButton({onSubmit,onChange,previewUrls,textPreview}:{
+    textPreview: string,
+    previewUrls: string[],
     onSubmit: (e: React.FormEvent) => void,
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }){
     const fileInputRef = React.useRef<HTMLInputElement>(null)
 
+
     return(
         <>
             {/*ADD TO CARD BUTTON*/}
             <div className={"details-button-container"}>
-
 
                 <button type="button" className="btn  p-1 add-button"  onClick={() => {
                 }}
@@ -42,8 +44,12 @@ export default function AddButton({onSubmit,onChange}:{
                                            onChange={onChange}
                                            multiple/>
 
+                                        <div>{previewUrls.map(p => <img  key={p} src={p} alt={p} style={{width: "250px",display: "block"}}/>)} </div>
+
+                                        <div><p>{!!textPreview && textPreview}</p></div>
+
                                     <div className="modal-footer">
-                                        <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal">Abschicken</button>
+                                        <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal">Load</button>
                                     </div>
 
                                 </form>

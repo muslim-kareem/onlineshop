@@ -57,7 +57,7 @@ public  void insertUser() throws Exception {
 
     @Test
     @WithMockUser(username = "user", password = "pw",roles = "ADMIN")
-    void getAll_should_return_all_products() throws Exception {
+     void getAll_should_return_all_products() throws Exception {
             // given
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                 .file(TestData.PRODUCT_FILE_2)
@@ -223,7 +223,7 @@ public  void insertUser() throws Exception {
     }
     @Test
     @WithMockUser(username = "admin", password = "pw",roles = "ADMIN")
-    void getOrdered_and_get_one() throws Exception {
+    void getByCategory_and_get_one() throws Exception {
         insertUser();
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
                 .file(TestData.PRODUCT_FILE_2)
@@ -233,6 +233,27 @@ public  void insertUser() throws Exception {
         mockMvc.perform(get("/api/products/category/"+"CLOSING")).andExpectAll(
                 status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
 
+    }
+
+    @Test
+    @WithMockUser(username = "admin", password = "pw",roles = "ADMIN")
+    void getAllOrdered_then_get_Array_that_contains_one() throws Exception {
+        insertUser();
+        this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
+                .file(TestData.PRODUCT_FILE_2)
+        ).andExpect(status().isOk());
+
+        mockMvc.perform(get("/api/products/orders/"+"2"));
+
+//        mockMvc.perform(get("/api/products/shopping-carts")).andExpectAll(
+//                status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
+
+
+        mockMvc.perform(put("/api/products/"+"2"));
+
+
+        mockMvc.perform(get("/api/products/ordered")).andExpectAll(
+                status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
     }
 
 }
