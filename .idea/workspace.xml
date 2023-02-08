@@ -7,11 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="fix: clean some spaces up">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="TEST: removeFromOrdered">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/product_details.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product_details.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +110,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductControllerTest.removeOrdered_and_get_emptyArray">
+  <component name="RunManager" selected="JUnit.ProductControllerTest.getOrdered_and_get_one">
     <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -142,7 +142,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.removeFromShoppingCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.getOrdered_and_get_one" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -152,7 +152,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
       <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="removeFromShoppingCart" />
+      <option name="METHOD_NAME" value="getOrdered_and_get_one" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,8 +200,8 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="JUnit.ProductControllerTest.getOrdered_and_get_one" />
       <item itemvalue="JUnit.ProductControllerTest.removeOrdered_and_get_emptyArray" />
-      <item itemvalue="JUnit.ProductControllerTest.removeFromShoppingCart" />
       <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
       <item itemvalue="JUnit.ProductControllerTest" />
       <item itemvalue="npm.start" />
@@ -209,11 +209,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProductControllerTest.getOrdered_and_get_one" />
         <item itemvalue="JUnit.ProductControllerTest.removeOrdered_and_get_emptyArray" />
         <item itemvalue="JUnit.ProductControllerTest" />
         <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
         <item itemvalue="npm.start" />
-        <item itemvalue="JUnit.ProductControllerTest.removeFromShoppingCart" />
       </list>
     </recent_temporary>
   </component>
@@ -239,14 +239,7 @@
       <workItem from="1675437998030" duration="7246000" />
       <workItem from="1675447569871" duration="51631000" />
       <workItem from="1675607383471" duration="62205000" />
-      <workItem from="1675851677645" duration="4556000" />
-    </task>
-    <task id="LOCAL-00069" summary="test: AppUserService">
-      <created>1675333695037</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1675333695037</updated>
+      <workItem from="1675851677645" duration="6305000" />
     </task>
     <task id="LOCAL-00070" summary="feat: some tests">
       <created>1675363154101</created>
@@ -584,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675855191526</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="TEST: removeFromOrdered">
+      <created>1675856592787</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1675856592787</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,7 +605,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="feat: show ordered product" />
     <MESSAGE value="fix: sonar backend" />
     <MESSAGE value="fix: sonar fronted refactor" />
     <MESSAGE value="small refactoring and bug fix" />
@@ -630,7 +629,8 @@
     <MESSAGE value="fix: small bug in key value" />
     <MESSAGE value="fix: if product details loaded show Product details loaded" />
     <MESSAGE value="fix: clean some spaces up" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: clean some spaces up" />
+    <MESSAGE value="TEST: removeFromOrdered" />
+    <option name="LAST_COMMIT_MESSAGE" value="TEST: removeFromOrdered" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
