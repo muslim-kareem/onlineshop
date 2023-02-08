@@ -56,15 +56,15 @@ export default function NavBar({user, onSearch}: {
                         </button>
                         <ul className="dropdown-menu">
                             <li>
-                                <button className="dropdown-item" type="button"><Link to={"/ordered"}>myOrder</Link>
-                                </button>
+                                <div className="dropdown-item"><Link to={"/ordered"}>myOrder</Link>
+                                </div>
                             </li>
                             <li>
-                                <button className="dropdown-item" type="button"><Link to={"/login"}>Login</Link>
-                                </button>
+                                <div className="dropdown-item" ><Link to={"/login"}>Login</Link>
+                                </div>
                             </li>
                             <li>
-                                <button className="dropdown-item" type="button"><LogoutButton/></button>
+                                <div className="dropdown-item" ><LogoutButton/></div>
                             </li>
                         </ul>
                     </div>
@@ -79,18 +79,17 @@ export default function NavBar({user, onSearch}: {
                         </button>
                         <ul className="dropdown-menu">
                             <li>
-                                <button className="dropdown-item" type="button" onClick={() => setCateGoryName("ALL")}>
-                                    <Link to={"/"}>ALL</Link></button>
+                                <div className="dropdown-item"  onClick={() => setCateGoryName("ALL")}>
+                                    <Link to={"/"}>ALL</Link></div>
                             </li>
 
                             {uniqueCategory.map(category =>
                                 <li key={category}>
-                                    <button className="dropdown-item" type="button"
+                                    <div className="dropdown-item"
                                             onClick={() => setCateGoryName(category)}><Link
-                                                                                            to={"/" + category}>{category}</Link>
-                                    </button>
+                                            to={"/" + category}>{category}</Link>
+                                    </div>
                                 </li>)}
-
                         </ul>
                     </div>
 
