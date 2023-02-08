@@ -1,4 +1,5 @@
-name:!Solid Kurzmantel »SDTave Coat 21105918« Kurzmantel mit Eingrifftaschen
-description:DETAILS & HIGHLIGHTS: Kurzmantel mit Eingrifftaschen, kurze Knopfleiste, seitliche Eingriffstaschen, V-Ausschnitt, Hemdkragen, Ärmelbund mit Knöpfen, unifarben, Ziernähte, gerader Saum, angenehmes und hochwertiges Material
-price:71.99
-category:COAT
+id:2
+name:product2
+description:description
+price:20.00
+category:CLOSING

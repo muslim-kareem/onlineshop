@@ -7,19 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: category endpoint and method">
-      <change afterPath="$PROJECT_DIR$/frontend/public/logo192.png" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="TEST: removeFromOrdered">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/product_details.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product_details.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,17 +23,17 @@
       <list>
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
-        <option value="TypeScript JSX File" />
         <option value="Class" />
         <option value="Enum" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="remove_from_ordered" />
+        <entry key="$PROJECT_DIR$" value="preview_when_upload" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,7 +110,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.ProductControllerTest.getOrdered_and_get_one">
     <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -130,22 +122,6 @@
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
       <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductControllerTest.buyProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="buyProduct" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,7 +142,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.removeFromShoppingCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.getOrdered_and_get_one" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -176,13 +152,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
       <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="removeFromShoppingCart" />
+      <option name="METHOD_NAME" value="getOrdered_and_get_one" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.shoppingCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.removeOrdered_and_get_emptyArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -192,7 +168,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
       <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="shoppingCart" />
+      <option name="METHOD_NAME" value="removeOrdered_and_get_emptyArray" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -212,22 +188,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="JUnit.ProductControllerTest.buyProduct" />
-      <item itemvalue="JUnit.ProductControllerTest.removeFromShoppingCart" />
-      <item itemvalue="JUnit.ProductControllerTest.shoppingCart" />
+      <item itemvalue="JUnit.ProductControllerTest.getOrdered_and_get_one" />
+      <item itemvalue="JUnit.ProductControllerTest.removeOrdered_and_get_emptyArray" />
       <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
       <item itemvalue="JUnit.ProductControllerTest" />
+      <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProductControllerTest.getOrdered_and_get_one" />
+        <item itemvalue="JUnit.ProductControllerTest.removeOrdered_and_get_emptyArray" />
         <item itemvalue="JUnit.ProductControllerTest" />
-        <item itemvalue="JUnit.ProductControllerTest.removeFromShoppingCart" />
-        <item itemvalue="JUnit.ProductControllerTest.shoppingCart" />
-        <item itemvalue="JUnit.ProductControllerTest.buyProduct" />
         <item itemvalue="JUnit.ProductControllerTest.create_whenNotLoggedIn_returnUnauthorized" />
+        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -252,105 +238,8 @@
       <workItem from="1675343841228" duration="18876000" />
       <workItem from="1675437998030" duration="7246000" />
       <workItem from="1675447569871" duration="51631000" />
-      <workItem from="1675607383471" duration="33388000" />
-    </task>
-    <task id="LOCAL-00056" summary="fix: clean spaces">
-      <created>1675162520009</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1675162520009</updated>
-    </task>
-    <task id="LOCAL-00057" summary="feat: send binary and id to update">
-      <created>1675177172266</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1675177172266</updated>
-    </task>
-    <task id="LOCAL-00058" summary="set up and implement update method and endpoint">
-      <created>1675183901038</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1675183901038</updated>
-    </task>
-    <task id="LOCAL-00059" summary="fix: small changes">
-      <created>1675188203556</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1675188203556</updated>
-    </task>
-    <task id="LOCAL-00060" summary="feat: update product first version is done">
-      <created>1675244488166</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1675244488166</updated>
-    </task>
-    <task id="LOCAL-00061" summary="feat: delete product from shopping cart when product bought">
-      <created>1675245096109</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1675245096109</updated>
-    </task>
-    <task id="LOCAL-00062" summary="feat: by delete product then removed from Orders and  shopping cart">
-      <created>1675246346091</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1675246346091</updated>
-    </task>
-    <task id="LOCAL-00063" summary="refactor deleteProduct method">
-      <created>1675247369331</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1675247369331</updated>
-    </task>
-    <task id="LOCAL-00064" summary="reformat cod add simple stile to file upload button">
-      <created>1675249348426</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1675249348426</updated>
-    </task>
-    <task id="LOCAL-00065" summary="feat: search on product and refactor NavBar component">
-      <created>1675278778535</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1675278778535</updated>
-    </task>
-    <task id="LOCAL-00066" summary="refactor: removeFromShoppingCarrOrOrdered method">
-      <created>1675279728451</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1675279728451</updated>
-    </task>
-    <task id="LOCAL-00067" summary="fix: remove removeFromExecutedOrder">
-      <created>1675281646268</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1675281646268</updated>
-    </task>
-    <task id="LOCAL-00068" summary="refactor: updateProduct method">
-      <created>1675328778856</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1675328778857</updated>
-    </task>
-    <task id="LOCAL-00069" summary="test: AppUserService">
-      <created>1675333695037</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1675333695037</updated>
+      <workItem from="1675607383471" duration="62205000" />
+      <workItem from="1675851677645" duration="6305000" />
     </task>
     <task id="LOCAL-00070" summary="feat: some tests">
       <created>1675363154101</created>
@@ -597,7 +486,105 @@
       <option name="project" value="LOCAL" />
       <updated>1675711213820</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="feat: show product by select category &gt; in progress">
+      <created>1675717612253</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1675717612253</updated>
+    </task>
+    <task id="LOCAL-00106" summary="feat: show product by selected category">
+      <created>1675761166044</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1675761166044</updated>
+    </task>
+    <task id="LOCAL-00107" summary="feat: category feature is done">
+      <created>1675767397097</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1675767397097</updated>
+    </task>
+    <task id="LOCAL-00108" summary="feat: not found page">
+      <created>1675768708224</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1675768708224</updated>
+    </task>
+    <task id="LOCAL-00109" summary="feat: sign up page">
+      <created>1675769978147</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1675769978147</updated>
+    </task>
+    <task id="LOCAL-00110" summary="small refactor">
+      <created>1675770682488</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1675770682488</updated>
+    </task>
+    <task id="LOCAL-00111" summary="feat: by signUp also log the user in">
+      <created>1675780001594</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1675780001594</updated>
+    </task>
+    <task id="LOCAL-00112" summary="feat: by signUp also log the user in">
+      <created>1675780077943</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1675780077943</updated>
+    </task>
+    <task id="LOCAL-00113" summary="small refactoring">
+      <created>1675780098049</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1675780098050</updated>
+    </task>
+    <task id="LOCAL-00114" summary="fix: bug fixes change button to div in li tag">
+      <created>1675854021884</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1675854021884</updated>
+    </task>
+    <task id="LOCAL-00115" summary="fix: small bug in key value">
+      <created>1675854337575</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1675854337575</updated>
+    </task>
+    <task id="LOCAL-00116" summary="fix: if product details loaded show Product details loaded">
+      <created>1675854949822</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1675854949822</updated>
+    </task>
+    <task id="LOCAL-00117" summary="fix: clean some spaces up">
+      <created>1675855191526</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1675855191526</updated>
+    </task>
+    <task id="LOCAL-00118" summary="TEST: removeFromOrdered">
+      <created>1675856592787</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1675856592787</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,19 +595,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="test_and_refactor" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -630,18 +605,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix: sonar (org.apache.maven.plugins)" />
-    <MESSAGE value="test: continue for appUser" />
-    <MESSAGE value="refactor addToCart and delete OrderController" />
-    <MESSAGE value="first version of test and refactor" />
-    <MESSAGE value="delete MyProperties.java class" />
-    <MESSAGE value="add dropdown and refactor Login/logout link" />
-    <MESSAGE value="small styling for footer" />
-    <MESSAGE value="feat: getOrdered method" />
-    <MESSAGE value="feat: new endPoint /api/ordered" />
-    <MESSAGE value="feat: show ordered products" />
-    <MESSAGE value="fix: refactor remove from shoppingCart button" />
-    <MESSAGE value="feat: show ordered product" />
     <MESSAGE value="fix: sonar backend" />
     <MESSAGE value="fix: sonar fronted refactor" />
     <MESSAGE value="small refactoring and bug fix" />
@@ -650,12 +613,24 @@
     <MESSAGE value="removed child from ProductCard component" />
     <MESSAGE value="order button style" />
     <MESSAGE value="feat: remove product from order" />
-    <MESSAGE value="small refactor" />
     <MESSAGE value="feat: in case no product added to shopping cart" />
     <MESSAGE value="small changes" />
     <MESSAGE value="add: category dropdown" />
     <MESSAGE value="feat: category endpoint and method" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: category endpoint and method" />
+    <MESSAGE value="feat: show product by select category &gt; in progress" />
+    <MESSAGE value="feat: show product by selected category" />
+    <MESSAGE value="feat: category feature is done" />
+    <MESSAGE value="feat: not found page" />
+    <MESSAGE value="feat: sign up page" />
+    <MESSAGE value="small refactor" />
+    <MESSAGE value="feat: by signUp also log the user in" />
+    <MESSAGE value="small refactoring" />
+    <MESSAGE value="fix: bug fixes change button to div in li tag" />
+    <MESSAGE value="fix: small bug in key value" />
+    <MESSAGE value="fix: if product details loaded show Product details loaded" />
+    <MESSAGE value="fix: clean some spaces up" />
+    <MESSAGE value="TEST: removeFromOrdered" />
+    <option name="LAST_COMMIT_MESSAGE" value="TEST: removeFromOrdered" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
