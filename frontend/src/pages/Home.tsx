@@ -21,8 +21,6 @@ export default function Home() {
     const [products, setProducts,isReady] = useProducts(searchParam);
     const[user] = useAuth()
 
-    console.log(category)
-
     const onSubmit = async (e: React.FormEvent) => {
         // FILE UPLOAD
         e.preventDefault();
@@ -79,9 +77,6 @@ export default function Home() {
             }
         })();
     }, [category,setProducts]);
-
-
-
 
     return (
         <>

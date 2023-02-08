@@ -81,7 +81,6 @@ export default function ProductDetails() {
                                 </div>
                             </div>
                             {/*---------------*/}
-
                             {/*BUY BUTTON */}
                             <div className={"details-button-container"}>
 
@@ -108,17 +107,14 @@ export default function ProductDetails() {
                                     </div>
                                 </div>
                             </div>
-
-
                             {/*---------------*/}
 
                         </div>
                     </div>
 
                 </div>
-
-            </div> : <div className={"place-holder"}>Product Details loaded...</div>}
-
+            </div>
+                : <div className={"place-holder"}>Product Details loaded...</div>}
         </>
     )
 }
