@@ -34,11 +34,14 @@ export default function Home() {
             formData.append("file[]", file);
         }
         setFiles(null)
+        setPreviewUrls([])
+        setTextPreview('')
+
         const res = await axios.post("/api/products", formData);
         setProducts([...products, res.data])
 
-        for (let i = 0; i < previewUrls.length; i++) {
-            URL.revokeObjectURL(previewUrls[i])
+        for (let previewUrl of previewUrls) {
+            URL.revokeObjectURL(previewUrl)
         }
     }
     const onUpdate = async (e: React.FormEvent) => {
@@ -69,13 +72,12 @@ export default function Home() {
             }
             const fileUrls = [];
 
-            for (let i = 0; i < e.target.files.length; i++) {
-                console.log(e.target.files[i].type)
-                if(e.target.files[i].type === "text/plain"){
-                    const text =  await  e.target.files[i].text();
+            for (let file of e.target.files) {
+                if(file.type === "text/plain"){
+                    const text =  await  file.text();
                     setTextPreview(text)
                 }else {
-                    fileUrls.push(URL.createObjectURL(e.target.files[i]));
+                    fileUrls.push(URL.createObjectURL(file));
                 }
             }
             setPreviewUrls(fileUrls);
