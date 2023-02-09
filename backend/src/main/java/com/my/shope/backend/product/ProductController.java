@@ -86,7 +86,7 @@ public class ProductController {
 
 
     @GetMapping("/shopping-cart-size")
-    public int getShoppingCartSiz(){
+    public int getShoppingCartSize(){
         return productService.getShoppingCart().size();
     }
 

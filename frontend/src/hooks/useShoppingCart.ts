@@ -1,10 +1,11 @@
-import {Dispatch, SetStateAction, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Product} from "../model/Product";
-import {getOrdered, getShoppingCart} from "../api/ProductApi";
+import {getOrdered, getShoppingCart, getSizeOfShoppingCart} from "../api/ProductApi";
 
 
-export default function useShoppingCart(order: string): [Product[], Dispatch<SetStateAction<Product[]>>] {
+export default function useShoppingCart(order: string): [Product[], ((value: (((prevState: Product[]) => Product[]) | Product[])) => void), number, ((value: (((prevState: number) => number) | number)) => void)] {
     const [products, setProducts] = useState<Product[]>([]);
+    const[sizeOfShoppingCart,setSizeOfShoppingCart] = useState(0)
 
     useEffect(() => {
         (async () => {
@@ -19,5 +20,13 @@ export default function useShoppingCart(order: string): [Product[], Dispatch<Set
         })();
 }, [order]);
 
-    return [products,setProducts];
+    useEffect(() => {
+        (async () => {
+            const sizOfShoppingCart = await getSizeOfShoppingCart()
+            setSizeOfShoppingCart(sizOfShoppingCart)
+        })();
+    }, [sizeOfShoppingCart]);
+
+
+    return [products,setProducts,sizeOfShoppingCart,setSizeOfShoppingCart];
 }

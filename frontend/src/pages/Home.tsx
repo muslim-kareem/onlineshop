@@ -11,10 +11,12 @@ import useAuth from "../hooks/useAuth";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import {useParams} from "react-router-dom";
+import useShoppingCart from "../hooks/useShoppingCart";
 
 export default function Home() {
 
     const {category} = useParams();
+    const[,,sizeOfShoppingCart] = useShoppingCart('');
     const [files, setFiles] = useState<File[] | null>()
     const [productId, setProductId] = useState("")
     const [searchParam,setSearchParam] = useState('')
@@ -62,13 +64,13 @@ export default function Home() {
     const onChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length) {
             const f = [];
-            for (let i = 0; i < e.target.files.length; i++) {
-                f.push(e.target.files[i]);
+            for (let file  of e.target.files) {
+                f.push(file);
             }
             setFiles(f);
 
-            for (let i = 0; i < previewUrls.length; i++) {
-                URL.revokeObjectURL(previewUrls[i])
+            for (let previewUrl of previewUrls) {
+                URL.revokeObjectURL(previewUrl)
             }
             const fileUrls = [];
 
@@ -104,7 +106,7 @@ export default function Home() {
 
     return (
         <>
-            <NavBar user={user} onSearch={(e) => setSearchParam(e)} />
+            <NavBar user={user} shoppingCartNum={sizeOfShoppingCart} onSearch={(e) => setSearchParam(e)} />
             {isReady && products.length > 0 ?
             <ProductContainer>
                 {products.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>

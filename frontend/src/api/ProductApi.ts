@@ -6,6 +6,11 @@ export const getProducts = async (): Promise<Product[]> => {
     return response.data;
 };
 
+export const getSizeOfShoppingCart= async ()=> {
+    const response = await axios.get('/api/products/shopping-cart-size');
+    return response.data;
+};
+
 export const getProductById = async (productId: string): Promise<Product> => {
     const response = await axios.get<Product>('/api/products/'+productId);
     return response.data;
