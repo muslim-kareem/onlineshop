@@ -1,5 +1,0 @@
-id:2
-name:product2
-description:description
-price:20.00
-category:CLOSING
