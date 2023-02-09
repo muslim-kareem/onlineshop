@@ -53,9 +53,7 @@ export default function NavBar({user, onSearch,shoppingCartNum}: {
                         <div className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2">
 
                         </div>
-
                     </Link>
-
                     {/*DROPDOWN*/}
                     <div className="dropdown">
 
