@@ -4,7 +4,8 @@ import {ChangeEvent, useState} from "react";
 import LogoutButton from "./LogoutButton";
 import useProducts from "../hooks/useProducts";
 
-export default function NavBar({user, onSearch}: {
+export default function NavBar({user, onSearch,shoppingCartNum}: {
+    shoppingCartNum?: number
     onSearch?: (search: string) => void
     user: User
 }) {
@@ -21,10 +22,12 @@ export default function NavBar({user, onSearch}: {
                 <Link to={"/"}>
                     <div className="fa-solid fs-1 fa-shop shop-icon"></div>
                     MyShop</Link>
-                <form>
+
+                    {/*SEARCH INPUT*/}
+                <form  className={"inline"}>
                     {user && <input onChange={(e: ChangeEvent<HTMLInputElement>) => {
                         return onSearch !== undefined ? onSearch(e.target.value) : null
-                    }} className="form-control me-3 search-input" placeholder="Search" aria-label="Search"/>}
+                    }} className="form-control ms-3 mt-2 search-input" placeholder="Search" aria-label="Search"/>}
                 </form>
 
                 {/* users icon containers */}
@@ -42,13 +45,21 @@ export default function NavBar({user, onSearch}: {
                             <div className="fa-solid fa-user-check fs-2"></div>
                             <p className={"text-under-icon"}>{user?.username}</p>
                         </div>}
-                    <Link to={"/home-shopping-cart"}
-                          className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2"></Link>
+                    {/*SHOPPING CART ICON*/}
+
+                    <Link to={"/home-shopping-cart"}>
+
+                        <div className={"sopping-cart-num"}>{shoppingCartNum}</div>
+                        <div className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2">
+
+                        </div>
+
+                    </Link>
 
                     {/*DROPDOWN*/}
                     <div className="dropdown">
 
-                        <button className="btn ms-4"
+                        <button className="btn ms-2 mt-2"
                                 type="button"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="true">
@@ -69,13 +80,13 @@ export default function NavBar({user, onSearch}: {
                         </ul>
                     </div>
 
-                    {/*CATEGORY*/}
+                    {/*DROPDOWN CATEGORY*/}
                     <div className="dropdown">
-                        <button className="btn ms-0"
+                        <button className="btn ms-0 mt-2"
                                 type="button"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="true">
-                            <h5>{categoryName}</h5>
+                            <h6 >{categoryName}</h6>
                         </button>
                         <ul className="dropdown-menu">
                             <li>
@@ -86,7 +97,9 @@ export default function NavBar({user, onSearch}: {
                             {uniqueCategory.map(category =>
                                 <li key={category}>
                                     <div className="dropdown-item"
-                                            onClick={() => setCateGoryName(category)}><Link
+                                            onClick={() => setCateGoryName(category)}>
+                                        <Link
+
                                             to={"/" + category}>{category}</Link>
                                     </div>
                                 </li>)}

@@ -2,18 +2,13 @@ package com.my.shope.backend.product;
 
 import com.my.shope.backend.app_ser.AppUser;
 import com.my.shope.backend.app_ser.AppUserService;
-import com.my.shope.backend.exception.MyException;
 import com.my.shope.backend.gridfs.FileService;
 import com.my.shope.backend.order.Order;
 import com.my.shope.backend.order.OrderService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
@@ -27,27 +22,21 @@ public class ProductService {
     private final AppUserService userService;
     private final FileService fileService;
    private final AppUserService appUserService;
-    @Value("${product.details}")
-    private  String detailsPath;
 
 
     private static final String PRODUCT_DETAILS = "product_details";
 
 
-    public Product createProduct(MultipartFile[] file) throws MyException, IOException{
+    public Product createProduct(MultipartFile[] files) throws IOException{
         Product product = new Product();
         List<String> imagesIds = new ArrayList<>();
 
-        for (MultipartFile multipartFile : file) {
+        for (MultipartFile multipartFile : files) {
             if (Objects.requireNonNull(multipartFile.getOriginalFilename()).startsWith(PRODUCT_DETAILS)) {
 
-                fileService.saveProductDetailsFile(multipartFile);
-                setProductDetails(product, detailsPath);
-
+                setProductDetails(product,new String(multipartFile.getBytes()));
             } else {
                 imagesIds.add(fileService.saveFile(multipartFile).getId());
-
-
             }
         }
         product.setImageIDs(imagesIds);
@@ -181,13 +170,9 @@ public class ProductService {
     }
 
 
-    public void setProductDetails(Product product, String textFilePath) throws MyException, IOException  {
+    public void setProductDetails(Product product, String  file)  {
 
-        File file = new File(textFilePath) ;
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-
-            String st;
-            while ((st = br.readLine()) != null) {
+            file.lines().forEach(st -> {
                 int index = st.indexOf(":");
                 String fieldName = st.substring(0, index);
                 String value = st.substring(index + 1);
@@ -198,20 +183,10 @@ public class ProductService {
                     case "price" -> product.setPrice(Double.parseDouble(value));
                     case "category" -> product.setCategory(value);
                     case "id" -> product.setId(value);
-                    default -> {
-                        if (value.equals("name")||
-                            value.equals("description")||
-                            value.equals("price")||
-                            value.equals("category")) {
-                            throw new MyException("unknown content of product_details text format");
-                        }
-                    }
-                }
+                    default ->  product.setDescription(value);
             }
-        } catch (IOException  e) {
-            throw new IOException ("file is not found :  " + e.getMessage());
-        }
 
+            });
 
     }
 
@@ -229,13 +204,13 @@ public class ProductService {
     }
 
 
-    public List<Product> updateProduct(String productId, MultipartFile[] multipartFile) throws MyException ,IOException  {
+    public List<Product> updateProduct(String productId, MultipartFile[] multipartFile) throws IOException  {
         Product productToUpdate = getProductById(productId);
 
         // if only product_details in the multipartFile then update only the details
         if(multipartFile.length == 1 && Objects.requireNonNull(multipartFile[0].getOriginalFilename()).startsWith(PRODUCT_DETAILS)){
-            fileService.saveProductDetailsFile(multipartFile[0]);
-            setProductDetails(productToUpdate, detailsPath);
+
+            setProductDetails(productToUpdate, new String(multipartFile[0].getBytes()));
              productRepo.save(productToUpdate);
              return getAll();
         }
@@ -243,8 +218,8 @@ public class ProductService {
         // case contains the product_details file and photos
         for (MultipartFile file : multipartFile) {
             if (Objects.requireNonNull(file.getOriginalFilename()).startsWith(PRODUCT_DETAILS)) {
-                fileService.saveProductDetailsFile(file);
-                setProductDetails(productToUpdate, detailsPath);
+
+                setProductDetails(productToUpdate, new String(file.getBytes()));
             } else {
                 fileService.deleteImagesByIds(productToUpdate.getImageIDs());
             }

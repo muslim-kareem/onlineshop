@@ -53,7 +53,6 @@
 }
 
 .shopping-cart-icon {
-    margin-top: 5.8px;
     margin-left: 18%;
 }
 
@@ -288,4 +287,16 @@ a {
 
 .dropdown {
     max-height: 12px;
+}
+
+.sopping-cart-num{
+    float: right;
+
+    border-radius: 100px;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0;
 }

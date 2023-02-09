@@ -38,7 +38,7 @@ export default function ProductDetails() {
 
     return (<>
 
-            <NavBar user={user}/>
+            <NavBar user={user} shoppingCartNum={shoppingCart.length}/>
             {isReady ? <div>
                 <div className={"photos-container"}>
 
