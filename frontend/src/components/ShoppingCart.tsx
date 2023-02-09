@@ -8,8 +8,7 @@ import React from "react";
 import {useNavigate} from "react-router-dom";
 
 export default function ShoppingCart(){
-
-    const [shoppingCart,setShoppingCart] = useShoppingCart("shopping-cart");
+    const [shoppingCart,setShoppingCart,sizeOfShoppingCart,setSizeOfShoppingCart] = useShoppingCart("shopping-cart");
     const [user] = useAuth();
     const navigate = useNavigate();
 
@@ -17,6 +16,7 @@ export default function ShoppingCart(){
         const theNewShoppingCard = shoppingCart.filter(f => f.id !== id)
         removeFromShoppingCart(id);
         setShoppingCart([...theNewShoppingCard])
+        setSizeOfShoppingCart(shoppingCart.length -1)
     }
 
 
@@ -24,11 +24,11 @@ export default function ShoppingCart(){
         getOrderAll();
         setShoppingCart([...shoppingCart])
         navigate("/")
+        setSizeOfShoppingCart(1)
     }
-
     return (
         <>
-            <NavBar user={user}/>
+            <NavBar user={user} shoppingCartNum={sizeOfShoppingCart}/>
              <ProductContainer >
                 {shoppingCart.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
                     {/*REMOVE BUTTON*/}

@@ -22,10 +22,7 @@ public class ProductService {
     private final AppUserService userService;
     private final FileService fileService;
    private final AppUserService appUserService;
-
-
     private static final String PRODUCT_DETAILS = "product_details";
-
 
     public Product createProduct(MultipartFile[] files) throws IOException{
         Product product = new Product();
@@ -83,7 +80,6 @@ public class ProductService {
         }
         return optionOrder.get();
     }
-
 
     public Product buyProduct(String productId) {
         removeFromShoppingCart(productId);
@@ -203,7 +199,6 @@ public class ProductService {
 
     }
 
-
     public List<Product> updateProduct(String productId, MultipartFile[] multipartFile) throws IOException  {
         Product productToUpdate = getProductById(productId);
 
@@ -265,4 +260,6 @@ public class ProductService {
             buyProduct(product.getId());
         }
     }
+
+
 }

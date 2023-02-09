@@ -7,14 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="add: index.html to static directory">
-      <change afterPath="$PROJECT_DIR$/note" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: endpoint size of shopping cart and refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/product_details.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ShoppingCart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ShoppingCart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useShoppingCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useShoppingCart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +116,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductControllerTest">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -249,28 +251,7 @@
       <workItem from="1675437998030" duration="7246000" />
       <workItem from="1675447569871" duration="51631000" />
       <workItem from="1675607383471" duration="62205000" />
-      <workItem from="1675851677645" duration="42650000" />
-    </task>
-    <task id="LOCAL-00076" summary="fix: sonar">
-      <created>1675428348637</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1675428348637</updated>
-    </task>
-    <task id="LOCAL-00077" summary="fix: sonar (org.apache.maven.plugins)">
-      <created>1675428994069</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1675428994070</updated>
-    </task>
-    <task id="LOCAL-00078" summary="small refactor">
-      <created>1675445859517</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1675445859517</updated>
+      <workItem from="1675851677645" duration="52961000" />
     </task>
     <task id="LOCAL-00079" summary="refactor addToCart and delete OrderController">
       <created>1675503085930</created>
@@ -594,7 +575,28 @@
       <option name="project" value="LOCAL" />
       <updated>1675929519919</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="refactor createProduct method">
+      <created>1675954743197</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1675954743197</updated>
+    </task>
+    <task id="LOCAL-00126" summary="first version of show num of shoppingCart">
+      <created>1675954821492</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1675954821492</updated>
+    </task>
+    <task id="LOCAL-00127" summary="feat: endpoint size of shopping cart and refactor">
+      <created>1675957587214</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1675957587214</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,9 +617,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="order button style" />
-    <MESSAGE value="feat: remove product from order" />
-    <MESSAGE value="feat: in case no product added to shopping cart" />
     <MESSAGE value="small changes" />
     <MESSAGE value="add: category dropdown" />
     <MESSAGE value="feat: category endpoint and method" />
@@ -640,7 +639,10 @@
     <MESSAGE value="refactor: for loop" />
     <MESSAGE value="test: product_details without relative path" />
     <MESSAGE value="add: index.html to static directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: index.html to static directory" />
+    <MESSAGE value="refactor createProduct method" />
+    <MESSAGE value="first version of show num of shoppingCart" />
+    <MESSAGE value="feat: endpoint size of shopping cart and refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: endpoint size of shopping cart and refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -653,6 +655,12 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java</url>
+          <line>21</line>
+          <properties field="userService" class="com.my.shope.backend.product.ProductService" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
