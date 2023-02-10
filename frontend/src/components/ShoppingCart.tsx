@@ -6,6 +6,7 @@ import NavBar from "./NavBar";
 import useAuth from "../hooks/useAuth";
 import React from "react";
 import {useNavigate} from "react-router-dom";
+import Footer from "./Footer";
 
 export default function ShoppingCart() {
     const [shoppingCart, setShoppingCart, sizeOfShoppingCart, setSizeOfShoppingCart] = useShoppingCart("shopping-cart");
@@ -27,22 +28,24 @@ export default function ShoppingCart() {
     }
     return (
         <>
-            <NavBar user={user} shoppingCartNum={sizeOfShoppingCart} />
-            <ProductContainer>
-                {shoppingCart.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
-                    {/*REMOVE BUTTON*/}
-                    <button type="button" className="btn  p-1 mt-2  shopping-cart-remove-button" onClick={() => {
-                        onRemove(p.id)
-                    }}>remove from shoppingCart
-                    </button>
-                </div>)}
+            <NavBar user={user} shoppingCartNum={sizeOfShoppingCart} showSearchInput={true}/>
 
-            </ProductContainer>
 
             {/*ORDER ALL BUTTON*/}
 
             {shoppingCart.length > 0 ?
                 <div>
+                    <ProductContainer>
+                        {shoppingCart.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
+                            {/*REMOVE BUTTON*/}
+                            <button type="button" className="btn  p-1 mt-2  shopping-cart-remove-button"
+                                    onClick={() => {
+                                        onRemove(p.id)
+                                    }}>remove from shoppingCart
+                            </button>
+                        </div>)}
+
+                    </ProductContainer>
                     <button type="button" className="btn btn-danger float-end me-5 " onClick={onOrderAll}
                             data-bs-toggle="modal" data-bs-target="#shopping-cart-added">
                         {shoppingCart.length > 1 ? ("Order all " + shoppingCart.length + " Products now") : "Order now"}
@@ -69,7 +72,7 @@ export default function ShoppingCart() {
                 <div className={"place-holder"}>No Products added to shopping</div>
             }
             {/*---------------*/}
-
+            <Footer/>
         </>
     )
 }

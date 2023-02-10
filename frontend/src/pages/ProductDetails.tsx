@@ -7,6 +7,7 @@ import useShoppingCart from "../hooks/useShoppingCart";
 import NavBar from "../components/NavBar";
 import useAuth from "../hooks/useAuth";
 import {getSizeOfShoppingCart} from "../api/ProductApi";
+import Footer from "../components/Footer";
 
 export default function ProductDetails() {
 
@@ -130,6 +131,7 @@ export default function ProductDetails() {
                 </div>
             </div>
                 : <div className={"place-holder"}>Product Details loaded...</div>}
+            <Footer/>
         </>
     )
 }

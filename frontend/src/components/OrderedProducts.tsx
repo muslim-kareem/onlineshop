@@ -5,6 +5,7 @@ import {removeOrdered} from "../api/ProductApi";
 import NavBar from "./NavBar";
 import useAuth from "../hooks/useAuth";
 import React from "react";
+import Footer from "./Footer";
 
 export default function OrderedProducts(){
     const [orderedProduct,setOrderedProduct,sizeOfShoppingCart] = useShoppingCart("ordered");
@@ -17,7 +18,7 @@ export default function OrderedProducts(){
     }
 
     return (
-        <>
+        <div>
             <NavBar user={user} shoppingCartNum={sizeOfShoppingCart}/>
             {orderedProduct.length > 0 ?
             <ProductContainer >
@@ -27,9 +28,9 @@ export default function OrderedProducts(){
                         onRemove(p.id)
                     }}>remove from orders</button>
                 </div>)}
-
             </ProductContainer>
            : <div className={"place-holder"}>No Products ordered</div>}
-        </>
+            <Footer/>
+        </div>
     )
 }

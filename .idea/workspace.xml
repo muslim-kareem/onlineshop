@@ -7,10 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="small improvement and styling refactor">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="small refactor and css stiling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/OrderedProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/OrderedProducts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ShoppingCart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ShoppingCart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,14 +247,7 @@
       <workItem from="1675437998030" duration="7246000" />
       <workItem from="1675447569871" duration="51631000" />
       <workItem from="1675607383471" duration="62205000" />
-      <workItem from="1675851677645" duration="64801000" />
-    </task>
-    <task id="LOCAL-00086" summary="feat: new endPoint /api/ordered">
-      <created>1675529901991</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1675529901991</updated>
+      <workItem from="1675851677645" duration="68771000" />
     </task>
     <task id="LOCAL-00087" summary="feat: show ordered products">
       <created>1675533283732</created>
@@ -589,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676035853148</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="small refactor and css stiling">
+      <created>1676036836189</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1676036836189</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +613,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="feat: sign up page" />
     <MESSAGE value="small refactor" />
     <MESSAGE value="feat: by signUp also log the user in" />
     <MESSAGE value="small refactoring" />
@@ -635,7 +637,8 @@
     <MESSAGE value="shopping cart v1 is done" />
     <MESSAGE value="small feature for Order product button  if the shopping cart contains more than 1 product or not" />
     <MESSAGE value="small improvement and styling refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="small improvement and styling refactor" />
+    <MESSAGE value="small refactor and css stiling" />
+    <option name="LAST_COMMIT_MESSAGE" value="small refactor and css stiling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

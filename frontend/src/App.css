@@ -1,7 +1,7 @@
 .container-login-page-wrapper {
     background-color: #f3f2f2;
     padding-top: 5%;
-    min-height: 1000px;
+    min-height: 750px;
 }
 
 .login-page {
@@ -115,6 +115,7 @@ a {
 
 .product-container {
     padding: 10px 100px 30px 100px;
+    min-height: 750px;
     margin: auto;
 }
 
@@ -137,6 +138,7 @@ a {
     flex-wrap: wrap;
     margin-top: 40px;
     margin-left: 10%;
+    min-height: 750px;
 }
 
 .text-buttons-container h2 {
@@ -271,12 +273,17 @@ a {
 
 .footer {
     min-height: 40px;
-    margin-top: 20px;
+    margin-top: 10%;
+
     background-color: #ecebeb;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 -50px 36px -28px inset;
 }
 
 .place-holder {
-    min-height: 700px;
+    min-height: 750px;
     margin: auto;
     text-align: center;
     padding-top: 100px;
