@@ -47,7 +47,8 @@ export default function ShoppingCart(){
             <div>
                 <button type="button" className="btn btn-danger float-end me-5 " onClick={onOrderAll}
                         data-bs-toggle="modal" data-bs-target="#shopping-cart-added">
-                     Order all {shoppingCart.length} Products
+
+                    {shoppingCart.length > 1 ? ("Order all " +shoppingCart.length+" Products now") :  "Order now"}
                 </button>
 
                 <div className="modal fade" id="shopping-cart-added" aria-labelledby="exampleModalLabel"
