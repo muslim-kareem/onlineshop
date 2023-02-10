@@ -49,9 +49,8 @@ export default function NavBar({user, onSearch,shoppingCartNum}: {
 
                     <Link to={"/home-shopping-cart"}>
 
-                        <div className={"sopping-cart-num"}>{shoppingCartNum}</div>
+                        <div className={"sopping-cart-num"}>{shoppingCartNum? shoppingCartNum:0}</div>
                         <div className="fa-sharp fa-solid fa-cart-shopping shopping-cart-icon fs-2">
-
                         </div>
                     </Link>
                     {/*DROPDOWN*/}

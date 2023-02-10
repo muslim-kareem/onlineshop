@@ -159,7 +159,7 @@ a {
 /*Details buttons */
 
 .add-to-cart-button {
-    background-color: #f66666;
+    background-color: #94c27d;
     display: inline-block;
     margin-bottom: 20px;
 
@@ -171,7 +171,7 @@ a {
 }
 
 .buy-button {
-    background-color: #e81111;
+    background-color: #f56262;
     color: white;
     min-width: 30%;
     display: block;
@@ -205,12 +205,6 @@ a {
     min-width: 300px;
 }
 
-.update-button {
-    max-height: 27px;
-    margin-top: 3px;
-    background-color: #e78181;
-    color: #e2eee0;
-}
 
 
 .add-button:hover {
@@ -291,7 +285,7 @@ a {
 
 .sopping-cart-num{
     float: right;
-
+    color: white;
     border-radius: 100px;
     background-color: red;
     width: 20px;

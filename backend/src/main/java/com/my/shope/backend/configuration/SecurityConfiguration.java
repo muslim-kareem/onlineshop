@@ -39,6 +39,7 @@ public class SecurityConfiguration {
                 .antMatchers(HttpMethod.POST, baseUrl).hasRole(Role.ADMIN.toString())
                 .antMatchers(HttpMethod.POST, baseUrl).hasRole(Role.ADMIN.toString())
                 .antMatchers(HttpMethod.DELETE, baseUrl).hasRole(Role.ADMIN.toString())
+                .antMatchers(HttpMethod.PUT, baseUrl).hasRole(Role.ADMIN.toString())
                 .and()
                 .build();
     }
