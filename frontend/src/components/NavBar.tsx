@@ -26,9 +26,9 @@ export default function NavBar({user, onSearch,shoppingCartNum,showSearchInput}:
 
                     {/*SEARCH INPUT*/}
                 {showSearchInput && <form className={"inline"}>
-                    {user && <input onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                     <input onChange={(e: ChangeEvent<HTMLInputElement>) => {
                         return onSearch !== undefined ? onSearch(e.target.value) : null
-                    }} className="form-control ms-3 mt-2 search-input" placeholder="Search" aria-label="Search"/>}
+                    }} className="form-control ms-3 mt-2 search-input" placeholder="Search" aria-label="Search"/>
                 </form>}
 
                 {/* users icon containers */}

@@ -140,7 +140,7 @@ a {
 }
 
 .text-buttons-container h2 {
-    margin-top: 150px;
+    margin-top: 10%;
     margin-bottom: 8%;
 }
 
@@ -156,7 +156,7 @@ a {
 }
 
 .present-photo {
-    margin-top: 147px;
+    margin-top: 15%;
     object-fit: cover;
     aspect-ratio: 3/4;
 }

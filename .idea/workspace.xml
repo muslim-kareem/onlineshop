@@ -7,13 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="small feature for Order product button  if the shopping cart contains more than 1 product or not">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="small improvement and styling refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ShoppingCart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ShoppingCart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,14 +244,7 @@
       <workItem from="1675437998030" duration="7246000" />
       <workItem from="1675447569871" duration="51631000" />
       <workItem from="1675607383471" duration="62205000" />
-      <workItem from="1675851677645" duration="63970000" />
-    </task>
-    <task id="LOCAL-00085" summary="feat: getOrdered method">
-      <created>1675529602861</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1675529602861</updated>
+      <workItem from="1675851677645" duration="64801000" />
     </task>
     <task id="LOCAL-00086" summary="feat: new endPoint /api/ordered">
       <created>1675529901991</created>
@@ -592,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676026707064</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="small improvement and styling refactor">
+      <created>1676035853147</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1676035853148</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,7 +610,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="feat: not found page" />
     <MESSAGE value="feat: sign up page" />
     <MESSAGE value="small refactor" />
     <MESSAGE value="feat: by signUp also log the user in" />
@@ -638,7 +634,8 @@
     <MESSAGE value="feat: secure update endpoint only for admin role" />
     <MESSAGE value="shopping cart v1 is done" />
     <MESSAGE value="small feature for Order product button  if the shopping cart contains more than 1 product or not" />
-    <option name="LAST_COMMIT_MESSAGE" value="small feature for Order product button  if the shopping cart contains more than 1 product or not" />
+    <MESSAGE value="small improvement and styling refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="small improvement and styling refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
