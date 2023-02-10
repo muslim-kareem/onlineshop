@@ -24,6 +24,7 @@ export default function Home() {
     const[previewUrls,setPreviewUrls] = useState<string[]>([])
     const [textPreview,setTextPreview] = useState<string>("")
     const[user] = useAuth()
+    const role = user?.role;
 
     const onSubmit = async (e: React.FormEvent) => {
         // FILE UPLOAD
@@ -112,16 +113,16 @@ export default function Home() {
                 {products.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
                     {/*CURD BUTTONS*/}
                     <div className={"crud-buttons-container"}>
-                        <UpdateProductButton onChange={onChange} onSubmit={onUpdate} onClick={() => {
+                        {role === "ADMIN" && <UpdateProductButton onChange={onChange} onSubmit={onUpdate} onClick={() => {
                             setProductId(p.id)
-                        }}/>
-                        <DeleteButton onDelete={() => onDelete(p.id)}/>
+                        }}/>}
+                        {role === "ADMIN" && <DeleteButton onDelete={() => onDelete(p.id)}/>}
                     </div>
                 </div>)}
             </ProductContainer>
                 :
                 <div className={"place-holder"}> Load data...</div>}
-            <AddButton onSubmit={onSubmit} onChange={onChange} previewUrls={previewUrls} textPreview={textPreview}/>
+            {role === "ADMIN" &&  <AddButton onSubmit={onSubmit} onChange={onChange} previewUrls={previewUrls} textPreview={textPreview}/>}
             <Footer/>
             </>
     )
