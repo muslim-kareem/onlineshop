@@ -98,7 +98,7 @@ export default function ProductDetails() {
 
                                 <button type="button" className="btn btn m-t-3 buy-button" onClick={buyProduct}
                                         data-bs-toggle="modal" data-bs-target="#order-button">
-                                    Order Product
+                                    Order now
                                 </button>
 
                                 <div className="modal fade" id="order-button" aria-labelledby="exampleModalLabel"

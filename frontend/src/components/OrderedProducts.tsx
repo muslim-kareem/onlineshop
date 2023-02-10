@@ -7,7 +7,7 @@ import useAuth from "../hooks/useAuth";
 import React from "react";
 
 export default function OrderedProducts(){
-    const [orderedProduct,setOrderedProduct] = useShoppingCart("ordered");
+    const [orderedProduct,setOrderedProduct,sizeOfShoppingCart] = useShoppingCart("ordered");
     const [user] = useAuth();
 
     const onRemove = (id: string) => {
@@ -18,7 +18,7 @@ export default function OrderedProducts(){
 
     return (
         <>
-            <NavBar user={user}/>
+            <NavBar user={user} shoppingCartNum={sizeOfShoppingCart}/>
             {orderedProduct.length > 0 ?
             <ProductContainer >
                 {orderedProduct.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
