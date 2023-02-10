@@ -109,13 +109,12 @@ a {
 }
 
 .card-img-top {
-    object-fit: contain;
+    object-fit: cover;
     aspect-ratio: 3/4;
 }
 
 .product-container {
-    padding: 100px;
-    padding-top: 10px;
+    padding: 10px 100px 30px 100px;
     margin: auto;
 }
 
@@ -141,6 +140,7 @@ a {
 }
 
 .text-buttons-container h2 {
+    margin-top: 150px;
     margin-bottom: 8%;
 }
 
@@ -154,6 +154,13 @@ a {
     padding-top: 10%;
 
 }
+
+.present-photo {
+    margin-top: 147px;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+}
+
 
 
 /*Details buttons */
@@ -177,8 +184,6 @@ a {
     display: block;
     margin-bottom: 15px;
     margin-left: 14px;
-    /*margin: auto;*/
-
 }
 
 .buy-button:hover {

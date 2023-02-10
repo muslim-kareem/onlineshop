@@ -107,7 +107,7 @@ export default function Home() {
 
     return (
         <>
-            <NavBar user={user} shoppingCartNum={sizeOfShoppingCart} onSearch={(e) => setSearchParam(e)} />
+            <NavBar user={user} shoppingCartNum={sizeOfShoppingCart} onSearch={(e) => setSearchParam(e)} showSearchInput={true} />
             {isReady && products.length > 0 ?
             <ProductContainer>
                 {products.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
