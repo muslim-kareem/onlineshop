@@ -4,7 +4,8 @@ import {ChangeEvent, useState} from "react";
 import LogoutButton from "./LogoutButton";
 import useProducts from "../hooks/useProducts";
 
-export default function NavBar({user, onSearch,shoppingCartNum}: {
+export default function NavBar({user, onSearch,shoppingCartNum,showSearchInput}: {
+    showSearchInput?: boolean
     shoppingCartNum?: number
     onSearch?: (search: string) => void
     user: User
@@ -17,18 +18,18 @@ export default function NavBar({user, onSearch,shoppingCartNum}: {
 
     return (
 
-        <nav className="navbar">
+        <nav className="navbar sticky-top">
             <div className="d-flex justify-content-around navbar-icons-container">
                 <Link to={"/"}>
                     <div className="fa-solid fs-1 fa-shop shop-icon"></div>
                     MyShop</Link>
 
                     {/*SEARCH INPUT*/}
-                <form  className={"inline"}>
-                    {user && <input onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                {showSearchInput && <form className={"inline"}>
+                     <input onChange={(e: ChangeEvent<HTMLInputElement>) => {
                         return onSearch !== undefined ? onSearch(e.target.value) : null
-                    }} className="form-control ms-3 mt-2 search-input" placeholder="Search" aria-label="Search"/>}
-                </form>
+                    }} className="form-control ms-3 mt-2 search-input" placeholder="Search" aria-label="Search"/>
+                </form>}
 
                 {/* users icon containers */}
                 <div className={"d-flex "}>

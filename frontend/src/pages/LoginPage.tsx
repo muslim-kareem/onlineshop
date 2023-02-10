@@ -8,6 +8,7 @@ import {
 import axios from "axios";
 import NavBar from "../components/NavBar";
 import useAuth from "../hooks/useAuth";
+import Footer from "../components/Footer";
 
 
 
@@ -103,6 +104,7 @@ export default function LoginPage() {
                     </form>
                 </div>
             </div>
+            <Footer/>
 
         </>
     );
