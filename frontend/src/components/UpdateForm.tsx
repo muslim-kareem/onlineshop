@@ -11,6 +11,7 @@ export default function UpdateForm({onSetId}:{
     const [productId,setProductId] = useState("")
     const [product,setProduct] = useProduct(productId);
     const [products] = useProducts("");
+    const [category,setCategory] = useState<string>(product.category)
 
     // STYLE UPLOAD BUTTON
     const fileInputRef = React.useRef<HTMLInputElement>(null)
@@ -21,14 +22,21 @@ export default function UpdateForm({onSetId}:{
     const handleShow = () => setShow(true);
     //----------
 
+    console.log(product.category)
 
 
     //MY ACTION METHODS
     const uniqueCategory = [...new Set(products.map(m => m.category))]
-    const categoryDropdown = uniqueCategory.map(c => <li><div className="dropdown-item" >{c}</div></li>);
+    const categoryDropdown = uniqueCategory.map(c => <li key={c}><div
+                                                              className="dropdown-item"
+                                                              onClick={() =>  {
+                                                                  setCategory(c)
+                                                              }} >
+     {c}
+    </div></li>);
 
     const showPhotos = <div>{product.imageIDs && product.imageIDs.map( img => <img key={img}
-                                                                                   style={{width: "200px", display:"block"}}
+                                                                                   style={{width: "20%"}}
                                                                                    src={IMAGES_PATH + img}
                                                                                    alt={img}
     />)}</div>;
@@ -40,17 +48,11 @@ export default function UpdateForm({onSetId}:{
 
     }
 
-    console.log(product.name)
-
-
-
-
-
 
     return(
         <>
             <>
-            <form onSubmit={onSubmit }>
+            <form onSubmit={onSubmit}>
                 <Button variant="primary" onClick={()=> {
                     handleShow()
                     setProductId(onSetId)
@@ -109,16 +111,15 @@ export default function UpdateForm({onSetId}:{
                             <ul className="dropdown-menu" >
                                 {categoryDropdown}
                             </ul>
-                            <input type="text" className="form-control" aria-label="Text input with dropdown button"  value={product.category}
-                            onChange={()=> {}}
-                            />
+                            <input type="text" className="form-control" aria-label="Text input with dropdown button"
+                                   placeholder={"Category"}
+                                   value={product.category}
+                                   name={"category"}
+                                   onChange={(e) => setProduct({...product, [e.target.name]: category} )}
+
+                                       />
                         </div>
                     {showPhotos}
-
-
-
-
-
 
 
                     </Modal.Body>
@@ -142,7 +143,6 @@ export default function UpdateForm({onSetId}:{
                         <Button variant="primary" type={"submit"} onClick={handleClose}>
                             load data
                         </Button>
-
 
                     </Modal.Footer>
 
