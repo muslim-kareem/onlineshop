@@ -1,8 +1,8 @@
-import {        useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Product} from "../model/Product";
 import {getProductById} from "../api/ProductApi";
 
-const initialStait: Product = {
+const initialStat: Product = {
     id: "",
     name: "",
     description: "",
@@ -12,7 +12,7 @@ const initialStait: Product = {
 }
 export default function useProduct(productId: string): [Product, ((value: (((prevState: Product) => Product) | Product)) => void), boolean] {
     const[isReady,setIsReady] = useState(false)
-    const [product, setProduct] = useState<Product>(initialStait);
+    const [product, setProduct] = useState<Product>(initialStat);
 
     useEffect(() => {
         (async () => {
