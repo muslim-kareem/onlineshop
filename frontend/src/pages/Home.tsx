@@ -85,7 +85,6 @@ export default function Home() {
             }
             setPreviewUrls(fileUrls);
         }
-
     }
     const onDelete = (id: string) => {
         const theNewProducts = products.filter(f => f.id !== id);
