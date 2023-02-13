@@ -68,8 +68,7 @@ export default function ProductDetails() {
 
                     <div className={"text-buttons-container"}>
                         <h2>{product.name}</h2>
-                        <p className={"description"}>Step into the season in style with our latest collection of
-                            clothing.From flowy dresses to tailored suits, we have something for every occasion." </p>
+                        <p className={"description"}>{product.description}</p>
 
                         {/*ADD TO CART BUTTON*/}
                         <div className={"details-button-container"}>

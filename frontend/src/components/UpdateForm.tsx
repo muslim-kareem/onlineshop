@@ -31,6 +31,7 @@ export default function UpdateForm({onSetId}:{
                                                               className="dropdown-item"
                                                               onClick={() =>  {
                                                                   setCategory(c)
+                                                                  setProduct({...product, ["category"]: c} )
                                                               }} >
      {c}
     </div></li>);
@@ -90,7 +91,6 @@ export default function UpdateForm({onSetId}:{
                                    value={product.price}
                                    placeholder={"Name"}
                                    name={'price'}
-                                   onChange={(e) => setProduct({...product, [e.target.name]: e.target.value} )}
 
                                   />
                         </div>
@@ -113,9 +113,9 @@ export default function UpdateForm({onSetId}:{
                             </ul>
                             <input type="text" className="form-control" aria-label="Text input with dropdown button"
                                    placeholder={"Category"}
-                                   value={product.category}
+                                   value={category}
                                    name={"category"}
-                                   onChange={(e) => setProduct({...product, [e.target.name]: category} )}
+
 
                                        />
                         </div>
