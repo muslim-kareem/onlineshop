@@ -12,20 +12,23 @@ import Footer from "../components/Footer";
 import {useParams} from "react-router-dom";
 import useShoppingCart from "../hooks/useShoppingCart";
 import UpdateForm from "../components/UpdateForm";
+import useProduct from "../hooks/useProduct";
 
 export default function Home() {
 
     const {category} = useParams();
-    const[,,sizeOfShoppingCart] = useShoppingCart('');
+    const [,,sizeOfShoppingCart] = useShoppingCart('');
     const [files, setFiles] = useState<File[] | null>()
-    // const [productId, setProductId] = useState("")
     const [searchParam,setSearchParam] = useState('')
     const [products, setProducts,isReady] = useProducts(searchParam);
-    const[previewUrls,setPreviewUrls] = useState<string[]>([])
+    const [productId,setProductId] =useState("")
+    const [product,setProduct] = useProduct(productId);
+    const [previewUrls,setPreviewUrls] = useState<string[]>([])
     const [textPreview,setTextPreview] = useState<string>("")
-    const[user] = useAuth()
+    const [user] = useAuth()
     const role = user?.role;
 
+    console.log(product.name)
     const onSubmit = async (e: React.FormEvent) => {
         // FILE UPLOAD
         e.preventDefault();
@@ -47,21 +50,7 @@ export default function Home() {
             URL.revokeObjectURL(previewUrl)
         }
     }
-    // const onUpdate = async (e: React.FormEvent) => {
-    //     // FILE UPLOAD
-    //     e.preventDefault();
-    //     if (!files) {
-    //         return;
-    //     }
-    //     const formData = new FormData();
-    //     for (const file of files) {
-    //         formData.append("file[]", file);
-    //     }
-    //     const res = await axios.post("/api/products/update/" + productId, formData);
-    //
-    //     setProducts([...res.data]);
-    //     setFiles(null)
-    // }
+
     const onChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length) {
             const f = [];
@@ -92,6 +81,34 @@ export default function Home() {
         deleteProduct(id)
     }
 
+
+
+    const onUpdate = async (e: React.FormEvent) => {
+        // FILE UPLOAD
+        e.preventDefault();
+
+        const res = await axios.put("/api/products/update", product);
+
+        setProducts(res.data)
+
+        if (!files) {
+            return;
+        }
+        const formData = new FormData();
+        for (const file of files) {
+            formData.append("file[]", file);
+        }
+        setFiles(null)
+        setPreviewUrls([])
+
+        await axios.put("/api/products/add-photos/"+product.id, formData);
+
+        for (let previewUrl of previewUrls) {
+            URL.revokeObjectURL(previewUrl)
+        }
+
+    }
+
     useEffect(() => {
         (async () => {
             if(category){
@@ -112,7 +129,16 @@ export default function Home() {
                 {products.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
                     {/*CURD BUTTONS*/}
                     <div className={"crud-buttons-container"}>
-                        {role === "ADMIN" &&  <UpdateForm  onSetId={() => p.id}/>}
+                        {role === "ADMIN" &&  <UpdateForm
+                            onSetId={() => setProductId(p.id)}
+                            onSubmit={onUpdate} onChange={onChange}
+                            previewUrls={previewUrls}
+                            productId={p.id}
+                            setProduct={setProduct}
+                            product={product}
+                        />
+
+                        }
                         {role === "ADMIN" && <DeleteButton onDelete={() => onDelete(p.id)}/>}
                     </div>
                 </div>)}

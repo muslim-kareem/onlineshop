@@ -1,20 +1,24 @@
 import React, {useState} from "react";
-import useProduct from "../hooks/useProduct";
 import {IMAGES_PATH} from "../model/aplication_properties";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import useProducts from "../hooks/useProducts";
-import axios from "axios";
+import {Product} from "../model/Product";
 
-export default function UpdateForm({onSetId}: {
-    onSetId: (id: string) => string
+export default function UpdateForm({onSubmit,onChange,previewUrls,product,onSetId,setProduct}: {
+    product: Product,
+    setProduct: React.Dispatch<React.SetStateAction<Product>>,
+    onSetId: () => void,
+    productId: string,
+    previewUrls: string[],
+    onSubmit: (e: React.FormEvent) => void,
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }) {
-    const [productId, setProductId] = useState("")
-    const [product, setProduct] = useProduct(productId);
     const [products] = useProducts("");
     const [category, setCategory] = useState<string>(product.category)
-    const [files, setFiles] = useState<File[] | null>()
-    const [previewUrls, setPreviewUrls] = useState<string[]>([])
+    // const [previewUrls, setPreviewUrls] = useState<string[]>([])
+
+    console.log("test "+category)
 
     // STYLE UPLOAD BUTTON
     const fileInputRef = React.useRef<HTMLInputElement>(null)
@@ -24,8 +28,6 @@ export default function UpdateForm({onSetId}: {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     //----------
-
-    console.log(product.category)
 
 
     //MY ACTION METHODS
@@ -55,61 +57,16 @@ export default function UpdateForm({onSetId}: {
     </div>;
 
 
-    const onSubmit = async (e: React.FormEvent) => {
-        // FILE UPLOAD
-        e.preventDefault();
-        if (!files) {
-            return;
-        }
-        const formData = new FormData();
-        for (const file of files) {
-            formData.append("file[]", file);
-        }
-        setFiles(null)
-        setPreviewUrls([])
-
-        await axios.post("/api/products/test2", product);
-        await axios.post("/api/products/test", formData);
-
-        for (let previewUrl of previewUrls) {
-            URL.revokeObjectURL(previewUrl)
-        }
-
-    }
-
-
-
-    const onChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files && e.target.files.length) {
-            const f = [];
-            for (let file of e.target.files) {
-                f.push(file);
-            }
-            setFiles(f);
-
-            for (let previewUrl of previewUrls) {
-                URL.revokeObjectURL(previewUrl)
-            }
-            const fileUrls = [];
-
-            for (let file of e.target.files) {
-                fileUrls.push(URL.createObjectURL(file));
-            }
-            setPreviewUrls(fileUrls);
-        }
-    }
-
 
     return (
         <>
             <>
-
-                <Button onClick={() => {
+                <button className={"btn"}  onClick={() => {
                     handleShow()
-                    setProductId(onSetId)
+                    onSetId()
                 }}>
                     UPDATE
-                </Button>
+                </button>
 
                 <Modal
                     backdrop="static"
@@ -121,7 +78,8 @@ export default function UpdateForm({onSetId}: {
                     <Modal.Header closeButton>
                         <Modal.Title>Update Product</Modal.Title>
                     </Modal.Header>
-                    <form onSubmit={onSubmit}>
+
+                    {product.name && <form onSubmit={onSubmit}>
                         <Modal.Body>
 
 
@@ -130,7 +88,7 @@ export default function UpdateForm({onSetId}: {
                                 <input className="form-control block block"
                                        placeholder={"name of Product"}
                                        name={'name'}
-                                       value={product.name}
+                                       value={product.name }
                                        onChange={(e) => setProduct({...product, [e.target.name]: e.target.value})}
                                 />
                             </div>
@@ -139,7 +97,7 @@ export default function UpdateForm({onSetId}: {
                                 <span className="input-group-text  " style={{minWidth: "110px"}}>Price</span>
                                 <input className="form-control block block" style={{minWidth: "110px"}}
                                        type={"number"}
-                                       value={product.price}
+                                       value={product.price }
                                        placeholder={"Price"}
                                        name={'price'}
                                        onChange={(e) => setProduct({...product, [e.target.name]: e.target.value})}
@@ -148,7 +106,7 @@ export default function UpdateForm({onSetId}: {
                             <div className="input-group mb-4">
                                 <span className="input-group-text  ">Description</span>
                                 <textarea className="form-control" aria-label="With textarea" rows={3}
-                                          value={product.description}
+                                          value={product.description }
                                           placeholder={"Description"}
                                           name={'description'}
                                           onChange={(e) => setProduct({...product, [e.target.name]: e.target.value})}
@@ -163,9 +121,11 @@ export default function UpdateForm({onSetId}: {
                                     {categoryDropdown}
                                 </ul>
                                 <input type="text" className="form-control" aria-label="Text input with dropdown button"
+                                       readOnly
                                        placeholder={"Category"}
-                                       value={category}
+                                       value={category? category: product.category }
                                        name={"category"}
+
                                 />
                             </div>
                             {showPhotos}
@@ -178,12 +138,13 @@ export default function UpdateForm({onSetId}: {
                             {/*THE TRIGGER BUTTON */}
                             <button className={"load-data-button"} onClick={() => {
                                 fileInputRef.current?.click();
-                            }}>load TXT File to update Details or Photos to update Alle Photos or Both
+                            }}>Load new photos
                             </button>
 
                             {/*THE ORIGINAL INPUT */}
                             <input type={"file"}
                                    ref={fileInputRef}
+                                   accept={"image/jpg"}
                                    style={{display: "none"}}
                                 // ON CHANGE FOR INPUT
                                    onChange={onChange}
@@ -197,7 +158,7 @@ export default function UpdateForm({onSetId}: {
                             </Button>
 
                         </Modal.Footer>
-                    </form>
+                    </form>}
 
                 </Modal>
             </>

@@ -17,8 +17,10 @@ export default function useProduct(productId: string): [Product, ((value: (((pre
     useEffect(() => {
         (async () => {
             try {
-                const product = await getProductById(productId)
-                setProduct(product)
+                if(productId){
+                    const product = await getProductById(productId)
+                    setProduct(product)
+                }
 
             }catch (e){
                 console.log("error : " + e)
