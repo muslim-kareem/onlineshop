@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {IMAGES_PATH} from "../model/aplication_properties";
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import useProducts from "../hooks/useProducts";
 import {Product} from "../model/Product";
+import ConformationDialog from "./ConformationDialog";
 
-export default function UpdateForm({onSubmit,onChange,previewUrls,product,onSetId,setProduct}: {
+export default function UpdateForm({onSubmit, onChange, previewUrls, product, onSetId, setProduct}: {
     product: Product,
     setProduct: React.Dispatch<React.SetStateAction<Product>>,
     onSetId: () => void,
@@ -16,16 +16,21 @@ export default function UpdateForm({onSubmit,onChange,previewUrls,product,onSetI
 }) {
     const [products] = useProducts("");
     const [category, setCategory] = useState<string>(product.category)
-    // const [previewUrls, setPreviewUrls] = useState<string[]>([])
+    const [e,setE] = useState<React.FormEvent | undefined >()
 
-    console.log("test "+category)
+
+
 
     // STYLE UPLOAD BUTTON
     const fileInputRef = React.useRef<HTMLInputElement>(null)
 
     // REACT BOOTSTRAP STATE
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        if(e)
+        onSubmit(e);
+        setShow(false);
+    }
     const handleShow = () => setShow(true);
     //----------
 
@@ -44,8 +49,8 @@ export default function UpdateForm({onSubmit,onChange,previewUrls,product,onSetI
     </li>);
 
     const showPhotos = <div className={"d-flex justify-content-around "}
-                            style={{width: "100%"}}>{product.imageIDs && product.imageIDs.map(img => <div key={img}><img
-            style={{maxWidth: " 150px", display: "block"}}
+                            style={{maxWidth: "100%"}}>{product.imageIDs && product.imageIDs.map(img => <div key={img}><img
+            style={{width: " 150px", display: "block"}}
             src={IMAGES_PATH + img}
             alt={img}></img>
             <button type={"button"} className={"btn d-block float-end p-0 me-4 remove-photo-button d-block"}
@@ -58,10 +63,11 @@ export default function UpdateForm({onSubmit,onChange,previewUrls,product,onSetI
 
 
 
+
     return (
         <>
             <>
-                <button className={"btn"}  onClick={() => {
+                <button className={"btn"} onClick={() => {
                     handleShow()
                     onSetId()
                 }}>
@@ -73,13 +79,17 @@ export default function UpdateForm({onSubmit,onChange,previewUrls,product,onSetI
                     show={show}
                     onHide={handleClose}
                     size="lg"
-                    aria-labelledby="update-modal-sizes-title-lg"
-                >
+                    aria-labelledby="update-modal-sizes-title-lg">
+
                     <Modal.Header closeButton>
                         <Modal.Title>Update Product</Modal.Title>
                     </Modal.Header>
 
-                    {product.name && <form onSubmit={onSubmit}>
+                    {product.name && <form onSubmit={e => {
+                        e.preventDefault();
+                        setE(e);
+                    }
+                    }>
                         <Modal.Body>
 
 
@@ -88,7 +98,7 @@ export default function UpdateForm({onSubmit,onChange,previewUrls,product,onSetI
                                 <input className="form-control block block"
                                        placeholder={"name of Product"}
                                        name={'name'}
-                                       value={product.name }
+                                       value={product.name}
                                        onChange={(e) => setProduct({...product, [e.target.name]: e.target.value})}
                                 />
                             </div>
@@ -97,7 +107,7 @@ export default function UpdateForm({onSubmit,onChange,previewUrls,product,onSetI
                                 <span className="input-group-text  " style={{minWidth: "110px"}}>Price</span>
                                 <input className="form-control block block" style={{minWidth: "110px"}}
                                        type={"number"}
-                                       value={product.price }
+                                       value={product.price}
                                        placeholder={"Price"}
                                        name={'price'}
                                        onChange={(e) => setProduct({...product, [e.target.name]: e.target.value})}
@@ -106,11 +116,10 @@ export default function UpdateForm({onSubmit,onChange,previewUrls,product,onSetI
                             <div className="input-group mb-4">
                                 <span className="input-group-text  ">Description</span>
                                 <textarea className="form-control" aria-label="With textarea" rows={3}
-                                          value={product.description }
+                                          value={product.description}
                                           placeholder={"Description"}
                                           name={'description'}
                                           onChange={(e) => setProduct({...product, [e.target.name]: e.target.value})}
-
                                 />
                             </div>
                             <div className="input-group mb-3">
@@ -123,7 +132,7 @@ export default function UpdateForm({onSubmit,onChange,previewUrls,product,onSetI
                                 <input type="text" className="form-control" aria-label="Text input with dropdown button"
                                        readOnly
                                        placeholder={"Category"}
-                                       value={category? category: product.category }
+                                       value={category ? category : product.category}
                                        name={"category"}
 
                                 />
@@ -153,9 +162,11 @@ export default function UpdateForm({onSubmit,onChange,previewUrls,product,onSetI
                             {/*<Button variant="secondary"   onClick={handleClose}>*/}
                             {/*    cancel*/}
                             {/*</Button>*/}
-                            <Button variant="primary" type={"submit"} onClick={handleClose}>
-                                load data
-                            </Button>
+                            {/*<Button variant="primary" type={"submit"} onClick={handleClose}>*/}
+                            {/*    load data*/}
+                            {/*</Button>*/}
+                            <ConformationDialog close={handleClose}/>
+
 
                         </Modal.Footer>
                     </form>}

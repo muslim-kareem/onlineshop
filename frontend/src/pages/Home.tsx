@@ -16,6 +16,8 @@ import useProduct from "../hooks/useProduct";
 
 export default function Home() {
 
+
+
     const {category} = useParams();
     const [,,sizeOfShoppingCart] = useShoppingCart('');
     const [files, setFiles] = useState<File[] | null>()
@@ -83,9 +85,8 @@ export default function Home() {
 
 
 
-    const onUpdate = async (e: React.FormEvent) => {
+    const onUpdate = async () => {
         // FILE UPLOAD
-        e.preventDefault();
 
         const res = await axios.put("/api/products/update", product);
 
@@ -101,7 +102,8 @@ export default function Home() {
         setFiles(null)
         setPreviewUrls([])
 
-        await axios.put("/api/products/add-photos/"+product.id, formData);
+       const response = await axios.put("/api/products/add-photos/"+product.id, formData);
+        setProducts(response.data)
 
         for (let previewUrl of previewUrls) {
             URL.revokeObjectURL(previewUrl)
@@ -129,7 +131,8 @@ export default function Home() {
                 {products.map(p => <div key={p.id} className={"product-card"}><ProductCard product={p}/>
                     {/*CURD BUTTONS*/}
                     <div className={"crud-buttons-container"}>
-                        {role === "ADMIN" &&  <UpdateForm
+                        {role === "ADMIN" &&
+                            <UpdateForm
                             onSetId={() => setProductId(p.id)}
                             onSubmit={onUpdate} onChange={onChange}
                             previewUrls={previewUrls}
