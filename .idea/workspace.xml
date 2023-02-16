@@ -7,15 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: v1 UpdateForm">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/my/shope/backend/product/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/UpdateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UpdateForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProduct.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: v3 UpdateForm">
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConformationDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConformationDialog.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +107,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.ProductControllerTest">
     <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -250,20 +243,6 @@
       <workItem from="1675447569871" duration="51631000" />
       <workItem from="1675607383471" duration="62205000" />
       <workItem from="1675851677645" duration="68771000" />
-    </task>
-    <task id="LOCAL-00089" summary="feat: show ordered product">
-      <created>1675600824509</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1675600824510</updated>
-    </task>
-    <task id="LOCAL-00090" summary="feat: show ordered product">
-      <created>1675600975560</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1675600975561</updated>
     </task>
     <task id="LOCAL-00091" summary="fix: sonar fronted refactor">
       <created>1675625144763</created>
@@ -594,7 +573,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676305031186</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="feat: v2 UpdateForm">
+      <created>1676392159787</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1676392159787</updated>
+    </task>
+    <task id="LOCAL-00139" summary="feat: v3 UpdateForm">
+      <created>1676457776396</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1676457776396</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,8 +608,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="small refactoring" />
-    <MESSAGE value="fix: bug fixes change button to div in li tag" />
     <MESSAGE value="fix: small bug in key value" />
     <MESSAGE value="fix: if product details loaded show Product details loaded" />
     <MESSAGE value="fix: clean some spaces up" />
@@ -640,7 +631,9 @@
     <MESSAGE value="small refactor and css stiling" />
     <MESSAGE value="feat: UpdateForm component in progress" />
     <MESSAGE value="feat: v1 UpdateForm" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: v1 UpdateForm" />
+    <MESSAGE value="feat: v2 UpdateForm" />
+    <MESSAGE value="feat: v3 UpdateForm" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: v3 UpdateForm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

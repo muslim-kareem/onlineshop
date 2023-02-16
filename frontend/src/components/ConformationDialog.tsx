@@ -70,8 +70,6 @@ export default function ConformationDialog({close}:{
                     }}>YES</Button>
                 </DialogActions>
             </Dialog>
-
-
         </div>
 
     );
