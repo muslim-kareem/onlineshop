@@ -83,8 +83,6 @@ export default function Home() {
         deleteProduct(id)
     }
 
-
-
     const onUpdate = async () => {
         // FILE UPLOAD
 

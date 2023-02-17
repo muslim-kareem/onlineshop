@@ -18,9 +18,6 @@ export default function UpdateForm({onSubmit, onChange, previewUrls, product, on
     const [category, setCategory] = useState<string>(product.category)
     const [e,setE] = useState<React.FormEvent | undefined >()
 
-
-
-
     // STYLE UPLOAD BUTTON
     const fileInputRef = React.useRef<HTMLInputElement>(null)
 
@@ -33,7 +30,6 @@ export default function UpdateForm({onSubmit, onChange, previewUrls, product, on
     }
     const handleShow = () => setShow(true);
     //----------
-
 
     //MY ACTION METHODS
     const uniqueCategory = [...new Set(products.map(m => m.category))]
@@ -60,9 +56,6 @@ export default function UpdateForm({onSubmit, onChange, previewUrls, product, on
         </div>
     )}
     </div>;
-
-
-
 
     return (
         <>
@@ -91,8 +84,6 @@ export default function UpdateForm({onSubmit, onChange, previewUrls, product, on
                     }
                     }>
                         <Modal.Body>
-
-
                             <div className="input-group mb-4">
                                 <span className="input-group-text  " style={{minWidth: "110px"}}>Name</span>
                                 <input className="form-control block block"
