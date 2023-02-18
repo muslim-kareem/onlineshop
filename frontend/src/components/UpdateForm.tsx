@@ -154,15 +154,15 @@ export default function UpdateForm({onUpdate, onChange, previewUrls, product, on
                                    onChange={onChange}
                                    multiple/>
 
-                            <Button variant="secondary" className={"ms-3"}  onClick={handleClose}>
+                            <Button className={"btn cancel-button"}  onClick={handleClose}>
                                 cancel
                             </Button>
-                            <button className={"btn btn-outline-secondary bg-opacity-10"} type={"submit"} onClick={() => {
+                            <button className={"btn save-button"} type={"submit"} onClick={() => {
                                 handleClose()
                                 onSuccess()
                             }
                             }>
-                                Save this State
+                                Save
                             </button>
                         </Modal.Footer>
                     </form>}
