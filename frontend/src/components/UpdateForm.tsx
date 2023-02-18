@@ -1,35 +1,43 @@
-import React, {useState} from "react";
+import React, {ChangeEvent, useState} from "react";
 import {IMAGES_PATH} from "../model/aplication_properties";
 import Modal from 'react-bootstrap/Modal';
 import useProducts from "../hooks/useProducts";
 import {Product} from "../model/Product";
-import ConformationDialog from "./ConformationDialog";
+import 'react-toastify/dist/ReactToastify.css';
+import { Button } from "react-bootstrap";
 
-export default function UpdateForm({onSubmit, onChange, previewUrls, product, onSetId, setProduct}: {
+export default function UpdateForm({onUpdate, onChange, previewUrls, product, onSetId, setProduct,onSuccess}: {
+    onSuccess: () => void,
     product: Product,
-    setProduct: React.Dispatch<React.SetStateAction<Product>>,
+    setProduct: (product: Product) => void,
     onSetId: () => void,
     productId: string,
     previewUrls: string[],
-    onSubmit: (e: React.FormEvent) => void,
+    onUpdate: (e: React.FormEvent) => void,
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }) {
     const [products] = useProducts("");
     const [category, setCategory] = useState<string>(product.category)
-    const [e,setE] = useState<React.FormEvent | undefined >()
+
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) => {
+        setProduct({
+            ...product,
+            [event.target.name]: event.target.value
+        });
+    };
+
 
     // STYLE UPLOAD BUTTON
     const fileInputRef = React.useRef<HTMLInputElement>(null)
 
     // REACT BOOTSTRAP STATE
     const [show, setShow] = useState(false);
-    const handleClose = () => {
-        if(e)
-        onSubmit(e);
-        setShow(false);
+    const handleClose = () => { setShow(false);
     }
     const handleShow = () => setShow(true);
     //----------
+
 
     //MY ACTION METHODS
     const uniqueCategory = [...new Set(products.map(m => m.category))]
@@ -78,11 +86,7 @@ export default function UpdateForm({onSubmit, onChange, previewUrls, product, on
                         <Modal.Title>Update Product</Modal.Title>
                     </Modal.Header>
 
-                    {product.name && <form onSubmit={e => {
-                        e.preventDefault();
-                        setE(e);
-                    }
-                    }>
+                    {product.name && <form onSubmit={onUpdate}>
                         <Modal.Body>
                             <div className="input-group mb-4">
                                 <span className="input-group-text  " style={{minWidth: "110px"}}>Name</span>
@@ -90,7 +94,7 @@ export default function UpdateForm({onSubmit, onChange, previewUrls, product, on
                                        placeholder={"name of Product"}
                                        name={'name'}
                                        value={product.name}
-                                       onChange={(e) => setProduct({...product, [e.target.name]: e.target.value})}
+                                       onChange={handleChange}
                                 />
                             </div>
 
@@ -101,7 +105,7 @@ export default function UpdateForm({onSubmit, onChange, previewUrls, product, on
                                        value={product.price}
                                        placeholder={"Price"}
                                        name={'price'}
-                                       onChange={(e) => setProduct({...product, [e.target.name]: e.target.value})}
+                                       onChange={handleChange}
                                 />
                             </div>
                             <div className="input-group mb-4">
@@ -110,7 +114,7 @@ export default function UpdateForm({onSubmit, onChange, previewUrls, product, on
                                           value={product.description}
                                           placeholder={"Description"}
                                           name={'description'}
-                                          onChange={(e) => setProduct({...product, [e.target.name]: e.target.value})}
+                                          onChange={handleChange}
                                 />
                             </div>
                             <div className="input-group mb-3">
@@ -132,7 +136,7 @@ export default function UpdateForm({onSubmit, onChange, previewUrls, product, on
 
                         </Modal.Body>
                         <Modal.Footer>
-                            <h5 style={{display: "block"}}>New Photo</h5>
+                            {/*<h5 style={{display: "block"}}>New Photo</h5>*/}
                             {previewUrls.map(img => <img key={img} style={{maxWidth: "150px"}} src={img} alt={img}/>)}
 
                             {/*THE TRIGGER BUTTON */}
@@ -150,22 +154,21 @@ export default function UpdateForm({onSubmit, onChange, previewUrls, product, on
                                    onChange={onChange}
                                    multiple/>
 
-                            {/*<Button variant="secondary"   onClick={handleClose}>*/}
-                            {/*    cancel*/}
-                            {/*</Button>*/}
-                            {/*<Button variant="primary" type={"submit"} onClick={handleClose}>*/}
-                            {/*    load data*/}
-                            {/*</Button>*/}
-                            <ConformationDialog close={handleClose}/>
-
-
+                            <Button variant="secondary" className={"ms-3"}  onClick={handleClose}>
+                                cancel
+                            </Button>
+                            <button className={"btn btn-outline-secondary bg-opacity-10"} type={"submit"} onClick={() => {
+                                handleClose()
+                                onSuccess()
+                            }
+                            }>
+                                Save this State
+                            </button>
                         </Modal.Footer>
                     </form>}
-
                 </Modal>
             </>
             {/*---------------*/}
-
         </>
     )
 }
