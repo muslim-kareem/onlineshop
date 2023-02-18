@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function UpdateProductButton({onSubmit,onChange,onClick}:{
-    onClick: () => void
+export default function UpdateProductButton({onSubmit,onChange,onSetId}:{
+    onSetId: () => void
     onSubmit: (e: React.FormEvent) => void,
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }){
@@ -11,7 +11,7 @@ export default function UpdateProductButton({onSubmit,onChange,onClick}:{
         <>
             {/*UPDATE PRODUCT BUTTON*/}
             <div className={""}>
-                <button type="button" className="btn  p-1 "  onClick={onClick}
+                <button type="button" className="btn  p-1 "  onClick={onSetId}
                         data-bs-toggle="modal" data-bs-target="#update-modal">
                      UPDATE
                 </button>

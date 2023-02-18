@@ -151,7 +151,7 @@ a {
 }
 
 .text-buttons-container {
-    margin-top: 80px;
+    margin-top: 5%;
     width: 25rem;
     padding-top: 10%;
 
@@ -305,4 +305,17 @@ a {
     text-align: center;
     font-size: 0.9rem;
     padding: 0;
+}
+
+/*UPDATE FOMR */
+.remove-photo-button{
+    margin-top: 5px;
+    background-color: #ef6e6e;
+    font-size: 0.7rem;
+    color: #faf6f6;
+}
+
+.remove-photo-button:hover{
+    background-color: #989393;
+    color: white;
 }

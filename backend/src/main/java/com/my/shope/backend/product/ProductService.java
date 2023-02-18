@@ -199,38 +199,7 @@ public class ProductService {
 
     }
 
-    public List<Product> updateProduct(String productId, MultipartFile[] multipartFile) throws IOException  {
-        Product productToUpdate = getProductById(productId);
 
-        // if only product_details in the multipartFile then update only the details
-        if(multipartFile.length == 1 && Objects.requireNonNull(multipartFile[0].getOriginalFilename()).startsWith(PRODUCT_DETAILS)){
-
-            setProductDetails(productToUpdate, new String(multipartFile[0].getBytes()));
-             productRepo.save(productToUpdate);
-             return getAll();
-        }
-
-        // case contains the product_details file and photos
-        for (MultipartFile file : multipartFile) {
-            if (Objects.requireNonNull(file.getOriginalFilename()).startsWith(PRODUCT_DETAILS)) {
-
-                setProductDetails(productToUpdate, new String(file.getBytes()));
-            } else {
-                fileService.deleteImagesByIds(productToUpdate.getImageIDs());
-            }
-        }
-
-        //just to delete old photos and sett the new photos to mey productToUpdate
-        productToUpdate.setImageIDs(new ArrayList<>());
-        for (MultipartFile file : multipartFile) {
-            if (!Objects.requireNonNull(file.getOriginalFilename()).startsWith(PRODUCT_DETAILS)) {
-                productToUpdate.getImageIDs().add(fileService.saveFile(file).getId());
-            }
-        }
-         productRepo.save(productToUpdate);
-         return getAll();
-
-    }
 
 
     public List<Product> getAllByProductName(String productName){
@@ -261,5 +230,28 @@ public class ProductService {
         }
     }
 
+    public void updateProduct(Product product) {
+        productRepo.save(product);
+    }
+
+    public void addPhotosToProduct(MultipartFile[] files, String productId) throws IOException {
+        Product product = getProductById(productId);
+        for (MultipartFile file : files) {
+            product.getImageIDs().add(fileService.saveFile(file).getId());
+        }
+          updateProduct(product);
+    }
+
+
+    public void updateImageIds(Product theNewProduct){
+        Product oldProduct = getProductById(theNewProduct.getId());
+
+        for (int i = 0; i < oldProduct.getImageIDs().size(); i++) {
+                if(!theNewProduct.getImageIDs().contains(oldProduct.getImageIDs().get(i))){
+                    fileService.deleteImagesByIds(new ArrayList<>( List.of(oldProduct.getImageIDs().get(i))));
+                }
+        }
+        updateProduct(theNewProduct);
+    }
 
 }

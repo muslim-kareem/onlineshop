@@ -65,10 +65,6 @@ public class ProductController {
         return productService.getShoppingCart();
     }
 
-    @PostMapping("/update/{id}")
-    public List<Product> updateProduct(@PathVariable String id, @RequestParam("file[]") MultipartFile[] file) throws IOException {
-     return productService.updateProduct(id,file);
-    }
 
     @GetMapping("/search-by-name/{name}")
     public List<Product> getAllByProductName(@PathVariable String name){
@@ -88,6 +84,18 @@ public class ProductController {
     @GetMapping("/shopping-cart-size")
     public int getShoppingCartSize(){
         return productService.getShoppingCart().size();
+    }
+
+
+    @PutMapping("/add-photos/{id}")
+    public List<Product> addPhotosToProduct(@RequestParam("file[]") MultipartFile[] files, @PathVariable  String id) throws IOException {
+        productService.addPhotosToProduct(files,id);
+        return productService.getAll();
+    }
+    @PutMapping("/update")
+    public List<Product> updateProduct(@RequestBody Product product){
+        productService.updateImageIds(product);
+        return productService.getAll();
     }
 
 }
