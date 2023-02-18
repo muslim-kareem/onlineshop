@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import DeleteButton from "../components/DeleteButton";
-import {deleteProduct, getProductByCategory, getProducts} from "../api/ProductApi";
+import {deleteProduct, getProductByCategory, getProductById, getProducts} from "../api/ProductApi";
 import AddButton from "../components/AddButton";
 import useAuth from "../hooks/useAuth";
 import NavBar from "../components/NavBar";
@@ -13,6 +13,7 @@ import {useParams} from "react-router-dom";
 import useShoppingCart from "../hooks/useShoppingCart";
 import UpdateForm from "../components/UpdateForm";
 import useProduct from "../hooks/useProduct";
+import {toast, ToastContainer} from "react-toastify";
 
 export default function Home() {
 
@@ -29,6 +30,16 @@ export default function Home() {
     const [textPreview,setTextPreview] = useState<string>("")
     const [user] = useAuth()
     const role = user?.role;
+    const notify = () => toast.success(' Product is successfully updated!', {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
 
     console.log(product.name)
     const onSubmit = async (e: React.FormEvent) => {
@@ -83,11 +94,10 @@ export default function Home() {
         deleteProduct(id)
     }
 
-    const onUpdate = async () => {
-        // FILE UPLOAD
+    const onUpdate = async (e: React.FormEvent) => {
+        e.preventDefault()
 
         const res = await axios.put("/api/products/update", product);
-
         setProducts(res.data)
 
         if (!files) {
@@ -100,8 +110,10 @@ export default function Home() {
         setFiles(null)
         setPreviewUrls([])
 
-       const response = await axios.put("/api/products/add-photos/"+product.id, formData);
+        const response = await axios.put("/api/products/add-photos/"+product.id, formData);
         setProducts(response.data)
+        const productResponse = await getProductById(product.id)
+        setProduct({...product,"imageIDs": productResponse.imageIDs})
 
         for (let previewUrl of previewUrls) {
             URL.revokeObjectURL(previewUrl)
@@ -131,12 +143,14 @@ export default function Home() {
                     <div className={"crud-buttons-container"}>
                         {role === "ADMIN" &&
                             <UpdateForm
-                            onSetId={() => setProductId(p.id)}
-                            onSubmit={onUpdate} onChange={onChange}
-                            previewUrls={previewUrls}
-                            productId={p.id}
-                            setProduct={setProduct}
-                            product={product}
+                                onSuccess={notify}
+                                onSetId={() => setProductId(p.id)}
+                                onUpdate={onUpdate}
+                                onChange={onChange}
+                                previewUrls={previewUrls}
+                                productId={p.id}
+                                setProduct={setProduct}
+                                product={product}
                         />
 
                         }
@@ -147,7 +161,10 @@ export default function Home() {
                 :
                 <div className={"place-holder"}> Load data...</div>}
             {role === "ADMIN" &&  <AddButton onSubmit={onSubmit} onChange={onChange} previewUrls={previewUrls} textPreview={textPreview}/>}
+            <ToastContainer/>
+
             <Footer/>
+
             </>
     )
 
