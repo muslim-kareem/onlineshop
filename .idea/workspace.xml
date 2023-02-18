@@ -7,8 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: v3 UpdateForm">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="remove spaces and remove UpdateProductButton">
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ConformationDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConformationDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UpdateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UpdateForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="show_num_of_products_by_shopping_cart" />
+        <entry key="$PROJECT_DIR$" value="update_product_with_form" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,7 +111,7 @@
       <recent name="com.my.shope.backend.appUser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductControllerTest">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -243,20 +247,6 @@
       <workItem from="1675447569871" duration="51631000" />
       <workItem from="1675607383471" duration="62205000" />
       <workItem from="1675851677645" duration="68771000" />
-    </task>
-    <task id="LOCAL-00091" summary="fix: sonar fronted refactor">
-      <created>1675625144763</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1675625144763</updated>
-    </task>
-    <task id="LOCAL-00092" summary="small refactoring and bug fix">
-      <created>1675678544746</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1675678544746</updated>
     </task>
     <task id="LOCAL-00093" summary="small refactoring and bug fix">
       <created>1675682515478</created>
@@ -587,7 +577,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676457776396</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="feat: v4 UpdateForm">
+      <created>1676543975131</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1676543975131</updated>
+    </task>
+    <task id="LOCAL-00141" summary="remove spaces and remove UpdateProductButton">
+      <created>1676626496898</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1676626496898</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,8 +612,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="fix: small bug in key value" />
-    <MESSAGE value="fix: if product details loaded show Product details loaded" />
     <MESSAGE value="fix: clean some spaces up" />
     <MESSAGE value="TEST: removeFromOrdered" />
     <MESSAGE value="TEST: getAllByCateGory" />
@@ -633,7 +635,9 @@
     <MESSAGE value="feat: v1 UpdateForm" />
     <MESSAGE value="feat: v2 UpdateForm" />
     <MESSAGE value="feat: v3 UpdateForm" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: v3 UpdateForm" />
+    <MESSAGE value="feat: v4 UpdateForm" />
+    <MESSAGE value="remove spaces and remove UpdateProductButton" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove spaces and remove UpdateProductButton" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
