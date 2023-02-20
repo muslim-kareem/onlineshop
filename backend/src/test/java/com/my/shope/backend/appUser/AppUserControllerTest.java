@@ -36,7 +36,6 @@ class AppUserControllerTest {
 //                .andExpectAll(MockMvcResultMatchers.status().isConflict());
 //    }
 
-
     @Test
     void meWithoutLogin_Forbidden() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/users/me")
@@ -70,12 +69,6 @@ class AppUserControllerTest {
                         MockMvcResultMatchers.status().isUnauthorized()
                 );
     }
-
-
-
-
-
-
 
 
 
