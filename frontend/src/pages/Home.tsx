@@ -31,7 +31,7 @@ export default function Home() {
     const [user] = useAuth()
     const role = user?.role;
     const notify = () => toast.success(' Product is successfully updated!', {
-        position: "bottom-left",
+        position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
