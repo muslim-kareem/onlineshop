@@ -62,7 +62,7 @@ export default function ProductDetails() {
                     <div>
                         <img src={presentPhoto ? presentPhoto : IMAGES_PATH + (product.imageIDs[0])}
                              className="present-photo border border-5 " style={{width: "25rem"}}
-                             alt={product.imageIDs[0]}/>
+                             alt={presentPhoto}/>
                     </div>
 
 

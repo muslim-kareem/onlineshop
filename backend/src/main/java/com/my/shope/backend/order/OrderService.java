@@ -13,11 +13,11 @@ public class OrderService {
     private final OrderRepo orderRepo;
 
 
-    public Optional<Order> getOrderByAppUserIdAndIsExcuted(String userId, boolean isExcuted) {
+    public Optional<Order> getOrderByAppUserIdAndIsExecuted(String userId, boolean isExecuted) {
        List<Optional<Order>> orders = orderRepo.findAllByAppUserId(userId);
 
            for (Optional<Order> order : orders) {
-               if (order.isPresent() && order.get().isExecuted() == isExcuted) {
+               if (order.isPresent() && order.get().isExecuted() == isExecuted) {
                    return order;
                }
            }

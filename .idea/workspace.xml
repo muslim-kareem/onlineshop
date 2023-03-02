@@ -7,11 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="small refactor: set remove set method">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-onlineshope-my-capstone-project.iml" beforeDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="refactor: remove redundant productId">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UpdateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UpdateForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +77,7 @@
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/node_modules/typescript/lib&quot;
+    &quot;ts.external.directory.path&quot;: &quot;/home/mk/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/node_modules/typescript/lib&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -247,34 +249,10 @@
       <workItem from="1677321457468" duration="1346000" />
       <workItem from="1677581149989" duration="513000" />
       <workItem from="1677751848059" duration="2326000" />
-    </task>
-    <task id="LOCAL-00098" summary="feat: remove product from order">
-      <created>1675694180079</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1675694180079</updated>
-    </task>
-    <task id="LOCAL-00099" summary="feat: remove product from order">
-      <created>1675696398389</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1675696398389</updated>
-    </task>
-    <task id="LOCAL-00100" summary="small refactor">
-      <created>1675701353931</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1675701353931</updated>
-    </task>
-    <task id="LOCAL-00101" summary="feat: in case no product added to shopping cart">
-      <created>1675701412916</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1675701412916</updated>
+      <workItem from="1677754220817" duration="4562000" />
+      <workItem from="1677771534450" duration="643000" />
+      <workItem from="1677774197586" duration="3057000" />
+      <workItem from="1677778069384" duration="6248000" />
     </task>
     <task id="LOCAL-00102" summary="small changes">
       <created>1675708058661</created>
@@ -591,7 +569,35 @@
       <option name="project" value="LOCAL" />
       <updated>1677753088288</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="refactor: change project name and  remove comment">
+      <created>1677754360945</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1677754360945</updated>
+    </task>
+    <task id="LOCAL-00148" summary="refactor: typo  and duplicated object">
+      <created>1677756171543</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1677756171543</updated>
+    </task>
+    <task id="LOCAL-00149" summary="refactor: theList to products">
+      <created>1677757535343</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1677757535343</updated>
+    </task>
+    <task id="LOCAL-00150" summary="refactor: remove redundant productId">
+      <created>1677780601485</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1677780601486</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,10 +618,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="refactor: for loop" />
-    <MESSAGE value="test: product_details without relative path" />
-    <MESSAGE value="add: index.html to static directory" />
-    <MESSAGE value="refactor createProduct method" />
     <MESSAGE value="first version of show num of shoppingCart" />
     <MESSAGE value="feat: endpoint size of shopping cart and refactor" />
     <MESSAGE value="in progress: show shoppingCart size above the shopping icon" />
@@ -637,6 +639,10 @@
     <MESSAGE value="feat: ToastContainer and refactor" />
     <MESSAGE value="buttons style and small changes" />
     <MESSAGE value="small refactor: set remove set method" />
-    <option name="LAST_COMMIT_MESSAGE" value="small refactor: set remove set method" />
+    <MESSAGE value="refactor: change project name and  remove comment" />
+    <MESSAGE value="refactor: typo  and duplicated object" />
+    <MESSAGE value="refactor: theList to products" />
+    <MESSAGE value="refactor: remove redundant productId" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove redundant productId" />
   </component>
 </project>
