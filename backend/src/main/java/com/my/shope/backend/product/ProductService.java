@@ -202,14 +202,14 @@ public class ProductService {
 
 
     public List<Product> getAllByProductName(String productName){
-        List<Product> theList = new ArrayList<>();
+        List<Product> products = new ArrayList<>();
 
         for (Product product: getAll()) {
             if(product.getName().toLowerCase().contains(productName.toLowerCase())){
-                theList.add(product);
+                products.add(product);
             }
         }
-        return theList;
+        return products;
     }
 
     public List<Product> getAllByProductCategory(String category){
