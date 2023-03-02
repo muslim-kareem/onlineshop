@@ -148,7 +148,6 @@ export default function Home() {
                                 onUpdate={onUpdate}
                                 onChange={onChange}
                                 previewUrls={previewUrls}
-                                productId={p.id}
                                 setProduct={setProduct}
                                 product={product}
                         />

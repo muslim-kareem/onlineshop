@@ -11,7 +11,6 @@ export default function UpdateForm({onUpdate, onChange, previewUrls, product, on
     product: Product,
     setProduct: (product: Product) => void,
     onSetId: () => void,
-    productId: string,
     previewUrls: string[],
     onUpdate: (e: React.FormEvent) => void,
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
