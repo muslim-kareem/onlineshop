@@ -7,10 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="refactor: theList to products">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="refactor: remove redundant productId">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/UpdateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UpdateForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,14 +252,7 @@
       <workItem from="1677754220817" duration="4562000" />
       <workItem from="1677771534450" duration="643000" />
       <workItem from="1677774197586" duration="3057000" />
-      <workItem from="1677778069384" duration="2337000" />
-    </task>
-    <task id="LOCAL-00101" summary="feat: in case no product added to shopping cart">
-      <created>1675701412916</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1675701412916</updated>
+      <workItem from="1677778069384" duration="6248000" />
     </task>
     <task id="LOCAL-00102" summary="small changes">
       <created>1675708058661</created>
@@ -594,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677757535343</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="refactor: remove redundant productId">
+      <created>1677780601485</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1677780601486</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,7 +618,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="refactor createProduct method" />
     <MESSAGE value="first version of show num of shoppingCart" />
     <MESSAGE value="feat: endpoint size of shopping cart and refactor" />
     <MESSAGE value="in progress: show shoppingCart size above the shopping icon" />
@@ -640,6 +642,7 @@
     <MESSAGE value="refactor: change project name and  remove comment" />
     <MESSAGE value="refactor: typo  and duplicated object" />
     <MESSAGE value="refactor: theList to products" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: theList to products" />
+    <MESSAGE value="refactor: remove redundant productId" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove redundant productId" />
   </component>
 </project>

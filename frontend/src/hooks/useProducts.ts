@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {Product} from "../model/Product";
-import {getByTitle, getProducts} from "../api/ProductApi";
+import {getProductsByTitle, getProducts} from "../api/ProductApi";
 
 
 export default function useProducts(name: string): [Product[], ((value: (((prevState: Product[]) => Product[]) | Product[])) => void), boolean] {
@@ -13,7 +13,7 @@ export default function useProducts(name: string): [Product[], ((value: (((prevS
 
            // && name.toLowerCase() === name
             if (name.length > 0 ) {
-                const products = await getByTitle(name)
+                const products = await getProductsByTitle(name)
                 setProducts(products)
             }else {
                 const products = await getProducts();

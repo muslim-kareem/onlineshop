@@ -88,7 +88,7 @@ export default function UpdateForm({onUpdate, onChange, previewUrls, product, on
                     {product.name && <form onSubmit={onUpdate}>
                         <Modal.Body>
                             <div className="input-group mb-4">
-                                <span className="input-group-text  " style={{minWidth: "110px"}}>Name</span>
+                                <span className="input-group-text" style={{minWidth: "110px"}}>Name</span>
                                 <input className="form-control block block"
                                        placeholder={"name of Product"}
                                        name={'name'}
@@ -135,7 +135,6 @@ export default function UpdateForm({onUpdate, onChange, previewUrls, product, on
 
                         </Modal.Body>
                         <Modal.Footer>
-                            {/*<h5 style={{display: "block"}}>New Photo</h5>*/}
                             {previewUrls.map(img => <img key={img} style={{maxWidth: "150px"}} src={img} alt={img}/>)}
 
                             {/*THE TRIGGER BUTTON */}

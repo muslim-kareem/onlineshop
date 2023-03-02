@@ -17,8 +17,6 @@ import {toast, ToastContainer} from "react-toastify";
 
 export default function Home() {
 
-
-
     const {category} = useParams();
     const [,,sizeOfShoppingCart] = useShoppingCart('');
     const [files, setFiles] = useState<File[] | null>()
@@ -30,6 +28,7 @@ export default function Home() {
     const [textPreview,setTextPreview] = useState<string>("")
     const [user] = useAuth()
     const role = user?.role;
+
     const notify = () => toast.success(' Product is successfully updated!', {
         position: "top-center",
         autoClose: 5000,
@@ -41,7 +40,6 @@ export default function Home() {
         theme: "light",
     });
 
-    console.log(product.name)
     const onSubmit = async (e: React.FormEvent) => {
         // FILE UPLOAD
         e.preventDefault();
@@ -72,9 +70,6 @@ export default function Home() {
             }
             setFiles(f);
 
-            for (let previewUrl of previewUrls) {
-                URL.revokeObjectURL(previewUrl)
-            }
             const fileUrls = [];
 
             for (let file of e.target.files) {

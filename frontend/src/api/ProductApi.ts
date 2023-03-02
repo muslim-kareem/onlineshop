@@ -51,7 +51,7 @@ export const deleteProduct = async (productId: string): Promise<Product> => {
 };
 
 
-export const getByTitle = async (name: string): Promise<Product[]> => {
+export const getProductsByTitle = async (name: string): Promise<Product[]> => {
     const response = await axios.get(PRODUCT_BASE_URL+'/search-by-name/'+name);
     return response.data;
 };
