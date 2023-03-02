@@ -25,10 +25,6 @@ public class SecurityConfiguration {
     @Value("${base.url}")
     private String baseUrl;
 
-//    public void set(String value){
-//        baseUrl = value;
-//    }
-
     @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {
         return http

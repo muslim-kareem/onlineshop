@@ -7,10 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="buttons style and small changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="small refactor: set remove set method">
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/configuration/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/my/shope/backend/gridfs/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-onlineshope-my-capstone-project.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,14 +246,7 @@
       <workItem from="1675851677645" duration="68771000" />
       <workItem from="1677321457468" duration="1346000" />
       <workItem from="1677581149989" duration="513000" />
-      <workItem from="1677751848059" duration="1048000" />
-    </task>
-    <task id="LOCAL-00097" summary="order button style">
-      <created>1675693158659</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1675693158659</updated>
+      <workItem from="1677751848059" duration="2326000" />
     </task>
     <task id="LOCAL-00098" summary="feat: remove product from order">
       <created>1675694180079</created>
@@ -590,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676724999864</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="small refactor: set remove set method">
+      <created>1677753088288</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1677753088288</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +612,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="remove surefire" />
     <MESSAGE value="refactor: for loop" />
     <MESSAGE value="test: product_details without relative path" />
     <MESSAGE value="add: index.html to static directory" />
@@ -636,6 +636,7 @@
     <MESSAGE value="refactor UpdateForm" />
     <MESSAGE value="feat: ToastContainer and refactor" />
     <MESSAGE value="buttons style and small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="buttons style and small changes" />
+    <MESSAGE value="small refactor: set remove set method" />
+    <option name="LAST_COMMIT_MESSAGE" value="small refactor: set remove set method" />
   </component>
 </project>
