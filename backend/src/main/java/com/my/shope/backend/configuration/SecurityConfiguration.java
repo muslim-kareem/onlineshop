@@ -22,11 +22,8 @@ import java.util.Optional;
 public class SecurityConfiguration {
 
     private final AppUserService appUserService;
-    private String baseUrl = "/api/products";
     @Value("${base.url}")
-    public void set(String value){
-        baseUrl = value;
-    }
+    private String baseUrl;
 
     @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {

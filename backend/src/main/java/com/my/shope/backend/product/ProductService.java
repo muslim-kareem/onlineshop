@@ -21,7 +21,7 @@ public class ProductService {
     private final OrderService orderService;
     private final AppUserService userService;
     private final FileService fileService;
-   private final AppUserService appUserService;
+    private final AppUserService appUserService;
     private static final String PRODUCT_DETAILS = "product_details";
 
     public Product createProduct(MultipartFile[] files) throws IOException{

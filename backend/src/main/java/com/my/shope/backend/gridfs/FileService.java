@@ -15,11 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -86,11 +82,11 @@ public class FileService {
     }
 
 
-public void saveProductDetailsFile(MultipartFile file) throws IOException {
-       Files.copy(file.getInputStream(),
-               Paths.get("/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend" + File.separator + file.getOriginalFilename()),
-               StandardCopyOption.REPLACE_EXISTING);
-   }
+//public void saveProductDetailsFile(MultipartFile file) throws IOException {
+//       Files.copy(file.getInputStream(),
+//               Paths.get("/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project/backend" + File.separator + file.getOriginalFilename()),
+//               StandardCopyOption.REPLACE_EXISTING);
+//   }
 
     public void deleteImagesByIds(List<String> imageIdes){
         gridFsTemplate.delete(new Query()

@@ -22,7 +22,7 @@ public class FileController {
     @GetMapping("/{id}")
     public ResponseEntity<InputStreamResource> getFile(@PathVariable String id) throws IOException {
 
-        GridFsResource gridFsResource = fileService.getResource(id);
+        GridFsResource gridFsResource = fileService.    getResource(id);
         return ResponseEntity.ok()
             .contentType(MediaType.valueOf(gridFsResource.getContentType()))
             .body(new InputStreamResource(gridFsResource.getInputStream()));
