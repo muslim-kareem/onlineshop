@@ -19,7 +19,6 @@ public class ProductService {
 
     private final ProductRepo productRepo;
     private final OrderService orderService;
-    private final AppUserService userService;
     private final FileService fileService;
     private final AppUserService appUserService;
     private static final String PRODUCT_DETAILS = "product_details";
@@ -57,7 +56,7 @@ public class ProductService {
     public Order addToCart(String productId) {
         AppUser appUser = appUserService.getAuthenticatedUser();
 
-        Optional<Order> optionOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), false);
+        Optional<Order> optionOrder = orderService.getOrderByAppUserIdAndIsExecuted(appUser.getId(), false);
 
         if (optionOrder.isEmpty()) {
             Order newOrder = new Order(null, appUser.getId(), List.of(productId), false);
@@ -85,7 +84,7 @@ public class ProductService {
         removeFromShoppingCart(productId);
         AppUser appUser = appUserService.getAuthenticatedUser();
 
-        Optional<Order> optionOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), true);
+        Optional<Order> optionOrder = orderService.getOrderByAppUserIdAndIsExecuted(appUser.getId(), true);
 
         if (optionOrder.isEmpty()) {
             Order newOrder = new Order(null, appUser.getId(), List.of(productId), true);
@@ -112,8 +111,8 @@ public class ProductService {
 
     public List<Product> getShoppingCart() {
         List<Product> addedToCardProducts = new ArrayList<>();
-        AppUser appUser = userService.getAuthenticatedUser();
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), false);
+        AppUser appUser = appUserService.getAuthenticatedUser();
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExecuted(appUser.getId(), false);
 
         if (optionalOrder.isPresent()) {
             for (String productId : optionalOrder.get().getProductsIds()) {
@@ -125,8 +124,8 @@ public class ProductService {
     }
     public List<Product> getOrdered() {
         List<Product> orderedProducts = new ArrayList<>();
-        AppUser appUser = userService.getAuthenticatedUser();
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(appUser.getId(), true);
+        AppUser appUser = appUserService.getAuthenticatedUser();
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExecuted(appUser.getId(), true);
 
         if (optionalOrder.isPresent()) {
             for (String productId : optionalOrder.get().getProductsIds()) {
@@ -142,13 +141,13 @@ public class ProductService {
 
 
     public void removeFromShoppingCart(String productId) {
-        String authorizedUserId = userService.getAuthorizedUserId();
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, false);
+        String authorizedUserId = appUserService.getAuthorizedUserId();
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExecuted(authorizedUserId, false);
         removeProductFromOrder(productId,optionalOrder);
     }
     public void removeFromOrdered(String productId) {
-        String authorizedUserId = userService.getAuthorizedUserId();
-        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExcuted(authorizedUserId, true);
+        String authorizedUserId = appUserService.getAuthorizedUserId();
+        Optional<Order> optionalOrder = orderService.getOrderByAppUserIdAndIsExecuted(authorizedUserId, true);
         removeProductFromOrder(productId,optionalOrder);
     }
 
