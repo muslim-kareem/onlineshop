@@ -41,9 +41,7 @@ public class ProductService {
     }
 
     public List<Product> getAll() {
-        List<Product> allProduct = productRepo.findAll();
-        productRepo.findAll().sort(Collections.reverseOrder());
-        return allProduct;
+       return productRepo.findAllByOrderByIdAsc();
     }
     public Product getProductById(String id) {
         Optional<Product> optionalProduct = productRepo.findById(id);
