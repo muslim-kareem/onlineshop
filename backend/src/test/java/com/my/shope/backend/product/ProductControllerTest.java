@@ -245,10 +245,6 @@ public  void insertUser() throws Exception {
 
         mockMvc.perform(get("/api/products/orders/"+"2"));
 
-//        mockMvc.perform(get("/api/products/shopping-carts")).andExpectAll(
-//                status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
-
-
         mockMvc.perform(put("/api/products/"+"2"));
 
 
