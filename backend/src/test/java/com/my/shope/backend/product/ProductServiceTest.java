@@ -1,6 +1,5 @@
 package com.my.shope.backend.product;
 
-import com.my.shope.backend.TestData;
 import com.my.shope.backend.app_ser.AppUserService;
 import com.my.shope.backend.gridfs.FileMetadata;
 import com.my.shope.backend.gridfs.FileService;
@@ -40,9 +39,9 @@ class ProductServiceTest {
     @Mock
     AppUserService appUserService;
 
-
     @InjectMocks
     ProductService productService ;
+
 
     
 
@@ -54,34 +53,34 @@ class ProductServiceTest {
     void createProduct_then_return_product() throws IOException {
 
         //given
-        MultipartFile[] files = new MockMultipartFile[]{TestData.SOME_IMAGE_FILE, TestData.PRODUCT_FILE_1};
-        when(fileService.saveFile(TestData.SOME_IMAGE_FILE)).thenReturn(createdFileMetaData());
-        when(productRepo.save(TestData.PRODUCT1)).thenReturn(TestData.PRODUCT1);
+        MultipartFile[] files = new MockMultipartFile[]{SOME_IMAGE_FILE, PRODUCT_FILE_1};
+        when(fileService.saveFile(SOME_IMAGE_FILE)).thenReturn(createdFileMetaData());
+        when(productRepo.save(PRODUCT1)).thenReturn(PRODUCT1);
 
         //when
         Product actual = productService.createProduct(files);
 
         //then
-        assertEquals(TestData.PRODUCT1, actual);
+        assertEquals(PRODUCT1, actual);
         verify(fileService,  atLeast(1)).saveFile(SOME_IMAGE_FILE);
-        verify(productRepo).save(TestData.PRODUCT1);
+        verify(productRepo).save(PRODUCT1);
 
     }
 
     @Test
     void getAll_products_then_return_array_with_one_product() throws IOException {
         //given
-        MultipartFile[] files = new MockMultipartFile[]{TestData.SOME_IMAGE_FILE, TestData.PRODUCT_FILE_1};
+        MultipartFile[] files = new MockMultipartFile[]{SOME_IMAGE_FILE, PRODUCT_FILE_1};
 
-        when(fileService.saveFile(TestData.SOME_IMAGE_FILE)).thenReturn(createdFileMetaData());
-        when(productRepo.findAllByOrderByIdAsc()).thenReturn(List.of(TestData.PRODUCT1));
+        when(fileService.saveFile(SOME_IMAGE_FILE)).thenReturn(createdFileMetaData());
+        when(productRepo.findAllByOrderByIdAsc()).thenReturn(List.of(PRODUCT1));
         productService.createProduct(files);
 
         // when
         List<Product> actual = productService.getAll();
 
         //then
-        assertEquals(List.of(TestData.PRODUCT1), actual);
+        assertEquals(List.of(PRODUCT1), actual);
         verify(fileService).saveFile(SOME_IMAGE_FILE);
         verify(productRepo).findAllByOrderByIdAsc();
     }
@@ -89,18 +88,18 @@ class ProductServiceTest {
     @Test
     void getProductById_then_return_the_product() throws IOException {
         //given
-        MultipartFile[] files = new MockMultipartFile[]{TestData.SOME_IMAGE_FILE, TestData.PRODUCT_FILE_1};
+        MultipartFile[] files = new MockMultipartFile[]{SOME_IMAGE_FILE, PRODUCT_FILE_1};
         String productId = "1";
 
-        when(productRepo.findById(productId)).thenReturn(Optional.of(TestData.PRODUCT1));
-        when(fileService.saveFile(TestData.SOME_IMAGE_FILE)).thenReturn(createdFileMetaData());
+        when(productRepo.findById(productId)).thenReturn(Optional.of(PRODUCT1));
+        when(fileService.saveFile(SOME_IMAGE_FILE)).thenReturn(createdFileMetaData());
         productService.createProduct(files);
 
         // when
         Product actual = productService.getProductById(productId);
 
         //then
-        assertEquals(TestData.PRODUCT1,actual);
+        assertEquals(PRODUCT1,actual);
         verify(productRepo).findById(productId);
     }
 
@@ -112,11 +111,13 @@ class ProductServiceTest {
         when(productRepo.findById(productId)).thenReturn(Optional.empty());
 
         // when and then
-        Throwable actual = assertThrows(NoSuchElementException.class,
-                () -> productService.getProductById(productId));
-        
+        Throwable actual = assertThrows(NoSuchElementException.class, () -> productService.getProductById(productId));
+
         assertEquals("No Product found with this id: " + productId, actual.getMessage());
         verify(productRepo).findById(productId);
+        verifyNoMoreInteractions(productRepo);
+
+
     }
 
 
@@ -125,9 +126,9 @@ class ProductServiceTest {
         //given
         String productId = "1";
 
-        when(appUserService.getAuthenticatedUser()).thenReturn(TestData.APP_USER1);
+        when(appUserService.getAuthenticatedUser()).thenReturn(APP_USER1);
         when(orderService.getOrderByAppUserIdAndIsExecuted(
-                TestData.APP_USER1.getId(),false))
+                APP_USER1.getId(),false))
                       .thenReturn(Optional.empty());
 
 
@@ -138,7 +139,8 @@ class ProductServiceTest {
         //then
         assertEquals(new Order(null,"1",List.of("1"),false),actual);
         verify(appUserService).getAuthenticatedUser();
-        verify(orderService).getOrderByAppUserIdAndIsExecuted(TestData.APP_USER1.getId(),false);
+        verify(orderService).getOrderByAppUserIdAndIsExecuted(APP_USER1.getId(),false);
+
     }
 
 
@@ -148,10 +150,10 @@ class ProductServiceTest {
         //given
         String productId = "2";
 
-        when(appUserService.getAuthenticatedUser()).thenReturn(TestData.APP_USER1);
+        when(appUserService.getAuthenticatedUser()).thenReturn(APP_USER1);
         when(orderService.getOrderByAppUserIdAndIsExecuted(
-                TestData.APP_USER1.getId(),false))
-                .thenReturn(Optional.of(TestData.SHOPPING_CART_ORDER));
+                APP_USER1.getId(),false))
+                .thenReturn(Optional.of(SHOPPING_CART_ORDER));
 
 
         //when
@@ -161,7 +163,7 @@ class ProductServiceTest {
         //then
         assertEquals(new Order("1","1",new ArrayList<>(List.of("1","2")),false),actual);
         verify(appUserService).getAuthenticatedUser();
-        verify(orderService).getOrderByAppUserIdAndIsExecuted(TestData.APP_USER1.getId(),false);
+        verify(orderService).getOrderByAppUserIdAndIsExecuted(APP_USER1.getId(),false);
     }
 
     @Test
@@ -169,11 +171,11 @@ class ProductServiceTest {
         //given
         String productId = "1";
 
-        when(appUserService.getAuthorizedUserId()).thenReturn(TestData.APP_USER1.getId());
-        when(appUserService.getAuthenticatedUser()).thenReturn(TestData.APP_USER1);
-        when(productRepo.findById(productId)).thenReturn(Optional.of(TestData.PRODUCT1));
-//        when(orderService.getOrderByAppUserIdAndIsExecuted(TestData.APP_USER1.getId(),true))
-//                                                         .thenReturn(Optional.of(TestData.ORDERED_CARD_ORDER));
+        when(appUserService.getAuthorizedUserId()).thenReturn(APP_USER1.getId());
+        when(appUserService.getAuthenticatedUser()).thenReturn(APP_USER1);
+        when(productRepo.findById(productId)).thenReturn(Optional.of(PRODUCT1));
+//        when(orderService.getOrderByAppUserIdAndIsExecuted(APP_USER1.getId(),true))
+//                                                         .thenReturn(Optional.of(ORDERED_CARD_ORDER));
 
 
         //when
@@ -181,20 +183,20 @@ class ProductServiceTest {
 
 
         //then
-        assertEquals(TestData.PRODUCT1,actual);
+        assertEquals(PRODUCT1,actual);
         verify(appUserService).getAuthenticatedUser();
-        verify(orderService).getOrderByAppUserIdAndIsExecuted(TestData.APP_USER1.getId(),true);
+        verify(orderService).getOrderByAppUserIdAndIsExecuted(APP_USER1.getId(),true);
     }
 
 
     @Test
     void getShoppingCart_return_list_with_one_product() {
         //given
-        when(appUserService.getAuthenticatedUser()).thenReturn(TestData.APP_USER1);
+        when(appUserService.getAuthenticatedUser()).thenReturn(APP_USER1);
         when(orderService.getOrderByAppUserIdAndIsExecuted(
-                TestData.APP_USER1.getId(),false))
-                .thenReturn(Optional.of(TestData.SHOPPING_CART_ORDER));
-        when(productRepo.findById(any())).thenReturn(Optional.of(TestData.PRODUCT1));
+                APP_USER1.getId(),false))
+                .thenReturn(Optional.of(SHOPPING_CART_ORDER));
+        when(productRepo.findById(any())).thenReturn(Optional.of(PRODUCT1));
 
         //when
         List<Product> actual = productService.getShoppingCart();
@@ -206,11 +208,11 @@ class ProductServiceTest {
     @Test
     void getOrdered() {
         //given
-        when(appUserService.getAuthenticatedUser()).thenReturn(TestData.APP_USER1);
+        when(appUserService.getAuthenticatedUser()).thenReturn(APP_USER1);
         when(orderService.getOrderByAppUserIdAndIsExecuted(
-                TestData.APP_USER1.getId(),true))
+                APP_USER1.getId(),true))
                        .thenReturn(Optional.of(ORDERED_CARD_ORDER));
-        when(productRepo.findById(any())).thenReturn(Optional.of(TestData.PRODUCT1));
+        when(productRepo.findById(any())).thenReturn(Optional.of(PRODUCT1));
 
         //when
         List<Product> actual = productService.getOrdered();
@@ -223,5 +225,8 @@ class ProductServiceTest {
     @Test
     @Disabled
     void removeFromShoppingCart() {
+
 }
+
+
 }

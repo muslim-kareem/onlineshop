@@ -1,6 +1,5 @@
 package com.my.shope.backend.product;
 
-import com.my.shope.backend.TestData;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -12,6 +11,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import static com.my.shope.backend.TestData.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -26,14 +26,14 @@ class ProductControllerTest {
 public  void insertUser() throws Exception {
         mockMvc.perform(post("/api/app-users")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(TestData.NEW_USER_ADMIN)).andExpect( MockMvcResultMatchers.status().isOk()
+                .content(NEW_USER_ADMIN)).andExpect( MockMvcResultMatchers.status().isOk()
         );
     }
 
     @Test
         void create_whenNotLoggedIn_returnUnauthorized() throws Exception {
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_1)
+                .file(PRODUCT_FILE_1)
         ).andExpect(status().isUnauthorized());
     }
 
@@ -41,14 +41,14 @@ public  void insertUser() throws Exception {
     @WithMockUser(username = "muslim",password = "passowrd", roles = {"ADMIN"})
     void create_product_Without_photos_when_only_txtFile_sanded() throws Exception {
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                        .file(TestData.PRODUCT_FILE_1))
+                        .file(PRODUCT_FILE_1))
                 .andExpect(status().isOk());
     }
     @Test
     @WithMockUser(username = "muslim",password = "passowrd", roles = {"BASIC"})
     void create_product_should_returnUnauthorized_for_BASIC() throws Exception {
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                        .file(TestData.PRODUCT_FILE_1)
+                        .file(PRODUCT_FILE_1)
                 )
                 .andExpect(status().isForbidden());
     }
@@ -60,14 +60,14 @@ public  void insertUser() throws Exception {
      void getAll_should_return_all_products() throws Exception {
             // given
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_2)
+                .file(PRODUCT_FILE_2)
         );
 
         //when and then
         mockMvc.perform(multipart(HttpMethod.GET,"/api/products")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpectAll(
-                        status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
+                        status().isOk()).andExpect(content().json(PRODUCT_EXPECTED_2_ARRAY));
     }
     @Test
     @WithMockUser(username = "admin",password = "ps",roles = "ADMIN")
@@ -75,7 +75,7 @@ public  void insertUser() throws Exception {
         // given
         insertUser();
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_1)
+                .file(PRODUCT_FILE_1)
         );
 
         String expected = """
@@ -93,12 +93,12 @@ public  void insertUser() throws Exception {
         // given
         insertUser();
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_1)
+                .file(PRODUCT_FILE_1)
         ).andExpect(status().isOk());
 
         //when and then
         mockMvc.perform(multipart(HttpMethod.GET,"/api/products/"+"1")).andExpectAll(
-                               status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_1,false));
+                               status().isOk()).andExpect(content().json(PRODUCT_EXPECTED_1,false));
     }
 
     @Test
@@ -108,11 +108,11 @@ public  void insertUser() throws Exception {
          insertUser();
 
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_1)
+                .file(PRODUCT_FILE_1)
         ).andExpect(status().isOk());
 
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_2)
+                .file(PRODUCT_FILE_2)
         ).andExpect(status().isOk());
 
 
@@ -121,7 +121,7 @@ public  void insertUser() throws Exception {
         mockMvc.perform(multipart(HttpMethod.GET,"/api/products/search-by-name/"+"product2")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpectAll(
-                            status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
+                            status().isOk()).andExpect(content().json(PRODUCT_EXPECTED_2_ARRAY));
     }
 
     @Test
@@ -129,7 +129,7 @@ public  void insertUser() throws Exception {
     void getProductsByName_should_return_empty() throws Exception {
         // given
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_1)
+                .file(PRODUCT_FILE_1)
         ).andExpect(status().isOk());
 
         String expected = """
@@ -147,8 +147,8 @@ public  void insertUser() throws Exception {
     void when_only_txtFile_uploaded_then_does_not_sett_the_photos() throws Exception {
         // given
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_2)
-        ).andExpect(status().isOk()) .andExpect(status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2));
+                .file(PRODUCT_FILE_2)
+        ).andExpect(status().isOk()) .andExpect(status().isOk()).andExpect(content().json(PRODUCT_EXPECTED_2));
         // when and actual
 
     }
@@ -158,11 +158,11 @@ public  void insertUser() throws Exception {
     void buyProduct_then_return_same_product() throws Exception {
         insertUser();
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_1)
+                .file(PRODUCT_FILE_1)
         ).andExpect(status().isOk());
 
         mockMvc.perform(put("/api/products/"+"1")).andExpectAll(
-                status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_1));
+                status().isOk()).andExpect(content().json(PRODUCT_EXPECTED_1));
 
     }
 
@@ -171,14 +171,14 @@ public  void insertUser() throws Exception {
     void shoppingCart_get_array_of_product_that_contains_one_product() throws Exception {
         insertUser();
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_2)
+                .file(PRODUCT_FILE_2)
         ).andExpect(status().isOk());
 
         mockMvc.perform(put("/api/products/orders/"+"2")).andExpectAll(
                 status().isOk());
 
         mockMvc.perform(get("/api/products/shopping-carts")).andExpectAll(
-                status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
+                status().isOk()).andExpect(content().json(PRODUCT_EXPECTED_2_ARRAY));
     }
 
     @Test
@@ -186,7 +186,7 @@ public  void insertUser() throws Exception {
     void removeFromShoppingCart_and_get_emptyArray() throws Exception {
         insertUser();
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_2)
+                .file(PRODUCT_FILE_2)
         ).andExpect(status().isOk());
 
         mockMvc.perform(put("/api/products/orders/"+"2")).andExpectAll(
@@ -206,7 +206,7 @@ public  void insertUser() throws Exception {
     void removeOrdered_and_get_emptyArray() throws Exception {
         insertUser();
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_1)
+                .file(PRODUCT_FILE_1)
         ).andExpect(status().isOk());
 
         mockMvc.perform(put("/api/products/"+"1"));
@@ -226,12 +226,12 @@ public  void insertUser() throws Exception {
     void getByCategory_and_get_one() throws Exception {
         insertUser();
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_2)
+                .file(PRODUCT_FILE_2)
         ).andExpect(status().isOk());
 
         //given and when
         mockMvc.perform(get("/api/products/category/"+"CLOSING")).andExpectAll(
-                status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
+                status().isOk()).andExpect(content().json(PRODUCT_EXPECTED_2_ARRAY));
 
     }
 
@@ -240,7 +240,7 @@ public  void insertUser() throws Exception {
     void getAllOrdered_then_get_Array_that_contains_one() throws Exception {
         insertUser();
         this.mockMvc.perform(multipart(HttpMethod.POST,"/api/products")
-                .file(TestData.PRODUCT_FILE_2)
+                .file(PRODUCT_FILE_2)
         ).andExpect(status().isOk());
 
         mockMvc.perform(get("/api/products/orders/"+"2"));
@@ -249,7 +249,7 @@ public  void insertUser() throws Exception {
 
 
         mockMvc.perform(get("/api/products/ordered")).andExpectAll(
-                status().isOk()).andExpect(content().json(TestData.PRODUCT_EXPECTED_2_ARRAY));
+                status().isOk()).andExpect(content().json(PRODUCT_EXPECTED_2_ARRAY));
     }
 
 }

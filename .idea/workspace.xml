@@ -7,13 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="refactor: remove redundant productId">
+    <list default="true" id="692f0ed2-90a5-4ada-b7e1-68fe9d6c57ce" name="Changes" comment="feat: Unit Test for ProductService">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ProductApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/UpdateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UpdateForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useProducts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/product/ProductServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,21 +22,37 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="update_product_with_form" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="fa5b52cc-024d-4ac3-addf-90e416ed1220" />
+        <option name="url" value="https://github.com/kareem8989/simple-onlineshop-my-capstone-project.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/backend/src/test/java/com/my/shope/backend/BackendApplicationTests.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,19 +79,23 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/kareem89/IdeaProjects/simple-onlineshope-my-capstone-project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mkadmin/IdeaProjects/simple-onlineshop-my-capstone-project&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/mk/IdeaProjects/simple-onlineshope-my-capstone-project/frontend/node_modules/typescript/lib&quot;
+    &quot;ts.external.directory.path&quot;: &quot;/home/mkadmin/IdeaProjects/simple-onlineshop-my-capstone-project/frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -113,53 +131,38 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BackendApplication">
-    <configuration name="AppUserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
+          <option name="PATTERN" value="com.my.shope.backend.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserControllerTest" />
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppUserControllerTest.meWithoutLogin_Forbidden" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductServiceTest.JWS_HS256" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
+          <option name="PATTERN" value="com.my.shope.backend.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserControllerTest" />
-      <option name="METHOD_NAME" value="meWithoutLogin_Forbidden" />
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductServiceTest" />
+      <option name="METHOD_NAME" value="JWS_HS256" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppUserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.my.shope.backend.appUser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.my.shope.backend.appUser" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.appUser.AppUserServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductServiceTest.JWS_consume" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -168,13 +171,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductServiceTest" />
+      <option name="METHOD_NAME" value="JWS_consume" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.getByCategory_and_get_one" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductServiceTest.JWS_noAlg" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -183,8 +187,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
-      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductControllerTest" />
-      <option name="METHOD_NAME" value="getByCategory_and_get_one" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductServiceTest" />
+      <option name="METHOD_NAME" value="JWS_noAlg" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceTest.getProductById_then_return_NoSuchElementException_and_prove_the_message" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.my.shope.backend.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.my.shope.backend.product" />
+      <option name="MAIN_CLASS_NAME" value="com.my.shope.backend.product.ProductServiceTest" />
+      <option name="METHOD_NAME" value="getProductById_then_return_NoSuchElementException_and_prove_the_message" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -206,20 +226,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="JUnit.AppUserControllerTest" />
-      <item itemvalue="JUnit.AppUserControllerTest.meWithoutLogin_Forbidden" />
-      <item itemvalue="JUnit.AppUserServiceTest" />
-      <item itemvalue="JUnit.ProductControllerTest.getByCategory_and_get_one" />
-      <item itemvalue="JUnit.ProductControllerTest" />
+      <item itemvalue="JUnit.ProductServiceTest.JWS_HS256" />
+      <item itemvalue="JUnit.ProductServiceTest.JWS_consume" />
+      <item itemvalue="JUnit.ProductServiceTest.JWS_noAlg" />
+      <item itemvalue="JUnit.ProductServiceTest" />
+      <item itemvalue="JUnit.ProductServiceTest.getProductById_then_return_NoSuchElementException_and_prove_the_message" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppUserControllerTest.meWithoutLogin_Forbidden" />
-        <item itemvalue="JUnit.AppUserServiceTest" />
-        <item itemvalue="JUnit.AppUserControllerTest" />
-        <item itemvalue="JUnit.ProductControllerTest" />
-        <item itemvalue="JUnit.ProductControllerTest.getByCategory_and_get_one" />
+        <item itemvalue="JUnit.ProductServiceTest.JWS_HS256" />
+        <item itemvalue="JUnit.ProductServiceTest.JWS_consume" />
+        <item itemvalue="JUnit.ProductServiceTest.JWS_noAlg" />
+        <item itemvalue="JUnit.ProductServiceTest" />
+        <item itemvalue="JUnit.ProductServiceTest.getProductById_then_return_NoSuchElementException_and_prove_the_message" />
       </list>
     </recent_temporary>
   </component>
@@ -253,41 +273,30 @@
       <workItem from="1677771534450" duration="643000" />
       <workItem from="1677774197586" duration="3057000" />
       <workItem from="1677778069384" duration="6248000" />
-    </task>
-    <task id="LOCAL-00102" summary="small changes">
-      <created>1675708058661</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1675708058661</updated>
-    </task>
-    <task id="LOCAL-00103" summary="add: category dropdown">
-      <created>1675710285438</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1675710285438</updated>
-    </task>
-    <task id="LOCAL-00104" summary="feat: category endpoint and method">
-      <created>1675711213820</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1675711213820</updated>
-    </task>
-    <task id="LOCAL-00105" summary="feat: show product by select category &gt; in progress">
-      <created>1675717612253</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1675717612253</updated>
-    </task>
-    <task id="LOCAL-00106" summary="feat: show product by selected category">
-      <created>1675761166044</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1675761166044</updated>
+      <workItem from="1678464109165" duration="1199000" />
+      <workItem from="1678466428523" duration="1880000" />
+      <workItem from="1678468322631" duration="1249000" />
+      <workItem from="1678469587075" duration="80000" />
+      <workItem from="1678469685811" duration="533000" />
+      <workItem from="1678470226064" duration="2182000" />
+      <workItem from="1678526201070" duration="5276000" />
+      <workItem from="1678532222227" duration="1035000" />
+      <workItem from="1678548194874" duration="3333000" />
+      <workItem from="1678551932006" duration="9140000" />
+      <workItem from="1678693693818" duration="18882000" />
+      <workItem from="1678719887226" duration="8719000" />
+      <workItem from="1678865382753" duration="1759000" />
+      <workItem from="1678869445270" duration="6512000" />
+      <workItem from="1678951657091" duration="1582000" />
+      <workItem from="1678993213362" duration="7271000" />
+      <workItem from="1679073952147" duration="156000" />
+      <workItem from="1679078337448" duration="13000" />
+      <workItem from="1679223302176" duration="874000" />
+      <workItem from="1679421143981" duration="2354000" />
+      <workItem from="1679482491945" duration="1336000" />
+      <workItem from="1679497412322" duration="2500000" />
+      <workItem from="1679589109790" duration="1672000" />
+      <workItem from="1679669522843" duration="625000" />
     </task>
     <task id="LOCAL-00107" summary="feat: category feature is done">
       <created>1675767397097</created>
@@ -597,7 +606,42 @@
       <option name="project" value="LOCAL" />
       <updated>1677780601486</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="refactor: sort findAll">
+      <created>1678555080540</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1678555080540</updated>
+    </task>
+    <task id="LOCAL-00152" summary="refactor: sort findAll">
+      <created>1678722746183</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1678722746183</updated>
+    </task>
+    <task id="LOCAL-00153" summary="refactor: remove the comments">
+      <created>1678722896892</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1678722896892</updated>
+    </task>
+    <task id="LOCAL-00154" summary="small feat: create some data and remove the comments">
+      <created>1678722991703</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1678722991703</updated>
+    </task>
+    <task id="LOCAL-00155" summary="feat: Unit Test for ProductService">
+      <created>1678723092900</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1678723092900</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,11 +662,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="first version of show num of shoppingCart" />
-    <MESSAGE value="feat: endpoint size of shopping cart and refactor" />
-    <MESSAGE value="in progress: show shoppingCart size above the shopping icon" />
-    <MESSAGE value="some styling for add to cart button" />
-    <MESSAGE value="feat: show crud button by role" />
     <MESSAGE value="feat: secure update endpoint only for admin role" />
     <MESSAGE value="shopping cart v1 is done" />
     <MESSAGE value="small feature for Order product button  if the shopping cart contains more than 1 product or not" />
@@ -643,6 +682,23 @@
     <MESSAGE value="refactor: typo  and duplicated object" />
     <MESSAGE value="refactor: theList to products" />
     <MESSAGE value="refactor: remove redundant productId" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove redundant productId" />
+    <MESSAGE value="refactor: sort findAll" />
+    <MESSAGE value="refactor: change the return" />
+    <MESSAGE value="refactor: remove the comments" />
+    <MESSAGE value="small feat: create some data and remove the comments" />
+    <MESSAGE value="feat: Unit Test for ProductService" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Unit Test for ProductService" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/simple_onlineshop_my_capstone_project$ProductControllerTest.ic" NAME="ProductControllerTest Coverage Results" MODIFIED="1678807742372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.my.shope.backend.product.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/simple_onlineshop_my_capstone_project$ProductServiceTest.ic" NAME="ProductServiceTest Coverage Results" MODIFIED="1678725320261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.my.shope.backend.product.*</FILTER>
+    </SUITE>
   </component>
 </project>
