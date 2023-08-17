@@ -10,6 +10,7 @@ Before you begin, make sure you have the following prerequisites installed on yo
 - MongoDB & MongoDB compass
 - Maven
 - Node.js 18 or higher version
+- Git
 
 ## Installation and Setup
 
